@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    
+    <title>CSS问题与解答 | Guagua个人博客</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="代码">
+    
+    <meta name="description" content="flex布局1234567891011 .fdiv &amp;#123;  /*父容器*/   justify-content: flex-start; /*设置自容器沿主轴排列flex-end,center,space-around(均匀分布)，space-between(两端相切)*/   align-items: flex-start; /*设置交叉轴(上下轴),flex-end,center,b">
+<meta name="keywords" content="代码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS问题与解答">
+<meta property="og:url" content="http://yoursite.com/2018/07/19/CSS问题与解答/index.html">
+<meta property="og:site_name" content="Guagua个人博客">
+<meta property="og:description" content="flex布局1234567891011 .fdiv &amp;#123;  /*父容器*/   justify-content: flex-start; /*设置自容器沿主轴排列flex-end,center,space-around(均匀分布)，space-between(两端相切)*/   align-items: flex-start; /*设置交叉轴(上下轴),flex-end,center,b">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/b.png">
+<meta property="og:updated_time" content="2018-10-21T17:01:31.719Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS问题与解答">
+<meta name="twitter:description" content="flex布局1234567891011 .fdiv &amp;#123;  /*父容器*/   justify-content: flex-start; /*设置自容器沿主轴排列flex-end,center,space-around(均匀分布)，space-between(两端相切)*/   align-items: flex-start; /*设置交叉轴(上下轴),flex-end,center,b">
+<meta name="twitter:image" content="http://yoursite.com/images/b.png">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.2.4/jquery.min.js"></script>
+    <!--自己添加的js-->
+    <script src="/js/love.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+        <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?d9022f3f6c7bc2d3e18c5029cf30c753";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">我见青山多妩媚</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                        
+                                    
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/myhtml/music.html">云音乐</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/myhtml/game.html">游戏</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/video/video.html">视频</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    未分类
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-CSS问题与解答" class="article article-single article-type-post " itemscope itemprop="blogPost">
+    <div class="article-inner">
+
+        
+        <header class="article-header">
+            
+    
+        <h1 class="article-title" itemprop="name">
+        CSS问题与解答
+        </h1>
+    
+
+        </header>
+        
+
+        
+        <div class="article-meta">
+            
+    <div class="article-date">
+        <a href="/2018/07/19/CSS问题与解答/" class="article-date">
+            <time datetime="2018-07-19T15:25:11.000Z" itemprop="datePublished">2018-07-19</time>
+        </a>
+    </div>
+
+            
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/代码/">代码</a>
+    </div>
+
+            <p>阅读数量: <span id="/2018/07/19/CSS问题与解答/" class="leancloud_visitors" data-flag-title="CSS问题与解答"></span>次</p>
+        </div>
+
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <img src="/images/b.png" class="[images]" title="花">
+<h3 id="flex布局"><a href="#flex布局" class="headerlink" title="flex布局"></a>flex布局</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> .fdiv &#123;</span><br><span class="line">  /*父容器*/</span><br><span class="line">   justify-content: flex-start; /*设置自容器沿主轴排列flex-end,center,space-around(均匀分布)，space-between(两端相切)*/</span><br><span class="line">   align-items: flex-start; /*设置交叉轴(上下轴),flex-end,center,baseline(基线),stretch(拉伸)*/</span><br><span class="line">   display: flex;</span><br><span class="line">   flex-direction: row; /*设置排列方向 row-revere,column,column-reverse*/</span><br><span class="line">       &#125;</span><br><span class="line">.cdiv &#123;</span><br><span class="line">   /*子容器*/</span><br><span class="line">   align-self: flex-start; /*字容器交叉轴。可覆盖父容器的align-items*/</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="文字的下划线"><a href="#文字的下划线" class="headerlink" title="文字的下划线"></a>文字的下划线</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.dia1 &#123;</span><br><span class="line">    text-decoration: none; /*正常*/</span><br><span class="line">    text-decoration: underline; /*下划线*/</span><br><span class="line">    text-decoration: overline; /*上划线*/</span><br><span class="line">    text-decoration: line-through; /*删除线*/</span><br><span class="line">    cursor: pointer; /*wait,help,move,none(游标不可见)*/</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="字符间距"><a href="#字符间距" class="headerlink" title="字符间距"></a>字符间距</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.div2 &#123;</span><br><span class="line">    letter-spacing: 20px; /*字符间距*/</span><br><span class="line">    word-spacing: 20px; /*单词间距*/</span><br><span class="line">    text-align: center; /*文字居中*/</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="背景与图片"><a href="#背景与图片" class="headerlink" title="背景与图片"></a>背景与图片</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">img &#123;</span><br><span class="line">    vertical-align: middle; /*垂直对齐图片*/</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">.div4 &#123;</span><br><span class="line">    background-image: url(&quot;../images/img.png&quot;);</span><br><span class="line">    background-repeat: no-repeat; /*背景图片不重复*/</span><br><span class="line">    background-position: center bottom; /*背景图片位置，也可 10px 10px*/</span><br><span class="line">    background-attachment: fixed; /*图片不随页面其余部分滚动*/</span><br><span class="line">    background: rgba(98, 98, 98, 0.5); /*背景颜色不透明度*/</span><br><span class="line">    background: url(&quot;../images/img.png&quot;) no-repeat 0 center; /*表示水平0，垂直居中*/</span><br><span class="line">    background: url(&quot;../images/img.png&quot;) no-repeat -10px 20px; /*表示水平-10px，垂直20px*/</span><br><span class="line">    background-image: linear-gradient(0deg, #ededed 0%, #ffffff 100%); /*背景色渐变*/</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="完全居中"><a href="#完全居中" class="headerlink" title="完全居中"></a>完全居中</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.div5 &#123;</span><br><span class="line">  /*方法1*/</span><br><span class="line">    position: absolute;</span><br><span class="line">    margin: -60px 0 0 -60px /*自身高的一半，自身宽的一半*/</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">.div6 &#123;</span><br><span class="line">  /*方法2*/</span><br><span class="line">    position: fixed;</span><br><span class="line">    transform: translate(-50%, -50%);</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="消失隐藏"><a href="#消失隐藏" class="headerlink" title="消失隐藏"></a>消失隐藏</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.div6 &#123;</span><br><span class="line">    display: none; /*不占地方的隐藏*/</span><br><span class="line">    visibility: hidden; /*只隐藏，所占位置还在*/</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="div滚动条"><a href="#div滚动条" class="headerlink" title="div滚动条"></a>div滚动条</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.div7 &#123;</span><br><span class="line">    overflow-x: auto; /*如果溢出则出现滚动条*/</span><br><span class="line">    overflow-y: auto;</span><br><span class="line">    height: 100px;</span><br><span class="line">    width: 200px;</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+<p><a href="https://github.com/inuyaksa/jquery.nicescroll" target="_blank" rel="noopener">滚动条插件niceScroll</a></p>
+<h3 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.div8 &#123;</span><br><span class="line">    word-break: break-all; /*允许在单词内换行*/</span><br><span class="line">    word-break: keep-all; /*只能在半角空格或连字符处换行*/</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">禁止换行可用&lt;nobr&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="隔行颜色"><a href="#隔行颜色" class="headerlink" title="隔行颜色"></a>隔行颜色</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">tbody tr:nth-child(2n+1) &#123;</span><br><span class="line">    background-color: #8ac16c;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">tbody tr:nth-child(2n) &#123;</span><br><span class="line">    background-color: #afd9ee;</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="媒体查询"><a href="#媒体查询" class="headerlink" title="媒体查询"></a>媒体查询</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@media (max-width: 1280px) &#123;</span><br><span class="line">    /*小于1280px时的css*/</span><br><span class="line">    /*注意：iframe时以上一层body参考*/</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="input-提示文字颜色"><a href="#input-提示文字颜色" class="headerlink" title="input 提示文字颜色"></a>input 提示文字颜色</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">input::-webkit-input-placeholder &#123;</span><br><span class="line">    color: #afd9ee</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">input::-moz-placeholder &#123;</span><br><span class="line">    color: #afd9ee;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">input:-ms-input-placeholder &#123;</span><br><span class="line">    color: #afd9ee;</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="表格文字超出隐藏"><a href="#表格文字超出隐藏" class="headerlink" title="表格文字超出隐藏"></a>表格文字超出隐藏</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">table &#123;</span><br><span class="line">    table-layout: fixed; /*定义fixed才起作用*/</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">td &#123;</span><br><span class="line">    word-break: keep-all; /*不换行*/</span><br><span class="line">    white-space: nowrap;</span><br><span class="line">    overflow: hidden; /*内容超出隱藏*/</span><br><span class="line">    text-overflow: ellipsis; /*省略号*/</span><br><span class="line">    /*可在td+title属性显示全部内容*/</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="css选择器"><a href="#css选择器" class="headerlink" title="css选择器"></a>css选择器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">ul + p &#123;</span><br><span class="line">    /*ul的下一个p(紧贴的)相邻*/</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">input[type=checkbox]:checked + label:after &#123;</span><br><span class="line"></span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">ul &gt; p &#123;</span><br><span class="line">    /*ul的直接子代(只一代)*/</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">ul ~ p &#123;</span><br><span class="line"></span><br><span class="line">    /*与ul+p相似，p的紧贴下所有p*/</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">ul:not(&quot;.div1&quot;) &#123;</span><br><span class="line">    /*所有的ul中不包含.div1的*/</span><br><span class="line"></span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">li:not(:last-child) &#123;</span><br><span class="line">    /*除最后一个的其余所有li的样式*/</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="各条边边框粗细"><a href="#各条边边框粗细" class="headerlink" title="各条边边框粗细"></a>各条边边框粗细</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.div9 &#123;</span><br><span class="line">    border-color: #afd9ee;</span><br><span class="line">    border-style: solid;</span><br><span class="line">    border-width: 1px 5px 5px 1px; /*设置边框粗细*/</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="动态计算长度值"><a href="#动态计算长度值" class="headerlink" title="动态计算长度值"></a>动态计算长度值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.div10 &#123;</span><br><span class="line">   calc(100 % - 10 px);</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="背景图片全屏且保持比例"><a href="#背景图片全屏且保持比例" class="headerlink" title="背景图片全屏且保持比例"></a>背景图片全屏且保持比例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">.bg &#123;</span><br><span class="line">	background: url(&quot;images/login_bg.jpg&quot;) no-repeat center center;</span><br><span class="line">	z-index: 0;</span><br><span class="line">	background-size: cover;</span><br><span class="line">	background-attachment: fixed;</span><br><span class="line">	width: 100%;</span><br><span class="line">	height: 100%;</span><br><span class="line">	position: fixed;</span><br><span class="line">	top: 0;</span><br><span class="line">	left: 0;</span><br><span class="line">	right: 0;</span><br><span class="line">	bottom: 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://yoursite.com/2018/07/19/CSS问题与解答/" data-id="cjw7zi2qf0001cwui0m0vnjbd" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zODM1OS8xNDg4Nw==">
+    <script type="text/javascript">
+        (function(d, s) {
+            var j, e = d.getElementsByTagName(s)[0];
+
+            if (typeof LivereTower === 'function') { return; }
+
+            j = d.createElement(s);
+            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+            j.async = true;
+
+            e.parentNode.insertBefore(j, e);
+        })(document, 'script');
+    </script>
+    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="qq" href="https://user.qzone.qq.com/532652152/infocenter" target="_blank" rel="noopener">
+                        <i class="icon fa fa-qq"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="internet-explorer" href="http://zcc.ac.cn/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-internet-explorer"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://www.instagram.com/chengcheng.zheng.355/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="https://weibo.com/u/3247224430?is_hot=1" target="_blank" rel="noopener">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2018/07/26/jQuery问题与解答/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            jQuery问题与解答
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2018/07/08/Android问题与解决1/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">Android问题与解答1</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/05/20/太平洋的第一缕海风-东极岛/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://image.zcc.ac.cn/dongjidao-00.jpg)" alt="太平洋的第一缕海风--东极岛" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2019/05/20/太平洋的第一缕海风-东极岛/" class="title">太平洋的第一缕海风--东极岛</a></p>
+                            <p class="item-date"><time datetime="2019-05-20T14:17:37.000Z" itemprop="datePublished">2019-05-20</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/12/05/Android问题与解答4/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/girl_night.jpg)" alt="Android问题与解答4" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/12/05/Android问题与解答4/" class="title">Android问题与解答4</a></p>
+                            <p class="item-date"><time datetime="2018-12-05T15:21:02.000Z" itemprop="datePublished">2018-12-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/11/08/Tomcat部署与配置/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/cat.jpg)" alt="Tomcat部署与配置" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/11/08/Tomcat部署与配置/" class="title">Tomcat部署与配置</a></p>
+                            <p class="item-date"><time datetime="2018-11-08T15:11:14.000Z" itemprop="datePublished">2018-11-08</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/10/14/记国庆江西婺源-三清山游/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://image.zcc.ac.cn/guoqing_1.jpg)" alt="记国庆江西婺源-三清山游" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/10/14/记国庆江西婺源-三清山游/" class="title">记国庆江西婺源-三清山游</a></p>
+                            <p class="item-date"><time datetime="2018-10-13T18:43:17.000Z" itemprop="datePublished">2018-10-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/10/08/Android问题与解答3/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/yellowClothes.jpg)" alt="Android问题与解答3" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/10/08/Android问题与解答3/" class="title">Android问题与解答3</a></p>
+                            <p class="item-date"><time datetime="2018-10-07T16:42:31.000Z" itemprop="datePublished">2018-10-08</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/代码/">代码</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a><span class="tag-list-count">4</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/代码/" style="font-size: 20px;">代码</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/生活/" style="font-size: 15px;">生活</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+                
+<div class="widget-wrap widget-list">
+    <!--<h3 class="widget-title">我的侧边栏</h3>-->
+    <!--<div class="widget">-->
+    <!--这里是我的侧边栏哦-->
+    <!--</div>-->
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="300" height="86" src="//music.163.com/outchain/player?type=2&id=28285910&auto=1&height=66"></iframe>
+</div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 ZhengChengcheng</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+
+            </div>
+        </div>
+    </div>
+
+
+</footer>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script src="//cdn1.lncld.net/static/js/2.5.0/av-min.js"></script>
+<script>
+    var APP_ID = 'K14Yo7meMkb2d2eRXnvjs5Nx-gzGzoHsz';
+    var APP_KEY = 'BG64BwIHiKiOkgqjcr6Nm9DX';
+    AV.init({
+        appId: APP_ID,
+        appKey: APP_KEY
+    });
+    // 显示次数
+    function showTime(Counter) {
+        var query = new AV.Query("Counter");
+        if($(".leancloud_visitors").length > 0){
+            var url = $(".leancloud_visitors").attr('id').trim();
+            // where field
+            query.equalTo("words", url);
+            // count
+            query.count().then(function (number) {
+                // There are number instances of MyClass where words equals url.
+                $(document.getElementById(url)).text(number?  number : '--');
+            }, function (error) {
+                // error is an instance of AVError.
+            });
+        }
+    }
+    // 追加pv
+    function addCount(Counter) {
+        var url = $(".leancloud_visitors").length > 0 ? $(".leancloud_visitors").attr('id').trim() : 'icafebolger.com';
+        var Counter = AV.Object.extend("Counter");
+        var query = new Counter;
+        query.save({
+            words: url
+        }).then(function (object) {
+        })
+    }
+    $(function () {
+        var Counter = AV.Object.extend("Counter");
+        addCount(Counter);
+        showTime(Counter);
+    });
+</script>
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://yoursite.com/2018/07/19/CSS问题与解答/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

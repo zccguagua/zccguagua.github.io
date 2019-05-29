@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    
+    <title>Android问题与解答1 | Guagua个人博客</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="代码">
+    
+    <meta name="description" content="AndroidStudio减少文件的大小12345678910手动删除以下文件或者目录Dir : ProjectFolder/buildDir : ProjectFolder/app/buildDir : ProjectFolder/.gradleDir : ProjectFolder/.ideaDir : ProjectFolder/capturesFile : ProjectFolder/*">
+<meta name="keywords" content="代码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android问题与解答1">
+<meta property="og:url" content="http://yoursite.com/2018/07/08/Android问题与解决1/index.html">
+<meta property="og:site_name" content="Guagua个人博客">
+<meta property="og:description" content="AndroidStudio减少文件的大小12345678910手动删除以下文件或者目录Dir : ProjectFolder/buildDir : ProjectFolder/app/buildDir : ProjectFolder/.gradleDir : ProjectFolder/.ideaDir : ProjectFolder/capturesFile : ProjectFolder/*">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/two_pigs.jpg">
+<meta property="og:updated_time" content="2018-10-21T17:01:31.585Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android问题与解答1">
+<meta name="twitter:description" content="AndroidStudio减少文件的大小12345678910手动删除以下文件或者目录Dir : ProjectFolder/buildDir : ProjectFolder/app/buildDir : ProjectFolder/.gradleDir : ProjectFolder/.ideaDir : ProjectFolder/capturesFile : ProjectFolder/*">
+<meta name="twitter:image" content="http://yoursite.com/images/two_pigs.jpg">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.2.4/jquery.min.js"></script>
+    <!--自己添加的js-->
+    <script src="/js/love.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+        <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?d9022f3f6c7bc2d3e18c5029cf30c753";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">我见青山多妩媚</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                        
+                                    
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/myhtml/music.html">云音乐</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/myhtml/game.html">游戏</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/video/video.html">视频</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    未分类
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-Android问题与解决1" class="article article-single article-type-post " itemscope itemprop="blogPost">
+    <div class="article-inner">
+
+        
+        <header class="article-header">
+            
+    
+        <h1 class="article-title" itemprop="name">
+        Android问题与解答1
+        </h1>
+    
+
+        </header>
+        
+
+        
+        <div class="article-meta">
+            
+    <div class="article-date">
+        <a href="/2018/07/08/Android问题与解决1/" class="article-date">
+            <time datetime="2018-07-07T17:50:34.000Z" itemprop="datePublished">2018-07-08</time>
+        </a>
+    </div>
+
+            
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/代码/">代码</a>
+    </div>
+
+            <p>阅读数量: <span id="/2018/07/08/Android问题与解决1/" class="leancloud_visitors" data-flag-title="Android问题与解答1"></span>次</p>
+        </div>
+
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <img src="/images/two_pigs.jpg" class="[images]" title="猪">
+<h3 id="AndroidStudio减少文件的大小"><a href="#AndroidStudio减少文件的大小" class="headerlink" title="AndroidStudio减少文件的大小"></a>AndroidStudio减少文件的大小</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">手动删除以下文件或者目录</span><br><span class="line">Dir : ProjectFolder/build</span><br><span class="line">Dir : ProjectFolder/app/build</span><br><span class="line">Dir : ProjectFolder/.gradle</span><br><span class="line">Dir : ProjectFolder/.idea</span><br><span class="line">Dir : ProjectFolder/captures</span><br><span class="line">File : ProjectFolder/*.iml</span><br><span class="line">File : ProjectFolder/local.properties</span><br><span class="line">File : ProjectFolder/.DS_Store</span><br><span class="line">File : ProjectFolder/.externalNativeBuild</span><br></pre></td></tr></table></figure>
+<h3 id="圆形图片"><a href="#圆形图片" class="headerlink" title="圆形图片"></a>圆形图片</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1.compile <span class="string">'de.hdodenhof:circleimageview:2.1.0'</span></span><br><span class="line">2.&lt;de.hdodenhof.circleimageview.CircleImageView</span><br><span class="line">        android:id=<span class="string">"@+id/profile_image"</span></span><br><span class="line">        android:layout_width=<span class="string">"96dp"</span></span><br><span class="line">        android:layout_height=<span class="string">"96dp"</span></span><br><span class="line">        android:src=<span class="string">"@drawable/d"</span></span><br><span class="line">        app:civ_border_color=<span class="string">"#FFFFFF"</span></span><br><span class="line">        app:civ_border_width=<span class="string">"2dp"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="设置圆角边框"><a href="#设置圆角边框" class="headerlink" title="设置圆角边框"></a>设置圆角边框</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"utf-8"</span>?&gt;</span><br><span class="line">&lt;shape xmlns:android=<span class="string">"http://schemas.android.com/apk/res/android"</span> &gt;</span><br><span class="line">    //这里是Linearlayout布局的背景颜色</span><br><span class="line">    &lt;solid android:color=<span class="string">"#FAFAFA"</span> /&gt;</span><br><span class="line">    //这里是设置边框线的粗细和颜色</span><br><span class="line">    &lt;stroke</span><br><span class="line">        android:width=<span class="string">"0.1dp"</span></span><br><span class="line">        android:color=<span class="string">"@color/border_gray"</span> /&gt;</span><br><span class="line">    &lt;padding</span><br><span class="line">        android:bottom=<span class="string">"1dp"</span></span><br><span class="line">        android:left=<span class="string">"1dp"</span></span><br><span class="line">        android:right=<span class="string">"1dp"</span></span><br><span class="line">        android:top=<span class="string">"1dp"</span> /&gt;</span><br><span class="line">    //角的话，里边有参数可以单独设置</span><br><span class="line">    &lt;corners android:radius=<span class="string">"10dp"</span> /&gt;</span><br><span class="line">&lt;/shape&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="圆形背景框"><a href="#圆形背景框" class="headerlink" title="圆形背景框"></a>圆形背景框</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;? xml version=<span class="string">"1.0"</span> encoding=<span class="string">"utf-8"</span>?&gt;</span><br><span class="line">&lt;shape xmlns:android=<span class="string">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    android:shape=<span class="string">"oval"</span></span><br><span class="line">    android:useLevel=<span class="string">"false"</span>&gt;</span><br><span class="line">    &lt;solid android:color=<span class="string">"@color/accent_material_light"</span>&gt;&lt;/solid&gt;</span><br><span class="line">    &lt;size</span><br><span class="line">        android:width=<span class="string">"15dp"</span></span><br><span class="line">        android:height=<span class="string">"15dp"</span>&gt;&lt;/size&gt;</span><br><span class="line">    &lt;padding</span><br><span class="line">        android:bottom=<span class="string">"1dp"</span></span><br><span class="line">        android:left=<span class="string">"2dp"</span></span><br><span class="line">        android:right=<span class="string">"2dp"</span></span><br><span class="line">        android:top=<span class="string">"1dp"</span>&gt;&lt;/padding&gt;</span><br><span class="line">&lt;/shape&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="Edittext监听输入变化"><a href="#Edittext监听输入变化" class="headerlink" title="Edittext监听输入变化"></a>Edittext监听输入变化</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">et_money.addTextChangedListener(new <span class="function"><span class="title">TextWatcher</span></span>() &#123;</span><br><span class="line">        @Override</span><br><span class="line">        public void onTextChanged(CharSequence s, int start, int before, int count) &#123;</span><br><span class="line">            // 输入的内容变化的监听</span><br><span class="line">            Log.e(<span class="string">"输入过程中执行该方法"</span>, <span class="string">"文字变化"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        @Override</span><br><span class="line">        public void beforeTextChanged(CharSequence s, int start, int count,</span><br><span class="line">                int after) &#123;</span><br><span class="line">            // 输入前的监听</span><br><span class="line">            Log.e(<span class="string">"输入前确认执行该方法"</span>, <span class="string">"开始输入"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        @Override</span><br><span class="line">        public void afterTextChanged(Editable s) &#123;</span><br><span class="line">            // 输入后的监听</span><br><span class="line">            Log.e(<span class="string">"输入结束执行该方法"</span>, <span class="string">"输入结束"</span>);</span><br><span class="line">	//通常用这个方法</span><br><span class="line">	//s.length为输入框长度</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="导航栏"><a href="#导航栏" class="headerlink" title="导航栏"></a>导航栏</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">BottomNavigationBar 使用add show来切换fragment不要使用replace</span><br><span class="line"><span class="comment">#隐藏软键盘</span></span><br><span class="line">  InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);</span><br><span class="line">                boolean isOpen = imm.isActive();//isOpen若返回<span class="literal">true</span>，则表示输入法打开</span><br><span class="line">                <span class="keyword">if</span> (isOpen) &#123;</span><br><span class="line">                    imm.hideSoftInputFromWindow(view.getWindowToken(), 0); //强制隐藏键盘</span><br><span class="line">                &#125;</span><br><span class="line"> InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);  </span><br><span class="line"> imm.showSoftInput(view,InputMethodManager.SHOW_FORCED); //表示强制显示</span><br></pre></td></tr></table></figure>
+<h3 id="延迟执行"><a href="#延迟执行" class="headerlink" title="延迟执行"></a>延迟执行</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Handler handler = new Handler();</span><br><span class="line">             handler.postDelayed(new <span class="function"><span class="title">Runnable</span></span>() &#123;</span><br><span class="line">                 @Override</span><br><span class="line">                 public void <span class="function"><span class="title">run</span></span>() &#123;</span><br><span class="line">                     initview(event.getEventId());</span><br><span class="line">                 &#125;</span><br><span class="line">             &#125;, 2000);//2秒后执行Runnable中的run方法</span><br></pre></td></tr></table></figure>
+<h3 id="反转List"><a href="#反转List" class="headerlink" title="反转List"></a>反转List</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Collections.reverse(messages);//翻转list</span><br></pre></td></tr></table></figure>
+<h3 id="加分割横线"><a href="#加分割横线" class="headerlink" title="加分割横线"></a>加分割横线</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1.&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"utf-8"</span>?&gt;</span><br><span class="line">&lt;shape xmlns:android=<span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;</span><br><span class="line">    &lt;solid android:color=<span class="string">"@color/border_gray"</span>/&gt;</span><br><span class="line">    &lt;size android:height=<span class="string">"1px"</span>/&gt;</span><br><span class="line">&lt;/shape&gt;</span><br><span class="line"></span><br><span class="line"> 2.   android:divider=<span class="string">"@drawable/line_shape"</span></span><br><span class="line">      android:showDividers=<span class="string">"middle"</span></span><br></pre></td></tr></table></figure>
+<h3 id="填充满ImageView-区域"><a href="#填充满ImageView-区域" class="headerlink" title="填充满ImageView 区域"></a>填充满ImageView 区域</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ImageView      android:scaleType=<span class="string">"fitXY"</span></span><br></pre></td></tr></table></figure>
+<h3 id="Fragment-跳转Activity"><a href="#Fragment-跳转Activity" class="headerlink" title="Fragment 跳转Activity"></a>Fragment 跳转Activity</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Intent <span class="keyword">in</span> = new Intent(mContext, CallVideoActivity.class);</span><br><span class="line">view.getContext().startActivity(<span class="keyword">in</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="设置横竖屏"><a href="#设置横竖屏" class="headerlink" title="设置横竖屏"></a>设置横竖屏</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">设置竖屏</span><br><span class="line"> android:screenOrientation=<span class="string">"portrait"</span></span><br><span class="line">设置横屏</span><br><span class="line"> android:screenOrientation=<span class="string">"landscape"</span></span><br></pre></td></tr></table></figure>
+<h3 id="快速编辑”我的界面”"><a href="#快速编辑”我的界面”" class="headerlink" title="快速编辑”我的界面”"></a>快速编辑”我的界面”</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">compile <span class="string">'com.leon:lsettingviewlibrary:1.7.0'</span></span><br></pre></td></tr></table></figure>
+<p>参考: <a href="https://github.com/leonHua/LSettingView" target="_blank" rel="noopener">GitHub</a></p>
+<h3 id="少量数据存储"><a href="#少量数据存储" class="headerlink" title="少量数据存储"></a>少量数据存储</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">     SharedPreferences pref = this.getSharedPreferences(<span class="string">"data"</span>, MODE_PRIVATE);</span><br><span class="line">        SharedPreferences.Editor editor = pref.edit();</span><br><span class="line">        editor.putString(<span class="string">"url"</span>, url);</span><br><span class="line">        editor.putString(<span class="string">"map1"</span>, map.toString());</span><br><span class="line">//        editor.putStringSet(<span class="string">"map2"</span>, (Set&lt;String&gt;) map);</span><br><span class="line">        editor.putString(<span class="string">"path"</span>, path);</span><br><span class="line">        editor.commit();</span><br><span class="line">        SharedPreferences pref2 = this.getSharedPreferences(<span class="string">"data"</span>, MODE_PRIVATE);</span><br><span class="line">        String url2 = pref2.getString(<span class="string">"url"</span>, null);//第二个参数为默认值</span><br><span class="line">        String map12 = pref2.getString(<span class="string">"map"</span>, null);</span><br><span class="line">//        Set map22 = pref2.getStringSet(<span class="string">"map2"</span>, null);</span><br><span class="line">        String path2 = pref2.getString(<span class="string">"path"</span>, null);</span><br></pre></td></tr></table></figure>
+<h3 id="打开相机权限"><a href="#打开相机权限" class="headerlink" title="打开相机权限"></a>打开相机权限</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">private void <span class="function"><span class="title">checkPermissionForNormal</span></span>() &#123;</span><br><span class="line">    //判断是否同意此权限</span><br><span class="line">    <span class="keyword">if</span> (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) &#123;</span><br><span class="line">        //申请权限</span><br><span class="line">        ActivityCompat.requestPermissions(this, new String[]&#123;Manifest.permission.CAMERA&#125;, 100);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        Log.e(TAG, <span class="string">"已授权拍照权限"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Fragment传递值"><a href="#Fragment传递值" class="headerlink" title="Fragment传递值"></a>Fragment传递值</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">in.putExtra(<span class="string">"data"</span>, mData.get(position));</span><br><span class="line">final Event event = (Event) getIntent().getSerializableExtra(<span class="string">"data"</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="This-Gradle-plugin-requires-a-newer-IDE-able-to-request-IDE-model-level-3-报错。"><a href="#This-Gradle-plugin-requires-a-newer-IDE-able-to-request-IDE-model-level-3-报错。" class="headerlink" title="This Gradle plugin requires a newer IDE able to request IDE model level 3 报错。"></a>This Gradle plugin requires a newer IDE able to request IDE model level 3 报错。</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">解决方法：</span><br><span class="line">（1）： 升级android studio IDE的版本。</span><br><span class="line">（2）：在项目的gradle.properties配置文件中加入以下这句：</span><br><span class="line">      gradle.properties中：android.injected.build.model.only.versioned = 3</span><br></pre></td></tr></table></figure>
+<h3 id="Fragment显示隐藏时触发的事件"><a href="#Fragment显示隐藏时触发的事件" class="headerlink" title="Fragment显示隐藏时触发的事件"></a>Fragment显示隐藏时触发的事件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">public void onHiddenChanged(boolean hidd) &#123;</span><br><span class="line">    <span class="keyword">if</span> (hidd) &#123;</span><br><span class="line">        //隐藏时所作的事情</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        //显示时所作的事情</span><br><span class="line">        Log.i(<span class="string">"MessagePageFragment"</span>, <span class="string">"success执行刷新"</span>);</span><br><span class="line">        initMessage();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="LinearLayout向右对齐"><a href="#LinearLayout向右对齐" class="headerlink" title="LinearLayout向右对齐"></a>LinearLayout向右对齐</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">方法一：</span><br><span class="line"> &lt;RelativeLayout</span><br><span class="line">   android:layout_width=<span class="string">"match_parent"</span></span><br><span class="line">   android:layout_height=<span class="string">"40dp"</span></span><br><span class="line">   android:layout_gravity=<span class="string">"right"</span></span><br><span class="line">   android:gravity=<span class="string">"right"</span>&gt;</span><br><span class="line">  &lt;Button android:layout_alignParentRight=<span class="string">"true"</span> /&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="隐藏软键盘"><a href="#隐藏软键盘" class="headerlink" title="隐藏软键盘"></a>隐藏软键盘</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">思路一：</span><br><span class="line">对最外层标签加事件</span><br><span class="line"> InputMethodManager imm = (InputMethodManager)</span><br><span class="line"> getSystemService(Context.INPUT_METHOD_SERVICE);</span><br><span class="line"> imm.hideSoftInputFromWindow(v.getWindowToken(), 0);</span><br></pre></td></tr></table></figure>
+<h3 id="按钮点击波纹效果："><a href="#按钮点击波纹效果：" class="headerlink" title="按钮点击波纹效果："></a>按钮点击波纹效果：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;ripple xmlns:android=<span class="string">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">        android:color=<span class="string">"@color/green"</span>&gt;</span><br><span class="line">&lt;!-- 按压的颜色 --&gt;</span><br><span class="line">&lt;!-- 按钮未点击的样子 --&gt;</span><br><span class="line">&lt;item android:drawable=<span class="string">"@drawable/lb_grey_border4"</span> /&gt;</span><br><span class="line">&lt;/ripple&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="CardView使用方法，此时圆角不受内部元素影响"><a href="#CardView使用方法，此时圆角不受内部元素影响" class="headerlink" title="CardView使用方法，此时圆角不受内部元素影响"></a>CardView使用方法，此时圆角不受内部元素影响</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;android.support.v7.widget.CardView</span><br><span class="line"> android:layout_width=<span class="string">"wrap_content"</span></span><br><span class="line"> android:layout_height=<span class="string">"wrap_content"</span></span><br><span class="line"> android:layout_marginBottom=<span class="string">"5dp"</span></span><br><span class="line"> android:layout_marginLeft=<span class="string">"40dp"</span></span><br><span class="line"> android:layout_marginRight=<span class="string">"40dp"</span></span><br><span class="line"> app:cardCornerRadius=<span class="string">"10dp"</span></span><br><span class="line"> app:cardElevation=<span class="string">"5dp"</span>&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="改变指定字体颜色可使用"><a href="#改变指定字体颜色可使用" class="headerlink" title="改变指定字体颜色可使用"></a>改变指定字体颜色可使用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String <span class="built_in">source</span> = <span class="string">" &lt;font color='red'&gt;提示：&lt;/font&gt; 启动后分机待处理。"</span>;</span><br><span class="line">hintText.setText(Html.fromHtml(<span class="built_in">source</span>));</span><br></pre></td></tr></table></figure>
+<h3 id="WebView的使用"><a href="#WebView的使用" class="headerlink" title="WebView的使用"></a>WebView的使用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">WebSettings webSettings = webView.getSettings();</span><br><span class="line">//设置是否支持缩放</span><br><span class="line">webSettings.setSupportZoom(<span class="literal">true</span>);</span><br><span class="line">webSettings.setBuiltInZoomControls(<span class="literal">true</span>);</span><br><span class="line">//设置是否显示缩放按钮</span><br><span class="line">webSettings.setDisplayZoomControls(<span class="literal">true</span>);</span><br><span class="line">//设置WebView是否允许执行JavaScript脚本，默认<span class="literal">false</span>，不允许</span><br><span class="line">webSettings.setJavaScriptEnabled(<span class="literal">true</span>);</span><br><span class="line">//设置自适应屏幕宽度</span><br><span class="line">webSettings.setUseWideViewPort(<span class="literal">true</span>);</span><br><span class="line">webSettings.setLoadWithOverviewMode(<span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://yoursite.com/2018/07/08/Android问题与解决1/" data-id="cjw7zi2rc000ucwui6s8xoxel" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zODM1OS8xNDg4Nw==">
+    <script type="text/javascript">
+        (function(d, s) {
+            var j, e = d.getElementsByTagName(s)[0];
+
+            if (typeof LivereTower === 'function') { return; }
+
+            j = d.createElement(s);
+            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+            j.async = true;
+
+            e.parentNode.insertBefore(j, e);
+        })(document, 'script');
+    </script>
+    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="qq" href="https://user.qzone.qq.com/532652152/infocenter" target="_blank" rel="noopener">
+                        <i class="icon fa fa-qq"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="internet-explorer" href="http://zcc.ac.cn/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-internet-explorer"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://www.instagram.com/chengcheng.zheng.355/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="https://weibo.com/u/3247224430?is_hot=1" target="_blank" rel="noopener">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2018/07/19/CSS问题与解答/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            CSS问题与解答
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2018/06/10/宏村与黄山/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">宏村与黄山</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/05/20/太平洋的第一缕海风-东极岛/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://image.zcc.ac.cn/dongjidao-00.jpg)" alt="太平洋的第一缕海风--东极岛" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2019/05/20/太平洋的第一缕海风-东极岛/" class="title">太平洋的第一缕海风--东极岛</a></p>
+                            <p class="item-date"><time datetime="2019-05-20T14:17:37.000Z" itemprop="datePublished">2019-05-20</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/12/05/Android问题与解答4/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/girl_night.jpg)" alt="Android问题与解答4" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/12/05/Android问题与解答4/" class="title">Android问题与解答4</a></p>
+                            <p class="item-date"><time datetime="2018-12-05T15:21:02.000Z" itemprop="datePublished">2018-12-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/11/08/Tomcat部署与配置/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/cat.jpg)" alt="Tomcat部署与配置" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/11/08/Tomcat部署与配置/" class="title">Tomcat部署与配置</a></p>
+                            <p class="item-date"><time datetime="2018-11-08T15:11:14.000Z" itemprop="datePublished">2018-11-08</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/10/14/记国庆江西婺源-三清山游/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://image.zcc.ac.cn/guoqing_1.jpg)" alt="记国庆江西婺源-三清山游" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/10/14/记国庆江西婺源-三清山游/" class="title">记国庆江西婺源-三清山游</a></p>
+                            <p class="item-date"><time datetime="2018-10-13T18:43:17.000Z" itemprop="datePublished">2018-10-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/10/08/Android问题与解答3/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/yellowClothes.jpg)" alt="Android问题与解答3" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/10/08/Android问题与解答3/" class="title">Android问题与解答3</a></p>
+                            <p class="item-date"><time datetime="2018-10-07T16:42:31.000Z" itemprop="datePublished">2018-10-08</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/代码/">代码</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a><span class="tag-list-count">4</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/代码/" style="font-size: 20px;">代码</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/生活/" style="font-size: 15px;">生活</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+                
+<div class="widget-wrap widget-list">
+    <!--<h3 class="widget-title">我的侧边栏</h3>-->
+    <!--<div class="widget">-->
+    <!--这里是我的侧边栏哦-->
+    <!--</div>-->
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="300" height="86" src="//music.163.com/outchain/player?type=2&id=28285910&auto=1&height=66"></iframe>
+</div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 ZhengChengcheng</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+
+            </div>
+        </div>
+    </div>
+
+
+</footer>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script src="//cdn1.lncld.net/static/js/2.5.0/av-min.js"></script>
+<script>
+    var APP_ID = 'K14Yo7meMkb2d2eRXnvjs5Nx-gzGzoHsz';
+    var APP_KEY = 'BG64BwIHiKiOkgqjcr6Nm9DX';
+    AV.init({
+        appId: APP_ID,
+        appKey: APP_KEY
+    });
+    // 显示次数
+    function showTime(Counter) {
+        var query = new AV.Query("Counter");
+        if($(".leancloud_visitors").length > 0){
+            var url = $(".leancloud_visitors").attr('id').trim();
+            // where field
+            query.equalTo("words", url);
+            // count
+            query.count().then(function (number) {
+                // There are number instances of MyClass where words equals url.
+                $(document.getElementById(url)).text(number?  number : '--');
+            }, function (error) {
+                // error is an instance of AVError.
+            });
+        }
+    }
+    // 追加pv
+    function addCount(Counter) {
+        var url = $(".leancloud_visitors").length > 0 ? $(".leancloud_visitors").attr('id').trim() : 'icafebolger.com';
+        var Counter = AV.Object.extend("Counter");
+        var query = new Counter;
+        query.save({
+            words: url
+        }).then(function (object) {
+        })
+    }
+    $(function () {
+        var Counter = AV.Object.extend("Counter");
+        addCount(Counter);
+        showTime(Counter);
+    });
+</script>
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://yoursite.com/2018/07/08/Android问题与解决1/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

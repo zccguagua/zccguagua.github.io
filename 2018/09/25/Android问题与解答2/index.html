@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    
+    <title>Android问题与解答2 | Guagua个人博客</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="代码">
+    
+    <meta name="description" content="1.循环遍历元素并设置2.EditText回车触发3.Activity处理adapter回调点击事件4.图片下载 循环遍历元素并设置（直接子元素）12345678910111213141516171819202122232425int count = line2.getChildCount();                    for (int i = 0; i &amp;lt; count; i">
+<meta name="keywords" content="代码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android问题与解答2">
+<meta property="og:url" content="http://yoursite.com/2018/09/25/Android问题与解答2/index.html">
+<meta property="og:site_name" content="Guagua个人博客">
+<meta property="og:description" content="1.循环遍历元素并设置2.EditText回车触发3.Activity处理adapter回调点击事件4.图片下载 循环遍历元素并设置（直接子元素）12345678910111213141516171819202122232425int count = line2.getChildCount();                    for (int i = 0; i &amp;lt; count; i">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/highway.jpg">
+<meta property="og:updated_time" content="2018-10-21T17:01:31.814Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android问题与解答2">
+<meta name="twitter:description" content="1.循环遍历元素并设置2.EditText回车触发3.Activity处理adapter回调点击事件4.图片下载 循环遍历元素并设置（直接子元素）12345678910111213141516171819202122232425int count = line2.getChildCount();                    for (int i = 0; i &amp;lt; count; i">
+<meta name="twitter:image" content="http://yoursite.com/images/highway.jpg">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.2.4/jquery.min.js"></script>
+    <!--自己添加的js-->
+    <script src="/js/love.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+        <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?d9022f3f6c7bc2d3e18c5029cf30c753";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">我见青山多妩媚</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                        
+                                    
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/myhtml/music.html">云音乐</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/myhtml/game.html">游戏</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/video/video.html">视频</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    未分类
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-Android问题与解答2" class="article article-single article-type-post " itemscope itemprop="blogPost">
+    <div class="article-inner">
+
+        
+        <header class="article-header">
+            
+    
+        <h1 class="article-title" itemprop="name">
+        Android问题与解答2
+        </h1>
+    
+
+        </header>
+        
+
+        
+        <div class="article-meta">
+            
+    <div class="article-date">
+        <a href="/2018/09/25/Android问题与解答2/" class="article-date">
+            <time datetime="2018-09-24T16:17:44.000Z" itemprop="datePublished">2018-09-25</time>
+        </a>
+    </div>
+
+            
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/代码/">代码</a>
+    </div>
+
+            <p>阅读数量: <span id="/2018/09/25/Android问题与解答2/" class="leancloud_visitors" data-flag-title="Android问题与解答2"></span>次</p>
+        </div>
+
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <img src="/images/highway.jpg" class="[images]" title="highway">
+<p><a href="#circulation">1.循环遍历元素并设置</a><br><a href="#EditText">2.EditText回车触发</a><br><a href="#activity">3.Activity处理adapter回调点击事件</a><br><a href="#imageDownload">4.图片下载</a></p>
+<h3 id="循环遍历元素并设置（直接子元素）"><a href="#循环遍历元素并设置（直接子元素）" class="headerlink" title="循环遍历元素并设置（直接子元素）"></a><span id="circulation">循环遍历元素并设置（直接子元素）</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">int count = line2.getChildCount();</span><br><span class="line">                    for (int i = 0; i &lt; count; i++) &#123;</span><br><span class="line">                        View view = line2.getChildAt(i);</span><br><span class="line">                        if (view instanceof EditText) &#123;</span><br><span class="line">                            editOnOff((EditText) view, isChecked);</span><br><span class="line">                        &#125; else if (view instanceof TextView) &#123;</span><br><span class="line">                            colorView((TextView) view, isChecked);</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    public static void editOnOff(EditText view, Boolean isChecked) &#123;</span><br><span class="line"></span><br><span class="line">        if (isChecked) &#123;</span><br><span class="line">            view.setEnabled(true);</span><br><span class="line">            view.setFocusable(true);</span><br><span class="line">            view.setFocusableInTouchMode(true);</span><br><span class="line">            view.requestFocus();</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            view.setEnabled(false);</span><br><span class="line">            view.setFocusable(false);</span><br><span class="line">            view.setFocusableInTouchMode(false);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="EditText回车触发"><a href="#EditText回车触发" class="headerlink" title="EditText回车触发"></a><span id="EditText">EditText回车触发</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">upTime.setOnEditorActionListener(new TextView.OnEditorActionListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) &#123;</span><br><span class="line">                int ss = Integer.parseInt(v.getText() + &quot;&quot;);</span><br><span class="line">                if (ss &gt; 240) &#123;</span><br><span class="line">                    upTime.setText(&quot;240&quot;);</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                    upTime.setText(ss);</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">	upTime.setSelection(upTime.getText().length());</span><br><span class="line">                return false;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="Activity处理adapter回调点击事件"><a href="#Activity处理adapter回调点击事件" class="headerlink" title="Activity处理adapter回调点击事件"></a><span id="activity">Activity处理adapter回调点击事件</span></h3><h5 id="1-首先adapter里定义一个接口"><a href="#1-首先adapter里定义一个接口" class="headerlink" title="1.首先adapter里定义一个接口"></a>1.首先adapter里定义一个接口</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">private ClickListener clickListener;</span><br><span class="line">    </span><br><span class="line">   public interface ClickListener &#123;</span><br><span class="line">       void onClick(int position);</span><br><span class="line">   &#125;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">   public ImageItemAdapter(int resourceId, List&lt;Contacts&gt; list, Context context,ClickListener clickListener) &#123;</span><br><span class="line">       this.resourceId = resourceId;</span><br><span class="line">       this.list = list;</span><br><span class="line">       this.context = context;</span><br><span class="line">       this.ClickListener=clickListener;</span><br><span class="line">   &#125;</span><br><span class="line">    </span><br><span class="line">       holder.contacts_line.setOnClickListener(new View.OnClickListener() &#123;</span><br><span class="line">               @Override</span><br><span class="line">               public void onClick(View v) &#123;</span><br><span class="line">                   ClickListener.onClick(position);</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;);</span><br></pre></td></tr></table></figure>
+<h5 id="2-Activity实现这个接口"><a href="#2-Activity实现这个接口" class="headerlink" title="2.Activity实现这个接口"></a>2.Activity实现这个接口</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">implements CellAdapter.ClickListener </span><br><span class="line"></span><br><span class="line">adapter = new ImageItemAdapter(R.layout.item_directories_image_list, list, getActivity(),this);</span><br></pre></td></tr></table></figure>
+<h3 id="图片下载"><a href="#图片下载" class="headerlink" title="图片下载"></a><span id="imageDownload">图片下载</span></h3><h5 id="1-启动图片下载线程"><a href="#1-启动图片下载线程" class="headerlink" title="1.启动图片下载线程"></a>1.启动图片下载线程</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">private void onDownLoad(final Contacts contacts) &#123;</span><br><span class="line">    Log.i(TAG, &quot;22222:启动图片下载线程&quot;);</span><br><span class="line">    DownLoadImageService service = new DownLoadImageService(getActivity(),</span><br><span class="line">            contacts.getChildPhoto(), new ImageDownLoadCallBack() &#123;</span><br><span class="line">        @Override</span><br><span class="line">        public void onDownLoadSuccess(File file) &#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                File files = new Compressor(getActivity())//压缩图片的依赖</span><br><span class="line">                        .setMaxWidth(120)</span><br><span class="line">                        .setMaxHeight(90)</span><br><span class="line">                        .setQuality(10)//图片质量</span><br><span class="line">                        .setCompressFormat(Bitmap.CompressFormat.WEBP)</span><br><span class="line">                        .setDestinationDirectoryPath(Environment.getExternalStoragePublicDirectory(</span><br><span class="line">                                Environment.DIRECTORY_PICTURES).getAbsolutePath())</span><br><span class="line">                        .compressToFile(file);</span><br><span class="line">    </span><br><span class="line">                contacts.setLocalPath(files.getAbsolutePath());</span><br><span class="line">                mContactsHelper.updateContacts(contacts);//保存路径进数据库</span><br><span class="line">    </span><br><span class="line">                //Log.e(TAG, &quot;22222压缩后大小:&quot; + files.length());</span><br><span class="line">                //Log.e(TAG, &quot;22222压缩后文件路径:&quot; + files.getPath());</span><br><span class="line">                //Log.e(TAG, &quot;22222压缩后文件绝对路径:&quot; + files.getAbsolutePath());</span><br><span class="line">            &#125; catch (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        @Override</span><br><span class="line">        public void onDownLoadSuccess(Bitmap bitmap) &#123;</span><br><span class="line">            Log.i(TAG, &quot;文件路径&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        @Override</span><br><span class="line">        public void onDownLoadFailed() &#123;</span><br><span class="line">            // 图片保存失败</span><br><span class="line">            Log.i(TAG, &quot;222222失败了&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    //启动图片下载线程</span><br><span class="line">    new Thread(service).start();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="2-图片下载服务类"><a href="#2-图片下载服务类" class="headerlink" title="2.图片下载服务类"></a>2.图片下载服务类</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line">public class DownLoadImageService implements Runnable &#123;</span><br><span class="line">    private String url;</span><br><span class="line">    private Context context;</span><br><span class="line">    private ImageDownLoadCallBack callBack;</span><br><span class="line">    private File currentFile;</span><br><span class="line">    public DownLoadImageService(Context context, String url, ImageDownLoadCallBack callBack) &#123;</span><br><span class="line">        this.url = url;</span><br><span class="line">        this.callBack = callBack;</span><br><span class="line">        this.context = context;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void run() &#123;</span><br><span class="line">        File file = null;</span><br><span class="line">        Bitmap bitmap = null;</span><br><span class="line">        try &#123;</span><br><span class="line">//            file = Glide.with(context)</span><br><span class="line">//                    .load(url)</span><br><span class="line">//                    .downloadOnly(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL)</span><br><span class="line">//                    .get();</span><br><span class="line">            bitmap = Glide.with(context)</span><br><span class="line">                    .load(url)</span><br><span class="line">                    .asBitmap()</span><br><span class="line">                    .into(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL)</span><br><span class="line">                    .get();</span><br><span class="line">            if (bitmap != null)&#123;</span><br><span class="line">                // 在这里执行图片保存方法</span><br><span class="line">                saveImageToGallery(context,bitmap);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; finally &#123;</span><br><span class="line">//            if (file != null) &#123;</span><br><span class="line">//                callBack.onDownLoadSuccess(file);</span><br><span class="line">//            &#125; else &#123;</span><br><span class="line">//                callBack.onDownLoadFailed();</span><br><span class="line">//            &#125;</span><br><span class="line">            if (bitmap != null &amp;&amp; currentFile.exists()) &#123;</span><br><span class="line">                callBack.onDownLoadSuccess(currentFile);</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                callBack.onDownLoadFailed();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void saveImageToGallery(Context context, Bitmap bmp) &#123;</span><br><span class="line">        // 首先保存图片</span><br><span class="line">         File file = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).getAbsoluteFile();//注意小米手机必须这样获得public绝对路径</span><br><span class="line">        String fileName = &quot;新建文件夹&quot;;</span><br><span class="line">        File appDir = new File(file ,fileName);</span><br><span class="line">        if (!appDir.exists()) &#123;</span><br><span class="line">            appDir.mkdirs();</span><br><span class="line">        &#125;</span><br><span class="line">        String fm = System.currentTimeMillis() + &quot;.jpg&quot;;</span><br><span class="line">        currentFile = new File(appDir, fm);</span><br><span class="line"></span><br><span class="line">        FileOutputStream fos = null;</span><br><span class="line">        try &#123;</span><br><span class="line">            fos = new FileOutputStream(currentFile);</span><br><span class="line">            bmp.compress(Bitmap.CompressFormat.JPEG, 100, fos);</span><br><span class="line">            fos.flush();</span><br><span class="line">        &#125; catch (FileNotFoundException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; catch (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; finally &#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                if (fos != null) &#123;</span><br><span class="line">                    fos.close();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; catch (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // 其次把文件插入到系统图库</span><br><span class="line">//        try &#123;</span><br><span class="line">//            MediaStore.Images.Media.insertImage(context.getContentResolver(),</span><br><span class="line">//                    currentFile.getAbsolutePath(), fileName, null);</span><br><span class="line">//        &#125; catch (FileNotFoundException e) &#123;</span><br><span class="line">//            e.printStackTrace();</span><br><span class="line">//        &#125;</span><br><span class="line"></span><br><span class="line">        // 最后通知图库更新</span><br><span class="line">        context.sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE,</span><br><span class="line">                Uri.fromFile(new File(currentFile.getPath()))));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="增加闪烁动画封装"><a href="#增加闪烁动画封装" class="headerlink" title="增加闪烁动画封装"></a>增加闪烁动画封装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">class InitAnimation &#123;</span><br><span class="line">        private Button mButton;</span><br><span class="line">        private String text;</span><br><span class="line"></span><br><span class="line">        private int centerDrawable;</span><br><span class="line">        private int backGroundDrawable;</span><br><span class="line">        private BtnBgRes res;</span><br><span class="line">        public ValueAnimator animator;</span><br><span class="line"></span><br><span class="line">        public InitAnimation(Button button, String text, int centerDrawable, int backGroundDrawable, BtnBgRes res) &#123;</span><br><span class="line">//要闪烁的按钮,按钮中间的文字(初始化文字),按钮中间的图标(初始化图标),背景(初始化背景),btnbgres(闪烁的多幅图片替换)</span><br><span class="line">            this.text = text;</span><br><span class="line">            this.mButton = button;</span><br><span class="line">            this.centerDrawable = centerDrawable;</span><br><span class="line">            this.backGroundDrawable = backGroundDrawable;</span><br><span class="line">            this.res = res;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public boolean isAnimation() &#123;</span><br><span class="line">            boolean flag = false;</span><br><span class="line">            if (animator != null &amp;&amp; animator.isRunning()) &#123;</span><br><span class="line">                flag = true;</span><br><span class="line">            &#125;</span><br><span class="line">            return flag;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public void startAnimation() &#123;</span><br><span class="line">//        main_help.setText(res.getTextState());</span><br><span class="line">            mButton.setText(&quot;&quot;);</span><br><span class="line">            Drawable helpImg = getResources().getDrawable(centerDrawable);</span><br><span class="line">            helpImg.setBounds(0, 50, 150, 200);</span><br><span class="line">            mButton.setCompoundDrawables(null, null, null, null);</span><br><span class="line"></span><br><span class="line">            if (animator != null &amp;&amp; animator.isRunning()) &#123;</span><br><span class="line">                animator.cancel();</span><br><span class="line">            &#125;</span><br><span class="line">            startDrawable = ContextCompat.getDrawable(getActivity(), res.getStartDrawable());</span><br><span class="line">            endDrawable = ContextCompat.getDrawable(getActivity(), res.getEndDrawable());</span><br><span class="line">            animator = ValueAnimator.ofObject(new BackgroundEvaluator(), startDrawable, endDrawable);</span><br><span class="line">            animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() &#123;</span><br><span class="line">                @Override</span><br><span class="line">                public void onAnimationUpdate(ValueAnimator animation) &#123;</span><br><span class="line">//                Log.d(TAG, &quot;Animation:----&gt;start&quot;);</span><br><span class="line">                    mButton.setBackground((Drawable) animation.getAnimatedValue());</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">            animator.setDuration(1500);   //毫秒</span><br><span class="line">            animator.setRepeatCount(ValueAnimator.INFINITE);  //无限循环</span><br><span class="line">            animator.start();</span><br><span class="line">//        talkState.setText(res.getTextState());</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public void stopAnimation() &#123;</span><br><span class="line">            if (isAnimation()) &#123;</span><br><span class="line">                animator.cancel();</span><br><span class="line">            &#125;</span><br><span class="line">            Drawable helpImg = getResources().getDrawable(centerDrawable);</span><br><span class="line">//            R.drawable.alarm</span><br><span class="line">            mButton.setBackgroundResource(backGroundDrawable);</span><br><span class="line">//            R.drawable.bt_shape_red</span><br><span class="line">            helpImg.setBounds(0, 50, 150, 200);</span><br><span class="line">            mButton.setCompoundDrawables(null, helpImg, null, null);</span><br><span class="line">            mButton.setText(text);</span><br><span class="line">//            getResources().getString(R.string.home_button_alarm_help);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h5 id="相关类"><a href="#相关类" class="headerlink" title="相关类"></a>相关类</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">public class BtnBgRes &#123;</span><br><span class="line">    private String textState;</span><br><span class="line">    private int startDrawable;</span><br><span class="line">    private int endDrawable;</span><br><span class="line"></span><br><span class="line">    public BtnBgRes(String textState, int startDrawable, int endDrawable) &#123;</span><br><span class="line">        this.textState = textState;</span><br><span class="line">        this.startDrawable = startDrawable;</span><br><span class="line">        this.endDrawable = endDrawable;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getTextState() &#123;</span><br><span class="line">        return textState;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setTextState(String textState) &#123;</span><br><span class="line">        this.textState = textState;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public int getStartDrawable() &#123;</span><br><span class="line">        return startDrawable;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setStartDrawable(int startDrawable) &#123;</span><br><span class="line">        this.startDrawable = startDrawable;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public int getEndDrawable() &#123;</span><br><span class="line">        return endDrawable;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setEndDrawable(int endDrawable) &#123;</span><br><span class="line">        this.endDrawable = endDrawable;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="类描述：背景图片求值器"><a href="#类描述：背景图片求值器" class="headerlink" title="类描述：背景图片求值器"></a>类描述：背景图片求值器</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public class BackgroundEvaluator implements TypeEvaluator &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public Object evaluate(float fraction, Object startValue, Object endValue) &#123;</span><br><span class="line">        Drawable startDrawable = (Drawable) startValue;</span><br><span class="line">        Drawable endDrawable = (Drawable) endValue;</span><br><span class="line">        if (fraction &lt;= 0.7) &#123;</span><br><span class="line">            return startDrawable;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            return endDrawable;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://yoursite.com/2018/09/25/Android问题与解答2/" data-id="cjw7zi2re000wcwuiyphtbxzo" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zODM1OS8xNDg4Nw==">
+    <script type="text/javascript">
+        (function(d, s) {
+            var j, e = d.getElementsByTagName(s)[0];
+
+            if (typeof LivereTower === 'function') { return; }
+
+            j = d.createElement(s);
+            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+            j.async = true;
+
+            e.parentNode.insertBefore(j, e);
+        })(document, 'script');
+    </script>
+    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="qq" href="https://user.qzone.qq.com/532652152/infocenter" target="_blank" rel="noopener">
+                        <i class="icon fa fa-qq"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="internet-explorer" href="http://zcc.ac.cn/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-internet-explorer"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://www.instagram.com/chengcheng.zheng.355/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="https://weibo.com/u/3247224430?is_hot=1" target="_blank" rel="noopener">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2018/10/07/SQL语法/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            SQL语法
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2018/08/20/我的ps学习之路/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">我的ps学习之路</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/05/20/太平洋的第一缕海风-东极岛/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://image.zcc.ac.cn/dongjidao-00.jpg)" alt="太平洋的第一缕海风--东极岛" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2019/05/20/太平洋的第一缕海风-东极岛/" class="title">太平洋的第一缕海风--东极岛</a></p>
+                            <p class="item-date"><time datetime="2019-05-20T14:17:37.000Z" itemprop="datePublished">2019-05-20</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/12/05/Android问题与解答4/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/girl_night.jpg)" alt="Android问题与解答4" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/12/05/Android问题与解答4/" class="title">Android问题与解答4</a></p>
+                            <p class="item-date"><time datetime="2018-12-05T15:21:02.000Z" itemprop="datePublished">2018-12-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/11/08/Tomcat部署与配置/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/cat.jpg)" alt="Tomcat部署与配置" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/11/08/Tomcat部署与配置/" class="title">Tomcat部署与配置</a></p>
+                            <p class="item-date"><time datetime="2018-11-08T15:11:14.000Z" itemprop="datePublished">2018-11-08</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/10/14/记国庆江西婺源-三清山游/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://image.zcc.ac.cn/guoqing_1.jpg)" alt="记国庆江西婺源-三清山游" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/10/14/记国庆江西婺源-三清山游/" class="title">记国庆江西婺源-三清山游</a></p>
+                            <p class="item-date"><time datetime="2018-10-13T18:43:17.000Z" itemprop="datePublished">2018-10-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/10/08/Android问题与解答3/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/yellowClothes.jpg)" alt="Android问题与解答3" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/10/08/Android问题与解答3/" class="title">Android问题与解答3</a></p>
+                            <p class="item-date"><time datetime="2018-10-07T16:42:31.000Z" itemprop="datePublished">2018-10-08</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/代码/">代码</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a><span class="tag-list-count">4</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/代码/" style="font-size: 20px;">代码</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/生活/" style="font-size: 15px;">生活</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+                
+<div class="widget-wrap widget-list">
+    <!--<h3 class="widget-title">我的侧边栏</h3>-->
+    <!--<div class="widget">-->
+    <!--这里是我的侧边栏哦-->
+    <!--</div>-->
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="300" height="86" src="//music.163.com/outchain/player?type=2&id=28285910&auto=1&height=66"></iframe>
+</div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 ZhengChengcheng</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+
+            </div>
+        </div>
+    </div>
+
+
+</footer>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script src="//cdn1.lncld.net/static/js/2.5.0/av-min.js"></script>
+<script>
+    var APP_ID = 'K14Yo7meMkb2d2eRXnvjs5Nx-gzGzoHsz';
+    var APP_KEY = 'BG64BwIHiKiOkgqjcr6Nm9DX';
+    AV.init({
+        appId: APP_ID,
+        appKey: APP_KEY
+    });
+    // 显示次数
+    function showTime(Counter) {
+        var query = new AV.Query("Counter");
+        if($(".leancloud_visitors").length > 0){
+            var url = $(".leancloud_visitors").attr('id').trim();
+            // where field
+            query.equalTo("words", url);
+            // count
+            query.count().then(function (number) {
+                // There are number instances of MyClass where words equals url.
+                $(document.getElementById(url)).text(number?  number : '--');
+            }, function (error) {
+                // error is an instance of AVError.
+            });
+        }
+    }
+    // 追加pv
+    function addCount(Counter) {
+        var url = $(".leancloud_visitors").length > 0 ? $(".leancloud_visitors").attr('id').trim() : 'icafebolger.com';
+        var Counter = AV.Object.extend("Counter");
+        var query = new Counter;
+        query.save({
+            words: url
+        }).then(function (object) {
+        })
+    }
+    $(function () {
+        var Counter = AV.Object.extend("Counter");
+        addCount(Counter);
+        showTime(Counter);
+    });
+</script>
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://yoursite.com/2018/09/25/Android问题与解答2/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
