@@ -2,16 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2018/10/14/%E8%AE%B0%E5%9B%BD%E5%BA%86%E6%B1%9F%E8%A5%BF%E5%A9%BA%E6%BA%90-%E4%B8%89%E6%B8%85%E5%B1%B1%E6%B8%B8/</loc>
+    <loc>http://yoursite.com/video/video.html</loc>
     
-    <lastmod>2019-05-29T16:30:41.761Z</lastmod>
+    <lastmod>2019-05-30T15:22:10.545Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2019/05/20/%E5%A4%AA%E5%B9%B3%E6%B4%8B%E7%9A%84%E7%AC%AC%E4%B8%80%E7%BC%95%E6%B5%B7%E9%A3%8E-%E4%B8%9C%E6%9E%81%E5%B2%9B/</loc>
+    <loc>http://yoursite.com/myhtml/music.html</loc>
     
-    <lastmod>2019-05-29T16:30:02.430Z</lastmod>
+    <lastmod>2019-05-30T15:22:10.513Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/myhtml/game.html</loc>
+    
+    <lastmod>2019-05-30T15:16:03.419Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/06/10/%E5%AE%8F%E6%9D%91%E4%B8%8E%E9%BB%84%E5%B1%B1/</loc>
+    
+    <lastmod>2019-05-30T14:31:20.931Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/10/14/%E8%AE%B0%E5%9B%BD%E5%BA%86%E6%B1%9F%E8%A5%BF%E5%A9%BA%E6%BA%90-%E4%B8%89%E6%B8%85%E5%B1%B1%E6%B8%B8/</loc>
+    
+    <lastmod>2019-05-30T14:27:59.244Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/05/20/%E4%B8%9C%E6%9E%81%E5%B2%9B-%E5%A4%AA%E5%B9%B3%E6%B4%8B%E7%9A%84%E7%AC%AC%E4%B8%80%E7%BC%95%E6%B5%B7%E9%A3%8E/</loc>
+    
+    <lastmod>2019-05-30T14:26:13.361Z</lastmod>
     
   </url>
   
@@ -51,20 +79,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/video/video.html</loc>
-    
-    <lastmod>2018-11-17T17:24:06.391Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/06/10/%E5%AE%8F%E6%9D%91%E4%B8%8E%E9%BB%84%E5%B1%B1/</loc>
-    
-    <lastmod>2018-10-21T17:04:45.190Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2018/10/07/SQL%E8%AF%AD%E6%B3%95/</loc>
     
     <lastmod>2018-10-21T17:01:31.902Z</lastmod>
@@ -96,20 +110,6 @@
     <loc>http://yoursite.com/2018/07/08/Android%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B31/</loc>
     
     <lastmod>2018-10-21T17:01:31.585Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/myhtml/music.html</loc>
-    
-    <lastmod>2018-10-21T16:45:18.221Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/myhtml/game.html</loc>
-    
-    <lastmod>2018-10-07T15:33:44.555Z</lastmod>
     
   </url>
   
