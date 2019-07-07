@@ -1,4 +1,4 @@
-<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\zccguagua.github.io\assets\css\APlayer.min.css"><script src="\zccguagua.github.io\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>/**
+<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>/**
  * jQuery Ripples plugin v0.6.2 / https://github.com/sirxemic/jquery.ripples
  * MIT License
  * @author sirxemic / https://sirxemic.com/
