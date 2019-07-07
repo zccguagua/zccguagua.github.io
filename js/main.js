@@ -1,4 +1,4 @@
-(function ($) {
+<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>(function ($) {
     // To top button
     $("#back-to-top").on('click', function () {
         $('body, html').animate({ scrollTop: 0 }, 600);
@@ -74,7 +74,7 @@
             // If more link not exists
             if ($('.main-nav-more').length == 0) {
                 $(['<li class="main-nav-list-item top-level-menu main-nav-more">',
-                    '<a class="main-nav-list-link" href="javascript:;">More</a>',
+                    '<a class="main-nav-list-link" href="javascript:;" target="_blank" rel="noopener">More</a>',
                     '<ul class="main-nav-list-child">',
                     '</ul></li>'].join('')).appendTo($('#main-nav'));
                 // Bind hover event

@@ -2,23 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/video/video.html</loc>
+    <loc>http://yoursite.com/myhtml/image.html</loc>
     
-    <lastmod>2019-05-30T15:22:10.545Z</lastmod>
+    <lastmod>2019-07-07T07:47:45.264Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://yoursite.com/myhtml/music.html</loc>
     
-    <lastmod>2019-05-30T15:22:10.513Z</lastmod>
+    <lastmod>2019-07-07T07:36:14.106Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/myhtml/game.html</loc>
+    <loc>http://yoursite.com/myhtml/lovetree.html</loc>
     
-    <lastmod>2019-05-30T15:16:03.419Z</lastmod>
+    <lastmod>2019-07-07T07:32:08.825Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/myhtml/animation.html</loc>
+    
+    <lastmod>2019-07-07T07:17:05.250Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/myhtml/video.html</loc>
+    
+    <lastmod>2019-07-07T06:57:00.933Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/baidu_verify_gCNvUzSIKr.html</loc>
+    
+    <lastmod>2019-06-01T07:34:01.538Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/05/21/Hexo%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E4%B8%8E%E4%BD%BF%E7%94%A8/</loc>
+    
+    <lastmod>2019-06-01T07:26:04.180Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/07/19/CSS%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E7%AD%94/</loc>
+    
+    <lastmod>2019-06-01T07:20:29.256Z</lastmod>
     
   </url>
   
@@ -40,13 +75,6 @@
     <loc>http://yoursite.com/2019/05/20/%E4%B8%9C%E6%9E%81%E5%B2%9B-%E5%A4%AA%E5%B9%B3%E6%B4%8B%E7%9A%84%E7%AC%AC%E4%B8%80%E7%BC%95%E6%B5%B7%E9%A3%8E/</loc>
     
     <lastmod>2019-05-30T14:26:13.361Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/05/21/Hexo%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E4%B8%8E%E4%BD%BF%E7%94%A8/</loc>
-    
-    <lastmod>2019-05-24T19:14:58.618Z</lastmod>
     
   </url>
   
@@ -100,23 +128,9 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/07/19/CSS%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E7%AD%94/</loc>
-    
-    <lastmod>2018-10-21T17:01:31.719Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2018/07/08/Android%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B31/</loc>
     
     <lastmod>2018-10-21T17:01:31.585Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/baidu_verify_RUIfDAX3lb.html</loc>
-    
-    <lastmod>2018-07-30T15:38:43.191Z</lastmod>
     
   </url>
   

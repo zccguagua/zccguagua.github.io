@@ -1,4 +1,4 @@
-/**
+<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>/**
  * Insight search plugin
  * @author PPOffice { @link https://github.com/ppoffice }
  */
@@ -76,7 +76,7 @@
     /**
      * Judge if a given post/page/category/tag contains all of the keywords.
      * @param Object            obj     Object to be weighted
-     * @param Array<String>     fields  Object's fields to find matches
+     * @param Array<string>     fields  Object's fields to find matches
      */
     function filter (keywords, obj, fields) {
         var result = false;
@@ -115,8 +115,8 @@
     /**
      * Calculate the weight of a matched post/page/category/tag.
      * @param Object            obj     Object to be weighted
-     * @param Array<String>     fields  Object's fields to find matches
-     * @param Array<Integer>    weights Weight of every field
+     * @param Array<string>     fields  Object's fields to find matches
+     * @param Array<integer>    weights Weight of every field
      */
     function weight (keywords, obj, fields, weights) {
         var value = 0;
@@ -237,4 +237,4 @@
                 gotoLink($container.find('.ins-selectable.active').eq(0)); break;
         }
     });
-})(jQuery, window.INSIGHT_CONFIG);
+})(jQuery, window.INSIGHT_CONFIG);</integer></string></string></p></span></i></header></div></header></section>
