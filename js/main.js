@@ -1,4 +1,4 @@
-<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>(function ($) {
+<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\zccguagua.github.io\assets\css\APlayer.min.css"><script src="\zccguagua.github.io\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>(function ($) {
     // To top button
     $("#back-to-top").on('click', function () {
         $('body, html').animate({ scrollTop: 0 }, 600);
