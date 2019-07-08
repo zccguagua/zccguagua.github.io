@@ -1,4 +1,4 @@
-<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>// variables
+// variables
 var $win = $(window);
 var clientWidth = $win.width();
 var clientHeight = $win.height();
@@ -18,7 +18,8 @@ $(window).resize(function() {
 			$ele.html('');
 			var timer = setInterval(function() {
 				var current = str.substr(progress, 1);
-				if (current == '<') { progress="str.indexOf('">', progress) + 1;
+				if (current == '<') {
+					progress = str.indexOf('>', progress) + 1;
 				} else {
 					progress++;
 				}
@@ -50,6 +51,6 @@ function timeElapse(date){
 	if (seconds < 10) {
 		seconds = "0" + seconds;
 	}
-	var result = "第 <span class="\"digit\"">" + days + "</span> 天 <span class="\"digit\"">" + hours + "</span> 小时 <span class="\"digit\"">" + minutes + "</span> 分钟 <span class="\"digit\"">" + seconds + "</span> 秒"; 
+	var result = "第 <span class=\"digit\">" + days + "</span> 天 <span class=\"digit\">" + hours + "</span> 小时 <span class=\"digit\">" + minutes + "</span> 分钟 <span class=\"digit\">" + seconds + "</span> 秒"; 
 	$("#clock").html(result);
-}</')>
+}

@@ -7,18 +7,18 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="description" content="动画              #container &amp;gt; div {             top: 60px !important;             left: 50px !important;         }                      var scene, camera, pointLight, stats;">
+    <meta name="description" content="动画              #container &amp;gt; div {             top: 60px !important;             left: 50px !important;         }                     var scene, camera, pointLight, stats;     var ren">
 <meta name="keywords" content="郑程程">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Orange个人博客">
 <meta property="og:url" content="http://yoursite.com/myhtml/animation.html">
 <meta property="og:site_name" content="Orange个人博客">
-<meta property="og:description" content="动画              #container &amp;gt; div {             top: 60px !important;             left: 50px !important;         }                      var scene, camera, pointLight, stats;">
+<meta property="og:description" content="动画              #container &amp;gt; div {             top: 60px !important;             left: 50px !important;         }                     var scene, camera, pointLight, stats;     var ren">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-07T08:39:01.649Z">
+<meta property="og:updated_time" content="2019-07-08T14:45:23.921Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Orange个人博客">
-<meta name="twitter:description" content="动画              #container &amp;gt; div {             top: 60px !important;             left: 50px !important;         }                      var scene, camera, pointLight, stats;">
+<meta name="twitter:description" content="动画              #container &amp;gt; div {             top: 60px !important;             left: 50px !important;         }                     var scene, camera, pointLight, stats;     var ren">
     
 
     
@@ -98,6 +98,10 @@ var _hmt = _hmt || [];
                                 </li>
                             
                                 <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/myhtml/animation.html">动画</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item">
                                     <a class="main-nav-list-link" href="/myhtml/lovetree.html">时间树</a>
                                 </li>
                             
@@ -172,8 +176,7 @@ var _hmt = _hmt || [];
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="UTF-8">
-    <!--<meta name="viewport"-->
-          <!--content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">-->
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=0.5, maximum-scale=0.5">
     <title>动画</title>
     <style type="text/css">
         #container > div {
@@ -184,13 +187,12 @@ var _hmt = _hmt || [];
 </head>
 <body>
 <div id="container"></div>
-<div id="alertDialog"></div>
-<script src="../js/animation/three.min.js"></script>
-<script src="../js/animation/Detector.js"></script>
-<script src="../js/animation/stats.min.js"></script>
-<script src="../js/animation/OrbitControls.js"></script>
-<script src="../js/animation/DRACOLoader.js"></script>
-<script src="../js/animation/GLTFLoader.js"></script>
+<script type="text/javascript" src="../js/animation/three.min.js"></script>
+<script type="text/javascript" src="../js/animation/Detector.js"></script>
+<script type="text/javascript" src="../js/animation/stats.min.js"></script>
+<script type="text/javascript" src="../js/animation/OrbitControls.js"></script>
+<script type="text/javascript" src="../js/animation/DRACOLoader.js"></script>
+<script type="text/javascript" src="../js/animation/GLTFLoader.js"></script>
 
 <script>
     var scene, camera, pointLight, stats;
@@ -236,7 +238,7 @@ var _hmt = _hmt || [];
         path + 'posy' + format, path + 'negy' + format,
         path + 'posz' + format, path + 'negz' + format]);
 
-    THREE.DRACOLoader.setDecoderPath('../js/video/');
+    THREE.DRACOLoader.setDecoderPath('../js/animation/gltf/');
 
     var loader = new THREE.GLTFLoader();
     loader.setDRACOLoader(new THREE.DRACOLoader());
@@ -294,7 +296,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://yoursite.com/myhtml/animation.html" data-id="cjxsq0eux001008uim2ccxs82" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/myhtml/animation.html" data-id="cjxueayxr000zh4uiftwtgbkd" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
