@@ -2,4 +2,4 @@
 
 Click here: [Orange的博客](http://zcccool.cn)
 
-{% img [orange] /images/orange.jpg orange %}
+![Image](/images/orange.jpg)

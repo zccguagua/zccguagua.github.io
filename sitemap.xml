@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/README.html</loc>
+    
+    <lastmod>2019-07-21T16:45:20.258Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/10/08/Android%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E7%AD%943/</loc>
+    
+    <lastmod>2019-07-21T16:41:35.693Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2018/07/08/Android%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B31/</loc>
     
     <lastmod>2019-07-21T16:33:18.461Z</lastmod>
@@ -96,13 +110,6 @@
     <loc>http://yoursite.com/2018/12/05/Android%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E7%AD%944/</loc>
     
     <lastmod>2019-02-27T15:21:26.354Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/10/08/Android%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E7%AD%943/</loc>
-    
-    <lastmod>2019-02-27T15:17:58.817Z</lastmod>
     
   </url>
   
