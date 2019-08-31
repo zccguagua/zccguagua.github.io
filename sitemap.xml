@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/myhtml/video.html</loc>
+    
+    <lastmod>2019-08-31T14:49:19.372Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/11/08/%E9%98%BF%E9%87%8C%E4%BA%91Tomcat%E9%83%A8%E7%BD%B2%E4%B8%8E%E9%85%8D%E7%BD%AE/</loc>
+    
+    <lastmod>2019-08-25T13:36:44.006Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/README.html</loc>
     
-    <lastmod>2019-07-21T16:45:20.258Z</lastmod>
+    <lastmod>2019-07-21T16:46:43.878Z</lastmod>
     
   </url>
   
@@ -65,13 +79,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/myhtml/video.html</loc>
-    
-    <lastmod>2019-07-07T06:57:00.933Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/baidu_verify_gCNvUzSIKr.html</loc>
     
     <lastmod>2019-06-01T07:34:01.538Z</lastmod>
@@ -110,13 +117,6 @@
     <loc>http://yoursite.com/2018/12/05/Android%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E7%AD%944/</loc>
     
     <lastmod>2019-02-27T15:21:26.354Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/11/08/Tomcat%E9%83%A8%E7%BD%B2%E4%B8%8E%E9%85%8D%E7%BD%AE/</loc>
-    
-    <lastmod>2019-02-27T15:14:21.105Z</lastmod>
     
   </url>
   
