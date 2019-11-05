@@ -17,12 +17,12 @@
 <meta property="og:site_name" content="Orange个人博客">
 <meta property="og:description" content="1.创建请求基类方便处理返回结果1234567891011121314151617Retorfit 网络请求基类public class BaseResponse&amp;lt;T&amp;gt; &amp;#123;    public int status;    public String msg;    public T body;    public boolean isSuccess()&amp;#123;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/images/watermelon.jpg">
-<meta property="og:updated_time" content="2019-10-13T10:22:17.808Z">
+<meta property="og:image" content="http://yoursite.com/images/cover/watermelon.jpg">
+<meta property="og:updated_time" content="2019-11-05T07:17:24.292Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Retorfit使用及问题总结">
 <meta name="twitter:description" content="1.创建请求基类方便处理返回结果1234567891011121314151617Retorfit 网络请求基类public class BaseResponse&amp;lt;T&amp;gt; &amp;#123;    public int status;    public String msg;    public T body;    public boolean isSuccess()&amp;#123;">
-<meta name="twitter:image" content="http://yoursite.com/images/watermelon.jpg">
+<meta name="twitter:image" content="http://yoursite.com/images/cover/watermelon.jpg">
     
 
     
@@ -204,7 +204,7 @@ var _hmt = _hmt || [];
         
         
         <div class="article-entry" itemprop="articleBody">
-            <img src="/images/watermelon.jpg" class="[food]" title="watermelon">
+            <img src="/images/cover/watermelon.jpg" class="[food]" title="watermelon">
 <h3 id="1-创建请求基类方便处理返回结果"><a href="#1-创建请求基类方便处理返回结果" class="headerlink" title="1.创建请求基类方便处理返回结果"></a>1.创建请求基类方便处理返回结果</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Retorfit 网络请求基类</span><br><span class="line">public class BaseResponse&lt;T&gt; &#123;</span><br><span class="line">    public int status;</span><br><span class="line">    public String msg;</span><br><span class="line">    public T body;</span><br><span class="line">    public boolean isSuccess()&#123;</span><br><span class="line">        return status == 200;</span><br><span class="line">    &#125;</span><br><span class="line">    @Override</span><br><span class="line">    public String toString() &#123;</span><br><span class="line">        final StringBuilder sb = new StringBuilder(&quot;&#123;&quot;);</span><br><span class="line">        sb.append(&quot;\&quot;body\&quot;:&quot;)</span><br><span class="line">                .append(body);</span><br><span class="line">        sb.append(&apos;&#125;&apos;);</span><br><span class="line">        return sb.toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="2-请求方法"><a href="#2-请求方法" class="headerlink" title="2.请求方法"></a>2.请求方法</h3><p>URL请求<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@GET</span><br><span class="line">Observable&lt;WeatherApiBean&gt; sevenDaysWeather(@Url String url);</span><br></pre></td></tr></table></figure></p>
 <p>GET 请求<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">@GET(&quot;api/v1.0/version&quot;)</span><br><span class="line">Observable&lt;BaseResponse&lt;Version&gt;&gt; getTerminalVersion(@Header(&quot;token&quot;) String token</span><br><span class="line">, @Query(&quot;type&quot;) int type);</span><br></pre></td></tr></table></figure></p>
@@ -224,7 +224,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://yoursite.com/2019/07/15/Retorfit使用及问题总结/" data-id="ck27mg0fh000eh8uiv9mnac0r" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2019/07/15/Retorfit使用及问题总结/" data-id="ck2lizb8t00060cui55dpmcsk" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -407,6 +407,26 @@ var _hmt = _hmt || [];
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2019/11/05/小程序-音乐播放器/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/ins_02.jpg)" alt="小程序-音乐播放器" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2019/11/05/小程序-音乐播放器/" class="title">小程序-音乐播放器</a></p>
+                            <p class="item-date"><time datetime="2019-11-05T07:05:48.000Z" itemprop="datePublished">2019-11-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2019/10/13/龙虎山游记/" class="thumbnail">
     
     
@@ -430,7 +450,7 @@ var _hmt = _hmt || [];
                             <a href="/2019/10/13/Android问题与解决5/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/ins_01.jpg)" alt="Android问题与解决5" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/cover/ins_01.jpg)" alt="Android问题与解决5" class="thumbnail-image"></span>
     
     
 </a>
@@ -450,7 +470,7 @@ var _hmt = _hmt || [];
                             <a href="/2019/07/15/Retorfit使用及问题总结/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/watermelon.jpg)" alt="Retorfit使用及问题总结" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/cover/watermelon.jpg)" alt="Retorfit使用及问题总结" class="thumbnail-image"></span>
     
     
 </a>
@@ -484,26 +504,6 @@ var _hmt = _hmt || [];
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/12/05/Android问题与解答4/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/girl_night.jpg)" alt="Android问题与解答4" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/12/05/Android问题与解答4/" class="title">Android问题与解答4</a></p>
-                            <p class="item-date"><time datetime="2018-12-05T15:21:02.000Z" itemprop="datePublished">2018-12-05</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -516,7 +516,7 @@ var _hmt = _hmt || [];
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/9图/" style="font-size: 10px;">.9图</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/EditText/" style="font-size: 10px;">EditText</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/IP/" style="font-size: 10px;">IP</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/PS/" style="font-size: 10px;">PS</a> <a href="/tags/Retorfit/" style="font-size: 10px;">Retorfit</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/WebView/" style="font-size: 10px;">WebView</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/ping/" style="font-size: 10px;">ping</a> <a href="/tags/三清山/" style="font-size: 10px;">三清山</a> <a href="/tags/下载/" style="font-size: 10px;">下载</a> <a href="/tags/东极岛/" style="font-size: 10px;">东极岛</a> <a href="/tags/位置/" style="font-size: 10px;">位置</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/域名/" style="font-size: 10px;">域名</a> <a href="/tags/增删改查/" style="font-size: 10px;">增删改查</a> <a href="/tags/大海/" style="font-size: 10px;">大海</a> <a href="/tags/婺源/" style="font-size: 10px;">婺源</a> <a href="/tags/字体/" style="font-size: 10px;">字体</a> <a href="/tags/宏村/" style="font-size: 10px;">宏村</a> <a href="/tags/定时器/" style="font-size: 13.33px;">定时器</a> <a href="/tags/居中/" style="font-size: 10px;">居中</a> <a href="/tags/拖动条/" style="font-size: 10px;">拖动条</a> <a href="/tags/旅行/" style="font-size: 16.67px;">旅行</a> <a href="/tags/晒秋/" style="font-size: 10px;">晒秋</a> <a href="/tags/查询/" style="font-size: 10px;">查询</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/视频合并/" style="font-size: 10px;">视频合并</a> <a href="/tags/证书/" style="font-size: 10px;">证书</a> <a href="/tags/超时/" style="font-size: 10px;">超时</a> <a href="/tags/软键盘/" style="font-size: 10px;">软键盘</a> <a href="/tags/选择器/" style="font-size: 10px;">选择器</a> <a href="/tags/阿里云/" style="font-size: 10px;">阿里云</a> <a href="/tags/黄山/" style="font-size: 10px;">黄山</a> <a href="/tags/龙虎山/" style="font-size: 10px;">龙虎山</a>
+            <a href="/tags/9图/" style="font-size: 10px;">.9图</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/EditText/" style="font-size: 10px;">EditText</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/IP/" style="font-size: 10px;">IP</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/PS/" style="font-size: 10px;">PS</a> <a href="/tags/Retorfit/" style="font-size: 10px;">Retorfit</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/WebView/" style="font-size: 10px;">WebView</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/ping/" style="font-size: 10px;">ping</a> <a href="/tags/三清山/" style="font-size: 10px;">三清山</a> <a href="/tags/下载/" style="font-size: 10px;">下载</a> <a href="/tags/东极岛/" style="font-size: 10px;">东极岛</a> <a href="/tags/位置/" style="font-size: 10px;">位置</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/域名/" style="font-size: 10px;">域名</a> <a href="/tags/增删改查/" style="font-size: 10px;">增删改查</a> <a href="/tags/大海/" style="font-size: 10px;">大海</a> <a href="/tags/婺源/" style="font-size: 10px;">婺源</a> <a href="/tags/字体/" style="font-size: 10px;">字体</a> <a href="/tags/宏村/" style="font-size: 10px;">宏村</a> <a href="/tags/定时器/" style="font-size: 13.33px;">定时器</a> <a href="/tags/小程序/" style="font-size: 10px;">小程序</a> <a href="/tags/居中/" style="font-size: 10px;">居中</a> <a href="/tags/拖动条/" style="font-size: 10px;">拖动条</a> <a href="/tags/旅行/" style="font-size: 16.67px;">旅行</a> <a href="/tags/晒秋/" style="font-size: 10px;">晒秋</a> <a href="/tags/查询/" style="font-size: 10px;">查询</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/视频合并/" style="font-size: 10px;">视频合并</a> <a href="/tags/证书/" style="font-size: 10px;">证书</a> <a href="/tags/超时/" style="font-size: 10px;">超时</a> <a href="/tags/软键盘/" style="font-size: 10px;">软键盘</a> <a href="/tags/选择器/" style="font-size: 10px;">选择器</a> <a href="/tags/阿里云/" style="font-size: 10px;">阿里云</a> <a href="/tags/黄山/" style="font-size: 10px;">黄山</a> <a href="/tags/龙虎山/" style="font-size: 10px;">龙虎山</a>
         </div>
     </div>
 
