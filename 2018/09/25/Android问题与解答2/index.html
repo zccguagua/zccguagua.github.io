@@ -17,12 +17,12 @@
 <meta property="og:site_name" content="Orange个人博客">
 <meta property="og:description" content="1.循环遍历元素并设置2.EditText回车触发4.图片下载 循环遍历元素并设置（直接子元素）12345678910111213141516171819202122232425int count = line2.getChildCount();                    for (int i = 0; i &amp;lt; count; i++) &amp;#123;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/images/cover/highway.jpg">
-<meta property="og:updated_time" content="2019-11-05T07:17:24.433Z">
+<meta property="og:image" content="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/highway.jpg">
+<meta property="og:updated_time" content="2020-03-18T16:41:10.717Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android问题与解答2">
 <meta name="twitter:description" content="1.循环遍历元素并设置2.EditText回车触发4.图片下载 循环遍历元素并设置（直接子元素）12345678910111213141516171819202122232425int count = line2.getChildCount();                    for (int i = 0; i &amp;lt; count; i++) &amp;#123;">
-<meta name="twitter:image" content="http://yoursite.com/images/cover/highway.jpg">
+<meta name="twitter:image" content="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/highway.jpg">
     
 
     
@@ -204,7 +204,7 @@ var _hmt = _hmt || [];
         
         
         <div class="article-entry" itemprop="articleBody">
-            <img src="/images/cover/highway.jpg" class="[images]" title="highway">
+            <p><img src="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/highway.jpg" alt title="Image"></p>
 <p><a href="#circulation">1.循环遍历元素并设置</a><br><a href="#EditText">2.EditText回车触发</a><br><a href="#imageDownload">4.图片下载</a></p>
 <h3 id="循环遍历元素并设置（直接子元素）"><a href="#循环遍历元素并设置（直接子元素）" class="headerlink" title="循环遍历元素并设置（直接子元素）"></a><span id="circulation">循环遍历元素并设置（直接子元素）</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">int count = line2.getChildCount();</span><br><span class="line">                    for (int i = 0; i &lt; count; i++) &#123;</span><br><span class="line">                        View view = line2.getChildAt(i);</span><br><span class="line">                        if (view instanceof EditText) &#123;</span><br><span class="line">                            editOnOff((EditText) view, isChecked);</span><br><span class="line">                        &#125; else if (view instanceof TextView) &#123;</span><br><span class="line">                            colorView((TextView) view, isChecked);</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    public static void editOnOff(EditText view, Boolean isChecked) &#123;</span><br><span class="line"></span><br><span class="line">        if (isChecked) &#123;</span><br><span class="line">            view.setEnabled(true);</span><br><span class="line">            view.setFocusable(true);</span><br><span class="line">            view.setFocusableInTouchMode(true);</span><br><span class="line">            view.requestFocus();</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            view.setEnabled(false);</span><br><span class="line">            view.setFocusable(false);</span><br><span class="line">            view.setFocusableInTouchMode(false);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <h3 id="EditText回车触发"><a href="#EditText回车触发" class="headerlink" title="EditText回车触发"></a><span id="EditText">EditText回车触发</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">upTime.setOnEditorActionListener(new TextView.OnEditorActionListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) &#123;</span><br><span class="line">                int ss = Integer.parseInt(v.getText() + &quot;&quot;);</span><br><span class="line">                if (ss &gt; 240) &#123;</span><br><span class="line">                    upTime.setText(&quot;240&quot;);</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                    upTime.setText(ss);</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">	upTime.setSelection(upTime.getText().length());</span><br><span class="line">                return false;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
@@ -221,7 +221,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://yoursite.com/2018/09/25/Android问题与解答2/" data-id="ck7ryve8t001ogoui2jnnjenw" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2018/09/25/Android问题与解答2/" data-id="ck7xl3x4u002xakuig91gnzj2" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -407,7 +407,7 @@ var _hmt = _hmt || [];
                             <a href="/2020/03/15/python爬取网易云音乐榜单/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/cover/ins_06.jpg)" alt="python爬取网易云音乐榜单" class="thumbnail-image"></span>
+        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_06.jpg)" alt="python爬取网易云音乐榜单" class="thumbnail-image"></span>
     
     
 </a>
@@ -427,7 +427,7 @@ var _hmt = _hmt || [];
                             <a href="/2020/02/28/Android手机刷机记录/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/cover/ins_05.jpg)" alt="Android手机刷机记录" class="thumbnail-image"></span>
+        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_05.jpg)" alt="Android手机刷机记录" class="thumbnail-image"></span>
     
     
 </a>
@@ -447,7 +447,7 @@ var _hmt = _hmt || [];
                             <a href="/2020/01/06/推流服务器与Android直播实现/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/cover/ins_04.jpg)" alt="推流服务器与Android直播实现" class="thumbnail-image"></span>
+        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_04.jpg)" alt="推流服务器与Android直播实现" class="thumbnail-image"></span>
     
     
 </a>
@@ -467,7 +467,7 @@ var _hmt = _hmt || [];
                             <a href="/2019/11/05/Itchat自动回复与数据库保存/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/cover/ins_03.jpg)" alt="Itchat自动回复与数据库保存" class="thumbnail-image"></span>
+        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_03.jpg)" alt="Itchat自动回复与数据库保存" class="thumbnail-image"></span>
     
     
 </a>
@@ -487,7 +487,7 @@ var _hmt = _hmt || [];
                             <a href="/2019/11/05/小程序-音乐播放器/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/cover/ins_02.jpg)" alt="小程序-音乐播放器" class="thumbnail-image"></span>
+        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_02.jpg)" alt="小程序-音乐播放器" class="thumbnail-image"></span>
     
     
 </a>

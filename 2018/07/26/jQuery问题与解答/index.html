@@ -17,12 +17,12 @@
 <meta property="og:site_name" content="Orange个人博客">
 <meta property="og:description" content="1.选择筛选元素2.增加&amp;amp;移出元素3.页面无操作是定时4.按钮冻结指定时间5.setTime函数带多个参数6.传递select的值(赋值)7.手机电话号码验证8.通过自定义属性定位9.复选框10.data-id使用11.配置 选择筛选元素123456789$(&amp;quot;.div1&amp;quot;).children().css(&amp;quot;font-size&amp;quot;, &amp;quot;40">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/images/cover/songshu.jpg">
-<meta property="og:updated_time" content="2019-11-05T07:17:24.403Z">
+<meta property="og:image" content="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/songshu.jpg">
+<meta property="og:updated_time" content="2020-03-18T16:43:46.381Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery问题与解答">
 <meta name="twitter:description" content="1.选择筛选元素2.增加&amp;amp;移出元素3.页面无操作是定时4.按钮冻结指定时间5.setTime函数带多个参数6.传递select的值(赋值)7.手机电话号码验证8.通过自定义属性定位9.复选框10.data-id使用11.配置 选择筛选元素123456789$(&amp;quot;.div1&amp;quot;).children().css(&amp;quot;font-size&amp;quot;, &amp;quot;40">
-<meta name="twitter:image" content="http://yoursite.com/images/cover/songshu.jpg">
+<meta name="twitter:image" content="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/songshu.jpg">
     
 
     
@@ -204,7 +204,7 @@ var _hmt = _hmt || [];
         
         
         <div class="article-entry" itemprop="articleBody">
-            <img src="/images/cover/songshu.jpg" class="[images]" title="animal">
+            <p><img src="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/songshu.jpg" alt title="Image"></p>
 <p><a href="#question_01">1.选择筛选元素</a><br><a href="#question_02">2.增加&amp;移出元素</a><br><a href="#question_03">3.页面无操作是定时</a><br><a href="#question_04">4.按钮冻结指定时间</a><br><a href="#question_05">5.setTime函数带多个参数</a><br><a href="#question_06">6.传递select的值(赋值)</a><br><a href="#question_07">7.手机电话号码验证</a><br><a href="#question_08">8.通过自定义属性定位</a><br><a href="#question_09">9.复选框</a><br><a href="#question_10">10.data-id使用</a><br><a href="#question_11">11.配置</a></p>
 <h3 id="选择筛选元素"><a href="#选择筛选元素" class="headerlink" title="选择筛选元素"></a><span id="question_01">选择筛选元素</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;.div1&quot;).children().css(&quot;font-size&quot;, &quot;40px&quot;);//所有子元素(第一级)</span><br><span class="line">$(&quot;.div2&quot;).children(&quot;:eq(1)&quot;).css(&quot;color&quot;, &quot;red&quot;);//第二个子元素</span><br><span class="line">$(&quot;.div3&quot;).find(&quot;*&quot;).css(&quot;color&quot;, &quot;red&quot;);//每个后代元素(包括子代的后代)</span><br><span class="line">$(&quot;.div4&quot;).find(&quot;li:last&quot;).css(&quot;color&quot;, &quot;red&quot;);//所有中最后一个li</span><br><span class="line">$(&quot;li&quot;).parents().css(&quot;color&quot;, &quot;red&quot;);//所有li的父元素</span><br><span class="line">$(&quot;span&quot;).parent();//元素的的直接父元素(只上一级)</span><br><span class="line">$(&quot;span&quot;).next();//紧跟的下一个元素</span><br><span class="line">$(&quot;span&quot;).prev();//紧跟的上一个兄弟元素</span><br><span class="line">$(&quot;span&quot;).siblings();//所有同辈元素(不包括自己)</span><br></pre></td></tr></table></figure>
 <h3 id="增加-amp-移出元素"><a href="#增加-amp-移出元素" class="headerlink" title="增加&amp;移出元素"></a><span id="question_02">增加&amp;移出元素</span></h3> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;p&quot;).detach();//移出p元素，但不删除p的事件</span><br><span class="line">$(&quot;p&quot;).remove();//会删除事件</span><br><span class="line">$(&quot;p&quot;).append();//在元素内部的最后添加</span><br><span class="line">$(&quot;p&quot;).prepend();//在元素内部的开头添加</span><br><span class="line">$(&quot;p&quot;).after();//在元素外部的后面</span><br><span class="line">$(&quot;p&quot;).before();//在元素外部的前面</span><br><span class="line"></span><br><span class="line">$(&quot;button&quot;).bind(&quot;click&quot;, &#123;sid: this.id&#125;, function (event) &#123;</span><br><span class="line">    onefunction(event.data.sid);</span><br><span class="line">    //綁定带参数的方法</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">$(&quot;button&quot;).prop(&quot;onclick&quot;, null).off(&quot;click&quot;);//卸载点击事件</span><br><span class="line">$(&quot;button&quot;).trigger(&quot;click&quot;);//触发点击事件</span><br></pre></td></tr></table></figure>
@@ -225,7 +225,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://yoursite.com/2018/07/26/jQuery问题与解答/" data-id="ck7ryve7n000bgoui5s89auqw" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2018/07/26/jQuery问题与解答/" data-id="ck7xl3x3n000aakuiytn986qb" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -411,7 +411,7 @@ var _hmt = _hmt || [];
                             <a href="/2020/03/15/python爬取网易云音乐榜单/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/cover/ins_06.jpg)" alt="python爬取网易云音乐榜单" class="thumbnail-image"></span>
+        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_06.jpg)" alt="python爬取网易云音乐榜单" class="thumbnail-image"></span>
     
     
 </a>
@@ -431,7 +431,7 @@ var _hmt = _hmt || [];
                             <a href="/2020/02/28/Android手机刷机记录/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/cover/ins_05.jpg)" alt="Android手机刷机记录" class="thumbnail-image"></span>
+        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_05.jpg)" alt="Android手机刷机记录" class="thumbnail-image"></span>
     
     
 </a>
@@ -451,7 +451,7 @@ var _hmt = _hmt || [];
                             <a href="/2020/01/06/推流服务器与Android直播实现/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/cover/ins_04.jpg)" alt="推流服务器与Android直播实现" class="thumbnail-image"></span>
+        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_04.jpg)" alt="推流服务器与Android直播实现" class="thumbnail-image"></span>
     
     
 </a>
@@ -471,7 +471,7 @@ var _hmt = _hmt || [];
                             <a href="/2019/11/05/Itchat自动回复与数据库保存/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/cover/ins_03.jpg)" alt="Itchat自动回复与数据库保存" class="thumbnail-image"></span>
+        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_03.jpg)" alt="Itchat自动回复与数据库保存" class="thumbnail-image"></span>
     
     
 </a>
@@ -491,7 +491,7 @@ var _hmt = _hmt || [];
                             <a href="/2019/11/05/小程序-音乐播放器/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/cover/ins_02.jpg)" alt="小程序-音乐播放器" class="thumbnail-image"></span>
+        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_02.jpg)" alt="小程序-音乐播放器" class="thumbnail-image"></span>
     
     
 </a>

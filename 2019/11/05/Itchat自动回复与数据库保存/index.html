@@ -17,12 +17,12 @@
 <meta property="og:site_name" content="Orange个人博客">
 <meta property="og:description" content="使用ItChat库微信消息自动回复/pymysql保存数据库前提注意登录网页微信只有老用户可以，新申请的微信号无法登录会出现以下提示： 123&amp;lt;error&amp;gt;&amp;lt;ret&amp;gt;1203&amp;lt;/ret&amp;gt;&amp;lt;message&amp;gt;为了你的帐号安全，此微信号已不允许登录网页微信。你可以使用Windows微信或Mac微信在电脑端登录。Windows微信下载地址：https://">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/images/cover/ins_03.jpg">
-<meta property="og:updated_time" content="2020-03-14T18:49:23.156Z">
+<meta property="og:image" content="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_03.jpg">
+<meta property="og:updated_time" content="2020-03-18T16:43:46.397Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Itchat自动回复与数据库保存">
 <meta name="twitter:description" content="使用ItChat库微信消息自动回复/pymysql保存数据库前提注意登录网页微信只有老用户可以，新申请的微信号无法登录会出现以下提示： 123&amp;lt;error&amp;gt;&amp;lt;ret&amp;gt;1203&amp;lt;/ret&amp;gt;&amp;lt;message&amp;gt;为了你的帐号安全，此微信号已不允许登录网页微信。你可以使用Windows微信或Mac微信在电脑端登录。Windows微信下载地址：https://">
-<meta name="twitter:image" content="http://yoursite.com/images/cover/ins_03.jpg">
+<meta name="twitter:image" content="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_03.jpg">
     
 
     
@@ -204,7 +204,7 @@ var _hmt = _hmt || [];
         
         
         <div class="article-entry" itemprop="articleBody">
-            <img src="/images/cover/ins_03.jpg" class="[images]" title="insImage">
+            <p><img src="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_03.jpg" alt title="Image"></p>
 <h3 id="使用ItChat库微信消息自动回复-pymysql保存数据库"><a href="#使用ItChat库微信消息自动回复-pymysql保存数据库" class="headerlink" title="使用ItChat库微信消息自动回复/pymysql保存数据库"></a>使用ItChat库微信消息自动回复/pymysql保存数据库</h3><h4 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h4><p>注意登录网页微信只有老用户可以，新申请的微信号无法登录会出现以下提示：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;error&gt;&lt;ret&gt;1203&lt;/ret&gt;&lt;message&gt;为了你的帐号安全，此微信号已不允许登录网页微信。</span><br><span class="line">你可以使用Windows微信或Mac微信在电脑端登录。Windows微信下载地址：https://pc.weixin.qq.com </span><br><span class="line"> Mac微信下载地址：https://mac.weixin.qq.com&lt;/message&gt;&lt;/error&gt;</span><br></pre></td></tr></table></figure>
 <h4 id="全局数据："><a href="#全局数据：" class="headerlink" title="全局数据："></a>全局数据：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># 自己id，用于判断是否是自己发送的消息</span><br><span class="line">my_UserName = &quot;my_UserName&quot;</span><br><span class="line"># 关键词恢复字典</span><br><span class="line">message_dict = &#123;</span><br><span class="line">    &quot;你最帅&quot;: &quot;回复消息1&quot;,</span><br><span class="line">    &quot;祝福&quot;: &quot;回复消息2&quot;,</span><br><span class="line">    &quot;佩奇&quot;: &quot;回复消息3&quot;,</span><br><span class="line">&#125;</span><br><span class="line"># 记录消息数，用于首次回复，第二次不再回复</span><br><span class="line">message_record = &#123;</span><br><span class="line">    &quot;userName&quot;: 1</span><br><span class="line">&#125;</span><br><span class="line"># 需要回复消息的微信群名称</span><br><span class="line">reply_group = &#123;1: &quot;消息测试&quot;, 2: &quot;疯狂找媳妇儿&quot;, 3: &quot;不准时下班小组&quot;&#125;</span><br></pre></td></tr></table></figure>
@@ -221,7 +221,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://yoursite.com/2019/11/05/Itchat自动回复与数据库保存/" data-id="ck7ryve8w001sgouiua70x0ub" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2019/11/05/Itchat自动回复与数据库保存/" data-id="ck7xl3x4w0030akui6teqlkwo" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -407,7 +407,7 @@ var _hmt = _hmt || [];
                             <a href="/2020/03/15/python爬取网易云音乐榜单/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/cover/ins_06.jpg)" alt="python爬取网易云音乐榜单" class="thumbnail-image"></span>
+        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_06.jpg)" alt="python爬取网易云音乐榜单" class="thumbnail-image"></span>
     
     
 </a>
@@ -427,7 +427,7 @@ var _hmt = _hmt || [];
                             <a href="/2020/02/28/Android手机刷机记录/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/cover/ins_05.jpg)" alt="Android手机刷机记录" class="thumbnail-image"></span>
+        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_05.jpg)" alt="Android手机刷机记录" class="thumbnail-image"></span>
     
     
 </a>
@@ -447,7 +447,7 @@ var _hmt = _hmt || [];
                             <a href="/2020/01/06/推流服务器与Android直播实现/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/cover/ins_04.jpg)" alt="推流服务器与Android直播实现" class="thumbnail-image"></span>
+        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_04.jpg)" alt="推流服务器与Android直播实现" class="thumbnail-image"></span>
     
     
 </a>
@@ -467,7 +467,7 @@ var _hmt = _hmt || [];
                             <a href="/2019/11/05/Itchat自动回复与数据库保存/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/cover/ins_03.jpg)" alt="Itchat自动回复与数据库保存" class="thumbnail-image"></span>
+        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_03.jpg)" alt="Itchat自动回复与数据库保存" class="thumbnail-image"></span>
     
     
 </a>
@@ -487,7 +487,7 @@ var _hmt = _hmt || [];
                             <a href="/2019/11/05/小程序-音乐播放器/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/cover/ins_02.jpg)" alt="小程序-音乐播放器" class="thumbnail-image"></span>
+        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_02.jpg)" alt="小程序-音乐播放器" class="thumbnail-image"></span>
     
     
 </a>

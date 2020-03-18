@@ -17,12 +17,12 @@
 <meta property="og:site_name" content="Orange个人博客">
 <meta property="og:description" content="1.关于ping外网问题2.定时器的使用3.线程及超时方法 关于ping外网问题需求：判断外网是否连接。问题：连接网线安卓设备中，在插上网线但是外网不通处于局域网时，isConnected依然返回true。解决：需要判断外网是否通方法：采用pingIP的方法判断外网12Process process = Runtime.getRuntime().exec(&amp;quot;ping -c 3 -w 1">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/images/cover/ins_01.jpg">
-<meta property="og:updated_time" content="2019-11-05T07:17:24.541Z">
+<meta property="og:image" content="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_01.jpg">
+<meta property="og:updated_time" content="2020-03-18T16:41:10.793Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android问题与解决5">
 <meta name="twitter:description" content="1.关于ping外网问题2.定时器的使用3.线程及超时方法 关于ping外网问题需求：判断外网是否连接。问题：连接网线安卓设备中，在插上网线但是外网不通处于局域网时，isConnected依然返回true。解决：需要判断外网是否通方法：采用pingIP的方法判断外网12Process process = Runtime.getRuntime().exec(&amp;quot;ping -c 3 -w 1">
-<meta name="twitter:image" content="http://yoursite.com/images/cover/ins_01.jpg">
+<meta name="twitter:image" content="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_01.jpg">
     
 
     
@@ -204,7 +204,7 @@ var _hmt = _hmt || [];
         
         
         <div class="article-entry" itemprop="articleBody">
-            <img src="/images/cover/ins_01.jpg" class="[images]" title="insImage">
+            <p><img src="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_01.jpg" alt title="Image"></p>
 <p><a href="#question_01">1.关于ping外网问题</a><br><a href="#question_02">2.定时器的使用</a><br><a href="#question_03">3.线程及超时方法</a></p>
 <h3 id="关于ping外网问题"><a href="#关于ping外网问题" class="headerlink" title="关于ping外网问题"></a><span id="question_01">关于ping外网问题</span></h3><p>需求：判断外网是否连接。<br>问题：连接网线安卓设备中，在插上网线但是外网不通处于局域网时，isConnected依然返回true。<br>解决：需要判断外网是否通<br>方法：采用pingIP的方法判断外网<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Process process = Runtime.getRuntime().exec(&quot;ping -c 3 -w 100 8.8.8.8);</span><br><span class="line">//-c 是指ping的次数 3是指ping 3次 ，-w 100  以秒为单位指定超时间隔，是指超时时间为100秒</span><br></pre></td></tr></table></figure></p>
 <p>但是此方法使用一直无效，<br>在stackoverflow找到解决方法：加/system/bin/ping<br>Process process = Runtime.getRuntime().exec(“/system/bin/ping -c 3 -w 100 <a href="http://www.baidu.com&quot;)" target="_blank" rel="noopener">www.baidu.com&quot;)</a>;</p>
@@ -221,7 +221,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://yoursite.com/2019/10/13/Android问题与解决5/" data-id="ck7ryve7j0007gouimmdyvgi9" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2019/10/13/Android问题与解决5/" data-id="ck7xl3x3h0004akuip3q02rll" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -407,7 +407,7 @@ var _hmt = _hmt || [];
                             <a href="/2020/03/15/python爬取网易云音乐榜单/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/cover/ins_06.jpg)" alt="python爬取网易云音乐榜单" class="thumbnail-image"></span>
+        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_06.jpg)" alt="python爬取网易云音乐榜单" class="thumbnail-image"></span>
     
     
 </a>
@@ -427,7 +427,7 @@ var _hmt = _hmt || [];
                             <a href="/2020/02/28/Android手机刷机记录/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/cover/ins_05.jpg)" alt="Android手机刷机记录" class="thumbnail-image"></span>
+        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_05.jpg)" alt="Android手机刷机记录" class="thumbnail-image"></span>
     
     
 </a>
@@ -447,7 +447,7 @@ var _hmt = _hmt || [];
                             <a href="/2020/01/06/推流服务器与Android直播实现/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/cover/ins_04.jpg)" alt="推流服务器与Android直播实现" class="thumbnail-image"></span>
+        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_04.jpg)" alt="推流服务器与Android直播实现" class="thumbnail-image"></span>
     
     
 </a>
@@ -467,7 +467,7 @@ var _hmt = _hmt || [];
                             <a href="/2019/11/05/Itchat自动回复与数据库保存/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/cover/ins_03.jpg)" alt="Itchat自动回复与数据库保存" class="thumbnail-image"></span>
+        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_03.jpg)" alt="Itchat自动回复与数据库保存" class="thumbnail-image"></span>
     
     
 </a>
@@ -487,7 +487,7 @@ var _hmt = _hmt || [];
                             <a href="/2019/11/05/小程序-音乐播放器/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/cover/ins_02.jpg)" alt="小程序-音乐播放器" class="thumbnail-image"></span>
+        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_02.jpg)" alt="小程序-音乐播放器" class="thumbnail-image"></span>
     
     
 </a>
