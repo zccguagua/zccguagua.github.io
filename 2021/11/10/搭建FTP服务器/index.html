@@ -9,19 +9,19 @@
     
         <meta name="keywords" content="FTP">
     
-    <meta name="description" content="前端时间阿里云服务器到期了，趁着双11换了一个2核4g的天翼云服务器，记录一下 FTP ps:天翼云服务器在没有备案的情况下，是使用不了80，8080，443等端口的，配置了安全组也不行，搞的当时不明所以浪费了很多时间 参考安装ftp服务器可参考下方教程  阿里云ftp教程  天翼云ftp教程 安装FTP服务器 1234yum install vsftpd -ysystemctl enable">
+    <meta name="description" content="前端时间阿里云服务器到期了，趁着双11换了一个2核4g的天翼云服务器，记录一下安装FTP服务器过程ps:天翼云服务器在没有备案的情况下，是使用不了80，8080，443等端口的，配置了安全组也不行，搞的当时不明所以浪费了很多时间 参考安装ftp服务器可参考下方教程 阿里云ftp教程 天翼云ftp教程 安装FTP服务器 1234yum install vsftpd -ysystemctl enab">
 <meta name="keywords" content="FTP">
 <meta property="og:type" content="article">
 <meta property="og:title" content="搭建FTP服务器">
 <meta property="og:url" content="https://zcccool.cn/2021/11/10/搭建FTP服务器/index.html">
 <meta property="og:site_name" content="Orange个人博客">
-<meta property="og:description" content="前端时间阿里云服务器到期了，趁着双11换了一个2核4g的天翼云服务器，记录一下 FTP ps:天翼云服务器在没有备案的情况下，是使用不了80，8080，443等端口的，配置了安全组也不行，搞的当时不明所以浪费了很多时间 参考安装ftp服务器可参考下方教程  阿里云ftp教程  天翼云ftp教程 安装FTP服务器 1234yum install vsftpd -ysystemctl enable">
+<meta property="og:description" content="前端时间阿里云服务器到期了，趁着双11换了一个2核4g的天翼云服务器，记录一下安装FTP服务器过程ps:天翼云服务器在没有备案的情况下，是使用不了80，8080，443等端口的，配置了安全组也不行，搞的当时不明所以浪费了很多时间 参考安装ftp服务器可参考下方教程 阿里云ftp教程 天翼云ftp教程 安装FTP服务器 1234yum install vsftpd -ysystemctl enab">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_20.jpg">
-<meta property="og:updated_time" content="2021-11-12T04:39:46.708Z">
+<meta property="og:updated_time" content="2021-11-12T04:47:56.994Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搭建FTP服务器">
-<meta name="twitter:description" content="前端时间阿里云服务器到期了，趁着双11换了一个2核4g的天翼云服务器，记录一下 FTP ps:天翼云服务器在没有备案的情况下，是使用不了80，8080，443等端口的，配置了安全组也不行，搞的当时不明所以浪费了很多时间 参考安装ftp服务器可参考下方教程  阿里云ftp教程  天翼云ftp教程 安装FTP服务器 1234yum install vsftpd -ysystemctl enable">
+<meta name="twitter:description" content="前端时间阿里云服务器到期了，趁着双11换了一个2核4g的天翼云服务器，记录一下安装FTP服务器过程ps:天翼云服务器在没有备案的情况下，是使用不了80，8080，443等端口的，配置了安全组也不行，搞的当时不明所以浪费了很多时间 参考安装ftp服务器可参考下方教程 阿里云ftp教程 天翼云ftp教程 安装FTP服务器 1234yum install vsftpd -ysystemctl enab">
 <meta name="twitter:image" content="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_20.jpg">
     
 
@@ -205,26 +205,19 @@ var _hmt = _hmt || [];
         
         <div class="article-entry" itemprop="articleBody">
             <p><img src="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_20.jpg" alt title="ftp"></p>
-<p>前端时间阿里云服务器到期了，趁着双11换了一个2核4g的天翼云服务器，记录一下 FTP</p>
-<p>ps:天翼云服务器在没有备案的情况下，是使用不了80，8080，443等端口的，配置了安全组也不行，搞的当时不明所以浪费了很多时间</p>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p>安装ftp服务器可参考下方教程</p>
-<p> <a href="https://help.aliyun.com/document_detail/60152.html?spm=5176.22414175.sslink.2.1ea4617cUgE4Zb" target="_blank" rel="noopener">阿里云ftp教程</a></p>
-<p> <a href="https://www.ctyun.cn/h5/help2/10000015/10553754" target="_blank" rel="noopener">天翼云ftp教程</a></p>
-<h3 id="安装FTP服务器"><a href="#安装FTP服务器" class="headerlink" title="安装FTP服务器"></a>安装FTP服务器</h3> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">yum install vsftpd -y</span><br><span class="line">systemctl enable vsftpd.service #设置FTP服务开机自启动</span><br><span class="line">systemctl start vsftpd.service #启动FTP服务</span><br><span class="line">netstat -antup | grep ftp #查看FTP服务的端口号</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">useradd ftpadmin #创建“ftpadmin”用户</span><br><span class="line">passwd ftpadmin #按照提示设置“ftpadmin”用户密码</span><br><span class="line">mkdir /var/ftp/pub #创建供FTP使用的文件目录</span><br><span class="line">chown -R ftpadmin:ftpadmin /var/ftp/pub #更改文件目录所有者</span><br></pre></td></tr></table></figure>
+<p>前端时间阿里云服务器到期了，趁着双11换了一个2核4g的天翼云服务器，记录一下安装FTP服务器过程<br>ps:天翼云服务器在没有备案的情况下，是使用不了80，8080，443等端口的，配置了安全组也不行，搞的当时不明所以浪费了很多时间</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p>安装ftp服务器可参考下方教程<br> <a href="https://help.aliyun.com/document_detail/60152.html?spm=5176.22414175.sslink.2.1ea4617cUgE4Zb" target="_blank" rel="noopener">阿里云ftp教程</a><br> <a href="https://www.ctyun.cn/h5/help2/10000015/10553754" target="_blank" rel="noopener">天翼云ftp教程</a></p>
+<h3 id="安装FTP服务器"><a href="#安装FTP服务器" class="headerlink" title="安装FTP服务器"></a>安装FTP服务器</h3> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">yum install vsftpd -y</span><br><span class="line">systemctl enable vsftpd.service    #设置FTP服务开机自启动</span><br><span class="line">systemctl start vsftpd.service      #启动FTP服务</span><br><span class="line">netstat -antup | grep ftp       #查看FTP服务的端口号</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">useradd ftpadmin    #创建“ftpadmin”用户</span><br><span class="line">passwd ftpadmin     #按照提示设置“ftpadmin”用户密码</span><br><span class="line">mkdir /var/ftp/pub  #创建供FTP使用的文件目录</span><br><span class="line">chown -R ftpadmin:ftpadmin /var/ftp/pub #更改文件目录所有者</span><br></pre></td></tr></table></figure>
 <p>修改配置文件,执行以下命令打开配置文件“vsftpd.conf”</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/vsftpd/vsftpd.conf</span><br></pre></td></tr></table></figure>
-<p>主动模式需要配置的参数如下：</p>
 <p>设置以下参数，不允许匿名登录FTP服务器，允许本地用户登录FTP服务器，并指定FTP本地用户使用的文件目录。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">anonymous_enable=NO              #不允许匿名登录FTP服务器</span><br><span class="line">local_enable=YES                 #允许本地用户登录FTP服务器</span><br><span class="line">local_root=/var/ftp/work01       #FTP本地用户使用的文件目录</span><br></pre></td></tr></table></figure>
 <p>设置以下参数，限制用户只能访问自身的主目录。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">chroot_local_user=YES                      #所有用户都被限制在其主目录</span><br><span class="line">chroot_list_enable=YES                     #启用例外用户名单</span><br><span class="line">chroot_list_file=/etc/vsftpd/chroot_list   #例外用户名单</span><br><span class="line">allow_writeable_chroot=YES</span><br></pre></td></tr></table></figure>
-<p>被动模式除了需要配置主动模式所需的所有参数外，还需要配置的参数如下：</p>
-<p>设置以下参数，配置FTP支持被动模式。并指定FTP服务器的公网IP地址，以及可供访问的端口范围，端口范围请根据实际环境进行设置。</p>
+<p>被动模式除了需要配置主动模式所需的所有参数外，还需要配置的参数如下：<br>设置以下参数，配置FTP支持被动模式。并指定FTP服务器的公网IP地址，以及可供访问的端口范围，端口范围请根据实际环境进行设置。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">listen=YES                           </span><br><span class="line">listen_ipv6=NO                       </span><br><span class="line">pasv_address=xx.xx.xx.xx      #FTP服务器的公网IP地址</span><br><span class="line">pasv_min_port=50000            #被动模式下的最小端口</span><br><span class="line">pasv_max_port=50010            #被动模式下的最大端口</span><br></pre></td></tr></table></figure>
-<p>ps:ftp的默认端口应该是21，要去服务器控制台去配置安全组开放21及上方端口号</p>
-<p>按Esc键退出编辑模式，并输入:wq保存后退出。</p>
-<p>在“/etc/vsftpd/”目录下创建“chroot_list”文件。</p>
+<p>ps:ftp的默认端口应该是21，要去服务器控制台去配置安全组开放21及上方端口号<br>按Esc键退出编辑模式，并输入:wq保存后退出。<br>在“/etc/vsftpd/”目录下创建“chroot_list”文件。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch chroot_list</span><br></pre></td></tr></table></figure>
 <p>“chroot_list”文件是限制在主目录下的例外用户名单。如果需要设置某个用户不受只可以访问其主目录的限制，可将对应的用户名写入该文件。</p>
 <p>如果没有例外也必须要有“chroot_list”文件，内容可为空。<br>执行以下命令重启vsftpd服务使配置生效。</p>
@@ -233,7 +226,7 @@ var _hmt = _hmt || [];
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ftp localhost   #quit可退出</span><br></pre></td></tr></table></figure>
 <p> 如果-bash: ftp: command not found<br> FTP命令没有安装</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install ftp</span><br></pre></td></tr></table></figure>
-<h3 id="配置网络防火墙"><a href="#配置网络防火墙" class="headerlink" title="配置网络防火墙"></a>配置网络防火墙</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">systemctl start firewalld.service #开启防火墙</span><br><span class="line">systemctl enable firewalld.service #防火墙开机启动</span><br><span class="line">systemctl stop firewalld.service #关闭防火墙</span><br><span class="line">firewall-cmd --reload #重启防火墙</span><br><span class="line">firewall-cmd --state #查看防火墙状态</span><br><span class="line">firewall-cmd --list-ports 查看开放的端口</span><br><span class="line">firewall-cmd --permanent --zone=public --add-port=8080-8083/tcp #添加多个端口</span><br><span class="line">firewall-cmd --permanent --zone=public --remove-port=81/tcp #删除某个端口</span><br><span class="line">netstat -inpt #查看各接口监听</span><br><span class="line">netstat -an | grep 8989 #查看端口是否正常监听</span><br></pre></td></tr></table></figure>
+<h3 id="配置网络防火墙"><a href="#配置网络防火墙" class="headerlink" title="配置网络防火墙"></a>配置网络防火墙</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">systemctl start firewalld.service   #开启防火墙</span><br><span class="line">systemctl enable firewalld.service  #防火墙开机启动</span><br><span class="line">systemctl stop firewalld.service    #关闭防火墙</span><br><span class="line">firewall-cmd --reload   #重启防火墙</span><br><span class="line">firewall-cmd --state    #查看防火墙状态</span><br><span class="line">firewall-cmd --list-ports   #查看开放的端口</span><br><span class="line">firewall-cmd --permanent --zone=public --add-port=8080-8083/tcp #添加多个端口</span><br><span class="line">firewall-cmd --permanent --zone=public --remove-port=81/tcp #删除某个端口</span><br><span class="line">netstat -inpt   #查看各接口监听</span><br><span class="line">netstat -an | grep 8989    #查看端口是否正常监听</span><br></pre></td></tr></table></figure>
 <h3 id="使用FTP"><a href="#使用FTP" class="headerlink" title="使用FTP"></a>使用FTP</h3><p>在windows电脑文件路径栏输入ftp:ip</p>
 <p>输入用户名密码就可以查看与上传文件了</p>
 <p>ubuntu可以使用fileZilla连接,Android手机和iPhone都可以下载FTP应用app，这样可以多端共享了</p>
@@ -245,7 +238,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="https://zcccool.cn/2021/11/10/搭建FTP服务器/" data-id="ckvvw5p2i000smsuido9w3j5t" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://zcccool.cn/2021/11/10/搭建FTP服务器/" data-id="ckvvwg2ue000xjouijzxoxphz" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
