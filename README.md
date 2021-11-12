@@ -1,5 +1,5 @@
 ### 我的博客
 
-Click here: [Orange的博客](http://zcccool.cn)
+Click here: [我的的博客](http://zcccool.cn)
 
-![Image](/images/xiyeqinai.jpg)
+![Image](https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/orange.jpg)
