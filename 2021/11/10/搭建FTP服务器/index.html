@@ -9,19 +9,19 @@
     
         <meta name="keywords" content="FTP">
     
-    <meta name="description" content="前端时间阿里云服务器到期了，趁着双11换了一个2核4g的天翼云服务器，记录一下安装FTP服务器过程ps:天翼云服务器在没有备案的情况下，是使用不了80，8080，443等端口的，配置了安全组也不行，搞的当时不明所以浪费了很多时间 参考安装ftp服务器可参考下方教程 阿里云ftp教程 天翼云ftp教程 安装FTP服务器 1234yum install vsftpd -ysystemctl enab">
+    <meta name="description" content="前段时间阿里云服务器到期了，趁着双11换了一个2核4g的天翼云服务器，记录一下安装FTP服务器过程ps:天翼云服务器在没有备案的情况下，是使用不了80，8080，443等端口的，配置了安全组也不行，搞的当时不明所以浪费了很多时间 参考安装ftp服务器可参考下方教程 阿里云ftp教程 天翼云ftp教程 安装FTP服务器 12345yum install vsftpd -ysystemctl ena">
 <meta name="keywords" content="FTP">
 <meta property="og:type" content="article">
 <meta property="og:title" content="搭建FTP服务器">
 <meta property="og:url" content="https://zcccool.cn/2021/11/10/搭建FTP服务器/index.html">
 <meta property="og:site_name" content="Orange个人博客">
-<meta property="og:description" content="前端时间阿里云服务器到期了，趁着双11换了一个2核4g的天翼云服务器，记录一下安装FTP服务器过程ps:天翼云服务器在没有备案的情况下，是使用不了80，8080，443等端口的，配置了安全组也不行，搞的当时不明所以浪费了很多时间 参考安装ftp服务器可参考下方教程 阿里云ftp教程 天翼云ftp教程 安装FTP服务器 1234yum install vsftpd -ysystemctl enab">
+<meta property="og:description" content="前段时间阿里云服务器到期了，趁着双11换了一个2核4g的天翼云服务器，记录一下安装FTP服务器过程ps:天翼云服务器在没有备案的情况下，是使用不了80，8080，443等端口的，配置了安全组也不行，搞的当时不明所以浪费了很多时间 参考安装ftp服务器可参考下方教程 阿里云ftp教程 天翼云ftp教程 安装FTP服务器 12345yum install vsftpd -ysystemctl ena">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_20.jpg">
-<meta property="og:updated_time" content="2021-11-12T04:47:56.994Z">
+<meta property="og:updated_time" content="2021-11-13T12:27:39.561Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搭建FTP服务器">
-<meta name="twitter:description" content="前端时间阿里云服务器到期了，趁着双11换了一个2核4g的天翼云服务器，记录一下安装FTP服务器过程ps:天翼云服务器在没有备案的情况下，是使用不了80，8080，443等端口的，配置了安全组也不行，搞的当时不明所以浪费了很多时间 参考安装ftp服务器可参考下方教程 阿里云ftp教程 天翼云ftp教程 安装FTP服务器 1234yum install vsftpd -ysystemctl enab">
+<meta name="twitter:description" content="前段时间阿里云服务器到期了，趁着双11换了一个2核4g的天翼云服务器，记录一下安装FTP服务器过程ps:天翼云服务器在没有备案的情况下，是使用不了80，8080，443等端口的，配置了安全组也不行，搞的当时不明所以浪费了很多时间 参考安装ftp服务器可参考下方教程 阿里云ftp教程 天翼云ftp教程 安装FTP服务器 12345yum install vsftpd -ysystemctl ena">
 <meta name="twitter:image" content="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_20.jpg">
     
 
@@ -205,9 +205,9 @@ var _hmt = _hmt || [];
         
         <div class="article-entry" itemprop="articleBody">
             <p><img src="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_20.jpg" alt title="ftp"></p>
-<p>前端时间阿里云服务器到期了，趁着双11换了一个2核4g的天翼云服务器，记录一下安装FTP服务器过程<br>ps:天翼云服务器在没有备案的情况下，是使用不了80，8080，443等端口的，配置了安全组也不行，搞的当时不明所以浪费了很多时间</p>
+<p>前段时间阿里云服务器到期了，趁着双11换了一个2核4g的天翼云服务器，记录一下安装FTP服务器过程<br>ps:天翼云服务器在没有备案的情况下，是使用不了80，8080，443等端口的，配置了安全组也不行，搞的当时不明所以浪费了很多时间</p>
 <h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p>安装ftp服务器可参考下方教程<br> <a href="https://help.aliyun.com/document_detail/60152.html?spm=5176.22414175.sslink.2.1ea4617cUgE4Zb" target="_blank" rel="noopener">阿里云ftp教程</a><br> <a href="https://www.ctyun.cn/h5/help2/10000015/10553754" target="_blank" rel="noopener">天翼云ftp教程</a></p>
-<h3 id="安装FTP服务器"><a href="#安装FTP服务器" class="headerlink" title="安装FTP服务器"></a>安装FTP服务器</h3> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">yum install vsftpd -y</span><br><span class="line">systemctl enable vsftpd.service    #设置FTP服务开机自启动</span><br><span class="line">systemctl start vsftpd.service      #启动FTP服务</span><br><span class="line">netstat -antup | grep ftp       #查看FTP服务的端口号</span><br></pre></td></tr></table></figure>
+<h3 id="安装FTP服务器"><a href="#安装FTP服务器" class="headerlink" title="安装FTP服务器"></a>安装FTP服务器</h3> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">yum install vsftpd -y</span><br><span class="line">systemctl enable vsftpd.service    #设置FTP服务开机自启动</span><br><span class="line">systemctl start vsftpd.service      #启动FTP服务</span><br><span class="line">systemctl stop vsftpd.service      #停止FTP服务</span><br><span class="line">netstat -antup | grep ftp       #查看FTP服务的端口号</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">useradd ftpadmin    #创建“ftpadmin”用户</span><br><span class="line">passwd ftpadmin     #按照提示设置“ftpadmin”用户密码</span><br><span class="line">mkdir /var/ftp/pub  #创建供FTP使用的文件目录</span><br><span class="line">chown -R ftpadmin:ftpadmin /var/ftp/pub #更改文件目录所有者</span><br></pre></td></tr></table></figure>
 <p>修改配置文件,执行以下命令打开配置文件“vsftpd.conf”</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/vsftpd/vsftpd.conf</span><br></pre></td></tr></table></figure>
@@ -230,7 +230,7 @@ var _hmt = _hmt || [];
 <h3 id="使用FTP"><a href="#使用FTP" class="headerlink" title="使用FTP"></a>使用FTP</h3><p>在windows电脑文件路径栏输入ftp:ip</p>
 <p>输入用户名密码就可以查看与上传文件了</p>
 <p>ubuntu可以使用fileZilla连接,Android手机和iPhone都可以下载FTP应用app，这样可以多端共享了</p>
-<p>ps:谷歌浏览器从90版本开始去除了FTP连接，试了火狐和edge都不不能打开FTP了</p>
+<p>ps:谷歌浏览器从90版本开始去除了FTP连接，试了火狐和edge都不不能打开FTP了<br>ps:开启FTP服务器后控制台查看cpu使用率飙升到100%，不知道为什么</p>
 
         </div>
         <footer class="article-footer">
@@ -238,7 +238,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="https://zcccool.cn/2021/11/10/搭建FTP服务器/" data-id="ckvvwg2ue000xjouijzxoxphz" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://zcccool.cn/2021/11/10/搭建FTP服务器/" data-id="ckvyz6xn7000ukouid5qr1e3n" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -386,6 +386,16 @@ var _hmt = _hmt || [];
         
 <nav id="article-nav">
     
+        <a href="/2021/11/14/小皮面板搭建nextcloud网盘/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            小皮面板搭建nextcloud网盘
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
     
         <a href="/2021/10/18/买房历程/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
@@ -407,6 +417,26 @@ var _hmt = _hmt || [];
         <h3 class="widget-title">最新文章</h3>
         <div class="widget">
             <ul id="recent-post" class>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/11/14/小皮面板搭建nextcloud网盘/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_19.jpg)" alt="小皮面板搭建nextcloud网盘" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2021/11/14/小皮面板搭建nextcloud网盘/" class="title">小皮面板搭建nextcloud网盘</a></p>
+                            <p class="item-date"><time datetime="2021-11-14T07:32:01.000Z" itemprop="datePublished">2021-11-14</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -488,26 +518,6 @@ var _hmt = _hmt || [];
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2020/04/12/DeepFaceLab-AI换脸/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/deepfacelab/deepfacelab_01.jpg)" alt="DeepFaceLab AI换脸" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2020/04/12/DeepFaceLab-AI换脸/" class="title">DeepFaceLab AI换脸</a></p>
-                            <p class="item-date"><time datetime="2020-04-12T15:26:02.000Z" itemprop="datePublished">2020-04-12</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -520,7 +530,7 @@ var _hmt = _hmt || [];
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/9图/" style="font-size: 10px;">.9图</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/DeepFaceLab/" style="font-size: 10px;">DeepFaceLab</a> <a href="/tags/FTP/" style="font-size: 10px;">FTP</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/PS/" style="font-size: 10px;">PS</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Retorfit/" style="font-size: 10px;">Retorfit</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/SRS/" style="font-size: 10px;">SRS</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/ping/" style="font-size: 10px;">ping</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/下载/" style="font-size: 10px;">下载</a> <a href="/tags/东极岛/" style="font-size: 10px;">东极岛</a> <a href="/tags/乌镇/" style="font-size: 10px;">乌镇</a> <a href="/tags/买房/" style="font-size: 10px;">买房</a> <a href="/tags/刷机/" style="font-size: 10px;">刷机</a> <a href="/tags/域名/" style="font-size: 10px;">域名</a> <a href="/tags/婺源-三清山/" style="font-size: 10px;">婺源&三清山</a> <a href="/tags/宏村-黄山/" style="font-size: 10px;">宏村&黄山</a> <a href="/tags/定时器-线程池/" style="font-size: 10px;">定时器&线程池</a> <a href="/tags/小程序/" style="font-size: 10px;">小程序</a> <a href="/tags/旅行/" style="font-size: 15px;">旅行</a> <a href="/tags/服务器/" style="font-size: 10px;">服务器</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a> <a href="/tags/视频合并/" style="font-size: 10px;">视频合并</a> <a href="/tags/阿里云/" style="font-size: 10px;">阿里云</a> <a href="/tags/龙虎山/" style="font-size: 10px;">龙虎山</a>
+            <a href="/tags/9图/" style="font-size: 10px;">.9图</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/DeepFaceLab/" style="font-size: 10px;">DeepFaceLab</a> <a href="/tags/FTP/" style="font-size: 10px;">FTP</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/PS/" style="font-size: 10px;">PS</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Retorfit/" style="font-size: 10px;">Retorfit</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/SRS/" style="font-size: 10px;">SRS</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nextcloud/" style="font-size: 10px;">nextcloud</a> <a href="/tags/ping/" style="font-size: 10px;">ping</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/下载/" style="font-size: 10px;">下载</a> <a href="/tags/东极岛/" style="font-size: 10px;">东极岛</a> <a href="/tags/乌镇/" style="font-size: 10px;">乌镇</a> <a href="/tags/买房/" style="font-size: 10px;">买房</a> <a href="/tags/刷机/" style="font-size: 10px;">刷机</a> <a href="/tags/域名/" style="font-size: 10px;">域名</a> <a href="/tags/婺源-三清山/" style="font-size: 10px;">婺源&三清山</a> <a href="/tags/宏村-黄山/" style="font-size: 10px;">宏村&黄山</a> <a href="/tags/定时器-线程池/" style="font-size: 10px;">定时器&线程池</a> <a href="/tags/小程序/" style="font-size: 10px;">小程序</a> <a href="/tags/旅行/" style="font-size: 15px;">旅行</a> <a href="/tags/服务器/" style="font-size: 10px;">服务器</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a> <a href="/tags/视频合并/" style="font-size: 10px;">视频合并</a> <a href="/tags/阿里云/" style="font-size: 10px;">阿里云</a> <a href="/tags/龙虎山/" style="font-size: 10px;">龙虎山</a>
         </div>
     </div>
 
