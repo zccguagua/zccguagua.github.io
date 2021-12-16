@@ -9,19 +9,19 @@
     
         <meta name="keywords" content="阿里云">
     
-    <meta name="description" content="1.下载下载两个文件apache-tomcat-8.5.34.tar.gzjdk-8u181-linux-x64.tar.gz使用工具复制到/usr/local/java文件夹 2.安装java解压1tar -zxvf jdk-8u181-linux-x64.tar.gz 配置Java环境变量 进入编辑 vim /etc/profile在文件最后添加下面的内容(i 编辑,Esc 退出,:wq 保">
+    <meta name="description" content="1.下载下载两个文件apache-tomcat-8.5.72.tar.gzjdk-8u311-linux-x64.tar.gz使用工具复制到/usr/local/java文件夹 2.安装java解压1tar -zxvf jdk-8u311-linux-x64.tar.gz 配置Java环境变量 进入编辑 vim /etc/profile在文件最后添加下面的内容(i 编辑,Esc 退出,:wq 保">
 <meta name="keywords" content="阿里云">
 <meta property="og:type" content="article">
 <meta property="og:title" content="阿里云Tomcat部署与配置">
 <meta property="og:url" content="https://zcccool.cn/2018/11/08/阿里云Tomcat部署与配置/index.html">
 <meta property="og:site_name" content="Orange个人博客">
-<meta property="og:description" content="1.下载下载两个文件apache-tomcat-8.5.34.tar.gzjdk-8u181-linux-x64.tar.gz使用工具复制到/usr/local/java文件夹 2.安装java解压1tar -zxvf jdk-8u181-linux-x64.tar.gz 配置Java环境变量 进入编辑 vim /etc/profile在文件最后添加下面的内容(i 编辑,Esc 退出,:wq 保">
+<meta property="og:description" content="1.下载下载两个文件apache-tomcat-8.5.72.tar.gzjdk-8u311-linux-x64.tar.gz使用工具复制到/usr/local/java文件夹 2.安装java解压1tar -zxvf jdk-8u311-linux-x64.tar.gz 配置Java环境变量 进入编辑 vim /etc/profile在文件最后添加下面的内容(i 编辑,Esc 退出,:wq 保">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/cat.jpg">
-<meta property="og:updated_time" content="2021-11-12T04:26:10.899Z">
+<meta property="og:updated_time" content="2021-11-17T15:43:29.704Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="阿里云Tomcat部署与配置">
-<meta name="twitter:description" content="1.下载下载两个文件apache-tomcat-8.5.34.tar.gzjdk-8u181-linux-x64.tar.gz使用工具复制到/usr/local/java文件夹 2.安装java解压1tar -zxvf jdk-8u181-linux-x64.tar.gz 配置Java环境变量 进入编辑 vim /etc/profile在文件最后添加下面的内容(i 编辑,Esc 退出,:wq 保">
+<meta name="twitter:description" content="1.下载下载两个文件apache-tomcat-8.5.72.tar.gzjdk-8u311-linux-x64.tar.gz使用工具复制到/usr/local/java文件夹 2.安装java解压1tar -zxvf jdk-8u311-linux-x64.tar.gz 配置Java环境变量 进入编辑 vim /etc/profile在文件最后添加下面的内容(i 编辑,Esc 退出,:wq 保">
 <meta name="twitter:image" content="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/cat.jpg">
     
 
@@ -205,15 +205,15 @@ var _hmt = _hmt || [];
         
         <div class="article-entry" itemprop="articleBody">
             <p><img src="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/cat.jpg" alt title="Image"></p>
-<h3 id="1-下载"><a href="#1-下载" class="headerlink" title="1.下载"></a>1.下载</h3><p>下载两个文件<br>apache-tomcat-8.5.34.tar.gz<br>jdk-8u181-linux-x64.tar.gz<br>使用工具复制到/usr/local/java文件夹</p>
-<h3 id="2-安装java"><a href="#2-安装java" class="headerlink" title="2.安装java"></a>2.安装java</h3><h5 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf jdk-8u181-linux-x64.tar.gz</span><br></pre></td></tr></table></figure>
-<h5 id="配置Java环境变量-进入编辑-vim-etc-profile"><a href="#配置Java环境变量-进入编辑-vim-etc-profile" class="headerlink" title="配置Java环境变量 进入编辑 vim /etc/profile"></a>配置Java环境变量 进入编辑 vim /etc/profile</h5><p>在文件最后添加下面的内容<br>(i 编辑,Esc 退出,:wq 保存退出,:q!退出)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/java/jdk路径</span><br><span class="line">export JRE_HOME=/usr/java/jdk路径/jre</span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH</span><br><span class="line">export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH</span><br></pre></td></tr></table></figure></p>
+<h3 id="1-下载"><a href="#1-下载" class="headerlink" title="1.下载"></a>1.下载</h3><p>下载两个文件<br>apache-tomcat-8.5.72.tar.gz<br>jdk-8u311-linux-x64.tar.gz<br>使用工具复制到/usr/local/java文件夹</p>
+<h3 id="2-安装java"><a href="#2-安装java" class="headerlink" title="2.安装java"></a>2.安装java</h3><h5 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf jdk-8u311-linux-x64.tar.gz</span><br></pre></td></tr></table></figure>
+<h5 id="配置Java环境变量-进入编辑-vim-etc-profile"><a href="#配置Java环境变量-进入编辑-vim-etc-profile" class="headerlink" title="配置Java环境变量 进入编辑 vim /etc/profile"></a>配置Java环境变量 进入编辑 vim /etc/profile</h5><p>在文件最后添加下面的内容<br>(i 编辑,Esc 退出,:wq 保存退出,:q!退出)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/local/java/jdk1.8.0_311</span><br><span class="line">export JRE_HOME=/usr/local/java/jdk1.8.0_311/jre</span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH</span><br><span class="line">export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH</span><br></pre></td></tr></table></figure></p>
 <p>添加完成后，使环境变量生效<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure></p>
 <h5 id="检测是否成功"><a href="#检测是否成功" class="headerlink" title="检测是否成功"></a>检测是否成功</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br></pre></td></tr></table></figure>
-<h3 id="3-安装tomcat"><a href="#3-安装tomcat" class="headerlink" title="3.安装tomcat"></a>3.安装tomcat</h3><h5 id="解压-1"><a href="#解压-1" class="headerlink" title="解压"></a>解压</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf apache-tomcat-8.5.34.tar.gz</span><br></pre></td></tr></table></figure>
+<h3 id="3-安装tomcat"><a href="#3-安装tomcat" class="headerlink" title="3.安装tomcat"></a>3.安装tomcat</h3><h5 id="解压-1"><a href="#解压-1" class="headerlink" title="解压"></a>解压</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf apache-tomcat-8.5.72.tar.gz</span><br></pre></td></tr></table></figure>
 <p>进入tomcat路径/bin<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./startup.sh //启动命令</span><br><span class="line">./shutdown.sh //停止命令</span><br></pre></td></tr></table></figure></p>
 <p>(注意：失败请检查8080端口是否开放，去服务器控制台安全组开启)</p>
-<h3 id="4-配置直接通过地址访问"><a href="#4-配置直接通过地址访问" class="headerlink" title="4.配置直接通过地址访问"></a>4.配置直接通过地址访问</h3><p>进入conf修改server.xml<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> &lt;Connector port=&quot;80&quot; protocol=&quot;HTTP/1.1&quot; //端口改为80(需开放80端口)</span><br><span class="line"> &lt;Engine name=&quot;Catalina&quot; defaultHost=&quot;地址/域名&quot;&gt; //地址</span><br><span class="line"> &lt;Host name=&quot;地址/域名&quot;  appBase=&quot;webapps&quot;</span><br><span class="line">            unpackWARs=&quot;true&quot; autoDeploy=&quot;true&quot;&gt;</span><br><span class="line">&lt;Context path=&quot;&quot; docBase=&quot;/usr/local/tomcat/apache-tomcat-7.0.85/webapps/项目名&quot; debug=&quot;0&quot; reloadable=&quot;true&quot; /&gt; //在Host之间加上</span><br></pre></td></tr></table></figure></p>
+<h3 id="4-配置直接通过地址访问"><a href="#4-配置直接通过地址访问" class="headerlink" title="4.配置直接通过地址访问"></a>4.配置直接通过地址访问</h3><p>进入conf修改server.xml<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> &lt;Connector port=&quot;80&quot; protocol=&quot;HTTP/1.1&quot; //端口改为80(需开放80端口)</span><br><span class="line"> &lt;Engine name=&quot;Catalina&quot; defaultHost=&quot;地址/域名&quot;&gt; //地址</span><br><span class="line"> &lt;Host name=&quot;地址/域名&quot;  appBase=&quot;webapps&quot;</span><br><span class="line">            unpackWARs=&quot;true&quot; autoDeploy=&quot;true&quot;&gt;</span><br><span class="line">&lt;Context path=&quot;&quot; docBase=&quot;/usr/local/java/apache-tomcat-8.5.72/webapps/项目名&quot; debug=&quot;0&quot; reloadable=&quot;true&quot; /&gt; //在Host之间加上</span><br></pre></td></tr></table></figure></p>
 <h3 id="5-Tomcat-开机启动"><a href="#5-Tomcat-开机启动" class="headerlink" title="5.Tomcat 开机启动"></a>5.Tomcat 开机启动</h3><p>关闭Tomcat<br>编辑vim /etc/rc.d/rc.local<br>添加以下内容<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/local/jdk路径</span><br><span class="line">export JRE_HOME=$JAVA_HOME/jre</span><br><span class="line">sh /usr/local/tomcat路径/bin/startup.sh</span><br></pre></td></tr></table></figure></p>
 <h3 id="6-服务器更新"><a href="#6-服务器更新" class="headerlink" title="6.服务器更新"></a>6.服务器更新</h3> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y update</span><br></pre></td></tr></table></figure>
 <p>（rc.local需要有执行权限 chmod +x rc.local）<br>重启机器即可启动Tomcat</p>
@@ -227,7 +227,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="https://zcccool.cn/2018/11/08/阿里云Tomcat部署与配置/" data-id="ckvz0djog00107suixfmk0s7u" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://zcccool.cn/2018/11/08/阿里云Tomcat部署与配置/" data-id="ckx93oyrn000ysouis0t4s1oe" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -410,6 +410,26 @@ var _hmt = _hmt || [];
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2021/12/16/V2ray客户端/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_18.jpg)" alt="V2ray客户端" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2021/12/16/V2ray客户端/" class="title">V2ray客户端</a></p>
+                            <p class="item-date"><time datetime="2021-12-16T15:06:12.000Z" itemprop="datePublished">2021-12-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2021/11/14/小皮面板搭建nextcloud网盘/" class="thumbnail">
     
     
@@ -487,26 +507,6 @@ var _hmt = _hmt || [];
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2020/06/30/Android搭建局域网服务器/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_07.jpg)" alt="Android搭建局域网服务器" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2020/06/30/Android搭建局域网服务器/" class="title">Android搭建局域网服务器</a></p>
-                            <p class="item-date"><time datetime="2020-06-30T14:14:28.000Z" itemprop="datePublished">2020-06-30</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -519,7 +519,7 @@ var _hmt = _hmt || [];
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/9图/" style="font-size: 10px;">.9图</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/DeepFaceLab/" style="font-size: 10px;">DeepFaceLab</a> <a href="/tags/FTP/" style="font-size: 10px;">FTP</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/PS/" style="font-size: 10px;">PS</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Retorfit/" style="font-size: 10px;">Retorfit</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/SRS/" style="font-size: 10px;">SRS</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nextcloud/" style="font-size: 10px;">nextcloud</a> <a href="/tags/ping/" style="font-size: 10px;">ping</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/下载/" style="font-size: 10px;">下载</a> <a href="/tags/东极岛/" style="font-size: 10px;">东极岛</a> <a href="/tags/乌镇/" style="font-size: 10px;">乌镇</a> <a href="/tags/买房/" style="font-size: 10px;">买房</a> <a href="/tags/刷机/" style="font-size: 10px;">刷机</a> <a href="/tags/域名/" style="font-size: 10px;">域名</a> <a href="/tags/婺源-三清山/" style="font-size: 10px;">婺源&三清山</a> <a href="/tags/宏村-黄山/" style="font-size: 10px;">宏村&黄山</a> <a href="/tags/定时器-线程池/" style="font-size: 10px;">定时器&线程池</a> <a href="/tags/小程序/" style="font-size: 10px;">小程序</a> <a href="/tags/旅行/" style="font-size: 15px;">旅行</a> <a href="/tags/服务器/" style="font-size: 10px;">服务器</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a> <a href="/tags/视频合并/" style="font-size: 10px;">视频合并</a> <a href="/tags/阿里云/" style="font-size: 10px;">阿里云</a> <a href="/tags/龙虎山/" style="font-size: 10px;">龙虎山</a>
+            <a href="/tags/9图/" style="font-size: 10px;">.9图</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/DeepFaceLab/" style="font-size: 10px;">DeepFaceLab</a> <a href="/tags/FTP/" style="font-size: 10px;">FTP</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/PS/" style="font-size: 10px;">PS</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Retorfit/" style="font-size: 10px;">Retorfit</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/SRS/" style="font-size: 10px;">SRS</a> <a href="/tags/V2ray/" style="font-size: 10px;">V2ray</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nextcloud/" style="font-size: 10px;">nextcloud</a> <a href="/tags/ping/" style="font-size: 10px;">ping</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/下载/" style="font-size: 10px;">下载</a> <a href="/tags/东极岛/" style="font-size: 10px;">东极岛</a> <a href="/tags/乌镇/" style="font-size: 10px;">乌镇</a> <a href="/tags/买房/" style="font-size: 10px;">买房</a> <a href="/tags/刷机/" style="font-size: 10px;">刷机</a> <a href="/tags/域名/" style="font-size: 10px;">域名</a> <a href="/tags/婺源-三清山/" style="font-size: 10px;">婺源&三清山</a> <a href="/tags/宏村-黄山/" style="font-size: 10px;">宏村&黄山</a> <a href="/tags/定时器-线程池/" style="font-size: 10px;">定时器&线程池</a> <a href="/tags/小程序/" style="font-size: 10px;">小程序</a> <a href="/tags/旅行/" style="font-size: 15px;">旅行</a> <a href="/tags/服务器/" style="font-size: 10px;">服务器</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a> <a href="/tags/视频合并/" style="font-size: 10px;">视频合并</a> <a href="/tags/阿里云/" style="font-size: 10px;">阿里云</a> <a href="/tags/龙虎山/" style="font-size: 10px;">龙虎山</a>
         </div>
     </div>
 
