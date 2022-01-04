@@ -1,69 +1,97 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
-    <meta charset="utf-8">
+<head>
+    <meta charset="utf-8" />
+
+    
+
     
     <title>Hexo博客创建与使用 | Orange个人博客</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Hexo,域名">
+    <meta name="keywords" content="Hexo,域名" />
     
-    <meta name="description" content="博客创建博客安装配置参考下方链接 hexo史上最全搭建教程Hexo博客添加SEO-评论系统-阅读统计-站长统计  博客使用本博客使用 Hexo 主题,所以部分方法适用于Hexo为主题的博客 在博客目录/myblog鼠标右键 Git Bash Here123456789//注意不要用淘宝镜像会出现问题，使用：npm set registry https://registry.npmjs.org/h">
-<meta name="keywords" content="Hexo,域名">
+    <meta name="description" content="博客创建博客安装配置参考下方链接 hexo史上最全搭建教程Hexo博客添加SEO-评论系统-阅读统计-站长统计  博客使用本博客使用 Hexo 主题,所以部分方法适用于Hexo为主题的博客 在博客目录&#x2F;myblog鼠标右键 Git Bash Here 123456789&#x2F;&#x2F;注意不要用淘宝镜像会出现问题，使用：npm set registry https:&#x2F;&#x2F;registry.npmjs.org&#x2F;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo博客创建与使用">
-<meta property="og:url" content="https://zcccool.cn/2018/05/21/Hexo博客创建与使用/index.html">
+<meta property="og:url" content="https://zcccool.cn/2018/05/21/Hexo%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E4%B8%8E%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="Orange个人博客">
-<meta property="og:description" content="博客创建博客安装配置参考下方链接 hexo史上最全搭建教程Hexo博客添加SEO-评论系统-阅读统计-站长统计  博客使用本博客使用 Hexo 主题,所以部分方法适用于Hexo为主题的博客 在博客目录/myblog鼠标右键 Git Bash Here123456789//注意不要用淘宝镜像会出现问题，使用：npm set registry https://registry.npmjs.org/h">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:description" content="博客创建博客安装配置参考下方链接 hexo史上最全搭建教程Hexo博客添加SEO-评论系统-阅读统计-站长统计  博客使用本博客使用 Hexo 主题,所以部分方法适用于Hexo为主题的博客 在博客目录&#x2F;myblog鼠标右键 Git Bash Here 123456789&#x2F;&#x2F;注意不要用淘宝镜像会出现问题，使用：npm set registry https:&#x2F;&#x2F;registry.npmjs.org&#x2F;">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/food.jpg">
-<meta property="og:updated_time" content="2021-05-25T16:54:08.427Z">
+<meta property="article:published_time" content="2018-05-21T15:24:14.000Z">
+<meta property="article:modified_time" content="2022-01-04T14:43:40.629Z">
+<meta property="article:author" content="ZhengChengcheng">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="域名">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo博客创建与使用">
-<meta name="twitter:description" content="博客创建博客安装配置参考下方链接 hexo史上最全搭建教程Hexo博客添加SEO-评论系统-阅读统计-站长统计  博客使用本博客使用 Hexo 主题,所以部分方法适用于Hexo为主题的博客 在博客目录/myblog鼠标右键 Git Bash Here123456789//注意不要用淘宝镜像会出现问题，使用：npm set registry https://registry.npmjs.org/h">
 <meta name="twitter:image" content="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/food.jpg">
     
 
     
 
     
-        <link rel="icon" href="/images/icon/iconOrangeMedium.ico">
+        <link rel="icon" href="/images/icon/iconOrangeMedium.ico" />
     
 
-    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
-    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="/css/style.css">
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
 
-    <script src="/libs/jquery/2.2.4/jquery.min.js"></script>
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
     <!--自己添加的js-->
-    <script src="/js/love.js"></script>
     
-    
-        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
-    
-    
-        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
-    
-    
-    
-        <script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?d9022f3f6c7bc2d3e18c5029cf30c753";
-  var s = document.getElementsByTagName("script")[0];
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
+<script src="/js/love.js"></script>
 
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
     
 
 
+    <meta name="baidu-site-verification" content="code-PwF0RA7PZP" />
+<meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="Orange个人博客" type="application/atom+xml">
 </head>
-</html>
+
 <body>
     <div id="wrap">
         <header id="header">
@@ -75,39 +103,35 @@ var _hmt = _hmt || [];
                         <a href="/" class="logo"></a>
                     </h1>
                     
-                        <h2 class="subtitle-wrap">
-                            <p class="subtitle">我见青山多妩媚</p>
-                        </h2>
-                    
                 </div>
                 <div id="header-inner" class="nav-container">
                     <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
                     <div class="nav-container-inner">
                         <ul id="main-nav">
                             
-                                <li class="main-nav-list-item">
+                                <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/">主页</a>
                                 </li>
                             
-                                        
                                     
-                                <li class="main-nav-list-item">
+                                
+                                <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/myhtml/music.html">云音乐</a>
                                 </li>
                             
-                                <li class="main-nav-list-item">
+                                <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/myhtml/image.html">图片</a>
                                 </li>
                             
-                                <li class="main-nav-list-item">
+                                <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/myhtml/video.html">视频</a>
                                 </li>
                             
-                                <li class="main-nav-list-item">
+                                <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/myhtml/animation.html">动画</a>
                                 </li>
                             
-                                <li class="main-nav-list-item">
+                                <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/myhtml/lovetree.html">时间树</a>
                                 </li>
                             
@@ -116,14 +140,14 @@ var _hmt = _hmt || [];
                             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="搜索">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="想要查找什么...">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -147,7 +171,9 @@ var _hmt = _hmt || [];
     window.INSIGHT_CONFIG = INSIGHT_CONFIG;
 })(window);
 </script>
+
 <script src="/js/insight.js"></script>
+
 
 </div>
                         </nav>
@@ -157,6 +183,7 @@ var _hmt = _hmt || [];
         </div>
     </div>
 </header>
+
         <div class="container">
             <div class="main-body container-inner">
                 <div class="main-body-inner">
@@ -167,66 +194,104 @@ var _hmt = _hmt || [];
     未分类
     </h1>
 </div>
-                        <div class="main-body-content">
-                            <article id="post-Hexo博客创建与使用" class="article article-single article-type-post " itemscope itemprop="blogPost">
-    <div class="article-inner">
 
+                        <div class="main-body-content">
+                            <article id="post-Hexo博客创建与使用" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        <header class="article-header">
-            
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
         Hexo博客创建与使用
         </h1>
     
 
-        </header>
+            </header>
         
-
         
-        <div class="article-meta">
-            
-    <div class="article-date">
-        <a href="/2018/05/21/Hexo博客创建与使用/" class="article-date">
-            <time datetime="2018-05-21T15:24:14.000Z" itemprop="datePublished">2018-05-21</time>
-        </a>
-    </div>
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2018/05/21/Hexo%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E4%B8%8E%E4%BD%BF%E7%94%A8/" class="article-date">
+       <time datetime="2018-05-21T15:24:14.000Z" itemprop="datePublished">2018-05-21</time>
+    </a>
+  </div>
 
-            
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2018/05/21/Hexo%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E4%B8%8E%E4%BD%BF%E7%94%A8/" class="article-date">
+     <time datetime="2022-01-04T14:43:40.629Z" itemprop="dateModified">2022-01-04</time>
+  </a>
+</div>
+
+
+                
+
+                
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Hexo/">Hexo</a>, <a class="tag-link" href="/tags/域名/">域名</a>
+        <a class="tag-link-link" href="/tags/Hexo/" rel="tag">Hexo</a>, <a class="tag-link-link" href="/tags/%E5%9F%9F%E5%90%8D/" rel="tag">域名</a>
     </div>
 
-            <p>阅读数量: <span id="/2018/05/21/Hexo博客创建与使用/" class="leancloud_visitors" data-flag-title="Hexo博客创建与使用"></span>次</p>
-        </div>
+                
 
+                
+
+                <p>阅读数量: <span id="/2018/05/21/Hexo%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E4%B8%8E%E4%BD%BF%E7%94%A8/" class="leancloud_visitors"
+                               data-flag-title="Hexo博客创建与使用"></span>次</p>
+            </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p><img src="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/food.jpg" alt title="Image"></p>
+            
+
+            
+
+            
+
+            <p><img src="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/food.jpg" title="Image"></p>
 <h3 id="博客创建"><a href="#博客创建" class="headerlink" title="博客创建"></a>博客创建</h3><p>博客安装配置参考下方链接</p>
-<p><a href="https://blog.csdn.net/sinat_37781304/article/details/82729029" target="_blank" rel="noopener">hexo史上最全搭建教程</a><br><a href="http://visugar.com/2017/08/01/20170801HexoPlugins/" target="_blank" rel="noopener">Hexo博客添加SEO-评论系统-阅读统计-站长统计 </a></p>
-<h3 id="博客使用"><a href="#博客使用" class="headerlink" title="博客使用"></a>博客使用</h3><p>本博客使用 <a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a> 主题,所以部分方法适用于Hexo为主题的博客</p>
-<p>在博客目录/myblog鼠标右键 Git Bash Here<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//注意不要用淘宝镜像会出现问题，使用：npm set registry https://registry.npmjs.org/</span><br><span class="line">hexo clean #清除缓存 网页正常情况下可以忽略此条命令</span><br><span class="line">hexo generate #生成</span><br><span class="line">hexo server #启动服务预览，非必要，可本地浏览网页</span><br><span class="line">//打开http://localhost:4000/，发现刚才的文章已经成功了</span><br><span class="line"></span><br><span class="line">hexo deploy #部署发布</span><br><span class="line"></span><br><span class="line">hexo new &quot;博客题目&quot; #新建文章</span><br></pre></td></tr></table></figure></p>
-<p>  添加图片<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% img [food] /images/food.png 食物 %&#125;</span><br><span class="line">![Image](https://your-link/rtmp.jpg &quot;Image&quot;)</span><br></pre></td></tr></table></figure></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_37781304/article/details/82729029">hexo史上最全搭建教程</a><br><a target="_blank" rel="noopener" href="http://visugar.com/2017/08/01/20170801HexoPlugins/">Hexo博客添加SEO-评论系统-阅读统计-站长统计 </a></p>
+<h3 id="博客使用"><a href="#博客使用" class="headerlink" title="博客使用"></a>博客使用</h3><p>本博客使用 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo</a> 主题,所以部分方法适用于Hexo为主题的博客</p>
+<p>在博客目录/myblog鼠标右键 Git Bash Here</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//注意不要用淘宝镜像会出现问题，使用：npm set registry https://registry.npmjs.org/</span><br><span class="line">hexo clean #清除缓存 网页正常情况下可以忽略此条命令</span><br><span class="line">hexo generate #生成</span><br><span class="line">hexo server #启动服务预览，非必要，可本地浏览网页</span><br><span class="line">//打开http://localhost:4000/，发现刚才的文章已经成功了</span><br><span class="line"></span><br><span class="line">hexo deploy #部署发布</span><br><span class="line"></span><br><span class="line">hexo new &quot;博客题目&quot; #新建文章</span><br></pre></td></tr></table></figure>
+<p>  添加图片</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% img [food] /images/food.png 食物 %&#125;</span><br><span class="line">![Image](https://your-link/rtmp.jpg &quot;Image&quot;)</span><br></pre></td></tr></table></figure>
 <p> 绑定域名</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">新建CNAME文件 里面写上你的域名</span><br></pre></td></tr></table></figure>
-<p>超链接<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">[超链接名](超链接地址 &quot;超链接title&quot;)</span><br><span class="line">[网站名称](http://zcccool.cn)</span><br></pre></td></tr></table></figure></p>
-<p>在文章中添加分类与标签<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">--- title: 文章标题</span><br><span class="line"> date: 2018-10-22 01:16:24 </span><br><span class="line"> categories: &quot;云服务器&quot; (#分类) </span><br><span class="line"> tags: (#标签) </span><br><span class="line">       - centOS </span><br><span class="line">       - tomcat</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
-<p>增加锚点<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. 使用Markdown的语法来增加跳转链接：“[名称](#id)”。</span><br><span class="line">2.&lt;span id = &quot;jump&quot;&gt;跳转到的位置&lt;/span&gt;</span><br></pre></td></tr></table></figure></p>
-<h3 id="添加背景音乐"><a href="#添加背景音乐" class="headerlink" title="添加背景音乐"></a>添加背景音乐</h3><p>在themes/hueman/_config.yml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">widgets:</span><br><span class="line">    - catalog</span><br><span class="line">    - recent_posts</span><br><span class="line">    - category</span><br><span class="line">    - archive</span><br><span class="line">    - tag</span><br><span class="line">    - tagcloud</span><br><span class="line">    - links</span><br><span class="line">    - myleft #此处添加了自定义的侧边栏</span><br></pre></td></tr></table></figure></p>
-<p>在themes/hueman/layout/widget/myleft.ejs里添加音乐ifragment<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=300 height=86</span><br><span class="line">            src=&quot;//music.163.com/outchain/player?type=2&amp;id=28285910&amp;auto=1&amp;height=66&quot;&gt;&lt;/iframe&gt;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">新建CNAME文件 里面写上你的域名</span><br></pre></td></tr></table></figure>
+
+<p>超链接</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">[超链接名](超链接地址 &quot;超链接title&quot;)</span><br><span class="line">[网站名称](http://zcccool.cn)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>在文章中添加分类与标签</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">--- title: 文章标题</span><br><span class="line"> date: 2018-10-22 01:16:24 </span><br><span class="line"> categories: &quot;云服务器&quot; (#分类) </span><br><span class="line"> tags: (#标签) </span><br><span class="line">       - centOS </span><br><span class="line">       - tomcat</span><br><span class="line">---</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>增加锚点</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. 使用Markdown的语法来增加跳转链接：“[名称](#id)”。</span><br><span class="line">2.&lt;span id = &quot;jump&quot;&gt;跳转到的位置&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="添加背景音乐"><a href="#添加背景音乐" class="headerlink" title="添加背景音乐"></a>添加背景音乐</h3><p>在themes/hueman/_config.yml</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">widgets:</span><br><span class="line">    - catalog</span><br><span class="line">    - recent_posts</span><br><span class="line">    - category</span><br><span class="line">    - archive</span><br><span class="line">    - tag</span><br><span class="line">    - tagcloud</span><br><span class="line">    - links</span><br><span class="line">    - myleft #此处添加了自定义的侧边栏</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>在themes/hueman/layout/widget/myleft.ejs里添加音乐ifragment</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=300 height=86</span><br><span class="line">            src=&quot;//music.163.com/outchain/player?type=2&amp;id=28285910&amp;auto=1&amp;height=66&quot;&gt;&lt;/iframe&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="添加导航栏"><a href="#添加导航栏" class="headerlink" title="添加导航栏"></a>添加导航栏</h3><p>1.在G:themes\hueman\languages\zh-CN.yml中添加英文对照</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">index:</span><br><span class="line">    home: &apos;主页&apos;</span><br><span class="line">    about: &apos;关于&apos;</span><br><span class="line">    test: &apos;测试导航栏&apos;  #添加的导航栏</span><br><span class="line">    search: &apos;搜索&apos;</span><br><span class="line">    archive: &apos;归档&apos;</span><br><span class="line">    category: &apos;分类：&apos;</span><br><span class="line">    uncategorized: &apos;未分类&apos;</span><br><span class="line">    tag: &apos;标签：&apos;</span><br></pre></td></tr></table></figure>
-<p>2.在themes/hueman/_config.yml中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">    Home: /</span><br><span class="line">    # Delete this row if you don&apos;t want categories in your header nav bar</span><br><span class="line">    Categories:</span><br><span class="line">    About: /about/index.html</span><br><span class="line">    Test: /test/test.html  #添加的导航栏html文件</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">index:</span><br><span class="line">    home: &#x27;主页&#x27;</span><br><span class="line">    about: &#x27;关于&#x27;</span><br><span class="line">    test: &#x27;测试导航栏&#x27;  #添加的导航栏</span><br><span class="line">    search: &#x27;搜索&#x27;</span><br><span class="line">    archive: &#x27;归档&#x27;</span><br><span class="line">    category: &#x27;分类：&#x27;</span><br><span class="line">    uncategorized: &#x27;未分类&#x27;</span><br><span class="line">    tag: &#x27;标签：&#x27;</span><br></pre></td></tr></table></figure>
+<p>2.在themes/hueman/_config.yml中</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">    Home: /</span><br><span class="line">    # Delete this row if you don&#x27;t want categories in your header nav bar</span><br><span class="line">    Categories:</span><br><span class="line">    About: /about/index.html</span><br><span class="line">    Test: /test/test.html  #添加的导航栏html文件</span><br></pre></td></tr></table></figure>
 <p>3.在sourse文件夹下新建文件夹test再新建test.html即可添加导航页面</p>
-<h3 id="文章中插入音频和视频"><a href="#文章中插入音频和视频" class="headerlink" title="文章中插入音频和视频"></a>文章中插入音频和视频</h3><p>1.在cmd 安装两个插件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo-tag-aplayer</span><br><span class="line">hexo-tag-dplayer</span><br></pre></td></tr></table></figure></p>
-<p>2.在你本地安装博客的根目录下右击鼠标打开Git Bash ，运行如下两条命令来分别安装以上的两款插件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-tag-dplayer</span><br><span class="line">npm install hexo-tag-aplayer</span><br></pre></td></tr></table></figure></p>
-<p>3.使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% aplayer &quot;歌名&quot; &quot;歌手&quot; &quot;url&quot; &quot;autoplay=false&quot; %&#125;</span><br><span class="line">&#123;% dplayer key=value ... %&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="阿里云域名绑定github博客"><a href="#阿里云域名绑定github博客" class="headerlink" title="阿里云域名绑定github博客"></a>阿里云域名绑定github博客</h3><p>1.ping 一下自己的博客地址 获得ip：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping zccguagua.github.io</span><br></pre></td></tr></table></figure></p>
+<h3 id="文章中插入音频和视频"><a href="#文章中插入音频和视频" class="headerlink" title="文章中插入音频和视频"></a>文章中插入音频和视频</h3><p>1.在cmd 安装两个插件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo-tag-aplayer</span><br><span class="line">hexo-tag-dplayer</span><br></pre></td></tr></table></figure>
+<p>2.在你本地安装博客的根目录下右击鼠标打开Git Bash ，运行如下两条命令来分别安装以上的两款插件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-tag-dplayer</span><br><span class="line">npm install hexo-tag-aplayer </span><br></pre></td></tr></table></figure>
+<p>3.使用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% aplayer &quot;歌名&quot; &quot;歌手&quot; &quot;url&quot; &quot;autoplay=false&quot; %&#125;</span><br><span class="line">&#123;% dplayer key=value ... %&#125;</span><br></pre></td></tr></table></figure>
+<p>4.更新主题</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm outdated #检查插件更新</span><br><span class="line">更改package.json里面的版本号</span><br><span class="line">npm install --save #开始更新</span><br><span class="line">hexo version #查看版本号</span><br></pre></td></tr></table></figure>
+<h3 id="文章访问计数"><a href="#文章访问计数" class="headerlink" title="文章访问计数"></a>文章访问计数</h3><p><a target="_blank" rel="noopener" href="http://busuanzi.ibruce.info/">不蒜子</a><br>修改文章访问次数在article.ejs</p>
+<h3 id="阿里云域名绑定github博客"><a href="#阿里云域名绑定github博客" class="headerlink" title="阿里云域名绑定github博客"></a>阿里云域名绑定github博客</h3><p>1.ping 一下自己的博客地址 获得ip：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping zccguagua.github.io </span><br></pre></td></tr></table></figure>
 <p>2.打开阿里云的域名解析，填入刚刚的ip进行解析<br>3.在自己的hexo项目source文件夹下添加CNAME文件，在文件填入自己的域名”zcccool.cn”<br>4.在github上修改custom domin 设置自己的域名zcccool.cn</p>
-<h3 id="看板娘"><a href="#看板娘" class="headerlink" title="看板娘"></a>看板娘</h3><p><a href="https://github.com/stevenjoezhang/live2d-widget" target="_blank" rel="noopener">看板娘</a></p>
+<h3 id="看板娘"><a href="#看板娘" class="headerlink" title="看板娘"></a>看板娘</h3><p><a target="_blank" rel="noopener" href="https://github.com/stevenjoezhang/live2d-widget">看板娘</a></p>
 <h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>  themes/hueman/layout/common/head.ejs<br>  themes/hueman/layout/common/footer.ejs<br>  对应页面的头部，底部，可添加自己的通用js,css等</p>
 
         </div>
@@ -235,7 +300,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="https://zcccool.cn/2018/05/21/Hexo博客创建与使用/" data-id="ckxxlqde1000720uiae8349vh" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://zcccool.cn/2018/05/21/Hexo%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E4%B8%8E%E4%BD%BF%E7%94%A8/" data-id="cky06hk51000m6suieqw32n2e" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -297,37 +362,46 @@ var _hmt = _hmt || [];
 
         </footer>
     </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "ZhengChengcheng"
+        },
+        "headline": "Hexo博客创建与使用",
+        "image": "https://zcccool.cnhttps://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/food.jpg",
+        "keywords": "Hexo 域名",
+        "genre": "",
+        "datePublished": "2018-05-21",
+        "dateCreated": "2018-05-21",
+        "dateModified": "2022-01-04",
+        "url": "https://zcccool.cn/2018/05/21/Hexo博客创建与使用/",
+        "description": "
+博客创建博客安装配置参考下方链接
+hexo史上最全搭建教程Hexo博客添加SEO-评论系统-阅读统计-站长统计 
+博客使用本博客使用 Hexo 主题,所以部分方法适用于Hexo为主题的博客
+在博客目录/myblog鼠标右键 Git Bash Here
+123456789//注意不要用淘宝镜像会出现问题，使用：npm set registry https://registry.npmjs.org/",
+        "wordCount": 479
+    }
+</script>
+
 </article>
 
     <section id="comments">
     
         
     <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
+
 
     
     </section>
 
 
-<!-- 来必力City版安装代码 -->
-<div id="lv-container" data-id="city" data-uid="MTAyMC8zODM1OS8xNDg4Nw==">
-    <script type="text/javascript">
-        (function(d, s) {
-            var j, e = d.getElementsByTagName(s)[0];
-
-            if (typeof LivereTower === 'function') { return; }
-
-            j = d.createElement(s);
-            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-            j.async = true;
-
-            e.parentNode.insertBefore(j, e);
-        })(document, 'script');
-    </script>
-    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
-</div>
-<!-- City版安装代码已完成 -->
 
                         </div>
                     </section>
@@ -339,7 +413,7 @@ var _hmt = _hmt || [];
             
                 
                 <li>
-                    <a class="social-tooltip" title="blog" href="http://onepeace.top/" target="_blank" rel="noopener">
+                    <a class="social-tooltip" title="blog" href="https://zccode.cn/" target="_blank" rel="noopener">
                         <i class="icon fa fa-blog"></i>
                     </a>
                 </li>
@@ -383,7 +457,7 @@ var _hmt = _hmt || [];
         
 <nav id="article-nav">
     
-        <a href="/2018/06/10/宏村与黄山/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2018/06/10/%E5%AE%8F%E6%9D%91%E4%B8%8E%E9%BB%84%E5%B1%B1/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">下一篇</strong>
         <p class="article-nav-title">
         
@@ -407,12 +481,12 @@ var _hmt = _hmt || [];
     <div class="widget-wrap">
         <h3 class="widget-title">最新文章</h3>
         <div class="widget">
-            <ul id="recent-post" class>
+            <ul id="recent-post" class="">
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2022/01/01/羽毛球知识/" class="thumbnail">
+                            <a href="/2022/01/01/%E7%BE%BD%E6%AF%9B%E7%90%83%E7%9F%A5%E8%AF%86/" class="thumbnail">
     
     
         <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/yumaoqiu.jpg)" alt="羽毛球知识" class="thumbnail-image"></span>
@@ -424,7 +498,7 @@ var _hmt = _hmt || [];
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2022/01/01/羽毛球知识/" class="title">羽毛球知识</a></p>
+                            <p class="item-title"><a href="/2022/01/01/%E7%BE%BD%E6%AF%9B%E7%90%83%E7%9F%A5%E8%AF%86/" class="title">羽毛球知识</a></p>
                             <p class="item-date"><time datetime="2021-12-31T17:02:30.000Z" itemprop="datePublished">2022-01-01</time></p>
                         </div>
                     </li>
@@ -432,7 +506,7 @@ var _hmt = _hmt || [];
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2021/12/16/V2ray客户端/" class="thumbnail">
+                            <a href="/2021/12/16/V2ray%E5%AE%A2%E6%88%B7%E7%AB%AF/" class="thumbnail">
     
     
         <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_18.jpg)" alt="V2ray客户端" class="thumbnail-image"></span>
@@ -444,7 +518,7 @@ var _hmt = _hmt || [];
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2021/12/16/V2ray客户端/" class="title">V2ray客户端</a></p>
+                            <p class="item-title"><a href="/2021/12/16/V2ray%E5%AE%A2%E6%88%B7%E7%AB%AF/" class="title">V2ray客户端</a></p>
                             <p class="item-date"><time datetime="2021-12-16T15:06:12.000Z" itemprop="datePublished">2021-12-16</time></p>
                         </div>
                     </li>
@@ -452,7 +526,7 @@ var _hmt = _hmt || [];
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2021/11/14/小皮面板搭建nextcloud网盘/" class="thumbnail">
+                            <a href="/2021/11/14/%E5%B0%8F%E7%9A%AE%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BAnextcloud%E7%BD%91%E7%9B%98/" class="thumbnail">
     
     
         <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_19.jpg)" alt="小皮面板搭建nextcloud网盘" class="thumbnail-image"></span>
@@ -464,7 +538,7 @@ var _hmt = _hmt || [];
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2021/11/14/小皮面板搭建nextcloud网盘/" class="title">小皮面板搭建nextcloud网盘</a></p>
+                            <p class="item-title"><a href="/2021/11/14/%E5%B0%8F%E7%9A%AE%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BAnextcloud%E7%BD%91%E7%9B%98/" class="title">小皮面板搭建nextcloud网盘</a></p>
                             <p class="item-date"><time datetime="2021-11-14T07:32:01.000Z" itemprop="datePublished">2021-11-14</time></p>
                         </div>
                     </li>
@@ -472,7 +546,7 @@ var _hmt = _hmt || [];
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2021/11/10/搭建FTP服务器/" class="thumbnail">
+                            <a href="/2021/11/10/%E6%90%AD%E5%BB%BAFTP%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="thumbnail">
     
     
         <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_20.jpg)" alt="搭建FTP服务器" class="thumbnail-image"></span>
@@ -484,7 +558,7 @@ var _hmt = _hmt || [];
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2021/11/10/搭建FTP服务器/" class="title">搭建FTP服务器</a></p>
+                            <p class="item-title"><a href="/2021/11/10/%E6%90%AD%E5%BB%BAFTP%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="title">搭建FTP服务器</a></p>
                             <p class="item-date"><time datetime="2021-11-09T16:27:44.000Z" itemprop="datePublished">2021-11-10</time></p>
                         </div>
                     </li>
@@ -492,7 +566,7 @@ var _hmt = _hmt || [];
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2021/10/18/买房历程/" class="thumbnail">
+                            <a href="/2021/10/18/%E4%B9%B0%E6%88%BF%E5%8E%86%E7%A8%8B/" class="thumbnail">
     
     
         <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/maifang/BurningHouse.png)" alt="买房历程" class="thumbnail-image"></span>
@@ -504,7 +578,7 @@ var _hmt = _hmt || [];
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2021/10/18/买房历程/" class="title">买房历程</a></p>
+                            <p class="item-title"><a href="/2021/10/18/%E4%B9%B0%E6%88%BF%E5%8E%86%E7%A8%8B/" class="title">买房历程</a></p>
                             <p class="item-date"><time datetime="2021-10-18T14:38:09.000Z" itemprop="datePublished">2021-10-18</time></p>
                         </div>
                     </li>
@@ -521,7 +595,7 @@ var _hmt = _hmt || [];
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/9图/" style="font-size: 10px;">.9图</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/DeepFaceLab/" style="font-size: 10px;">DeepFaceLab</a> <a href="/tags/FTP/" style="font-size: 10px;">FTP</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/PS/" style="font-size: 10px;">PS</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Retorfit/" style="font-size: 10px;">Retorfit</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/SRS/" style="font-size: 10px;">SRS</a> <a href="/tags/V2ray/" style="font-size: 10px;">V2ray</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nextcloud/" style="font-size: 10px;">nextcloud</a> <a href="/tags/ping/" style="font-size: 10px;">ping</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/下载/" style="font-size: 10px;">下载</a> <a href="/tags/东极岛/" style="font-size: 10px;">东极岛</a> <a href="/tags/乌镇/" style="font-size: 10px;">乌镇</a> <a href="/tags/买房/" style="font-size: 10px;">买房</a> <a href="/tags/刷机/" style="font-size: 10px;">刷机</a> <a href="/tags/域名/" style="font-size: 10px;">域名</a> <a href="/tags/婺源-三清山/" style="font-size: 10px;">婺源&三清山</a> <a href="/tags/宏村-黄山/" style="font-size: 10px;">宏村&黄山</a> <a href="/tags/定时器-线程池/" style="font-size: 10px;">定时器&线程池</a> <a href="/tags/小程序/" style="font-size: 10px;">小程序</a> <a href="/tags/旅行/" style="font-size: 15px;">旅行</a> <a href="/tags/服务器/" style="font-size: 10px;">服务器</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a> <a href="/tags/羽毛球/" style="font-size: 10px;">羽毛球</a> <a href="/tags/视频合并/" style="font-size: 10px;">视频合并</a> <a href="/tags/阿里云/" style="font-size: 10px;">阿里云</a> <a href="/tags/龙虎山/" style="font-size: 10px;">龙虎山</a>
+            <a href="/tags/9%E5%9B%BE/" style="font-size: 10px;">.9图</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/DeepFaceLab/" style="font-size: 10px;">DeepFaceLab</a> <a href="/tags/FTP/" style="font-size: 10px;">FTP</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/PS/" style="font-size: 10px;">PS</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Retorfit/" style="font-size: 10px;">Retorfit</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/SRS/" style="font-size: 10px;">SRS</a> <a href="/tags/V2ray/" style="font-size: 10px;">V2ray</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nextcloud/" style="font-size: 10px;">nextcloud</a> <a href="/tags/ping/" style="font-size: 10px;">ping</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/%E4%B8%8B%E8%BD%BD/" style="font-size: 10px;">下载</a> <a href="/tags/%E4%B8%9C%E6%9E%81%E5%B2%9B/" style="font-size: 10px;">东极岛</a> <a href="/tags/%E4%B9%8C%E9%95%87/" style="font-size: 10px;">乌镇</a> <a href="/tags/%E4%B9%B0%E6%88%BF/" style="font-size: 10px;">买房</a> <a href="/tags/%E5%88%B7%E6%9C%BA/" style="font-size: 10px;">刷机</a> <a href="/tags/%E5%9F%9F%E5%90%8D/" style="font-size: 10px;">域名</a> <a href="/tags/%E5%A9%BA%E6%BA%90-%E4%B8%89%E6%B8%85%E5%B1%B1/" style="font-size: 10px;">婺源&三清山</a> <a href="/tags/%E5%AE%8F%E6%9D%91-%E9%BB%84%E5%B1%B1/" style="font-size: 10px;">宏村&黄山</a> <a href="/tags/%E5%AE%9A%E6%97%B6%E5%99%A8-%E7%BA%BF%E7%A8%8B%E6%B1%A0/" style="font-size: 10px;">定时器&线程池</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 10px;">小程序</a> <a href="/tags/%E6%97%85%E8%A1%8C/" style="font-size: 15px;">旅行</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 10px;">服务器</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 10px;">爬虫</a> <a href="/tags/%E7%BE%BD%E6%AF%9B%E7%90%83/" style="font-size: 10px;">羽毛球</a> <a href="/tags/%E8%A7%86%E9%A2%91%E5%90%88%E5%B9%B6/" style="font-size: 10px;">视频合并</a> <a href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91/" style="font-size: 10px;">阿里云</a> <a href="/tags/%E9%BE%99%E8%99%8E%E5%B1%B1/" style="font-size: 10px;">龙虎山</a>
         </div>
     </div>
 
@@ -534,15 +608,15 @@ var _hmt = _hmt || [];
             <ul>
                 
                     <li>
-                        <a href="https://github.com/ppoffice/hexo-theme-hueman">Theme</a>
+                        <a target="_blank" rel="noopener" href="https://github.com/ppoffice/hexo-theme-hueman">Theme</a>
                     </li>
                 
                     <li>
-                        <a href="http://www.onepeace.top">我的网站</a>
+                        <a target="_blank" rel="noopener" href="https://www.zccode.cn">我的网站</a>
                     </li>
                 
                     <li>
-                        <a href="https://weibo.com/u/3247224430?is_hot=1">微博</a>
+                        <a target="_blank" rel="noopener" href="https://weibo.com/u/3247224430?is_hot=1">微博</a>
                     </li>
                 
             </ul>
@@ -557,10 +631,9 @@ var _hmt = _hmt || [];
         <!--<div class="widget">-->
         <!--这里是我的侧边栏哦-->
         <!--</div>-->
-        <!--<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=300 height=86-->
-        <!--src="//music.163.com/outchain/player?type=2&id=28285910&auto=1&height=66"></iframe>-->
-        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="300" height="86" src="//music.163.com/outchain/player?type=2&id=443242&auto=1&height=66"></iframe>
-        <img src="../images/main_wx.png" width="150" height="150">
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=300 height=86
+                src="//music.163.com/outchain/player?type=2&id=26237342&auto=1&height=66"></iframe>
+        <img src="../images/main_wx.png" width=150 height=150>
     </div>
 
 
@@ -581,15 +654,19 @@ var _hmt = _hmt || [];
                     <a href="/" class="logo"></a>
                 </h1>
                 <p>&copy; 2022 ZhengChengcheng</p>
-                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
-
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
                 <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
 
             </div>
         </div>
     </div>
-
-
 </footer>
 
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -642,13 +719,14 @@ var _hmt = _hmt || [];
     WIDGET = {FID: '1CtL3FMZRR'}
 </script>
 <script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>
-        
+    </div>
+    
     
     <script>
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'https://zcccool.cn/2018/05/21/Hexo博客创建与使用/';
+    var disqus_url = 'https://zcccool.cn/2018/05/21/Hexo%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E4%B8%8E%E4%BD%BF%E7%94%A8/';
     
     (function() {
     var dsq = document.createElement('script');
@@ -662,27 +740,53 @@ var _hmt = _hmt || [];
 
 
 
+
     
-        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
     
     
-        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
     
     
 
 
 
 <!-- Custom Scripts -->
+
 <script src="/js/main.js"></script>
 
-    </div>
+
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
 </html>

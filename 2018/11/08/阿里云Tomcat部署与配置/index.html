@@ -1,69 +1,96 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
-    <meta charset="utf-8">
+<head>
+    <meta charset="utf-8" />
+
+    
+
     
     <title>阿里云Tomcat部署与配置 | Orange个人博客</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="阿里云">
+    <meta name="keywords" content="阿里云" />
     
-    <meta name="description" content="1.下载下载两个文件apache-tomcat-8.5.72.tar.gzjdk-8u311-linux-x64.tar.gz使用工具复制到/usr/local/java文件夹 2.安装java解压1tar -zxvf jdk-8u311-linux-x64.tar.gz 配置Java环境变量 进入编辑 vim /etc/profile在文件最后添加下面的内容(i 编辑,Esc 退出,:wq 保">
-<meta name="keywords" content="阿里云">
+    <meta name="description" content="1.下载下载两个文件apache-tomcat-8.5.72.tar.gzjdk-8u311-linux-x64.tar.gz使用工具复制到&#x2F;usr&#x2F;local&#x2F;java文件夹 2.安装java解压1tar -zxvf jdk-8u311-linux-x64.tar.gz 配置Java环境变量 进入编辑 vim &#x2F;etc&#x2F;profile在文件最后添加下面的内容(i 编辑,Esc 退出,:wq 保">
 <meta property="og:type" content="article">
 <meta property="og:title" content="阿里云Tomcat部署与配置">
-<meta property="og:url" content="https://zcccool.cn/2018/11/08/阿里云Tomcat部署与配置/index.html">
+<meta property="og:url" content="https://zcccool.cn/2018/11/08/%E9%98%BF%E9%87%8C%E4%BA%91Tomcat%E9%83%A8%E7%BD%B2%E4%B8%8E%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="Orange个人博客">
-<meta property="og:description" content="1.下载下载两个文件apache-tomcat-8.5.72.tar.gzjdk-8u311-linux-x64.tar.gz使用工具复制到/usr/local/java文件夹 2.安装java解压1tar -zxvf jdk-8u311-linux-x64.tar.gz 配置Java环境变量 进入编辑 vim /etc/profile在文件最后添加下面的内容(i 编辑,Esc 退出,:wq 保">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:description" content="1.下载下载两个文件apache-tomcat-8.5.72.tar.gzjdk-8u311-linux-x64.tar.gz使用工具复制到&#x2F;usr&#x2F;local&#x2F;java文件夹 2.安装java解压1tar -zxvf jdk-8u311-linux-x64.tar.gz 配置Java环境变量 进入编辑 vim &#x2F;etc&#x2F;profile在文件最后添加下面的内容(i 编辑,Esc 退出,:wq 保">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/cat.jpg">
-<meta property="og:updated_time" content="2021-11-17T15:43:29.704Z">
+<meta property="article:published_time" content="2018-11-08T15:11:14.000Z">
+<meta property="article:modified_time" content="2021-11-17T15:43:29.704Z">
+<meta property="article:author" content="ZhengChengcheng">
+<meta property="article:tag" content="阿里云">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="阿里云Tomcat部署与配置">
-<meta name="twitter:description" content="1.下载下载两个文件apache-tomcat-8.5.72.tar.gzjdk-8u311-linux-x64.tar.gz使用工具复制到/usr/local/java文件夹 2.安装java解压1tar -zxvf jdk-8u311-linux-x64.tar.gz 配置Java环境变量 进入编辑 vim /etc/profile在文件最后添加下面的内容(i 编辑,Esc 退出,:wq 保">
 <meta name="twitter:image" content="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/cat.jpg">
     
 
     
 
     
-        <link rel="icon" href="/images/icon/iconOrangeMedium.ico">
+        <link rel="icon" href="/images/icon/iconOrangeMedium.ico" />
     
 
-    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
-    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="/css/style.css">
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
 
-    <script src="/libs/jquery/2.2.4/jquery.min.js"></script>
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
     <!--自己添加的js-->
-    <script src="/js/love.js"></script>
     
-    
-        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
-    
-    
-        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
-    
-    
-    
-        <script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?d9022f3f6c7bc2d3e18c5029cf30c753";
-  var s = document.getElementsByTagName("script")[0];
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
+<script src="/js/love.js"></script>
 
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
     
 
 
+    <meta name="baidu-site-verification" content="code-PwF0RA7PZP" />
+<meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="Orange个人博客" type="application/atom+xml">
 </head>
-</html>
+
 <body>
     <div id="wrap">
         <header id="header">
@@ -75,39 +102,35 @@ var _hmt = _hmt || [];
                         <a href="/" class="logo"></a>
                     </h1>
                     
-                        <h2 class="subtitle-wrap">
-                            <p class="subtitle">我见青山多妩媚</p>
-                        </h2>
-                    
                 </div>
                 <div id="header-inner" class="nav-container">
                     <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
                     <div class="nav-container-inner">
                         <ul id="main-nav">
                             
-                                <li class="main-nav-list-item">
+                                <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/">主页</a>
                                 </li>
                             
-                                        
                                     
-                                <li class="main-nav-list-item">
+                                
+                                <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/myhtml/music.html">云音乐</a>
                                 </li>
                             
-                                <li class="main-nav-list-item">
+                                <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/myhtml/image.html">图片</a>
                                 </li>
                             
-                                <li class="main-nav-list-item">
+                                <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/myhtml/video.html">视频</a>
                                 </li>
                             
-                                <li class="main-nav-list-item">
+                                <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/myhtml/animation.html">动画</a>
                                 </li>
                             
-                                <li class="main-nav-list-item">
+                                <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/myhtml/lovetree.html">时间树</a>
                                 </li>
                             
@@ -116,14 +139,14 @@ var _hmt = _hmt || [];
                             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="搜索">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="想要查找什么...">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -147,7 +170,9 @@ var _hmt = _hmt || [];
     window.INSIGHT_CONFIG = INSIGHT_CONFIG;
 })(window);
 </script>
+
 <script src="/js/insight.js"></script>
+
 
 </div>
                         </nav>
@@ -157,6 +182,7 @@ var _hmt = _hmt || [];
         </div>
     </div>
 </header>
+
         <div class="container">
             <div class="main-body container-inner">
                 <div class="main-body-inner">
@@ -167,59 +193,89 @@ var _hmt = _hmt || [];
     未分类
     </h1>
 </div>
-                        <div class="main-body-content">
-                            <article id="post-阿里云Tomcat部署与配置" class="article article-single article-type-post " itemscope itemprop="blogPost">
-    <div class="article-inner">
 
+                        <div class="main-body-content">
+                            <article id="post-阿里云Tomcat部署与配置" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        <header class="article-header">
-            
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
         阿里云Tomcat部署与配置
         </h1>
     
 
-        </header>
+            </header>
         
-
         
-        <div class="article-meta">
-            
-    <div class="article-date">
-        <a href="/2018/11/08/阿里云Tomcat部署与配置/" class="article-date">
-            <time datetime="2018-11-08T15:11:14.000Z" itemprop="datePublished">2018-11-08</time>
-        </a>
-    </div>
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2018/11/08/%E9%98%BF%E9%87%8C%E4%BA%91Tomcat%E9%83%A8%E7%BD%B2%E4%B8%8E%E9%85%8D%E7%BD%AE/" class="article-date">
+       <time datetime="2018-11-08T15:11:14.000Z" itemprop="datePublished">2018-11-08</time>
+    </a>
+  </div>
 
-            
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2018/11/08/%E9%98%BF%E9%87%8C%E4%BA%91Tomcat%E9%83%A8%E7%BD%B2%E4%B8%8E%E9%85%8D%E7%BD%AE/" class="article-date">
+     <time datetime="2021-11-17T15:43:29.704Z" itemprop="dateModified">2021-11-17</time>
+  </a>
+</div>
+
+
+                
+
+                
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/阿里云/">阿里云</a>
+        <a class="tag-link-link" href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91/" rel="tag">阿里云</a>
     </div>
 
-            <p>阅读数量: <span id="/2018/11/08/阿里云Tomcat部署与配置/" class="leancloud_visitors" data-flag-title="阿里云Tomcat部署与配置"></span>次</p>
-        </div>
+                
 
+                
+
+                <p>阅读数量: <span id="/2018/11/08/%E9%98%BF%E9%87%8C%E4%BA%91Tomcat%E9%83%A8%E7%BD%B2%E4%B8%8E%E9%85%8D%E7%BD%AE/" class="leancloud_visitors"
+                               data-flag-title="阿里云Tomcat部署与配置"></span>次</p>
+            </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p><img src="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/cat.jpg" alt title="Image"></p>
+            
+
+            
+
+            
+
+            <p><img src="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/cat.jpg" title="Image"></p>
 <h3 id="1-下载"><a href="#1-下载" class="headerlink" title="1.下载"></a>1.下载</h3><p>下载两个文件<br>apache-tomcat-8.5.72.tar.gz<br>jdk-8u311-linux-x64.tar.gz<br>使用工具复制到/usr/local/java文件夹</p>
-<h3 id="2-安装java"><a href="#2-安装java" class="headerlink" title="2.安装java"></a>2.安装java</h3><h5 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf jdk-8u311-linux-x64.tar.gz</span><br></pre></td></tr></table></figure>
-<h5 id="配置Java环境变量-进入编辑-vim-etc-profile"><a href="#配置Java环境变量-进入编辑-vim-etc-profile" class="headerlink" title="配置Java环境变量 进入编辑 vim /etc/profile"></a>配置Java环境变量 进入编辑 vim /etc/profile</h5><p>在文件最后添加下面的内容<br>(i 编辑,Esc 退出,:wq 保存退出,:q!退出)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/local/java/jdk1.8.0_311</span><br><span class="line">export JRE_HOME=/usr/local/java/jdk1.8.0_311/jre</span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH</span><br><span class="line">export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH</span><br></pre></td></tr></table></figure></p>
-<p>添加完成后，使环境变量生效<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure></p>
-<h5 id="检测是否成功"><a href="#检测是否成功" class="headerlink" title="检测是否成功"></a>检测是否成功</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br></pre></td></tr></table></figure>
-<h3 id="3-安装tomcat"><a href="#3-安装tomcat" class="headerlink" title="3.安装tomcat"></a>3.安装tomcat</h3><h5 id="解压-1"><a href="#解压-1" class="headerlink" title="解压"></a>解压</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf apache-tomcat-8.5.72.tar.gz</span><br></pre></td></tr></table></figure>
-<p>进入tomcat路径/bin<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./startup.sh //启动命令</span><br><span class="line">./shutdown.sh //停止命令</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-安装java"><a href="#2-安装java" class="headerlink" title="2.安装java"></a>2.安装java</h3><h5 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf jdk-8u311-linux-x64.tar.gz</span><br></pre></td></tr></table></figure>
+<h5 id="配置Java环境变量-进入编辑-vim-etc-profile"><a href="#配置Java环境变量-进入编辑-vim-etc-profile" class="headerlink" title="配置Java环境变量 进入编辑 vim /etc/profile"></a>配置Java环境变量 进入编辑 vim /etc/profile</h5><p>在文件最后添加下面的内容<br>(i 编辑,Esc 退出,:wq 保存退出,:q!退出)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/local/java/jdk1.8.0_311</span><br><span class="line">export JRE_HOME=/usr/local/java/jdk1.8.0_311/jre</span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH</span><br><span class="line">export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH</span><br></pre></td></tr></table></figure>
+
+<p>添加完成后，使环境变量生效</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
+<h5 id="检测是否成功"><a href="#检测是否成功" class="headerlink" title="检测是否成功"></a>检测是否成功</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-安装tomcat"><a href="#3-安装tomcat" class="headerlink" title="3.安装tomcat"></a>3.安装tomcat</h3><h5 id="解压-1"><a href="#解压-1" class="headerlink" title="解压"></a>解压</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf apache-tomcat-8.5.72.tar.gz</span><br></pre></td></tr></table></figure>
+
+<p>进入tomcat路径/bin</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./startup.sh //启动命令</span><br><span class="line">./shutdown.sh //停止命令</span><br></pre></td></tr></table></figure>
 <p>(注意：失败请检查8080端口是否开放，去服务器控制台安全组开启)</p>
-<h3 id="4-配置直接通过地址访问"><a href="#4-配置直接通过地址访问" class="headerlink" title="4.配置直接通过地址访问"></a>4.配置直接通过地址访问</h3><p>进入conf修改server.xml<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> &lt;Connector port=&quot;80&quot; protocol=&quot;HTTP/1.1&quot; //端口改为80(需开放80端口)</span><br><span class="line"> &lt;Engine name=&quot;Catalina&quot; defaultHost=&quot;地址/域名&quot;&gt; //地址</span><br><span class="line"> &lt;Host name=&quot;地址/域名&quot;  appBase=&quot;webapps&quot;</span><br><span class="line">            unpackWARs=&quot;true&quot; autoDeploy=&quot;true&quot;&gt;</span><br><span class="line">&lt;Context path=&quot;&quot; docBase=&quot;/usr/local/java/apache-tomcat-8.5.72/webapps/项目名&quot; debug=&quot;0&quot; reloadable=&quot;true&quot; /&gt; //在Host之间加上</span><br></pre></td></tr></table></figure></p>
-<h3 id="5-Tomcat-开机启动"><a href="#5-Tomcat-开机启动" class="headerlink" title="5.Tomcat 开机启动"></a>5.Tomcat 开机启动</h3><p>关闭Tomcat<br>编辑vim /etc/rc.d/rc.local<br>添加以下内容<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/local/jdk路径</span><br><span class="line">export JRE_HOME=$JAVA_HOME/jre</span><br><span class="line">sh /usr/local/tomcat路径/bin/startup.sh</span><br></pre></td></tr></table></figure></p>
-<h3 id="6-服务器更新"><a href="#6-服务器更新" class="headerlink" title="6.服务器更新"></a>6.服务器更新</h3> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y update</span><br></pre></td></tr></table></figure>
+<h3 id="4-配置直接通过地址访问"><a href="#4-配置直接通过地址访问" class="headerlink" title="4.配置直接通过地址访问"></a>4.配置直接通过地址访问</h3><p>进入conf修改server.xml<br> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> &lt;Connector port=&quot;80&quot; protocol=&quot;HTTP/1.1&quot; //端口改为80(需开放80端口)</span><br><span class="line"> &lt;Engine name=&quot;Catalina&quot; defaultHost=&quot;地址/域名&quot;&gt; //地址</span><br><span class="line"> &lt;Host name=&quot;地址/域名&quot;  appBase=&quot;webapps&quot;</span><br><span class="line">            unpackWARs=&quot;true&quot; autoDeploy=&quot;true&quot;&gt;</span><br><span class="line">&lt;Context path=&quot;&quot; docBase=&quot;/usr/local/java/apache-tomcat-8.5.72/webapps/项目名&quot; debug=&quot;0&quot; reloadable=&quot;true&quot; /&gt; //在Host之间加上</span><br></pre></td></tr></table></figure></p>
+<h3 id="5-Tomcat-开机启动"><a href="#5-Tomcat-开机启动" class="headerlink" title="5.Tomcat 开机启动"></a>5.Tomcat 开机启动</h3><p>关闭Tomcat<br>编辑vim /etc/rc.d/rc.local<br>添加以下内容<br> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/local/jdk路径</span><br><span class="line">export JRE_HOME=$JAVA_HOME/jre</span><br><span class="line">sh /usr/local/tomcat路径/bin/startup.sh</span><br></pre></td></tr></table></figure></p>
+<h3 id="6-服务器更新"><a href="#6-服务器更新" class="headerlink" title="6.服务器更新"></a>6.服务器更新</h3> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y update</span><br></pre></td></tr></table></figure>
+
+
 <p>（rc.local需要有执行权限 chmod +x rc.local）<br>重启机器即可启动Tomcat</p>
 <p>Tomcat日志在logs目录，进入目录查看日志：<br>tail -f catalina.out  </p>
-<h3 id="查看tomcat是否返回判断是否配置成功"><a href="#查看tomcat是否返回判断是否配置成功" class="headerlink" title="查看tomcat是否返回判断是否配置成功"></a>查看tomcat是否返回判断是否配置成功</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl ip:端口号</span><br></pre></td></tr></table></figure>
-<p>Mysql安装级部署参考下面链接<br><a href="https://blog.csdn.net/sihai12345/article/details/73381151?tdsourcetag=s_pcqq_aiomsg" target="_blank" rel="noopener">阿里云服务器配置Mysql</a></p>
+<h3 id="查看tomcat是否返回判断是否配置成功"><a href="#查看tomcat是否返回判断是否配置成功" class="headerlink" title="查看tomcat是否返回判断是否配置成功"></a>查看tomcat是否返回判断是否配置成功</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl ip:端口号</span><br></pre></td></tr></table></figure>
+
+<p>Mysql安装级部署参考下面链接<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/sihai12345/article/details/73381151?tdsourcetag=s_pcqq_aiomsg">阿里云服务器配置Mysql</a></p>
 
         </div>
         <footer class="article-footer">
@@ -227,7 +283,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="https://zcccool.cn/2018/11/08/阿里云Tomcat部署与配置/" data-id="ckxxlqdem001420uizml6j8vj" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://zcccool.cn/2018/11/08/%E9%98%BF%E9%87%8C%E4%BA%91Tomcat%E9%83%A8%E7%BD%B2%E4%B8%8E%E9%85%8D%E7%BD%AE/" data-id="cky06hk5c001j6suigiwt6vfy" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -289,37 +345,44 @@ var _hmt = _hmt || [];
 
         </footer>
     </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "ZhengChengcheng"
+        },
+        "headline": "阿里云Tomcat部署与配置",
+        "image": "https://zcccool.cnhttps://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/cat.jpg",
+        "keywords": "阿里云",
+        "genre": "",
+        "datePublished": "2018-11-08",
+        "dateCreated": "2018-11-08",
+        "dateModified": "2021-11-17",
+        "url": "https://zcccool.cn/2018/11/08/阿里云Tomcat部署与配置/",
+        "description": "
+1.下载下载两个文件apache-tomcat-8.5.72.tar.gzjdk-8u311-linux-x64.tar.gz使用工具复制到/usr/local/java文件夹
+2.安装java解压1tar -zxvf jdk-8u311-linux-x64.tar.gz
+配置Java环境变量 进入编辑 vim /etc/profile在文件最后添加下面的内容(i 编辑,Esc 退出,:wq 保",
+        "wordCount": 204
+    }
+</script>
+
 </article>
 
     <section id="comments">
     
         
     <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
+
 
     
     </section>
 
 
-<!-- 来必力City版安装代码 -->
-<div id="lv-container" data-id="city" data-uid="MTAyMC8zODM1OS8xNDg4Nw==">
-    <script type="text/javascript">
-        (function(d, s) {
-            var j, e = d.getElementsByTagName(s)[0];
-
-            if (typeof LivereTower === 'function') { return; }
-
-            j = d.createElement(s);
-            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-            j.async = true;
-
-            e.parentNode.insertBefore(j, e);
-        })(document, 'script');
-    </script>
-    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
-</div>
-<!-- City版安装代码已完成 -->
 
                         </div>
                     </section>
@@ -331,7 +394,7 @@ var _hmt = _hmt || [];
             
                 
                 <li>
-                    <a class="social-tooltip" title="blog" href="http://onepeace.top/" target="_blank" rel="noopener">
+                    <a class="social-tooltip" title="blog" href="https://zccode.cn/" target="_blank" rel="noopener">
                         <i class="icon fa fa-blog"></i>
                     </a>
                 </li>
@@ -375,7 +438,7 @@ var _hmt = _hmt || [];
         
 <nav id="article-nav">
     
-        <a href="/2018/12/05/Android问题与解答4/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2018/12/05/Android%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E7%AD%944/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">下一篇</strong>
         <p class="article-nav-title">
         
@@ -386,7 +449,7 @@ var _hmt = _hmt || [];
     </a>
     
     
-        <a href="/2018/10/14/记国庆江西婺源-三清山游/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/10/14/%E8%AE%B0%E5%9B%BD%E5%BA%86%E6%B1%9F%E8%A5%BF%E5%A9%BA%E6%BA%90-%E4%B8%89%E6%B8%85%E5%B1%B1%E6%B8%B8/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
         <p class="article-nav-title">记国庆江西婺源-三清山游</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
@@ -405,12 +468,12 @@ var _hmt = _hmt || [];
     <div class="widget-wrap">
         <h3 class="widget-title">最新文章</h3>
         <div class="widget">
-            <ul id="recent-post" class>
+            <ul id="recent-post" class="">
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2022/01/01/羽毛球知识/" class="thumbnail">
+                            <a href="/2022/01/01/%E7%BE%BD%E6%AF%9B%E7%90%83%E7%9F%A5%E8%AF%86/" class="thumbnail">
     
     
         <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/yumaoqiu.jpg)" alt="羽毛球知识" class="thumbnail-image"></span>
@@ -422,7 +485,7 @@ var _hmt = _hmt || [];
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2022/01/01/羽毛球知识/" class="title">羽毛球知识</a></p>
+                            <p class="item-title"><a href="/2022/01/01/%E7%BE%BD%E6%AF%9B%E7%90%83%E7%9F%A5%E8%AF%86/" class="title">羽毛球知识</a></p>
                             <p class="item-date"><time datetime="2021-12-31T17:02:30.000Z" itemprop="datePublished">2022-01-01</time></p>
                         </div>
                     </li>
@@ -430,7 +493,7 @@ var _hmt = _hmt || [];
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2021/12/16/V2ray客户端/" class="thumbnail">
+                            <a href="/2021/12/16/V2ray%E5%AE%A2%E6%88%B7%E7%AB%AF/" class="thumbnail">
     
     
         <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_18.jpg)" alt="V2ray客户端" class="thumbnail-image"></span>
@@ -442,7 +505,7 @@ var _hmt = _hmt || [];
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2021/12/16/V2ray客户端/" class="title">V2ray客户端</a></p>
+                            <p class="item-title"><a href="/2021/12/16/V2ray%E5%AE%A2%E6%88%B7%E7%AB%AF/" class="title">V2ray客户端</a></p>
                             <p class="item-date"><time datetime="2021-12-16T15:06:12.000Z" itemprop="datePublished">2021-12-16</time></p>
                         </div>
                     </li>
@@ -450,7 +513,7 @@ var _hmt = _hmt || [];
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2021/11/14/小皮面板搭建nextcloud网盘/" class="thumbnail">
+                            <a href="/2021/11/14/%E5%B0%8F%E7%9A%AE%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BAnextcloud%E7%BD%91%E7%9B%98/" class="thumbnail">
     
     
         <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_19.jpg)" alt="小皮面板搭建nextcloud网盘" class="thumbnail-image"></span>
@@ -462,7 +525,7 @@ var _hmt = _hmt || [];
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2021/11/14/小皮面板搭建nextcloud网盘/" class="title">小皮面板搭建nextcloud网盘</a></p>
+                            <p class="item-title"><a href="/2021/11/14/%E5%B0%8F%E7%9A%AE%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BAnextcloud%E7%BD%91%E7%9B%98/" class="title">小皮面板搭建nextcloud网盘</a></p>
                             <p class="item-date"><time datetime="2021-11-14T07:32:01.000Z" itemprop="datePublished">2021-11-14</time></p>
                         </div>
                     </li>
@@ -470,7 +533,7 @@ var _hmt = _hmt || [];
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2021/11/10/搭建FTP服务器/" class="thumbnail">
+                            <a href="/2021/11/10/%E6%90%AD%E5%BB%BAFTP%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="thumbnail">
     
     
         <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_20.jpg)" alt="搭建FTP服务器" class="thumbnail-image"></span>
@@ -482,7 +545,7 @@ var _hmt = _hmt || [];
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2021/11/10/搭建FTP服务器/" class="title">搭建FTP服务器</a></p>
+                            <p class="item-title"><a href="/2021/11/10/%E6%90%AD%E5%BB%BAFTP%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="title">搭建FTP服务器</a></p>
                             <p class="item-date"><time datetime="2021-11-09T16:27:44.000Z" itemprop="datePublished">2021-11-10</time></p>
                         </div>
                     </li>
@@ -490,7 +553,7 @@ var _hmt = _hmt || [];
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2021/10/18/买房历程/" class="thumbnail">
+                            <a href="/2021/10/18/%E4%B9%B0%E6%88%BF%E5%8E%86%E7%A8%8B/" class="thumbnail">
     
     
         <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/maifang/BurningHouse.png)" alt="买房历程" class="thumbnail-image"></span>
@@ -502,7 +565,7 @@ var _hmt = _hmt || [];
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2021/10/18/买房历程/" class="title">买房历程</a></p>
+                            <p class="item-title"><a href="/2021/10/18/%E4%B9%B0%E6%88%BF%E5%8E%86%E7%A8%8B/" class="title">买房历程</a></p>
                             <p class="item-date"><time datetime="2021-10-18T14:38:09.000Z" itemprop="datePublished">2021-10-18</time></p>
                         </div>
                     </li>
@@ -519,7 +582,7 @@ var _hmt = _hmt || [];
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/9图/" style="font-size: 10px;">.9图</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/DeepFaceLab/" style="font-size: 10px;">DeepFaceLab</a> <a href="/tags/FTP/" style="font-size: 10px;">FTP</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/PS/" style="font-size: 10px;">PS</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Retorfit/" style="font-size: 10px;">Retorfit</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/SRS/" style="font-size: 10px;">SRS</a> <a href="/tags/V2ray/" style="font-size: 10px;">V2ray</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nextcloud/" style="font-size: 10px;">nextcloud</a> <a href="/tags/ping/" style="font-size: 10px;">ping</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/下载/" style="font-size: 10px;">下载</a> <a href="/tags/东极岛/" style="font-size: 10px;">东极岛</a> <a href="/tags/乌镇/" style="font-size: 10px;">乌镇</a> <a href="/tags/买房/" style="font-size: 10px;">买房</a> <a href="/tags/刷机/" style="font-size: 10px;">刷机</a> <a href="/tags/域名/" style="font-size: 10px;">域名</a> <a href="/tags/婺源-三清山/" style="font-size: 10px;">婺源&三清山</a> <a href="/tags/宏村-黄山/" style="font-size: 10px;">宏村&黄山</a> <a href="/tags/定时器-线程池/" style="font-size: 10px;">定时器&线程池</a> <a href="/tags/小程序/" style="font-size: 10px;">小程序</a> <a href="/tags/旅行/" style="font-size: 15px;">旅行</a> <a href="/tags/服务器/" style="font-size: 10px;">服务器</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a> <a href="/tags/羽毛球/" style="font-size: 10px;">羽毛球</a> <a href="/tags/视频合并/" style="font-size: 10px;">视频合并</a> <a href="/tags/阿里云/" style="font-size: 10px;">阿里云</a> <a href="/tags/龙虎山/" style="font-size: 10px;">龙虎山</a>
+            <a href="/tags/9%E5%9B%BE/" style="font-size: 10px;">.9图</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/DeepFaceLab/" style="font-size: 10px;">DeepFaceLab</a> <a href="/tags/FTP/" style="font-size: 10px;">FTP</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/PS/" style="font-size: 10px;">PS</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Retorfit/" style="font-size: 10px;">Retorfit</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/SRS/" style="font-size: 10px;">SRS</a> <a href="/tags/V2ray/" style="font-size: 10px;">V2ray</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nextcloud/" style="font-size: 10px;">nextcloud</a> <a href="/tags/ping/" style="font-size: 10px;">ping</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/%E4%B8%8B%E8%BD%BD/" style="font-size: 10px;">下载</a> <a href="/tags/%E4%B8%9C%E6%9E%81%E5%B2%9B/" style="font-size: 10px;">东极岛</a> <a href="/tags/%E4%B9%8C%E9%95%87/" style="font-size: 10px;">乌镇</a> <a href="/tags/%E4%B9%B0%E6%88%BF/" style="font-size: 10px;">买房</a> <a href="/tags/%E5%88%B7%E6%9C%BA/" style="font-size: 10px;">刷机</a> <a href="/tags/%E5%9F%9F%E5%90%8D/" style="font-size: 10px;">域名</a> <a href="/tags/%E5%A9%BA%E6%BA%90-%E4%B8%89%E6%B8%85%E5%B1%B1/" style="font-size: 10px;">婺源&三清山</a> <a href="/tags/%E5%AE%8F%E6%9D%91-%E9%BB%84%E5%B1%B1/" style="font-size: 10px;">宏村&黄山</a> <a href="/tags/%E5%AE%9A%E6%97%B6%E5%99%A8-%E7%BA%BF%E7%A8%8B%E6%B1%A0/" style="font-size: 10px;">定时器&线程池</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 10px;">小程序</a> <a href="/tags/%E6%97%85%E8%A1%8C/" style="font-size: 15px;">旅行</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 10px;">服务器</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 10px;">爬虫</a> <a href="/tags/%E7%BE%BD%E6%AF%9B%E7%90%83/" style="font-size: 10px;">羽毛球</a> <a href="/tags/%E8%A7%86%E9%A2%91%E5%90%88%E5%B9%B6/" style="font-size: 10px;">视频合并</a> <a href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91/" style="font-size: 10px;">阿里云</a> <a href="/tags/%E9%BE%99%E8%99%8E%E5%B1%B1/" style="font-size: 10px;">龙虎山</a>
         </div>
     </div>
 
@@ -532,15 +595,15 @@ var _hmt = _hmt || [];
             <ul>
                 
                     <li>
-                        <a href="https://github.com/ppoffice/hexo-theme-hueman">Theme</a>
+                        <a target="_blank" rel="noopener" href="https://github.com/ppoffice/hexo-theme-hueman">Theme</a>
                     </li>
                 
                     <li>
-                        <a href="http://www.onepeace.top">我的网站</a>
+                        <a target="_blank" rel="noopener" href="https://www.zccode.cn">我的网站</a>
                     </li>
                 
                     <li>
-                        <a href="https://weibo.com/u/3247224430?is_hot=1">微博</a>
+                        <a target="_blank" rel="noopener" href="https://weibo.com/u/3247224430?is_hot=1">微博</a>
                     </li>
                 
             </ul>
@@ -555,10 +618,9 @@ var _hmt = _hmt || [];
         <!--<div class="widget">-->
         <!--这里是我的侧边栏哦-->
         <!--</div>-->
-        <!--<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=300 height=86-->
-        <!--src="//music.163.com/outchain/player?type=2&id=28285910&auto=1&height=66"></iframe>-->
-        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="300" height="86" src="//music.163.com/outchain/player?type=2&id=443242&auto=1&height=66"></iframe>
-        <img src="../images/main_wx.png" width="150" height="150">
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=300 height=86
+                src="//music.163.com/outchain/player?type=2&id=26237342&auto=1&height=66"></iframe>
+        <img src="../images/main_wx.png" width=150 height=150>
     </div>
 
 
@@ -579,15 +641,19 @@ var _hmt = _hmt || [];
                     <a href="/" class="logo"></a>
                 </h1>
                 <p>&copy; 2022 ZhengChengcheng</p>
-                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
-
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
                 <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
 
             </div>
         </div>
     </div>
-
-
 </footer>
 
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -640,13 +706,14 @@ var _hmt = _hmt || [];
     WIDGET = {FID: '1CtL3FMZRR'}
 </script>
 <script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>
-        
+    </div>
+    
     
     <script>
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'https://zcccool.cn/2018/11/08/阿里云Tomcat部署与配置/';
+    var disqus_url = 'https://zcccool.cn/2018/11/08/%E9%98%BF%E9%87%8C%E4%BA%91Tomcat%E9%83%A8%E7%BD%B2%E4%B8%8E%E9%85%8D%E7%BD%AE/';
     
     (function() {
     var dsq = document.createElement('script');
@@ -660,27 +727,53 @@ var _hmt = _hmt || [];
 
 
 
+
     
-        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
     
     
-        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
     
     
 
 
 
 <!-- Custom Scripts -->
+
 <script src="/js/main.js"></script>
 
-    </div>
+
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
 </html>
