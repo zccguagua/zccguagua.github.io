@@ -6,26 +6,21 @@
     
 
     
-    <title>设计模式整理 | Orange个人博客</title>
+    <title>Orange个人博客</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="keywords" content="设计模式" />
-    <!--百度收录-->
-<!--    <meta name="baidu-site-verification" content="code-PwF0RA7PZP" />-->
-
-    
-    <meta name="description" content="单例模式12345678910111213141516171819public class RecognDataManager &amp;#123;    private static final String TAG &#x3D; &quot;RecognDataManager&quot;;    private volatile static RecognDataManager singleton;    pr">
-<meta property="og:type" content="article">
-<meta property="og:title" content="设计模式整理">
-<meta property="og:url" content="https://zcccool.cn/2022/03/29/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%95%B4%E7%90%86/index.html">
+    <meta name="description" content="书签              h3 {             margin: 0 0;             font-size: 14px;         }          p {             margin: 0 0;         }">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Orange个人博客">
+<meta property="og:url" content="https://zcccool.cn/myhtml/bookmark.html">
 <meta property="og:site_name" content="Orange个人博客">
-<meta property="og:description" content="单例模式12345678910111213141516171819public class RecognDataManager &amp;#123;    private static final String TAG &#x3D; &quot;RecognDataManager&quot;;    private volatile static RecognDataManager singleton;    pr">
+<meta property="og:description" content="书签              h3 {             margin: 0 0;             font-size: 14px;         }          p {             margin: 0 0;         }">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-03-29T15:08:53.000Z">
-<meta property="article:modified_time" content="2022-05-08T05:59:30.719Z">
+<meta property="article:published_time" content="2022-08-17T16:40:13.589Z">
+<meta property="article:modified_time" content="2022-08-17T16:40:13.589Z">
 <meta property="article:author" content="ZhengChengcheng">
-<meta property="article:tag" content="设计模式">
+<meta property="article:tag" content="郑程程">
 <meta name="twitter:card" content="summary">
     
 
@@ -134,6 +129,10 @@
                                     <a class="main-nav-list-link" href="/myhtml/lovetree.html">时间树</a>
                                 </li>
                             
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/myhtml/bookmark.html">书签</a>
+                                </li>
+                            
                         </ul>
                         <nav id="sub-nav">
                             <div id="search-form-wrap">
@@ -190,58 +189,14 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    未分类
+    Orange个人博客
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-设计模式整理" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="page-" class="article article-single article-type-page" itemscope itemprop="blogPost">
     <div class="article-inner">
         
-            <header class="article-header">
-                
-    
-        <h1 class="article-title" itemprop="name">
-        设计模式整理
-        </h1>
-    
-
-            </header>
-        
-        
-            <div class="article-meta">
-                
-  <div class="article-date">
-    <i class="fa fa-calendar"></i>
-    <a href="/2022/03/29/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%95%B4%E7%90%86/" class="article-date">
-       <time datetime="2022-03-29T15:08:53.000Z" itemprop="datePublished">2022-03-29</time>
-    </a>
-  </div>
-
-
-<div class="article-date">
-  <i class="fa fa-calendar-plus-o"></i>
-  <a href="/2022/03/29/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%95%B4%E7%90%86/" class="article-date">
-     <time datetime="2022-05-08T05:59:30.719Z" itemprop="dateModified">2022-05-08</time>
-  </a>
-</div>
-
-
-                
-
-                
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a>
-    </div>
-
-                
-
-                
-
-                <p>阅读数量: <span id="/2022/03/29/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%95%B4%E7%90%86/" class="leancloud_visitors"
-                               data-flag-title="设计模式整理"></span>次</p>
-            </div>
         
         
         <div class="article-entry" itemprop="articleBody">
@@ -251,25 +206,230 @@
 
             
 
-            <h3 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public class RecognDataManager &#123;</span><br><span class="line">    private static final String TAG = &quot;RecognDataManager&quot;;</span><br><span class="line"></span><br><span class="line">    private volatile static RecognDataManager singleton;</span><br><span class="line"></span><br><span class="line">    private RecognDataManager() &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static RecognDataManager getInstance() &#123;</span><br><span class="line">        if (singleton == null) &#123;</span><br><span class="line">            synchronized (RecognDataManager.class) &#123;</span><br><span class="line">                if (singleton == null) &#123;</span><br><span class="line">                    singleton = new RecognDataManager();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return singleton;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/mainjsp.css">
+    <script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <meta charset="utf-8">
+    <title>书签</title>
+    <style>
+        h3 {
+            margin: 0 0;
+            font-size: 14px;
+        }
 
-<h3 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h3><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/8f32da74cd8b">观察者模式</a></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public interface Observer &#123;//抽象观察者</span><br><span class="line">    public void update(String message);//更新方法</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public interface  Observable &#123;//抽象被观察者</span><br><span class="line">    void add(Observer observer);//添加观察者</span><br><span class="line">    void remove(Observer observer);//删除观察者</span><br><span class="line">    void notify(String message);//通知观察者</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+        p {
+            margin: 0 0;
+        }
+    </style>
+</head>
+<body>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">public class Boy implements Observer &#123;</span><br><span class="line"></span><br><span class="line">        private String name;//名字</span><br><span class="line">        public Boy(String name) &#123;</span><br><span class="line">            this.name = name;</span><br><span class="line">        &#125;</span><br><span class="line">        @Override</span><br><span class="line">        public void update(String message) &#123;//男孩的具体反应</span><br><span class="line">            System.out.println(name + &quot;,收到了信息:&quot; + message+&quot;屁颠颠的去取快递.&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public class Girl implements Observer &#123;</span><br><span class="line"></span><br><span class="line">        private String name;//名字</span><br><span class="line">        public Girl(String name) &#123;</span><br><span class="line">            this.name = name;</span><br><span class="line">        &#125;</span><br><span class="line">        @Override</span><br><span class="line">        public void update(String message) &#123;//女孩的具体反应</span><br><span class="line">            System.out.println(name + &quot;,收到了信息:&quot; + message+&quot;让男朋友去取快递~&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<div class="row" style="margin-left: 10px">
+    <div class="col-sm-12 col-md-6 col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title" style="color:white">
+                    新闻/历史
+                </h3>
+            </div>
+            <div class="panel-body">
+                <p><a class="link_a" href="https://www.anyknew.com/#/" target="_blank">Anyknew</a></p>
+                <p><a class="link_a" href="https://tophub.today/" target="_blank">今日热榜</a></p>
+                <p><a class="link_a" href="https://www.zhihu.com/" target="_blank">知乎</a></p>
+                <p><a class="link_a" href="https://readhub.cn/topics" target="_blank">Readhub-新闻</a></p>
+                <p><a class="link_a" href="http://jandan.net/" target="_blank">煎蛋</a></p>
+                <p><a class="link_a" href="https://wentu.yimian.com.cn/showcase" target="_blank">文图</a></p>
+                <p><a class="link_a" href="https://top.zol.com.cn/compositor/15/digital_camera.html"
+                      target="_blank">中关村</a></p>
+            </div>
+        </div>
+    </div>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">public class Postman implements  Observable&#123;//快递员</span><br><span class="line"></span><br><span class="line">        private List&lt;Observer&gt; personList = new ArrayList&lt;Observer&gt;();//保存收件人（观察者）的信息</span><br><span class="line">        @Override</span><br><span class="line">        public void add(Observer observer) &#123;//添加收件人</span><br><span class="line">            personList.add(observer);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        @Override</span><br><span class="line">        public void remove(Observer observer) &#123;//移除收件人</span><br><span class="line">            personList.remove(observer);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        @Override</span><br><span class="line">        public void notify(String message) &#123;//逐一通知收件人（观察者）</span><br><span class="line">            for (Observer observer : personList) &#123;</span><br><span class="line">                observer.update(message);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+    <div class="col-sm-12 col-md-6 col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title" style="color:white">
+                    工具
+                </h3>
+            </div>
+            <div class="panel-body">
+                <p><a class="link_a" href="https://ps.gaoding.com/#/" target="_blank">在线PS</a></p>
+                <p><a class="link_a" href="https://www.toolfk.com/" target="_blank">toolfk-在线工具箱</a></p>
+                <p><a class="link_a" href="https://greasyfork.org/zh-CN/scripts" target="_blank">用户脚本</a></p>
+                <p><a class="link_a" href="https://www.revolvermaps.com/" target="_blank">revolvermaps(网页访问地图)</a></p>
+                <p><a class="link_a" href="https://d-maps.com/" target="_blank">免费地图</a></p>
+                <p><a class="link_a" href="https://www.jiumodiary.com/" target="_blank">鸠摩搜书</a></p>
+                <p><a class="link_a" href="https://squoosh.app/" target="_blank">squoosh(在线图像压缩工具)</a></p>
+                <p><a class="link_a" href="https://waifu2x.booru.pics/" target="_blank">waifu2x(图片放大工具)</a></p>
+                <p><a class="link_a" href="https://bigjpg.com/" target="_blank">bigjpg(图片放大工具)</a></p>
+                <p><a class="link_a" href="https://smallpdf.com/" target="_blank">smallpdf(文档转换)</a></p>
+                <p><a class="link_a"
+                      href="https://suulnnka.github.io/BullshitGenerator/index.html?%E4%B8%BB%E9%A2%98=%E6%98%8E%E5%A4%A9%E7%9A%84%E5%A4%A9%E6%B0%94&%E9%9A%8F%E6%9C%BA%E7%A7%8D%E5%AD%90=4085309651"
+                      target="_blank">狗屁不通文章生成器</a></p>
+                <p><a class="link_a" href="https://www.ipaddress.com/" target="_blank">ip address</a></p>
+                <p><a class="link_a" href="https://tieba.baidu.com/f?kw=%E9%98%BF%E9%87%8C%E4%BA%91%E7%9B%98&ie=utf-8"
+                      target="_blank">阿里云盘吧</a></p>
+                <p><a class="link_a" href="https://www.17ce.com/" target="_blank">服务器测速</a></p>
+                <p><a class="link_a" href="https://ping.pe/" target="_blank">国家ping</a></p>
+                <p><a class="link_a"
+                      href="https://romannurik.github.io/AndroidAssetStudio/nine-patches.html#&sourceDensity=320&name=example"
+                      target="_blank">.9图处理</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title" style="color:white">
+                    学习
+                </h3>
+            </div>
+            <div class="panel-body">
+                <p><a class="link_a" href="https://github.com/" target="_blank">github</a></p>
+                <p><a class="link_a" href="https://stackoverflow.com/" target="_blank">stackoverflow</a></p>
+                <p><a class="link_a" href="http://beigexa.com/" target="_blank">背个X啊</a></p>
+                <p><a class="link_a" href="https://docs.qq.com/sheet/DRU5MWHZCTHFGQnhM?tab=ykvdlu" target="_blank">精品课程链接</a>
+                </p>
+                <p><a class="link_a" href="https://www.zjlib.cn/" target="_blank">浙江大学图书馆</a></p>
+                <p><a class="link_a" href="https://zh.wikihow.com/%E9%A6%96%E9%A1%B5"
+                      target="_blank">wikihow-如何学会一些生活技能</a></p>
+                <p><a class="link_a" href="https://www.mvyxws.com/" target="_blank">医学微视</a></p>
+                <p><a class="link_a" href="https://www.imooc.com/" target="_blank">慕课网</a></p>
+                <p><a class="link_a" href="https://www.nowcoder.com/" target="_blank">牛客网</a></p>
+                <p><a class="link_a" href="https://www.ageeye.cn/" target="_blank">ageeye(历史地图)</a></p>
+                <p><a class="link_a" href="https://www.allhistory.com/" target="_blank">allhistory(全历史)</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title" style="color:white">
+                    设计
+                </h3>
+            </div>
+            <div class="panel-body">
+                <p><a class="link_a" href="https://dribbble.com/" target="_blank">dribbble</a></p>
+                <p><a class="link_a" href="https://nipponcolors.com/" target="_blank">nipponcolors(日本传统色)</a></p>
+                <p><a class="link_a" href="http://zhongguose.com/" target="_blank">中国传统色</a></p>
+                <p><a class="link_a" href="https://www.seeseed.com/" target="_blank">seeseed-无穷尽设计可能</a></p>
+                <p><a class="link_a"
+                      href="https://anvaka.github.io/pixchart/?d=4&ignore=&link=https%3A%2F%2Fi.imgur.com%2FBxFVEGO.jpg"
+                      target="_blank">pixel Chart(图片像素分析)</a></p>
+                <p><a class="link_a" href="https://colorhunt.co/" target="_blank">color hunt(颜色搭配)</a></p>
+                <p><a class="link_a" href="https://iconstore.co/" target="_blank">iconstore(图标)</a></p>
+                <p><a class="link_a" href="https://www.logosc.cn/logo/" target="_blank">logosc(LOGO)</a></p>
+                <p><a class="link_a" href="https://www.hellofont.cn/" target="_blank">字由(字体)</a></p>
+                <p><a class="link_a" href="https://www.zitijia.com/" target="_blank">字体家</a></p>
+                <p><a class="link_a" href="https://www.officeplus.cn/" target="_blank">officeplus(PPT模板)</a></p>
+                <p><a class="link_a" href="https://www.pptsupermarket.com/" target="_blank">pptsupermarket(PPT模板)</a>
+                </p>
+                <p><a class="link_a" href="https://www.ypppt.com/" target="_blank">ypppt(PPT模板)</a></p>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public void test()&#123;</span><br><span class="line">Observable postman=new Postman();</span><br><span class="line"></span><br><span class="line">        Observer boy1=new Boy(&quot;路飞&quot;);</span><br><span class="line">        Observer boy2=new Boy(&quot;乔巴&quot;);</span><br><span class="line">        Observer girl1=new Girl(&quot;娜美&quot;);</span><br><span class="line"></span><br><span class="line">        postman.add(boy1);</span><br><span class="line">        postman.add(boy2);</span><br><span class="line">        postman.add(girl1);</span><br><span class="line">        </span><br><span class="line">        postman.notify(&quot;快递到了,请下楼领取.&quot;);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title" style="color:white">
+                    图片
+                </h3>
+            </div>
+            <div class="panel-body">
+                <p><a class="link_a" href="https://500px.com/" target="_blank">500px</a></p>
+                <p><a class="link_a" href="https://www.pexels.com/zh-cn/" target="_blank">pexels-才华横溢的摄影作者</a></p>
+                <p><a class="link_a" href="https://unsplash.com/" target="_blank">unsplash(图片素材)</a></p>
+                <p><a class="link_a" href="https://www.nationalgeographic.com/" target="_blank">国家地理</a></p>
+                <p><a class="link_a" href="https://tuchong.com/community" target="_blank">图虫</a></p>
+                <p><a class="link_a" href="https://www.topys.cn/" target="_blank">topys-全球顶尖创意分享平台</a></p>
+                <p><a class="link_a" href="https://www.artic.edu/collection" target="_blank">名画介绍</a></p>
+                <p><a class="link_a" href="https://www.ostagram.me/lenta?locale=cn" target="_blank">ostagram(图片结合)</a>
+                </p>
+                <p><a class="link_a" href="https://www.airpano.com/" target="_blank">airpano(360全景)</a></p>
+                <p><a class="link_a" href="https://wallhaven.cc/" target="_blank">wallhaven(高清壁纸)</a></p>
+                <p><a class="link_a" href="https://wall.alphacoders.com/?lang=Chinese"
+                      target="_blank">alphacoders(高清壁纸)</a></p>
+                <p><a class="link_a" href="https://www.freepik.com/" target="_blank">freepik(图片素材)</a></p>
+                <p><a class="link_a" href="https://psdrepo.com/all/" target="_blank">psdrepo(psd素材)</a></p>
+                <p><a class="link_a" href="https://cn.365psd.com/" target="_blank">365psd(psd素材)</a></p>
+                <p><a class="link_a" href="https://www.cleanpng.com/" target="_blank">cleanpng(png素材)</a></p>
+            </div>
+        </div>
+    </div>
 
+    <div class="col-sm-12 col-md-6 col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title" style="color:white">
+                    音频/音效/视频
+                </h3>
+            </div>
+            <div class="panel-body">
+                <p><a class="link_a" href="https://www.soundsnap.com/" target="_blank">soundsnap(音效)</a></p>
+                <p><a class="link_a" href="https://www.aigei.com/" target="_blank">爱给(音效)</a></p>
+                <p><a class="link_a" href="https://www.tosound.com/" target="_blank">tosound(音效)</a></p>
+                <p><a class="link_a" href="https://www.ear0.com/" target="_blank">ear0(音效)</a></p>
+                <p><a class="link_a" href="https://www.videezy.com/" target="_blank">videezy(高清视频素材)</a></p>
+                <p><a class="link_a" href="https://www.videvo.net/" target="_blank">videvo(高清视频素材)</a></p>
+                <p><a class="link_a" href="https://panzoid.com/" target="_blank">panzoid(视频片头模板)</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title" style="color:white">
+                    访问不了
+                </h3>
+            </div>
+            <div class="panel-body">
+                <p><a class="link_a" href="https://www.youtube.com/" target="_blank">youtube</a></p>
+                <p><a class="link_a" href="https://www.instagram.com/" target="_blank">instagram</a></p>
+                <p><a class="link_a" href="https://twitter.com/home" target="_blank">twitter</a></p>
+                <p><a class="link_a" href="https://milou.cc/" target="_blank">milou</a></p>
 
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title" style="color:white">
+                    游戏/其他
+                </h3>
+            </div>
+            <div class="panel-body">
+                <p><a class="link_a" href="https://steamdb.info/" target="_blank">steamdb</a></p>
+                <p><a class="link_a" href="https://chp.shadiao.app/" target="_blank">彩虹屁生成器</a></p>
+                <p><a class="link_a" href="https://www.autopiano.cn/" target="_blank">pinano(弹钢琴)</a></p>
+                <p><a class="link_a" href="https://geektyper.com/" target="_blank">geektyper(极客主题)</a></p>
+                <p><a class="link_a" href="https://cybermap.kaspersky.com/" target="_blank">网络攻击实时地图</a></p>
+                <p><a class="link_a" href="https://www.passportindex.org/" target="_blank">护照封面</a></p>
+                <p><a class="link_a" href="https://musclewiki.com/" target="_blank">musclewiki(肌肉健身)</a></p>
+                <p><a class="link_a" href="https://fakeupdate.net/" target="_blank">假装电脑升级</a></p>
+                <p><a class="link_a" href="https://plugins.jetbrains.com/search?tags=Theme"
+                      target="_blank">jetbrains主题</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://zcccool.cn/2022/03/29/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%95%B4%E7%90%86/" data-id="cl2wwd99z0002o4uia7tz9jo6" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://zcccool.cn/myhtml/bookmark.html" data-id="cl6xttjbp0000ecuidqnr5377" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -339,16 +499,43 @@
             "@type": "Person",
             "name": "ZhengChengcheng"
         },
-        "headline": "设计模式整理",
+        
         "image": "https://zcccool.cn",
-        "keywords": "设计模式",
-        "genre": "",
-        "datePublished": "2022-03-29",
-        "dateCreated": "2022-03-29",
-        "dateModified": "2022-05-08",
-        "url": "https://zcccool.cn/2022/03/29/设计模式整理/",
-        "description": "单例模式12345678910111213141516171819public class RecognDataManager &#123;    private static final String TAG = &quot;RecognDataManager&quot;;    private volatile static RecognDataManager singleton;    pr",
-        "wordCount": 849
+        
+        
+        "datePublished": "2022-08-18",
+        "dateCreated": "2022-08-18",
+        "dateModified": "2022-08-18",
+        "url": "https://zcccool.cn/myhtml/bookmark.html",
+        "description": "
+
+
+    
+    
+    
+    
+    
+    
+    
+    书签
+    
+        h3 {
+            margin: 0 0;
+            font-size: 14px;
+        }
+
+        p {
+            margin: 0 0;
+        }
+    
+
+
+
+
+    
+        
+  ",
+        "wordCount": 3045
     }
 </script>
 
@@ -418,29 +605,6 @@
         </ul>
     </div>
     
-        
-<nav id="article-nav">
-    
-        <a href="/2022/05/01/gitlab%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">下一篇</strong>
-        <p class="article-nav-title">
-        
-            gitlab安装使用
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
-    
-    
-        <a href="/2022/03/12/%E4%B8%8A%E4%BC%A0%E9%98%BF%E9%87%8C%E4%BA%91%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/" id="article-nav-older" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">上传阿里云对象存储</p>
-        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
-        </a>
-    
-</nav>
-
-    
     <div class="widgets-container">
         
             
@@ -470,26 +634,6 @@
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/2022/05/01/gitlab%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/" class="title">gitlab安装使用</a></p>
                             <p class="item-date"><time datetime="2022-05-01T15:27:46.000Z" itemprop="datePublished">2022-05-01</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2022/03/29/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%95%B4%E7%90%86/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2022/03/29/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%95%B4%E7%90%86/" class="title">设计模式整理</a></p>
-                            <p class="item-date"><time datetime="2022-03-29T15:08:53.000Z" itemprop="datePublished">2022-03-29</time></p>
                         </div>
                     </li>
                 
@@ -550,6 +694,26 @@
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/2021/12/30/2021%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" class="title">2021年度总结</a></p>
                             <p class="item-date"><time datetime="2021-12-30T15:35:45.000Z" itemprop="datePublished">2021-12-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/12/16/V2ray%E5%AE%A2%E6%88%B7%E7%AB%AF/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_18.jpg)" alt="V2ray客户端" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2021/12/16/V2ray%E5%AE%A2%E6%88%B7%E7%AB%AF/" class="title">V2ray客户端</a></p>
+                            <p class="item-date"><time datetime="2021-12-16T15:06:12.000Z" itemprop="datePublished">2021-12-16</time></p>
                         </div>
                     </li>
                 
@@ -696,7 +860,7 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'https://zcccool.cn/2022/03/29/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%95%B4%E7%90%86/';
+    var disqus_url = 'https://zcccool.cn/myhtml/bookmark.html';
     
     (function() {
     var dsq = document.createElement('script');
