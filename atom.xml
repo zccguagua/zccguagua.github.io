@@ -6,7 +6,7 @@
   <link href="https://zcccool.cn/atom.xml" rel="self"/>
   
   <link href="https://zcccool.cn/"/>
-  <updated>2022-09-22T14:25:53.086Z</updated>
+  <updated>2022-09-22T14:31:53.721Z</updated>
   <id>https://zcccool.cn/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://zcccool.cn/2022/09/22/Storm-Sniffer%E8%BF%87%E5%85%B3%E7%BE%8A%E4%BA%86%E4%B8%AA%E7%BE%8A/"/>
     <id>https://zcccool.cn/2022/09/22/Storm-Sniffer%E8%BF%87%E5%85%B3%E7%BE%8A%E4%BA%86%E4%B8%AA%E7%BE%8A/</id>
     <published>2022-09-22T13:56:47.000Z</published>
-    <updated>2022-09-22T14:25:53.086Z</updated>
+    <updated>2022-09-22T14:31:53.721Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/games/ylgy01.png" title="羊了个羊"></p><p>9月20日之前，小程序羊了个羊各种bug，该本地配置文件，掉接口刷次数，把服务器都整崩好几次，9月20日游戏升级修复了很多bug，不能刷次数了。<br>在github找了很久找到了一个使用ios手机利用Storm Sniffer重写游戏配置的方法</p><p><a href="https://github.com/wyp010428/ylgy920">参考链接自github</a></p><p>1.下载Storm Sniffer</p><p>2.开通pro（后面记得取消订阅，防止下月自动扣费）</p><p>3.Storm Sniffer口令：Y 口令: SSC#7nYZc7xSLw# 复制本段文本并打开Storm Sniffer</p><p>会弹出导入，点击导入</p><p>4.配置MITM证书<br>1）点击证书配置-安装证书-一路确认-已下载描述文件后-到手机设置-通用-通用-vpn与设备管理-设置扫描文件-安装证书</p><p>2）然后去通用-关于本机-最后的证书信任配置-打开信任</p><p>5.开启MITM,开启重写，右上角移动Storm Sniffer</p><p><img src="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/games/ylgy02.jpg" alt="Storm Sniffer" title="Storm Sniffer"></p><p>6.卸载羊了个羊小程序，重新加载玩，会发现第二关全是空白，即可顺利过关</p><p>截至9.22 22:00此方法仍然可用</p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/games/ylgy01.png" title="羊了个羊"></p><p>9月20日之前，小程序羊了个羊各种bug，好多人改本地配置文件，调接口刷过关次数，把服务器都整崩好几次。9月20日游戏升级修复了很多bug，不能刷次数了。<br>在github找了很久找到了一个ios手机利用Storm Sniffer重写游戏配置的方法</p><p><a href="https://github.com/wyp010428/ylgy920">参考链接自github</a></p><p>1.下载Storm Sniffer</p><p>2.开通pro（后面记得取消订阅，防止下月自动扣费）</p><p>3.Storm Sniffer口令：Y 口令: SSC#7nYZc7xSLw# 复制本段文本并打开Storm Sniffer</p><p>会弹出导入，点击导入</p><p>4.配置MITM证书<br>1）点击证书配置-安装证书-一路确认-已下载描述文件后-到手机设置-通用-通用-vpn与设备管理-设置扫描文件-安装证书</p><p>2）然后去通用-关于本机-最后的证书信任配置-打开信任</p><p>5.开启MITM,开启重写，右上角移动Storm Sniffer</p><p><img src="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/games/ylgy02.jpg" alt="Storm Sniffer" title="Storm Sniffer"></p><p>6.卸载羊了个羊小程序，重新加载玩，会发现第二关全是空白，即可顺利过关</p><p>截至9.22 22:00此方法仍然可用</p>]]></content>
     
     
       
