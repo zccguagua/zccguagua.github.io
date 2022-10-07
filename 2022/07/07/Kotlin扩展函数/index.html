@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>Kotlin扩展函数 | Orange个人博客</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="Kotlin" />
+    <!--百度收录-->
+<!--    <meta name="baidu-site-verification" content="code-PwF0RA7PZP" />-->
+
+    
+    <meta name="description" content="kotlin扩展函数参考映射(Mapping)合并(Zipping)关联(Association)扁平化(Flattening)字符串表达(String representation)过滤(Filtering)集合加法(Plus) 和 减法(Minus) 操作符分组(Grouping) Kotlin 标准库提供了一组扩展函数用于集合的 变换(Transformation). 这些函数会使用指定的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kotlin扩展函数">
+<meta property="og:url" content="https://zcccool.cn/2022/07/07/Kotlin%E6%89%A9%E5%B1%95%E5%87%BD%E6%95%B0/index.html">
+<meta property="og:site_name" content="Orange个人博客">
+<meta property="og:description" content="kotlin扩展函数参考映射(Mapping)合并(Zipping)关联(Association)扁平化(Flattening)字符串表达(String representation)过滤(Filtering)集合加法(Plus) 和 减法(Minus) 操作符分组(Grouping) Kotlin 标准库提供了一组扩展函数用于集合的 变换(Transformation). 这些函数会使用指定的">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2017/05/kotlin_250x250.png">
+<meta property="article:published_time" content="2022-07-07T15:47:15.000Z">
+<meta property="article:modified_time" content="2022-10-07T17:08:06.191Z">
+<meta property="article:author" content="ZhengChengcheng">
+<meta property="article:tag" content="Kotlin">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.runoob.com/wp-content/uploads/2017/05/kotlin_250x250.png">
+    
+
+    
+
+    
+        <link rel="icon" href="/images/icon/iconOrangeMedium.ico" />
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+    <!--自己添加的js-->
+<!--    
+<script src="/js/love.js"></script>
+-->
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="Orange个人博客" type="application/atom+xml">
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                    
+                                
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/myhtml/music.html">云音乐</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/myhtml/image.html">图片</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/myhtml/video.html">视频</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/myhtml/animation.html">动画</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/myhtml/lovetree.html">时间树</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/myhtml/bookmark.html">书签</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    未分类
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-Kotlin扩展函数" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Kotlin扩展函数
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2022/07/07/Kotlin%E6%89%A9%E5%B1%95%E5%87%BD%E6%95%B0/" class="article-date">
+       <time datetime="2022-07-07T15:47:15.000Z" itemprop="datePublished">2022-07-07</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2022/07/07/Kotlin%E6%89%A9%E5%B1%95%E5%87%BD%E6%95%B0/" class="article-date">
+     <time datetime="2022-10-07T17:08:06.191Z" itemprop="dateModified">2022-10-08</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/Kotlin/" rel="tag">Kotlin</a>
+    </div>
+
+                
+
+                
+
+                <p>阅读数量: <span id="/2022/07/07/Kotlin%E6%89%A9%E5%B1%95%E5%87%BD%E6%95%B0/" class="leancloud_visitors"
+                               data-flag-title="Kotlin扩展函数"></span>次</p>
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <p><img src="https://www.runoob.com/wp-content/uploads/2017/05/kotlin_250x250.png" title="kotlin"></p>
+<p><a target="_blank" rel="noopener" href="http://kotlin.liying-cn.net/docs/reference_zh/collection-transformations.html">kotlin扩展函数参考</a><br><a href="#function_01">映射(Mapping)</a><br><a href="#function_02">合并(Zipping)</a><br><a href="#function_03">关联(Association)</a><br><a href="#function_04">扁平化(Flattening)</a><br><a href="#function_05">字符串表达(String representation)</a><br><a href="#function_06">过滤(Filtering)集合</a><br><a href="#function_07">加法(Plus) 和 减法(Minus) 操作符</a><br><a href="#function_08">分组(Grouping)</a></p>
+<p>Kotlin 标准库提供了一组扩展函数用于集合的 变换(Transformation). 这些函数会使用指定的变换规则从原集合创建新的集合. 本节中, 我们概要介绍集合的这些变换函数.</p>
+<h3 id="映射-Mapping"><a href="#映射-Mapping" class="headerlink" title="映射(Mapping)"></a><span id="function_01">映射(Mapping)</span></h3><p>映射(Mapping) 变换, 会将集合的每个元素传递给一个函数, 然后用函数结果创建一个新的集合. 最基本的映射函数是 <font color=#FFA500>map()</font>. 它将每个元素传递给指定的 lambda 函数, 然后用 lambda 函数返回的结果创建一个 list. 结果的顺序与原集合中的元素顺序相同. 如果变换时还需要元素下标参数, 请使用 <font color=#FFA500>mapIndexed()</font> 函数.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">val numbers = setOf(1, 2, 3)</span><br><span class="line">println(numbers.map &#123; it * 3 &#125;)</span><br><span class="line">println(numbers.mapIndexed &#123; idx, value -&gt; value * idx &#125;)</span><br><span class="line"></span><br><span class="line">[3, 6, 9]</span><br><span class="line">[0, 2, 6]</span><br></pre></td></tr></table></figure>
+<p>如果对某些元素变换的结果是 null, 你可以将这些 null 值从结果集合中过滤掉, 方法是使用 <font color=#FFA500>mapNotNull()</font> 函数代替 map() 函数, 或者相应的使用 <font color=#FFA500>mapIndexedNotNull()</font> 函数代替 mapIndexed() 函数.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">val numbers = setOf(1, 2, 3)</span><br><span class="line">println(numbers.mapNotNull &#123; if ( it == 2) null else it * 3 &#125;)</span><br><span class="line">println(numbers.mapIndexedNotNull &#123; idx, value -&gt; if (idx == 0) null else value * idx &#125;)</span><br><span class="line"></span><br><span class="line">[3, 9]</span><br><span class="line">[2, 6]</span><br></pre></td></tr></table></figure>
+<p>其他 mapKeys()要对键(key)进行指定的变换，mapValues()要变换值(value)</p>
+<h3 id="合并-Zipping"><a href="#合并-Zipping" class="headerlink" title="合并(Zipping)"></a><span id="function_02">合并(Zipping)</span></h3><p>合并(Zipping) 变换, 将两个集合中相同位置的元素合并为 <font color=#FFA500>pair</font>. Kotlin 标准库中, 这个操作使用 zip() 扩展函数实现.<br>可以对一个集合或数组调用 zip() 函数, 参数是另一个集合(或数组), 返回值是 Pair 对象构成的 List. 接受者对象集合中的元素, 将成为这些 pair 中的第一个元素.<br>如果两个集合的大小不同, zip() 返回的结果只包含较小的那个集合大小; 较大的集合中的末尾元素不会出现在结果中.<br>zip() 也可以使用中缀形式调用, 也就是 a zip b.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">val colors = listOf(&quot;red&quot;, &quot;brown&quot;, &quot;grey&quot;)</span><br><span class="line">val animals = listOf(&quot;fox&quot;, &quot;bear&quot;, &quot;wolf&quot;)</span><br><span class="line">println(colors zip animals)</span><br><span class="line"></span><br><span class="line">val twoAnimals = listOf(&quot;fox&quot;, &quot;bear&quot;)</span><br><span class="line">println(colors.zip(twoAnimals))</span><br><span class="line"></span><br><span class="line">[(red, fox), (brown, bear), (grey, wolf)]</span><br><span class="line">[(red, fox), (brown, bear)]</span><br></pre></td></tr></table></figure>
+<p>如果已有 Pair 构成的 List, 你可以做相反的变换 – 分离(unzipping) – 它会通过这些 pair 创建两个 list:</p>
+<p>第一个 list 包含原 List 的每个 Pair 中的第一个元素.<br>第二个 list 包含 Pair 中的第二个元素.<br>要分离 pair 构成的 list, 请使用 <font color=#FFA500>unzip()</font> 函数.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">val numberPairs = listOf(&quot;one&quot; to 1, &quot;two&quot; to 2, &quot;three&quot; to 3, &quot;four&quot; to 4)</span><br><span class="line">println(numberPairs.unzip())</span><br><span class="line"></span><br><span class="line">([one, two, three, four], [1, 2, 3, 4])</span><br></pre></td></tr></table></figure>
+<h3 id="关联-Association"><a href="#关联-Association" class="headerlink" title="关联(Association)"></a><span id="function_03">关联(Association)</span></h3><p>关联(Association) 变换, 可以使用指定集合的元素以及与各元素对应的值创建 map. 在不同的关联类型中, 原集合的元素可以是结果 map 中的键(key), 也可以是值(value).</p>
+<p>基本的关联函数 <font color=#FFA500>associateWith()</font> 会创建一个 <font color=#FFA500>Map</font>, 原集合的元素成为它的键(key), 值(value)由一个变换函数通过这些元素计算得到. 如果两个元素相等, 那么<font color=#006e5f>只有后一个会保留在 map 中</font>.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">val numbers = listOf(&quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;)</span><br><span class="line">println(numbers.associateWith &#123; it.length &#125;)</span><br><span class="line"></span><br><span class="line">&#123;one=3, two=3, three=5, four=4&#125;</span><br></pre></td></tr></table></figure>
+<p>如果要把集合元素变换为 map 中的值(value), 请使用 associateBy() 函数. 它的参数是一个函数, 这个函数根据元素值返回一个键(key). 如果两个元素的 Key 相等, 那么<font color=#006e5f>只有后一个会保留在 map 中</font>.</p>
+<p>调用 associateBy() 时, 也可以指定一个值变换函数.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">val numbers = listOf(&quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;)</span><br><span class="line"></span><br><span class="line">println(numbers.associateBy &#123; it.first().uppercaseChar() &#125;)</span><br><span class="line">println(numbers.associateBy(keySelector = &#123; it.first().uppercaseChar() &#125;, valueTransform = &#123; it.length &#125;))</span><br><span class="line"></span><br><span class="line">&#123;O=one, T=three, F=four&#125;</span><br><span class="line">&#123;O=3, T=5, F=4&#125;</span><br></pre></td></tr></table></figure>
+<p>构建 map 的另一种方法是 <font color=#FFA500>associate()</font> 函数, 它根据集合元素通过某种方法同时产生键(key)和值(value). 这个函数的参数是一个 lambda 函数, lambda 函数返回一个 Pair: 其中包含对应的 map 条目(entry) 的键(key)和值(value).</p>
+<p><font color=#c5283d>注意</font>, associate() 产生的是临时存在(short-living)的 Pair 对象, 可能会影响性能. 因此, 只有性能问题不是很关键, 或者它比其他方式更合理的情况下, 才应该使用 associate() 函数.</p>
+<p>后一种情况的例子是, 如果需要从集合元素同时产生键(key)和对应的值(value), 那么就应该使用 associate() 函数了.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">val names = listOf(&quot;Alice Adams&quot;, &quot;Brian Brown&quot;, &quot;Clara Campbell&quot;)</span><br><span class="line">println(names.associate &#123; name -&gt; parseFullName(name).let &#123; it.lastName to it.firstName &#125; &#125;)  </span><br><span class="line"></span><br><span class="line">&#123;Adams=Alice, Brown=Brian, Campbell=Clara&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="扁平化-Flattening"><a href="#扁平化-Flattening" class="headerlink" title="扁平化(Flattening)"></a><span id="function_04">扁平化(Flattening)</span></h3><p>标准库提供了对嵌套集合(nested collection)的元素进行扁平化访问(flat access)的函数, 对于嵌套集合(nested collection)的操作非常便利.</p>
+<p>第一个函数是 <font color=#FFA500>flatten()</font>. 可以对一个集合的集合调用这个函数, 比如, Set 构成的 List. 这个函数返回单个 List, 其中包含嵌套集合中的所有元素.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">val numberSets = listOf(setOf(1, 2, 3), setOf(4, 5, 6), setOf(1, 2))</span><br><span class="line">println(numberSets.flatten())</span><br><span class="line"></span><br><span class="line">[1, 2, 3, 4, 5, 6, 1, 2]</span><br></pre></td></tr></table></figure>
+<p>另一个函数 – <font color=#FFA500>flatMap()</font> 提供了一种灵活的方式来处理嵌套集合. 它的参数是一个函数, 负责将集合中的一个元素变换为另一个集合. flatMap() 的结果返回单个 list, 其中包括对原集合各个元素调用变换函数后返回的集合中的所有元素. 因此, flatMap() 的行为等于调用 map() (映射(Mapping)的结果是一个集合) 之后再调用 flatten().</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">val containers = listOf(</span><br><span class="line">    StringContainer(listOf(&quot;one&quot;, &quot;two&quot;, &quot;three&quot;)),</span><br><span class="line">    StringContainer(listOf(&quot;four&quot;, &quot;five&quot;, &quot;six&quot;)),</span><br><span class="line">    StringContainer(listOf(&quot;seven&quot;, &quot;eight&quot;))</span><br><span class="line">)</span><br><span class="line">println(containers.flatMap &#123; it.values &#125;)</span><br><span class="line"></span><br><span class="line">[one, two, three, four, five, six, seven, eight]</span><br></pre></td></tr></table></figure>
+<h3 id="字符串表达-String-representation"><a href="#字符串表达-String-representation" class="headerlink" title="字符串表达(String representation)"></a><span id="function_05">字符串表达(String representation)</span></h3><p>如果你需要将集合内容表达为人类可读的格式, 请使用将集合转换为字符串的函数: <font color=#FFA500>joinToString()</font> 和 <font color=#FFA500>joinTo()</font>.</p>
+<p>joinToString() 根据指定的参数, 从集合元素创建单个 String. joinTo() 执行同样的功能, 但把结果添加到指定的 Appendable 对象中.</p>
+<p>如果使用默认参数调用这些函数, 返回的结果与对集合调用 toString() 函数类似: 由各个元素的字符串表达组成的 String, 元素之间以逗号加空格分隔.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">val numbers = listOf(&quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;)</span><br><span class="line"></span><br><span class="line">println(numbers)         </span><br><span class="line">println(numbers.joinToString())</span><br><span class="line"></span><br><span class="line">val listString = StringBuffer(&quot;The list of numbers: &quot;)</span><br><span class="line">numbers.joinTo(listString)</span><br><span class="line">println(listString)</span><br><span class="line"></span><br><span class="line">[one, two, three, four]</span><br><span class="line">one, two, three, four</span><br><span class="line">The list of numbers: one, two, three, four</span><br></pre></td></tr></table></figure>
+<p>如果要创建自定义的字符串表达, 可以指定函数参数 <font color=#f5a31f>separator</font>, <font color=#f5a31f>prefix</font>, 以及 <font color=#f5a31f>postfix</font>. 结果字符串以 prefix 开始, 以 postfix 结尾. separator 会出现在每个元素之后, 最后一个元素除外.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">val numbers = listOf(&quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;)    </span><br><span class="line">println(numbers.joinToString(separator = &quot; | &quot;, prefix = &quot;start: &quot;, postfix = &quot;: end&quot;))</span><br><span class="line"></span><br><span class="line">start: one | two | three | four: end</span><br></pre></td></tr></table></figure>
+<p>对比较大的集合, 你可能需要指定 limit – 结果中包含的最大元素个数. 如果集合大小超过 limit 值, 所有超过的元素会被替换为 truncated 参数指定的值.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">对比较大的集合, 你可能需要指定 limit – 结果中包含的最大元素个数. 如果集合大小超过 limit 值, 所有超过的元素会被替换为 truncated 参数指定的值.</span><br></pre></td></tr></table></figure>
+<p>最后, 如果要控制集合元素本身的字符串表达, 可以指定一个 transform 函数.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">val numbers = listOf(&quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;)</span><br><span class="line">println(numbers.joinToString &#123; &quot;Element: $&#123;it.uppercase()&#125;&quot;&#125;)</span><br><span class="line"></span><br><span class="line">Element: ONE, Element: TWO, Element: THREE, Element: FOUR</span><br></pre></td></tr></table></figure>
+<h3 id="过滤-Filtering-集合"><a href="#过滤-Filtering-集合" class="headerlink" title="过滤(Filtering)集合"></a><span id="function_06">过滤(Filtering)集合</span></h3><p><font color=#FFA500>filter()</font><br><font color=#FFA500> filterNot()</font></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">val numbers = listOf(&quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;)  </span><br><span class="line">val longerThan3 = numbers.filter &#123; it.length &gt; 3 &#125;</span><br><span class="line">println(longerThan3)</span><br><span class="line"></span><br><span class="line">val numbersMap = mapOf(&quot;key1&quot; to 1, &quot;key2&quot; to 2, &quot;key3&quot; to 3, &quot;key11&quot; to 11)</span><br><span class="line">val filteredMap = numbersMap.filter &#123; (key, value) -&gt; key.endsWith(&quot;1&quot;) &amp;&amp; value &gt; 10&#125;</span><br><span class="line">println(filteredMap)</span><br><span class="line"></span><br><span class="line">[three, four]</span><br><span class="line">&#123;key11=11&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">val numbers = listOf(&quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;)</span><br><span class="line"></span><br><span class="line">val filteredIdx = numbers.filterIndexed &#123; index, s -&gt; (index != 0) &amp;&amp; (s.length &lt; 5)  &#125;</span><br><span class="line">val filteredNot = numbers.filterNot &#123; it.length &lt;= 3 &#125;</span><br><span class="line"></span><br><span class="line">println(filteredIdx)</span><br><span class="line">println(filteredNot)</span><br><span class="line"></span><br><span class="line">[two, four]</span><br><span class="line">[three, four]</span><br></pre></td></tr></table></figure>
+
+<h3 id="加法-Plus-和-减法-Minus-操作符"><a href="#加法-Plus-和-减法-Minus-操作符" class="headerlink" title="加法(Plus) 和 减法(Minus) 操作符"></a><span id="function_07">加法(Plus) 和 减法(Minus) 操作符</span></h3><p>在 Kotlin 中, 也为集合定义了 加法(Plus) (+) 和 减法(Minus) (-) 操作符. 这些操作符使用一个集合作为第一个操作数; 第二个操作数可以是单个元素, 也可以是另一个集合. 返回值是一个新的只读集合:</p>
+<p>加法(Plus) 的返回值包含原来集合中的元素 和 第二个操作数的元素.<br>减法(Minus) 的返回值包含原来集合中的元素, 但要 除去 第二个操作数的元素. 如果第二个操作数是单个元素, 减法(Minus) 只删除原来的集合中 第一次 出现的这个元素; 如果第二个操作数是一个集合, 那么原来的集合中 所有 出现的这些元素都会被删除.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">val numbers = listOf(&quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;)</span><br><span class="line"></span><br><span class="line">val plusList = numbers + &quot;five&quot;</span><br><span class="line">val minusList = numbers - listOf(&quot;three&quot;, &quot;four&quot;)</span><br><span class="line">println(plusList)</span><br><span class="line">println(minusList)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[one, two, three, four, five]</span><br><span class="line">[one, two]</span><br></pre></td></tr></table></figure>
+<h3 id="分组-Grouping"><a href="#分组-Grouping" class="headerlink" title="分组(Grouping)"></a><span id="function_08">分组(Grouping)</span></h3><p>Kotlin 标准库提供了扩展函数, 用于对集合中的元素进行分组操作. 最基本的函数是 <font color=#FFA500>groupBy()</font>, 它接受一个 lambda 函数为参数, 返回结果是一个 Map. <font color=#006e5f>在这个 map 中, 每个键(key)是 lambda 函数的一个返回结果, 与键(key)对应的值(value) 是一个 List, 其中包含返回这个结果的所有元素</font>. 这个函数的用途, 举例来说, <font color=#006e5f>我们可以对一个 String 组成的 list, 按字符串的首字母进行分组</font>.</p>
+<p>调用 groupBy() 函数时, 也可以使用另一个 lambda 函数作为第二个参数 – 这个函数负责对值进行变换. 象这样使用两个 lambda 函数调用 groupBy()时, 结果 map 中, 第一个参数(keySelector lambda 函数)负责生成键(key), 它对应的值(value) 则是由第二个参数(值转换 lambda 函数)产生的结果组成的 list, 而不是集合中原来元素组成的 list.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">val numbers = listOf(&quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;, &quot;five&quot;)</span><br><span class="line"></span><br><span class="line">println(numbers.groupBy &#123; it.first().uppercase() &#125;)</span><br><span class="line">println(numbers.groupBy(keySelector = &#123; it.first() &#125;, valueTransform = &#123; it.uppercase() &#125;))</span><br><span class="line"></span><br><span class="line">&#123;O=[one], T=[two, three], F=[four, five]&#125;</span><br><span class="line">&#123;o=[ONE], t=[TWO, THREE], f=[FOUR, FIVE]&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://zcccool.cn/2022/07/07/Kotlin%E6%89%A9%E5%B1%95%E5%87%BD%E6%95%B0/" data-id="cl8yqrlds0000u8ui701ehxzp" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "ZhengChengcheng"
+        },
+        "headline": "Kotlin扩展函数",
+        "image": "https://zcccool.cnhttps://www.runoob.com/wp-content/uploads/2017/05/kotlin_250x250.png",
+        "keywords": "Kotlin",
+        "genre": "",
+        "datePublished": "2022-07-07",
+        "dateCreated": "2022-07-07",
+        "dateModified": "2022-10-08",
+        "url": "https://zcccool.cn/2022/07/07/Kotlin扩展函数/",
+        "description": "
+kotlin扩展函数参考映射(Mapping)合并(Zipping)关联(Association)扁平化(Flattening)字符串表达(String representation)过滤(Filtering)集合加法(Plus) 和 减法(Minus) 操作符分组(Grouping)
+Kotlin 标准库提供了一组扩展函数用于集合的 变换(Transformation). 这些函数会使用指定的",
+        "wordCount": 1114
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="blog" href="https://zccode.cn/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-blog"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://www.instagram.com/g.p.orange/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/zccguagua" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="https://weibo.com/u/3247224430?is_hot=1" target="_blank" rel="noopener">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="https://twitter.com/w7yRCu52263sPTV" target="_blank" rel="noopener">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2022/09/22/%E8%BF%87%E5%85%B3%E7%BE%8A%E4%BA%86%E4%B8%AA%E7%BE%8A/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            过关羊了个羊
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2022/05/01/gitlab%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">gitlab安装使用</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/09/22/%E8%BF%87%E5%85%B3%E7%BE%8A%E4%BA%86%E4%B8%AA%E7%BE%8A/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/games/ylgy01.png)" alt="过关羊了个羊" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2022/09/22/%E8%BF%87%E5%85%B3%E7%BE%8A%E4%BA%86%E4%B8%AA%E7%BE%8A/" class="title">过关羊了个羊</a></p>
+                            <p class="item-date"><time datetime="2022-09-22T13:56:47.000Z" itemprop="datePublished">2022-09-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/07/07/Kotlin%E6%89%A9%E5%B1%95%E5%87%BD%E6%95%B0/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://www.runoob.com/wp-content/uploads/2017/05/kotlin_250x250.png)" alt="Kotlin扩展函数" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2022/07/07/Kotlin%E6%89%A9%E5%B1%95%E5%87%BD%E6%95%B0/" class="title">Kotlin扩展函数</a></p>
+                            <p class="item-date"><time datetime="2022-07-07T15:47:15.000Z" itemprop="datePublished">2022-07-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/05/01/gitlab%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2022/05/01/gitlab%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/" class="title">gitlab安装使用</a></p>
+                            <p class="item-date"><time datetime="2022-05-01T15:27:46.000Z" itemprop="datePublished">2022-05-01</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/03/12/%E4%B8%8A%E4%BC%A0%E9%98%BF%E9%87%8C%E4%BA%91%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/badminton/badminton3.jpg)" alt="上传阿里云对象存储" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2022/03/12/%E4%B8%8A%E4%BC%A0%E9%98%BF%E9%87%8C%E4%BA%91%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/" class="title">上传阿里云对象存储</a></p>
+                            <p class="item-date"><time datetime="2022-03-11T16:22:20.000Z" itemprop="datePublished">2022-03-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/01/01/%E7%BE%BD%E6%AF%9B%E7%90%83%E7%9F%A5%E8%AF%86/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/badminton/badminton1.jpg)" alt="羽毛球知识" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2022/01/01/%E7%BE%BD%E6%AF%9B%E7%90%83%E7%9F%A5%E8%AF%86/" class="title">羽毛球知识</a></p>
+                            <p class="item-date"><time datetime="2021-12-31T17:02:30.000Z" itemprop="datePublished">2022-01-01</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/9%E5%9B%BE/" style="font-size: 10px;">.9图</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/DeepFaceLab/" style="font-size: 10px;">DeepFaceLab</a> <a href="/tags/FTP/" style="font-size: 10px;">FTP</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Kotlin/" style="font-size: 10px;">Kotlin</a> <a href="/tags/PS/" style="font-size: 10px;">PS</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Retorfit/" style="font-size: 10px;">Retorfit</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/SRS/" style="font-size: 10px;">SRS</a> <a href="/tags/V2ray/" style="font-size: 10px;">V2ray</a> <a href="/tags/gitlab/" style="font-size: 10px;">gitlab</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nextcloud/" style="font-size: 10px;">nextcloud</a> <a href="/tags/ping/" style="font-size: 10px;">ping</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/%E4%B8%8B%E8%BD%BD/" style="font-size: 10px;">下载</a> <a href="/tags/%E4%B8%9C%E6%9E%81%E5%B2%9B/" style="font-size: 10px;">东极岛</a> <a href="/tags/%E4%B9%8C%E9%95%87/" style="font-size: 10px;">乌镇</a> <a href="/tags/%E4%B9%B0%E6%88%BF/" style="font-size: 10px;">买房</a> <a href="/tags/%E5%88%B7%E6%9C%BA/" style="font-size: 10px;">刷机</a> <a href="/tags/%E5%9F%9F%E5%90%8D/" style="font-size: 10px;">域名</a> <a href="/tags/%E5%A9%BA%E6%BA%90-%E4%B8%89%E6%B8%85%E5%B1%B1/" style="font-size: 10px;">婺源&三清山</a> <a href="/tags/%E5%AE%8F%E6%9D%91-%E9%BB%84%E5%B1%B1/" style="font-size: 10px;">宏村&黄山</a> <a href="/tags/%E5%AE%9A%E6%97%B6%E5%99%A8-%E7%BA%BF%E7%A8%8B%E6%B1%A0/" style="font-size: 10px;">定时器&线程池</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 10px;">小程序</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 10px;">总结</a> <a href="/tags/%E6%97%85%E8%A1%8C/" style="font-size: 16.67px;">旅行</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 10px;">服务器</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 10px;">游戏</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 10px;">爬虫</a> <a href="/tags/%E7%BE%BD%E6%AF%9B%E7%90%83/" style="font-size: 10px;">羽毛球</a> <a href="/tags/%E8%A7%86%E9%A2%91%E5%90%88%E5%B9%B6/" style="font-size: 10px;">视频合并</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 10px;">设计模式</a> <a href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91/" style="font-size: 13.33px;">阿里云</a> <a href="/tags/%E9%BE%99%E8%99%8E%E5%B1%B1/" style="font-size: 10px;">龙虎山</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://github.com/ppoffice/hexo-theme-hueman">Theme</a>
+                    </li>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://www.zccode.cn">我的网站</a>
+                    </li>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://weibo.com/u/3247224430?is_hot=1">微博</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <!--<h3 class="widget-title">我的侧边栏</h3>-->
+        <!--<div class="widget">-->
+        <!--这里是我的侧边栏哦-->
+        <!--</div>-->
+<!--        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=300 height=86-->
+<!--                src="//music.163.com/outchain/player?type=2&id=26237342&auto=1&height=66"></iframe>-->
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=300 height=86
+                src="//music.163.com/outchain/player?type=2&id=578090&auto=1&height=66"></iframe>
+        <img src="../images/main_wx.png" width=150 height=150>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2022 ZhengChengcheng</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script src="//cdn1.lncld.net/static/js/2.5.0/av-min.js"></script>
+
+<script>
+    var APP_ID = 'K14Yo7meMkb2d2eRXnvjs5Nx-gzGzoHsz';
+    var APP_KEY = 'BG64BwIHiKiOkgqjcr6Nm9DX';
+    AV.init({
+        appId: APP_ID,
+        appKey: APP_KEY
+    });
+    // 显示次数
+    function showTime(Counter) {
+        var query = new AV.Query("Counter");
+        if($(".leancloud_visitors").length > 0){
+            var url = $(".leancloud_visitors").attr('id').trim();
+            // where field
+            query.equalTo("words", url);
+            // count
+            query.count().then(function (number) {
+                // There are number instances of MyClass where words equals url.
+                $(document.getElementById(url)).text(number?  number : '--');
+            }, function (error) {
+                // error is an instance of AVError.
+            });
+        }
+    }
+    // 追加pv
+    function addCount(Counter) {
+        var url = $(".leancloud_visitors").length > 0 ? $(".leancloud_visitors").attr('id').trim() : 'icafebolger.com';
+        var Counter = AV.Object.extend("Counter");
+        var query = new Counter;
+        query.save({
+            words: url
+        }).then(function (object) {
+        })
+    }
+    $(function () {
+        var Counter = AV.Object.extend("Counter");
+        addCount(Counter);
+        showTime(Counter);
+    });
+
+</script>
+
+<script src="/js/fireworks.js"></script>
+
+<!-- 天气预报right -->
+<script type="text/javascript">
+    WIDGET = {FID: '1CtL3FMZRR'}
+</script>
+<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://zcccool.cn/2022/07/07/Kotlin%E6%89%A9%E5%B1%95%E5%87%BD%E6%95%B0/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+</html>
