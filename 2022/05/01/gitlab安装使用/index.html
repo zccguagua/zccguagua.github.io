@@ -23,7 +23,7 @@
 <meta property="og:description" content="开始想在自己的服务器上搭建一个gitlab,保存代码啥的，发现gitlab要求最低配置2核4g内存，自己的服务器够呛。gitlab安装参考 手动部署 安装依赖包  1sudo yum install -y curl policycoreutils-python openssh-server   依次运行一下命令，配置SSH服务  12sudo systemctl start sshd &#x2F;&#x2F;启动SS">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-05-01T15:27:46.000Z">
-<meta property="article:modified_time" content="2022-05-08T06:10:34.083Z">
+<meta property="article:modified_time" content="2022-11-16T15:24:52.035Z">
 <meta property="article:author" content="ZhengChengcheng">
 <meta property="article:tag" content="gitlab">
 <meta name="twitter:card" content="summary">
@@ -226,7 +226,7 @@
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
   <a href="/2022/05/01/gitlab%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/" class="article-date">
-     <time datetime="2022-05-08T06:10:34.083Z" itemprop="dateModified">2022-05-08</time>
+     <time datetime="2022-11-16T15:24:52.035Z" itemprop="dateModified">2022-11-16</time>
   </a>
 </div>
 
@@ -289,6 +289,7 @@
 <h3 id="gitlab内存占用过大问题修改"><a href="#gitlab内存占用过大问题修改" class="headerlink" title="gitlab内存占用过大问题修改"></a>gitlab内存占用过大问题修改</h3><p><a target="_blank" rel="noopener" href="https://ouyangpeng.blog.csdn.net/article/details/84066417">gitlab内存占用过大问题参考</a></p>
 <p>编辑/etc/gitlab/gitlab.rb文件<br>添加<br>unicorn[‘worker_timeout’] = 20<br>unicorn[‘worker_processes’] = 2<br>postgresql[‘shared_buffers’] = “128MB”<br>postgresql[‘max_worker_processes’] = 4<br>sidekiq[‘concurrency’] = 5</p>
 <p>运行gitlab-ctl reconfigure命令<br>gitlab-ctl restart</p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>自己的2核4g服务器无法使用，只能打开个网页，一直转圈卡住。</p>
 
         </div>
         <footer class="article-footer">
@@ -372,7 +373,7 @@
         "genre": "",
         "datePublished": "2022-05-01",
         "dateCreated": "2022-05-01",
-        "dateModified": "2022-05-08",
+        "dateModified": "2022-11-16",
         "url": "https://zcccool.cn/2022/05/01/gitlab安装使用/",
         "description": "开始想在自己的服务器上搭建一个gitlab,保存代码啥的，发现gitlab要求最低配置2核4g内存，自己的服务器够呛。gitlab安装参考
 手动部署
@@ -384,7 +385,7 @@
 依次运行一下命令，配置SSH服务
 
 12sudo systemctl start sshd //启动SS",
-        "wordCount": 121
+        "wordCount": 125
     }
 </script>
 
