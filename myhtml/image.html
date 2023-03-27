@@ -10,15 +10,15 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="description" content="游戏                   #water_div {             background-image: url(https:&#x2F;&#x2F;zccguagua.oss-cn-hangzhou.aliyuncs.com&#x2F;images&#x2F;blog&#x2F;cover&#x2F;b.jpg);             width: 789px;             height: 7">
+    <meta name="description" content="游戏                   #water_div {             background-image: url(https:&#x2F;&#x2F;zccguagua.oss-cn-hangzhou.aliyuncs.com&#x2F;images&#x2F;blog&#x2F;cover&#x2F;deer.jpg);             width: 750px;             height">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Orange个人博客">
 <meta property="og:url" content="https://zcccool.cn/myhtml/image.html">
 <meta property="og:site_name" content="Orange个人博客">
-<meta property="og:description" content="游戏                   #water_div {             background-image: url(https:&#x2F;&#x2F;zccguagua.oss-cn-hangzhou.aliyuncs.com&#x2F;images&#x2F;blog&#x2F;cover&#x2F;b.jpg);             width: 789px;             height: 7">
+<meta property="og:description" content="游戏                   #water_div {             background-image: url(https:&#x2F;&#x2F;zccguagua.oss-cn-hangzhou.aliyuncs.com&#x2F;images&#x2F;blog&#x2F;cover&#x2F;deer.jpg);             width: 750px;             height">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-03-18T17:10:50.982Z">
-<meta property="article:modified_time" content="2020-03-18T17:10:50.960Z">
+<meta property="article:published_time" content="2023-03-27T15:14:27.883Z">
+<meta property="article:modified_time" content="2023-03-27T15:14:27.883Z">
 <meta property="article:author" content="ZhengChengcheng">
 <meta property="article:tag" content="郑程程">
 <meta name="twitter:card" content="summary">
@@ -194,7 +194,9 @@
 </div>
 
                         <div class="main-body-content">
-                            <article id="page-" class="article article-single article-type-page" itemscope itemprop="blogPost">
+                            <article id="page-"
+         class="article article-single article-type-page"
+         itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -214,36 +216,44 @@
     <script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
     <style type="text/css">
         #water_div {
-            background-image: url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/b.jpg);
-            width: 789px;
-            height: 700px;
+            background-image: url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/deer.jpg);
+            width: 750px;
+            height: 936px;
             background-color: beige;
             margin-bottom: 10px;
         }
+
+        /*https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/maitianyubaishu.jpg*/
+        /*https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/deer.jpg*/
     </style>
 </head>
 <body>
 <div id="water_div"></div>
 
-<object type="application/x-shockwave-flash" style="outline:none;"
-        data="http://cdn.abowman.com/widgets/hamster/hamster.swf?" width="300" height="225">
-    <param name="movie" value="http://cdn.abowman.com/widgets/hamster/hamster.swf?"></param>
-    <param name="AllowScriptAccess" value="always"></param>
-    <param name="wmode" value="opaque"></param>
-</object>
+<iframe width="400" height="300" frameborder="0" src="https://cdn.abowman.com/widgets/hamster/hamster.html?"></iframe>
+
 <script type="text/javascript" src="../js/jquery.ripples-min.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
         try {
-            $('#water_div').ripples({
-                resolution: 666,
-                dropRadius: 7, //px
-                perturbance: 0.02
+            $("#water_div").ripples({
+                resolution: 512,
+                dropRadius: 20,
+                perturbance: 0.04,
             });
+        } catch (e) {
+            $(".error").show().text(e);
         }
-        catch (e) {
-            $('.error').show().text(e);
-        }
+// Automatic drops
+        setInterval(function () {
+            var $el = $("#water_div");
+            var x = Math.random() * $el.outerWidth();
+            var y = Math.random() * $el.outerHeight();
+            var dropRadius = 20;
+            var strength = 0.04 + Math.random() * 0.04;
+
+            $el.ripples('drop', x, y, dropRadius, strength);
+        }, 400);
     });
 </script>
 </body>
@@ -254,7 +264,7 @@
 
 
 
-    <a data-url="https://zcccool.cn/myhtml/image.html" data-id="clfl7488k0007skuidm3i8yfr" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://zcccool.cn/myhtml/image.html" data-id="clfqz9m8n0007zcui4io8chvh" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -328,9 +338,9 @@
         "image": "https://zcccool.cn",
         
         
-        "datePublished": "2020-03-19",
-        "dateCreated": "2020-03-19",
-        "dateModified": "2020-03-19",
+        "datePublished": "2023-03-27",
+        "dateCreated": "2023-03-27",
+        "dateModified": "2023-03-27",
         "url": "https://zcccool.cn/myhtml/image.html",
         "description": "
 
@@ -340,10 +350,10 @@
     
     
         #water_div {
-            background-image: url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/b.jpg);
-            width: 789px;
-            height: 7",
-        "wordCount": 281
+            background-image: url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/deer.jpg);
+            width: 750px;
+            height",
+        "wordCount": 383
     }
 </script>
 
@@ -613,8 +623,8 @@
     </div>
 </footer>
 
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
+<!--<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>-->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <script src="//cdn1.lncld.net/static/js/2.5.0/av-min.js"></script>
 
 <script>
