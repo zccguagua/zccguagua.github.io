@@ -15,15 +15,15 @@
 <!--    <meta name="baidu-site-verification" content="code-PwF0RA7PZP" />-->
 
     
-    <meta name="description" content="单例模式12345678910111213141516171819public class RecognDataManager &amp;#123;    private static final String TAG &#x3D; &quot;RecognDataManager&quot;;    private volatile static RecognDataManager singleton;    pr">
+    <meta name="description" content="单例模式观察者模式命令模式建造者模式 单例模式(Singleton)确保某个类只有一个实例,并且自行实例化并向整个系统提供这个实例。 12345678910111213141516171819public class RecognDataManager &amp;#123;    private static final String TAG &#x3D; &quot;RecognDataManager&quot;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="设计模式整理">
 <meta property="og:url" content="https://zcccool.cn/2021/03/29/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%95%B4%E7%90%86/index.html">
 <meta property="og:site_name" content="Orange个人博客">
-<meta property="og:description" content="单例模式12345678910111213141516171819public class RecognDataManager &amp;#123;    private static final String TAG &#x3D; &quot;RecognDataManager&quot;;    private volatile static RecognDataManager singleton;    pr">
+<meta property="og:description" content="单例模式观察者模式命令模式建造者模式 单例模式(Singleton)确保某个类只有一个实例,并且自行实例化并向整个系统提供这个实例。 12345678910111213141516171819public class RecognDataManager &amp;#123;    private static final String TAG &#x3D; &quot;RecognDataManager&quot;">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-03-29T15:08:53.000Z">
-<meta property="article:modified_time" content="2022-10-06T15:54:22.334Z">
+<meta property="article:modified_time" content="2023-05-27T17:29:37.187Z">
 <meta property="article:author" content="ZhengChengcheng">
 <meta property="article:tag" content="设计模式">
 <meta name="twitter:card" content="summary">
@@ -101,41 +101,50 @@
                     <h1 class="logo-wrap">
                         <a href="/" class="logo"></a>
                     </h1>
+
                     
+
                 </div>
                 <div id="header-inner" class="nav-container">
                     <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
                     <div class="nav-container-inner">
                         <ul id="main-nav">
                             
-                                <li class="main-nav-list-item" >
-                                    <a class="main-nav-list-link" href="/">主页</a>
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link"
+                                       href="/">主页</a>
                                 </li>
                             
-                                    
                                 
-                                <li class="main-nav-list-item" >
-                                    <a class="main-nav-list-link" href="/myhtml/music.html">云音乐</a>
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link"
+                                       href="/myhtml/music.html">云音乐</a>
                                 </li>
                             
-                                <li class="main-nav-list-item" >
-                                    <a class="main-nav-list-link" href="/myhtml/image.html">图片</a>
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link"
+                                       href="/myhtml/image.html">图片</a>
                                 </li>
                             
-                                <li class="main-nav-list-item" >
-                                    <a class="main-nav-list-link" href="/myhtml/video.html">视频</a>
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link"
+                                       href="/myhtml/video.html">视频</a>
                                 </li>
                             
-                                <li class="main-nav-list-item" >
-                                    <a class="main-nav-list-link" href="/myhtml/animation.html">动画</a>
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link"
+                                       href="/myhtml/animation.html">动画</a>
                                 </li>
                             
-                                <li class="main-nav-list-item" >
-                                    <a class="main-nav-list-link" href="/myhtml/lovetree.html">时间树</a>
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link"
+                                       href="/myhtml/lovetree.html">时间树</a>
                                 </li>
                             
-                                <li class="main-nav-list-item" >
-                                    <a class="main-nav-list-link" href="/myhtml/bookmark.html">书签</a>
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link"
+                                       href="/myhtml/bookmark.html">书签</a>
                                 </li>
                             
                         </ul>
@@ -199,7 +208,9 @@
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-设计模式整理" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-设计模式整理"
+         class="article article-single article-type-post"
+         itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
@@ -226,7 +237,7 @@
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
   <a href="/2021/03/29/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%95%B4%E7%90%86/" class="article-date">
-     <time datetime="2022-10-06T15:54:22.334Z" itemprop="dateModified">2022-10-06</time>
+     <time datetime="2023-05-27T17:29:37.187Z" itemprop="dateModified">2023-05-28</time>
   </a>
 </div>
 
@@ -243,8 +254,9 @@
 
                 
 
-                <p>阅读数量: <span id="/2021/03/29/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%95%B4%E7%90%86/" class="leancloud_visitors"
-                               data-flag-title="设计模式整理"></span>次</p>
+                <!--                <p>阅读数量: <span id="/2021/03/29/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%95%B4%E7%90%86/" class="leancloud_visitors"-->
+                <!--                               data-flag-title="设计模式整理"></span>次</p>-->
+                <span id="busuanzi_container_page_pv">阅读数量:<span id="busuanzi_value_page_pv"></span>次</span>
             </div>
         
         
@@ -255,9 +267,12 @@
 
             
 
-            <h3 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public class RecognDataManager &#123;</span><br><span class="line">    private static final String TAG = &quot;RecognDataManager&quot;;</span><br><span class="line"></span><br><span class="line">    private volatile static RecognDataManager singleton;</span><br><span class="line"></span><br><span class="line">    private RecognDataManager() &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static RecognDataManager getInstance() &#123;</span><br><span class="line">        if (singleton == null) &#123;</span><br><span class="line">            synchronized (RecognDataManager.class) &#123;</span><br><span class="line">                if (singleton == null) &#123;</span><br><span class="line">                    singleton = new RecognDataManager();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return singleton;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <p><a href="#function_01">单例模式</a><br><a href="#function_02">观察者模式</a><br><a href="#function_03">命令模式</a><br><a href="#function_04">建造者模式</a></p>
+<h3 id="单例模式-Singleton"><a href="#单例模式-Singleton" class="headerlink" title="单例模式(Singleton)"></a><span id="function_01">单例模式(Singleton)</span></h3><p>确保某个类只有一个实例,并且自行实例化并向整个系统提供这个实例。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public class RecognDataManager &#123;</span><br><span class="line">    private static final String TAG = &quot;RecognDataManager&quot;;</span><br><span class="line"></span><br><span class="line">    private volatile static RecognDataManager singleton;</span><br><span class="line"></span><br><span class="line">    private RecognDataManager() &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static RecognDataManager getInstance() &#123;</span><br><span class="line">        if (singleton == null) &#123;</span><br><span class="line">            synchronized (RecognDataManager.class) &#123;</span><br><span class="line">                if (singleton == null) &#123;</span><br><span class="line">                    singleton = new RecognDataManager();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return singleton;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h3><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/8f32da74cd8b">观察者模式</a></p>
+<h3 id="观察者模式-Observer"><a href="#观察者模式-Observer" class="headerlink" title="观察者模式(Observer)"></a><span id="function_02">观察者模式(Observer)</span></h3><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/8f32da74cd8b">观察者模式</a></p>
+<p>定义对象间的一种一个对多的依赖关系，当一个对象的状态发送改变时，所以依赖于它的对象都得到通知并被自动更新。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public interface Observer &#123;//抽象观察者</span><br><span class="line">    public void update(String message);//更新方法</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public interface  Observable &#123;//抽象被观察者</span><br><span class="line">    void add(Observer observer);//添加观察者</span><br><span class="line">    void remove(Observer observer);//删除观察者</span><br><span class="line">    void notify(String message);//通知观察者</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">public class Boy implements Observer &#123;</span><br><span class="line"></span><br><span class="line">        private String name;//名字</span><br><span class="line">        public Boy(String name) &#123;</span><br><span class="line">            this.name = name;</span><br><span class="line">        &#125;</span><br><span class="line">        @Override</span><br><span class="line">        public void update(String message) &#123;//男孩的具体反应</span><br><span class="line">            System.out.println(name + &quot;,收到了信息:&quot; + message+&quot;屁颠颠的去取快递.&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public class Girl implements Observer &#123;</span><br><span class="line"></span><br><span class="line">        private String name;//名字</span><br><span class="line">        public Girl(String name) &#123;</span><br><span class="line">            this.name = name;</span><br><span class="line">        &#125;</span><br><span class="line">        @Override</span><br><span class="line">        public void update(String message) &#123;//女孩的具体反应</span><br><span class="line">            System.out.println(name + &quot;,收到了信息:&quot; + message+&quot;让男朋友去取快递~&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
@@ -266,26 +281,33 @@
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public void test()&#123;</span><br><span class="line">Observable postman=new Postman();</span><br><span class="line"></span><br><span class="line">        Observer boy1=new Boy(&quot;路飞&quot;);</span><br><span class="line">        Observer boy2=new Boy(&quot;乔巴&quot;);</span><br><span class="line">        Observer girl1=new Girl(&quot;娜美&quot;);</span><br><span class="line"></span><br><span class="line">        postman.add(boy1);</span><br><span class="line">        postman.add(boy2);</span><br><span class="line">        postman.add(girl1);</span><br><span class="line">        </span><br><span class="line">        postman.notify(&quot;快递到了,请下楼领取.&quot;);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id=""><a href="#" class="headerlink" title=""></a></h3><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/ff909f9d925f">命令模式</a></p>
+<h3 id="命令模式-Command"><a href="#命令模式-Command" class="headerlink" title="命令模式(Command)"></a><span id="function_03">命令模式(Command)</span></h3><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/ff909f9d925f">命令模式</a></p>
+<p>将一个请求封装成一个对象，从而让你使用不同的请求把客户端参数化，对请求排队或者记录日志，可以提供命令的撤销和恢复功能。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//创建一个命令接口</span><br><span class="line">public interface Command &#123;</span><br><span class="line">void execute();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//创建一个请求类/执行操作</span><br><span class="line">public class Stock &#123;</span><br><span class="line">    private String name = &quot;ABC&quot;;</span><br><span class="line">    private int quantity = 10;</span><br><span class="line"></span><br><span class="line">    public void buy()&#123;</span><br><span class="line">        System.out.println(&quot;Stock [ Name: &quot;+name+&quot;, Quantity: &quot; + quantity +&quot; ] bought&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    public void sell()&#123;</span><br><span class="line">        System.out.println(&quot;Stock [ Name: &quot;+name+&quot;, Quantity: &quot; + quantity +&quot; ] sold&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">public class BuyCommand implements Command &#123;</span><br><span class="line">    private Stock abcStock;</span><br><span class="line">    public BuyCommand(Stock abcStock)&#123;</span><br><span class="line">        this.abcStock = abcStock;</span><br><span class="line">    &#125;</span><br><span class="line">    @Override</span><br><span class="line">    public void execute() &#123;</span><br><span class="line">        abcStock.buy();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class SellCommand implements Command &#123;</span><br><span class="line">    private Stock abcStock;</span><br><span class="line">    public SellCommand(Stock abcStock)&#123;</span><br><span class="line">        this.abcStock = abcStock;</span><br><span class="line">    &#125;</span><br><span class="line">    @Override</span><br><span class="line">    public void execute() &#123;</span><br><span class="line">        abcStock.sell();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//创建命令调用类</span><br><span class="line">public class Invoker &#123;</span><br><span class="line">    private List&lt;Command&gt; orderList = new ArrayList&lt;Command&gt;();</span><br><span class="line"></span><br><span class="line">    public void takeOrder(Command order)&#123;</span><br><span class="line">        orderList.add(order);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void placeOrders()&#123;</span><br><span class="line">        for (Command order : orderList) &#123;</span><br><span class="line">            order.execute();</span><br><span class="line">        &#125;</span><br><span class="line">        orderList.clear();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//测试</span><br><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">        Stock abcStock = new Stock();</span><br><span class="line"></span><br><span class="line">        BuyCommand buyStockOrder = new BuyCommand(abcStock);</span><br><span class="line">        SellCommand sellStockOrder = new SellCommand(abcStock);</span><br><span class="line"></span><br><span class="line">         Invoker invoker = new Invoker();</span><br><span class="line">        invoker.takeOrder(buyStockOrder);</span><br><span class="line">        invoker.takeOrder(sellStockOrder);</span><br><span class="line"></span><br><span class="line">        invoker.placeOrders();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="建造者模式（Builder）"><a href="#建造者模式（Builder）" class="headerlink" title="建造者模式（Builder）"></a><span id="function_04">建造者模式（Builder）</span></h3><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/154948d5adc6">建造者模式</a></p>
+<p>将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。</p>
+<p>Android中的AlertDialog.Builder就是使用了Builder模式来构建AlertDialog的。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">AlertDialog.Builder builder = new AlertDialog.Builder(activity);//创建一个Builder对象</span><br><span class="line">builder.setIcon(R.drawable.icon);</span><br><span class="line">builder.setTitle(&quot;标题&quot;);</span><br><span class="line">builder.setMessage(&quot;信息&quot;);</span><br><span class="line">builder.setPositiveButton(&quot;确定&quot;,</span><br><span class="line">        new DialogInterface.OnClickListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void onClick(DialogInterface dialog, int which) &#123;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">AlertDialog alertDialog = builder.create();//创建AlertDialog对象</span><br><span class="line">alertDialog.show();</span><br></pre></td></tr></table></figure>
+
+<h3 id="装饰器模式（Decorator）"><a href="#装饰器模式（Decorator）" class="headerlink" title="装饰器模式（Decorator）"></a><span id="function_04">装饰器模式（Decorator）</span></h3><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/df1a96c5c046">装饰器模式</a></p>
+<p>动态地给一个对象添加一些额外的职责。就增加功能来说，装饰模式相比生成子类更为灵活。</p>
+
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://zcccool.cn/2021/03/29/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%95%B4%E7%90%86/" data-id="cl2wwd99z0002o4uia7tz9jo6" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://zcccool.cn/2021/03/29/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%95%B4%E7%90%86/" data-id="cli69of9y001zvcuibp0qfuv6" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -361,10 +383,12 @@
         "genre": "",
         "datePublished": "2021-03-29",
         "dateCreated": "2021-03-29",
-        "dateModified": "2022-10-06",
+        "dateModified": "2023-05-28",
         "url": "https://zcccool.cn/2021/03/29/设计模式整理/",
-        "description": "单例模式12345678910111213141516171819public class RecognDataManager &#123;    private static final String TAG = &quot;RecognDataManager&quot;;    private volatile static RecognDataManager singleton;    pr",
-        "wordCount": 1355
+        "description": "单例模式观察者模式命令模式建造者模式
+单例模式(Singleton)确保某个类只有一个实例,并且自行实例化并向整个系统提供这个实例。
+12345678910111213141516171819public class RecognDataManager &#123;    private static final String TAG = &quot;RecognDataManager&quot;",
+        "wordCount": 1469
     }
 </script>
 
@@ -472,7 +496,47 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2022/11/27/2022%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" class="thumbnail">
+                            <a href="/2023/05/28/%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/software/title.jpg)" alt="软考中级-网络工程师" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2023/05/28/%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" class="title">软考中级-网络工程师</a></p>
+                            <p class="item-date"><time datetime="2023-05-27T16:22:02.000Z" itemprop="datePublished">2023-05-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2023/03/15/ChatGPT%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://raw.githubusercontent.com/lencx/ChatGPT/main/public/logo.png)" alt="ChatGPT使用教程" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2023/03/15/ChatGPT%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="title">ChatGPT使用教程</a></p>
+                            <p class="item-date"><time datetime="2023-03-15T14:25:46.000Z" itemprop="datePublished">2023-03-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/12/30/2022%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" class="thumbnail">
     
     
         <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/2022zj/2022_zj_003.jpg)" alt="2022年度总结" class="thumbnail-image"></span>
@@ -484,8 +548,8 @@
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2022/11/27/2022%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" class="title">2022年度总结</a></p>
-                            <p class="item-date"><time datetime="2022-11-27T11:30:59.000Z" itemprop="datePublished">2022-11-27</time></p>
+                            <p class="item-title"><a href="/2022/12/30/2022%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" class="title">2022年度总结</a></p>
+                            <p class="item-date"><time datetime="2022-12-30T11:30:59.000Z" itemprop="datePublished">2022-12-30</time></p>
                         </div>
                     </li>
                 
@@ -529,46 +593,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2022/09/22/%E8%BF%87%E5%85%B3%E7%BE%8A%E4%BA%86%E4%B8%AA%E7%BE%8A/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/games/ylgy01.png)" alt="过关羊了个羊" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2022/09/22/%E8%BF%87%E5%85%B3%E7%BE%8A%E4%BA%86%E4%B8%AA%E7%BE%8A/" class="title">过关羊了个羊</a></p>
-                            <p class="item-date"><time datetime="2022-09-22T13:56:47.000Z" itemprop="datePublished">2022-09-22</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2022/07/07/Kotlin%E6%89%A9%E5%B1%95%E5%87%BD%E6%95%B0/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://www.runoob.com/wp-content/uploads/2017/05/kotlin_250x250.png)" alt="Kotlin扩展函数" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2022/07/07/Kotlin%E6%89%A9%E5%B1%95%E5%87%BD%E6%95%B0/" class="title">Kotlin扩展函数</a></p>
-                            <p class="item-date"><time datetime="2022-07-07T15:47:15.000Z" itemprop="datePublished">2022-07-07</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -581,7 +605,7 @@
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/9%E5%9B%BE/" style="font-size: 10px;">.9图</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/DeepFaceLab/" style="font-size: 10px;">DeepFaceLab</a> <a href="/tags/FTP/" style="font-size: 10px;">FTP</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Kotlin/" style="font-size: 10px;">Kotlin</a> <a href="/tags/PS/" style="font-size: 10px;">PS</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Retorfit/" style="font-size: 10px;">Retorfit</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/SRS/" style="font-size: 10px;">SRS</a> <a href="/tags/V2ray/" style="font-size: 10px;">V2ray</a> <a href="/tags/gitlab/" style="font-size: 10px;">gitlab</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nextcloud/" style="font-size: 10px;">nextcloud</a> <a href="/tags/ping/" style="font-size: 10px;">ping</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/%E4%B8%8B%E8%BD%BD/" style="font-size: 10px;">下载</a> <a href="/tags/%E4%B8%9C%E6%9E%81%E5%B2%9B/" style="font-size: 10px;">东极岛</a> <a href="/tags/%E4%B9%8C%E9%95%87/" style="font-size: 10px;">乌镇</a> <a href="/tags/%E4%B9%B0%E6%88%BF/" style="font-size: 10px;">买房</a> <a href="/tags/%E5%88%B7%E6%9C%BA/" style="font-size: 10px;">刷机</a> <a href="/tags/%E5%9F%9F%E5%90%8D/" style="font-size: 10px;">域名</a> <a href="/tags/%E5%A9%BA%E6%BA%90-%E4%B8%89%E6%B8%85%E5%B1%B1/" style="font-size: 10px;">婺源&三清山</a> <a href="/tags/%E5%AE%8F%E6%9D%91-%E9%BB%84%E5%B1%B1/" style="font-size: 10px;">宏村&黄山</a> <a href="/tags/%E5%AE%9A%E6%97%B6%E5%99%A8-%E7%BA%BF%E7%A8%8B%E6%B1%A0/" style="font-size: 10px;">定时器&线程池</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 10px;">小程序</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 13.33px;">总结</a> <a href="/tags/%E6%97%85%E8%A1%8C/" style="font-size: 16.67px;">旅行</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 10px;">服务器</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 10px;">游戏</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 10px;">爬虫</a> <a href="/tags/%E7%8B%97/" style="font-size: 10px;">狗</a> <a href="/tags/%E7%BE%BD%E6%AF%9B%E7%90%83/" style="font-size: 10px;">羽毛球</a> <a href="/tags/%E8%A7%86%E9%A2%91%E5%90%88%E5%B9%B6/" style="font-size: 10px;">视频合并</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 10px;">设计模式</a> <a href="/tags/%E8%BD%AF%E8%80%83/" style="font-size: 10px;">软考</a> <a href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91/" style="font-size: 13.33px;">阿里云</a> <a href="/tags/%E9%BE%99%E8%99%8E%E5%B1%B1/" style="font-size: 10px;">龙虎山</a>
+            <a href="/tags/9%E5%9B%BE/" style="font-size: 10px;">.9图</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ChatGPT/" style="font-size: 10px;">ChatGPT</a> <a href="/tags/DeepFaceLab/" style="font-size: 10px;">DeepFaceLab</a> <a href="/tags/FTP/" style="font-size: 10px;">FTP</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Kotlin/" style="font-size: 10px;">Kotlin</a> <a href="/tags/PS/" style="font-size: 10px;">PS</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Retorfit/" style="font-size: 10px;">Retorfit</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/SRS/" style="font-size: 10px;">SRS</a> <a href="/tags/V2ray/" style="font-size: 10px;">V2ray</a> <a href="/tags/gitlab/" style="font-size: 10px;">gitlab</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nextcloud/" style="font-size: 10px;">nextcloud</a> <a href="/tags/ping/" style="font-size: 10px;">ping</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/%E4%B8%8B%E8%BD%BD/" style="font-size: 10px;">下载</a> <a href="/tags/%E4%B8%9C%E6%9E%81%E5%B2%9B/" style="font-size: 10px;">东极岛</a> <a href="/tags/%E4%B9%8C%E9%95%87/" style="font-size: 10px;">乌镇</a> <a href="/tags/%E4%B9%B0%E6%88%BF/" style="font-size: 10px;">买房</a> <a href="/tags/%E5%88%B7%E6%9C%BA/" style="font-size: 10px;">刷机</a> <a href="/tags/%E5%9F%9F%E5%90%8D/" style="font-size: 10px;">域名</a> <a href="/tags/%E5%A9%BA%E6%BA%90-%E4%B8%89%E6%B8%85%E5%B1%B1/" style="font-size: 10px;">婺源&三清山</a> <a href="/tags/%E5%AE%8F%E6%9D%91-%E9%BB%84%E5%B1%B1/" style="font-size: 10px;">宏村&黄山</a> <a href="/tags/%E5%AE%9A%E6%97%B6%E5%99%A8-%E7%BA%BF%E7%A8%8B%E6%B1%A0/" style="font-size: 10px;">定时器&线程池</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 10px;">小程序</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 13.33px;">总结</a> <a href="/tags/%E6%97%85%E8%A1%8C/" style="font-size: 16.67px;">旅行</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 10px;">服务器</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 10px;">游戏</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 10px;">爬虫</a> <a href="/tags/%E7%8B%97/" style="font-size: 10px;">狗</a> <a href="/tags/%E7%BE%BD%E6%AF%9B%E7%90%83/" style="font-size: 10px;">羽毛球</a> <a href="/tags/%E8%A7%86%E9%A2%91%E5%90%88%E5%B9%B6/" style="font-size: 10px;">视频合并</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 10px;">设计模式</a> <a href="/tags/%E8%BD%AF%E8%80%83/" style="font-size: 13.33px;">软考</a> <a href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91/" style="font-size: 13.33px;">阿里云</a> <a href="/tags/%E9%BE%99%E8%99%8E%E5%B1%B1/" style="font-size: 10px;">龙虎山</a>
         </div>
     </div>
 
@@ -622,6 +646,34 @@
         <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=300 height=86
                 src="//music.163.com/outchain/player?type=2&id=578090&auto=1&height=66"></iframe>
         <img src="../images/main_wx.png" width=150 height=150>
+
+        <!--天气插件-->
+        <div id="he-plugin-simple" style="width: 300px"></div>
+        <!--天气插件-->
+        <script>
+            WIDGET = {
+                "CONFIG": {
+                    "modules": "01234",
+                    "background": "1",
+                    "tmpColor": "FFFFFF",
+                    "tmpSize": "16",
+                    "cityColor": "FFFFFF",
+                    "citySize": "16",
+                    "aqiColor": "FFFFFF",
+                    "aqiSize": "16",
+                    "weatherIconSize": "24",
+                    "alertIconSize": "18",
+                    "padding": "10px 10px 10px 10px",
+                    "shadow": "0",
+                    "language": "auto",
+                    "fixed": "false",
+                    "vertical": "top",
+                    "horizontal": "left",
+                    "key": "30867faab9634d6692ca70efb12b39ea"
+                }
+            }
+        </script>
+        <script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script>
     </div>
 
 
@@ -657,8 +709,8 @@
     </div>
 </footer>
 
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
+<!--<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>-->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <script src="//cdn1.lncld.net/static/js/2.5.0/av-min.js"></script>
 
 <script>
