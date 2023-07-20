@@ -24,7 +24,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/lencx/ChatGPT/main/public/logo.png">
 <meta property="article:published_time" content="2023-03-15T14:25:46.000Z">
-<meta property="article:modified_time" content="2023-05-22T14:31:22.982Z">
+<meta property="article:modified_time" content="2023-06-29T17:23:39.828Z">
 <meta property="article:author" content="ZhengChengcheng">
 <meta property="article:tag" content="ChatGPT">
 <meta name="twitter:card" content="summary">
@@ -239,7 +239,7 @@
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
   <a href="/2023/03/15/ChatGPT%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="article-date">
-     <time datetime="2023-05-22T14:31:22.982Z" itemprop="dateModified">2023-05-22</time>
+     <time datetime="2023-06-29T17:23:39.828Z" itemprop="dateModified">2023-06-30</time>
   </a>
 </div>
 
@@ -287,7 +287,7 @@
 <h3 id="搭建自己的ChatGPT网站"><a href="#搭建自己的ChatGPT网站" class="headerlink" title="搭建自己的ChatGPT网站"></a>搭建自己的ChatGPT网站</h3><p><a target="_blank" rel="noopener" href="https://github.com/Chanzhaoyu/chatgpt-web">参考：chatgpt-web</a><br>部署到Railway后,点击项目-&gt; setting -&gt; Domains -&gt; 可以创建一个访问地址，<br>可以绑定自己的域名<br>用免费的openai key，既可拥有自己的ChatGPT啦,</p>
 <h3 id="微信公众号集成ChatGPT"><a href="#微信公众号集成ChatGPT" class="headerlink" title="微信公众号集成ChatGPT"></a>微信公众号集成ChatGPT</h3><p>ps:railway微信公众号无法访问,我是搭在我的天翼云ubuntu上，需要开启clash代理，否则无法访问openai<br><a target="_blank" rel="noopener" href="https://github.com/zhayujie/chatgpt-on-wechat">参考项目chatgpt-on-wechat</a><br><a target="_blank" rel="noopener" href="https://github.com/zhayujie/chatgpt-on-wechat/blob/master/channel/wechatmp/README.md">使用文档</a><br>ps:运行程序的时候一开始会提示缺少库，一个一个安装就行<br>我的设置iptables端口转发到80时，没有加sudo，运行app.py时也没有加sudo</p>
 <h5 id="代理："><a href="#代理：" class="headerlink" title="代理："></a>代理：</h5><p><a target="_blank" rel="noopener" href="https://w1.v2free.top/doc/#/linux/clash">Clash for linux 教程</a><br>ps:我的订阅下载的是字符串文件，不是yaml规则文件，我是把windows电脑上clash的yml配置文件替换到~/.config/clash/config.yaml中去的</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//其他命令</span><br><span class="line">nohup ./clash &amp; tail -f nohup.out//后台运行</span><br><span class="line">jobs -l //查看后台进程</span><br><span class="line">kill %编号 //杀死进程</span><br><span class="line">touch 文件.后缀 //新建文件</span><br><span class="line">nohup python3 app.py &amp; tail -f nohup.out //后台运行并打印日志到nohub.out</span><br><span class="line">ps -ef | grep clash //查看进程编号</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//其他命令</span><br><span class="line">nohup ./clash &amp; tail -f nohup.out//后台运行</span><br><span class="line">jobs -l //查看后台进程</span><br><span class="line">kill %编号 //杀死进程</span><br><span class="line">touch 文件.后缀 //新建文件</span><br><span class="line">nohup python3 app.py &amp; tail -f nohup.out //后台运行并打印日志到nohub.out</span><br><span class="line">ps -ef | grep clash //查看进程编号</span><br><span class="line">lsof -i 8080 //显示8080端口进程</span><br></pre></td></tr></table></figure>
 
 <h3 id="无阻访问OpenAI-API"><a href="#无阻访问OpenAI-API" class="headerlink" title="无阻访问OpenAI API"></a>无阻访问OpenAI API</h3><p>不用配置代理啦<br><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/SYGPuHKO7ShzfmBGsQ363w">通过Cloudflare Worker无阻访问OpenAI API</a><br><a target="_blank" rel="noopener" href="https://nic.eu.org/arf/en/">eu.org</a><br><a target="_blank" rel="noopener" href="https://dash.cloudflare.com/">cloudflare</a></p>
 <h3 id="企业微信接入ChatGPT"><a href="#企业微信接入ChatGPT" class="headerlink" title="企业微信接入ChatGPT"></a>企业微信接入ChatGPT</h3><p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/Ultc3LKDnoX9VRW-S9tXhw">一键为你的企业微信接入ChatGPT</a><br>railway注意端口填80，json编辑配置是无法使字符[]<br><a target="_blank" rel="noopener" href="https://github.com/goldfishh/chatgpt-on-wechat/blob/master/plugins/tool/README.md">插件</a><br><a target="_blank" rel="noopener" href="https://alapi.cn/api/view/93">每日60秒早报</a></p>
@@ -378,7 +378,7 @@
         "genre": "",
         "datePublished": "2023-03-15",
         "dateCreated": "2023-03-15",
-        "dateModified": "2023-05-22",
+        "dateModified": "2023-06-30",
         "url": "https://zcccool.cn/2023/03/15/ChatGPT使用教程/",
         "description": "
 准备1.需要科学上网2.ios部分app需要使用国外AppleId才能安装
@@ -386,7 +386,7 @@
 客户端ChatGPT 客户端 (Mac, Windows and Linux)
 5月19日OpenAI官方ChatGPT app上架appstore
 如",
-        "wordCount": 174
+        "wordCount": 179
     }
 </script>
 
@@ -494,6 +494,26 @@
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2023/07/21/0715%E6%97%85%E6%B8%B8/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/0715piaoliu/tiantangzhai9.jpg)" alt="0715旅游" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2023/07/21/0715%E6%97%85%E6%B8%B8/" class="title">0715旅游</a></p>
+                            <p class="item-date"><time datetime="2023-07-20T17:07:13.000Z" itemprop="datePublished">2023-07-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2023/05/28/%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" class="thumbnail">
     
     
@@ -571,26 +591,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2022/11/08/%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/software/title.jpg)" alt="软考中级-软件设计师" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2022/11/08/%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/" class="title">软考中级-软件设计师</a></p>
-                            <p class="item-date"><time datetime="2022-11-07T16:52:53.000Z" itemprop="datePublished">2022-11-08</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -603,7 +603,7 @@
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/9%E5%9B%BE/" style="font-size: 10px;">.9图</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ChatGPT/" style="font-size: 10px;">ChatGPT</a> <a href="/tags/DeepFaceLab/" style="font-size: 10px;">DeepFaceLab</a> <a href="/tags/FTP/" style="font-size: 10px;">FTP</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Kotlin/" style="font-size: 10px;">Kotlin</a> <a href="/tags/PS/" style="font-size: 10px;">PS</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Retorfit/" style="font-size: 10px;">Retorfit</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/SRS/" style="font-size: 10px;">SRS</a> <a href="/tags/V2ray/" style="font-size: 10px;">V2ray</a> <a href="/tags/gitlab/" style="font-size: 10px;">gitlab</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nextcloud/" style="font-size: 10px;">nextcloud</a> <a href="/tags/ping/" style="font-size: 10px;">ping</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/%E4%B8%8B%E8%BD%BD/" style="font-size: 10px;">下载</a> <a href="/tags/%E4%B8%9C%E6%9E%81%E5%B2%9B/" style="font-size: 10px;">东极岛</a> <a href="/tags/%E4%B9%8C%E9%95%87/" style="font-size: 10px;">乌镇</a> <a href="/tags/%E4%B9%B0%E6%88%BF/" style="font-size: 10px;">买房</a> <a href="/tags/%E5%88%B7%E6%9C%BA/" style="font-size: 10px;">刷机</a> <a href="/tags/%E5%9F%9F%E5%90%8D/" style="font-size: 10px;">域名</a> <a href="/tags/%E5%A9%BA%E6%BA%90-%E4%B8%89%E6%B8%85%E5%B1%B1/" style="font-size: 10px;">婺源&三清山</a> <a href="/tags/%E5%AE%8F%E6%9D%91-%E9%BB%84%E5%B1%B1/" style="font-size: 10px;">宏村&黄山</a> <a href="/tags/%E5%AE%9A%E6%97%B6%E5%99%A8-%E7%BA%BF%E7%A8%8B%E6%B1%A0/" style="font-size: 10px;">定时器&线程池</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 10px;">小程序</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 13.33px;">总结</a> <a href="/tags/%E6%97%85%E8%A1%8C/" style="font-size: 16.67px;">旅行</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 10px;">服务器</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 10px;">游戏</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 10px;">爬虫</a> <a href="/tags/%E7%8B%97/" style="font-size: 10px;">狗</a> <a href="/tags/%E7%BE%BD%E6%AF%9B%E7%90%83/" style="font-size: 10px;">羽毛球</a> <a href="/tags/%E8%A7%86%E9%A2%91%E5%90%88%E5%B9%B6/" style="font-size: 10px;">视频合并</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 10px;">设计模式</a> <a href="/tags/%E8%BD%AF%E8%80%83/" style="font-size: 13.33px;">软考</a> <a href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91/" style="font-size: 13.33px;">阿里云</a> <a href="/tags/%E9%BE%99%E8%99%8E%E5%B1%B1/" style="font-size: 10px;">龙虎山</a>
+            <a href="/tags/9%E5%9B%BE/" style="font-size: 10px;">.9图</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ChatGPT/" style="font-size: 10px;">ChatGPT</a> <a href="/tags/DeepFaceLab/" style="font-size: 10px;">DeepFaceLab</a> <a href="/tags/FTP/" style="font-size: 10px;">FTP</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Kotlin/" style="font-size: 10px;">Kotlin</a> <a href="/tags/PS/" style="font-size: 10px;">PS</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Retorfit/" style="font-size: 10px;">Retorfit</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/SRS/" style="font-size: 10px;">SRS</a> <a href="/tags/V2ray/" style="font-size: 10px;">V2ray</a> <a href="/tags/gitlab/" style="font-size: 10px;">gitlab</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nextcloud/" style="font-size: 10px;">nextcloud</a> <a href="/tags/ping/" style="font-size: 10px;">ping</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/%E4%B8%8B%E8%BD%BD/" style="font-size: 10px;">下载</a> <a href="/tags/%E4%B8%9C%E6%9E%81%E5%B2%9B/" style="font-size: 10px;">东极岛</a> <a href="/tags/%E4%B9%8C%E9%95%87/" style="font-size: 10px;">乌镇</a> <a href="/tags/%E4%B9%B0%E6%88%BF/" style="font-size: 10px;">买房</a> <a href="/tags/%E5%88%B7%E6%9C%BA/" style="font-size: 10px;">刷机</a> <a href="/tags/%E5%9F%9F%E5%90%8D/" style="font-size: 10px;">域名</a> <a href="/tags/%E5%A9%BA%E6%BA%90-%E4%B8%89%E6%B8%85%E5%B1%B1/" style="font-size: 10px;">婺源&三清山</a> <a href="/tags/%E5%AE%8F%E6%9D%91-%E9%BB%84%E5%B1%B1/" style="font-size: 10px;">宏村&黄山</a> <a href="/tags/%E5%AE%9A%E6%97%B6%E5%99%A8-%E7%BA%BF%E7%A8%8B%E6%B1%A0/" style="font-size: 10px;">定时器&线程池</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 10px;">小程序</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 13.33px;">总结</a> <a href="/tags/%E6%97%85%E8%A1%8C/" style="font-size: 16.67px;">旅行</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 10px;">服务器</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 10px;">游戏</a> <a href="/tags/%E6%BC%82%E6%B5%81/" style="font-size: 10px;">漂流</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 10px;">爬虫</a> <a href="/tags/%E7%8B%97/" style="font-size: 10px;">狗</a> <a href="/tags/%E7%BE%BD%E6%AF%9B%E7%90%83/" style="font-size: 10px;">羽毛球</a> <a href="/tags/%E8%A7%86%E9%A2%91%E5%90%88%E5%B9%B6/" style="font-size: 10px;">视频合并</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 10px;">设计模式</a> <a href="/tags/%E8%BD%AF%E8%80%83/" style="font-size: 13.33px;">软考</a> <a href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91/" style="font-size: 13.33px;">阿里云</a> <a href="/tags/%E9%BE%99%E8%99%8E%E5%B1%B1/" style="font-size: 10px;">龙虎山</a>
         </div>
     </div>
 
