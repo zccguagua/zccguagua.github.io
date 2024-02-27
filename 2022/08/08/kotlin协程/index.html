@@ -6,20 +6,29 @@
     
 
     
-    <title>归档 | Orange个人博客</title>
+    <title>kotlin协程 | Orange个人博客</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="description" content="郑程程">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Orange个人博客">
-<meta property="og:url" content="https://zcccool.cn/archives/page/2/index.html">
+    <meta name="keywords" content="Kotlin" />
+    <!--百度收录-->
+<!--    <meta name="baidu-site-verification" content="code-PwF0RA7PZP" />-->
+
+    
+    <meta name="description" content="理解协程、LiveData 和 Flow 协程中的取消和异常 | 核心概念介绍 协程中的取消和异常 | 取消操作详解 协程中的取消和异常 | 异常处理详解 Kotlin中为什么不推荐使用GlobalScope.launch? 在 Android 开发中使用协程 | 上手指南 在 Android 开发中使用协程 | 代码实战 使用 Jetpack DataStore 进行数据存储 WorkMana">
+<meta property="og:type" content="article">
+<meta property="og:title" content="kotlin协程">
+<meta property="og:url" content="https://zcccool.cn/2022/08/08/kotlin%E5%8D%8F%E7%A8%8B/index.html">
 <meta property="og:site_name" content="Orange个人博客">
-<meta property="og:description" content="郑程程">
+<meta property="og:description" content="理解协程、LiveData 和 Flow 协程中的取消和异常 | 核心概念介绍 协程中的取消和异常 | 取消操作详解 协程中的取消和异常 | 异常处理详解 Kotlin中为什么不推荐使用GlobalScope.launch? 在 Android 开发中使用协程 | 上手指南 在 Android 开发中使用协程 | 代码实战 使用 Jetpack DataStore 进行数据存储 WorkMana">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2017/05/kotlin_250x250.png">
+<meta property="article:published_time" content="2022-08-08T15:16:45.000Z">
+<meta property="article:modified_time" content="2024-02-27T15:27:08.274Z">
 <meta property="article:author" content="ZhengChengcheng">
-<meta property="article:tag" content="郑程程">
+<meta property="article:tag" content="Kotlin">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.runoob.com/wp-content/uploads/2017/05/kotlin_250x250.png">
     
 
     
@@ -196,122 +205,166 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-archive"></i>归档
+    未分类
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            
-
-    
-    
+                            <article id="post-kotlin协程"
+         class="article article-single article-type-post"
+         itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2022" class="archive-year"><i class="icon fa fa-calendar-o"></i>2022</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2022/09/22/%E8%BF%87%E5%85%B3%E7%BE%8A%E4%BA%86%E4%B8%AA%E7%BE%8A/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/games/ylgy01.png)" alt="过关羊了个羊" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://zcccool.cn/2022/09/22/%E8%BF%87%E5%85%B3%E7%BE%8A%E4%BA%86%E4%B8%AA%E7%BE%8A/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            
-            </div>
-            <div class="date"><time datetime="2022-09-22T13:56:47.000Z" itemprop="datePublished">2022-09-22</time></div>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2022/09/22/%E8%BF%87%E5%85%B3%E7%BE%8A%E4%BA%86%E4%B8%AA%E7%BE%8A/">过关羊了个羊</a>
+        kotlin协程
         </h1>
     
 
-        <p class="article-excerpt">
-            
-9.26方法已失效，游戏已被完善
-9.24方法1.使用Stream抓包获取t值
-打开Stream点击开始抓包（提示安装证书需要安装）
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2022/08/08/kotlin%E5%8D%8F%E7%A8%8B/" class="article-date">
+       <time datetime="2022-08-08T15:16:45.000Z" itemprop="datePublished">2022-08-08</time>
+    </a>
+  </div>
 
-打开小程序，查看一下排行榜
 
-返回Stream停止抓包，在抓包历史中找到请求为cat-match.easygame2021.com的请求，其中的t值即为token
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2022/08/08/kotlin%E5%8D%8F%E7%A8%8B/" class="article-date">
+     <time datetime="2024-02-27T15:27:08.274Z" itemprop="dateModified">2024-02-27</time>
+  </a>
+</div>
 
 
+                
 
-2.下载github python代码参考链接自github
-3.导入PyCharm，tok
-        </p>
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/Kotlin/" rel="tag">Kotlin</a>
     </div>
-</article>
-    
 
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2022/08/08/kotlin%E5%8D%8F%E7%A8%8B/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://www.runoob.com/wp-content/uploads/2017/05/kotlin_250x250.png)" alt="kotlin协程" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://zcccool.cn/2022/08/08/kotlin%E5%8D%8F%E7%A8%8B/">0</span>
-    
-</span>
+                
 
+                
 
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            
+                <!--                <p>阅读数量: <span id="/2022/08/08/kotlin%E5%8D%8F%E7%A8%8B/" class="leancloud_visitors"-->
+                <!--                               data-flag-title="kotlin协程"></span>次</p>-->
+                <span id="busuanzi_container_page_pv">阅读数量:<span id="busuanzi_value_page_pv"></span>次</span>
             </div>
-            <div class="date"><time datetime="2022-08-08T15:16:45.000Z" itemprop="datePublished">2022-08-08</time></div>
-        </div>
         
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/08/08/kotlin%E5%8D%8F%E7%A8%8B/">kotlin协程</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
+        
+        <div class="article-entry" itemprop="articleBody">
             
+
+            
+
+            
+
+            <p><img src="https://www.runoob.com/wp-content/uploads/2017/05/kotlin_250x250.png" title="kotlin"></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/140314207">理解协程、LiveData 和 Flow</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/142523589">协程中的取消和异常 | 核心概念介绍</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/268502284">协程中的取消和异常 | 取消操作详解</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/269228572">协程中的取消和异常 | 异常处理详解</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/1b289ff09709">Kotlin中为什么不推荐使用GlobalScope.launch?</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/135203063">在 Android 开发中使用协程 | 上手指南</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/138802478">在 Android 开发中使用协程 | 代码实战</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/342972276">使用 Jetpack DataStore 进行数据存储</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/368298043">WorkManager 系列课程 | MAD Skills</a></p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://zcccool.cn/2022/08/08/kotlin%E5%8D%8F%E7%A8%8B/" data-id="clt4j1t2e001ah4ui3sbk3zox" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "ZhengChengcheng"
+        },
+        "headline": "kotlin协程",
+        "image": "https://zcccool.cnhttps://www.runoob.com/wp-content/uploads/2017/05/kotlin_250x250.png",
+        "keywords": "Kotlin",
+        "genre": "",
+        "datePublished": "2022-08-08",
+        "dateCreated": "2022-08-08",
+        "dateModified": "2024-02-27",
+        "url": "https://zcccool.cn/2022/08/08/kotlin协程/",
+        "description": "
 理解协程、LiveData 和 Flow
 协程中的取消和异常 | 核心概念介绍
 协程中的取消和异常 | 取消操作详解
@@ -320,449 +373,24 @@ Kotlin中为什么不推荐使用GlobalScope.launch?
 在 Android 开发中使用协程 | 上手指南
 在 Android 开发中使用协程 | 代码实战
 使用 Jetpack DataStore 进行数据存储
-WorkMana
-        </p>
-    </div>
+WorkMana",
+        "wordCount": 40
+    }
+</script>
+
 </article>
-    
-        </div>
-    
 
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2022/07/07/Kotlin%E6%89%A9%E5%B1%95%E5%87%BD%E6%95%B0/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://www.runoob.com/wp-content/uploads/2017/05/kotlin_250x250.png)" alt="Kotlin扩展函数" class="thumbnail-image"></span>
-    
+    <section id="comments">
     
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://zcccool.cn/2022/07/07/Kotlin%E6%89%A9%E5%B1%95%E5%87%BD%E6%95%B0/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            
-            </div>
-            <div class="date"><time datetime="2022-07-07T15:47:15.000Z" itemprop="datePublished">2022-07-07</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/07/07/Kotlin%E6%89%A9%E5%B1%95%E5%87%BD%E6%95%B0/">Kotlin扩展函数</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-kotlin扩展函数参考映射(Mapping)合并(Zipping)关联(Association)扁平化(Flattening)字符串表达(String representation)过滤(Filtering)集合加法(Plus) 和 减法(Minus) 操作符分组(Grouping)
-Kotlin 标准库提供了一组扩展函数用于集合的 变换(Transformation). 这些函数会使用指定的
-        </p>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2022/05/01/gitlab%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://zcccool.cn/2022/05/01/gitlab%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/">0</span>
-    
-</span>
 
 
     
-</a>
+    </section>
 
-        
-        <div class="article-meta">
-            <div class="category">
-            
-            </div>
-            <div class="date"><time datetime="2022-05-01T15:27:46.000Z" itemprop="datePublished">2022-05-01</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/05/01/gitlab%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/">gitlab安装使用</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            开始想在自己的服务器上搭建一个gitlab,保存代码啥的，发现gitlab要求最低配置2核4g内存，自己的服务器够呛。gitlab安装参考
-手动部署
-安装依赖包
-
-1sudo yum install -y curl policycoreutils-python openssh-server
-
-
-依次运行一下命令，配置SSH服务
-
-12sudo systemctl start sshd //启动SS
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2022/03/12/%E4%B8%8A%E4%BC%A0%E9%98%BF%E9%87%8C%E4%BA%91%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/badminton/badminton3.jpg)" alt="上传阿里云对象存储" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://zcccool.cn/2022/03/12/%E4%B8%8A%E4%BC%A0%E9%98%BF%E9%87%8C%E4%BA%91%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            
-            </div>
-            <div class="date"><time datetime="2022-03-11T16:22:20.000Z" itemprop="datePublished">2022-03-12</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/03/12/%E4%B8%8A%E4%BC%A0%E9%98%BF%E9%87%8C%E4%BA%91%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/">上传阿里云对象存储</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-需求项目远程调试公司设备时，现场抓取的设备日志是加密的，需要传回来解密排查问题，如果对方电脑没有QQ等可以发送文件软件时，就不太方便。 我的想法就是利用自己的服务器传递文件到自己的阿里云对象存储。利用阿里云CDN可以快速访问文件。
-开始废话不多说直接开始，可参考下方地址
-阿里云对象存储快速入门
-服务端添加maven依赖
-1234567891011&lt;dependency&gt;    &lt
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2022/01/01/%E7%BE%BD%E6%AF%9B%E7%90%83%E7%9F%A5%E8%AF%86/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/badminton/badminton1.jpg)" alt="羽毛球知识" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://zcccool.cn/2022/01/01/%E7%BE%BD%E6%AF%9B%E7%90%83%E7%9F%A5%E8%AF%86/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            
-            </div>
-            <div class="date"><time datetime="2021-12-31T17:02:30.000Z" itemprop="datePublished">2022-01-01</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/01/01/%E7%BE%BD%E6%AF%9B%E7%90%83%E7%9F%A5%E8%AF%86/">羽毛球知识</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-最近在网上看羽毛球拍，被球拍的名字搞得云里雾里，刚好趁机一边学习一边整理一下羽毛球的相关小知识
-关于厂商主要三大厂商 VICTOR 胜利(蓝厂)，YONEX尤尼克斯(绿厂),李宁(红厂)
-关于选拍球拍的选择可以参考中羽在线的这篇帖子理性烧拍法则
-球拍本身没有单打拍、双打拍的区分，只能说一个拍子更适合用来单打还是双打。总的来说排头重一些的球拍适合单打，排头重杀球更具威力；排头轻一点、挥速快的拍子更
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-        
-            </div></section>
-        
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2021" class="archive-year"><i class="icon fa fa-calendar-o"></i>2021</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2021/12/30/2021%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/2021zj/badminton.jpg)" alt="2021年度总结" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://zcccool.cn/2021/12/30/2021%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            
-            </div>
-            <div class="date"><time datetime="2021-12-30T15:35:45.000Z" itemprop="datePublished">2021-12-30</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2021/12/30/2021%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/">2021年度总结</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-总结从来没写过年度总结，感觉日子就是每天Ctrl C+Ctrl V复制粘贴,没什么好写的。刚好年末很多手机app走出了总结报告。就以此为基础看下自己一年都干了些什么。
-豆瓣
-123部影视中，很多是以前看过的，只是标记了一下已看，有些在B站上看up的讲解，过一下剧情也算看过。
-
-看了15本书《亲密关系》受益匪浅，非常不错，有空会多读几遍《你当像鸟飞往你的山》关于教育《巨人的陨落》、《卡拉马佐夫兄弟
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2021/12/16/V2ray%E5%AE%A2%E6%88%B7%E7%AB%AF/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_18.jpg)" alt="V2ray客户端" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://zcccool.cn/2021/12/16/V2ray%E5%AE%A2%E6%88%B7%E7%AB%AF/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            
-            </div>
-            <div class="date"><time datetime="2021-12-16T15:06:12.000Z" itemprop="datePublished">2021-12-16</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2021/12/16/V2ray%E5%AE%A2%E6%88%B7%E7%AB%AF/">V2ray客户端</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-什么是墙防火长城（英语：Great Firewall，常用简称：GFW），中文也称中国国家防火墙，俗称墙、网络长城、防火墙等等，中国国家互联网信息办公室称为数据跨境安全网关，是中华人民共和国政府监控和过滤互联网国际出口内容的软硬件系统集合。随着使用的拓广，“墙”有时也被用作动词，中国网友所说的“被墙”即指网站内容被防火长城所屏蔽或者指服务器的通讯被封阻，“翻墙”也被引申为突破网络审查浏览中国大陆
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2021/11/14/%E5%B0%8F%E7%9A%AE%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BAnextcloud%E7%BD%91%E7%9B%98/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_19.jpg)" alt="小皮面板搭建nextcloud网盘" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://zcccool.cn/2021/11/14/%E5%B0%8F%E7%9A%AE%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BAnextcloud%E7%BD%91%E7%9B%98/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            
-            </div>
-            <div class="date"><time datetime="2021-11-14T07:32:01.000Z" itemprop="datePublished">2021-11-14</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2021/11/14/%E5%B0%8F%E7%9A%AE%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BAnextcloud%E7%BD%91%E7%9B%98/">小皮面板搭建nextcloud网盘</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-2023年6月补充更新ps:需要注意php版本，不在维护的php版本可能无法部署nextcloud,建议使用最新php版本ps:2023年6月，小皮面板已长时间没有更新维护，使用的php版本官方已不再维护，我替换成了宝塔，配置方法类似
-安装小皮面板小皮面板：轻巧,便捷,功能强大,是国内最早,最知名的的免费集成环境，类似与宝塔。功能强大见者欣喜若狂。
-小皮面板网址
-注意：小皮面板提示请确保您的系统
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2021/11/10/%E6%90%AD%E5%BB%BAFTP%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_20.jpg)" alt="搭建FTP服务器" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://zcccool.cn/2021/11/10/%E6%90%AD%E5%BB%BAFTP%E6%9C%8D%E5%8A%A1%E5%99%A8/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            
-            </div>
-            <div class="date"><time datetime="2021-11-09T16:27:44.000Z" itemprop="datePublished">2021-11-10</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2021/11/10/%E6%90%AD%E5%BB%BAFTP%E6%9C%8D%E5%8A%A1%E5%99%A8/">搭建FTP服务器</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-前段时间阿里云服务器到期了，趁着双11换了一个2核4g的天翼云服务器，记录一下安装FTP服务器过程ps:天翼云服务器在没有备案的情况下，是使用不了80，8080，443等端口的，配置了安全组也不行，搞的当时不明所以浪费了很多时间
-参考安装ftp服务器可参考下方教程 阿里云ftp教程 天翼云ftp教程
-安装FTP服务器 12345yum install vsftpd -ysystemctl ena
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-
-    </div></section>
-
-
-    <nav id="page-nav">
-        <span class="pages">第 2 页，共 5 页</span>
-        <a class="extend prev" rel="prev" href="/archives/">&laquo;</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><a class="extend next" rel="next" href="/archives/page/3/">&raquo;</a>
-    </nav>
 
 
                         </div>
@@ -815,6 +443,29 @@ Kotlin 标准库提供了一组扩展函数用于集合的 变换(Transformation
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2022/09/22/%E8%BF%87%E5%85%B3%E7%BE%8A%E4%BA%86%E4%B8%AA%E7%BE%8A/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            过关羊了个羊
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2022/07/07/Kotlin%E6%89%A9%E5%B1%95%E5%87%BD%E6%95%B0/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">Kotlin扩展函数</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -1108,11 +759,13 @@ Kotlin 标准库提供了一组扩展函数用于集合的 变换(Transformation
     var disqus_shortname = 'hexo-theme-hueman';
     
     
+    var disqus_url = 'https://zcccool.cn/2022/08/08/kotlin%E5%8D%8F%E7%A8%8B/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
