@@ -90,7 +90,7 @@
     
 
 
-<meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="Orange个人博客" type="application/atom+xml">
+<meta name="generator" content="Hexo 7.0.0"><link rel="alternate" href="/atom.xml" title="Orange个人博客" type="application/atom+xml">
 </head>
 
 <body>
@@ -291,7 +291,7 @@
 <p><a target="_blank" rel="noopener" href="https://nextcloud.com/">nextcloud官网</a></p>
 <p><a target="_blank" rel="noopener" href="https://github.com/nextcloud/server">nextcloud GitHub</a></p>
 <p>去nextcloud GitHub下载两个东西，一个是源码包我用的是版本22.2.1，下载后文件名server-22.2.1.zip，另一个是这个3rdparty压缩包<br><img src="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/nextcloud/nextcloud_3.png" alt="nextcloud" title="nextcloud"><br><img src="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/nextcloud/nextcloud_4.png" alt="nextcloud" title="nextcloud"></p>
-<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><p>上传server-22.2.1.zip压缩包到你的站点目录，就是刚刚新建的/www/admin/abc.cn_8888/wwwroot<br>鼠标移到压缩包上解压，点击解压，解压成功后将service-22.2.1文件夹中的所有文件剪切到wwwroot的目录<br><img src="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/nextcloud/nextcloud_5.png" alt="nextcloud" title="nextcloud"><br>注意这个3rdparty目录，默认是空的，需要将上一步下载的3rdparty包同样上传并解压到自己的这个3rdparty中。如果3rdparty是空的打开网页会提示</p>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><p>上传server-22.2.1.zip压缩包到你的站点目录，就是刚刚新建的&#x2F;www&#x2F;admin&#x2F;abc.cn_8888&#x2F;wwwroot<br>鼠标移到压缩包上解压，点击解压，解压成功后将service-22.2.1文件夹中的所有文件剪切到wwwroot的目录<br><img src="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/nextcloud/nextcloud_5.png" alt="nextcloud" title="nextcloud"><br>注意这个3rdparty目录，默认是空的，需要将上一步下载的3rdparty包同样上传并解压到自己的这个3rdparty中。如果3rdparty是空的打开网页会提示</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Composer autoloader not found, unable to continue.</span><br><span class="line">Check the folder &quot;3rdparty&quot;. </span><br><span class="line">Running &quot;git submodule update --init&quot; will initialize the git submodule that</span><br><span class="line">handles the subfolder &quot;3rdparty&quot;.</span><br></pre></td></tr></table></figure>
 
 <p>到此nextcloud部署结束 在浏览器输入:你的域名:8888,不出意外即可打开nextcloud界面<br>在界面上创建管理员账号，密码,配置数据库选择mysql，用户名、密码、数据库名都是刚刚设置的，端口号mysql默认是3306，点击安装完成，稍等片库即可大功告成</p>
@@ -306,7 +306,7 @@
 
 
 
-    <a data-url="https://zcccool.cn/2021/11/14/%E5%B0%8F%E7%9A%AE%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BAnextcloud%E7%BD%91%E7%9B%98/" data-id="clvuzhj1b002a4suiaxojf0wm" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://zcccool.cn/2021/11/14/%E5%B0%8F%E7%9A%AE%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BAnextcloud%E7%BD%91%E7%9B%98/" data-id="cm8x6tcad0021eohyhyb29wwq" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -715,7 +715,6 @@
     </div>
 </footer>
 
-<!--<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>-->
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <script src="//cdn1.lncld.net/static/js/2.5.0/av-min.js"></script>
 

@@ -88,7 +88,7 @@
     
 
 
-<meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="Orange个人博客" type="application/atom+xml">
+<meta name="generator" content="Hexo 7.0.0"><link rel="alternate" href="/atom.xml" title="Orange个人博客" type="application/atom+xml">
 </head>
 
 <body>
@@ -289,17 +289,25 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl enable postfix</span><br></pre></td></tr></table></figure>
 
 <ol start="5">
-<li><p>启动Postfix服务</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/postfix/main.cf//打开文件</span><br><span class="line">inet_interfaces = all//修改文件中代码</span><br><span class="line">保存关闭文件</span><br><span class="line">sudo systemctl start postfix//启动Postfix服务</span><br></pre></td></tr></table></figure></li>
-<li><p>添加GitLab软件包仓库</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.rpm.sh | sudo bash</span><br></pre></td></tr></table></figure></li>
-<li><p>安装GitLab</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo EXTERNAL_URL=&quot;GitLab服务器的公网IP地址:端口&quot; yum install -y gitlab-ce</span><br></pre></td></tr></table></figure></li>
-<li><p>打开网页<br>用户名root<br>密码在/etc/gitlab/initial_root_password文件中</p>
-</li>
+<li>启动Postfix服务</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/postfix/main.cf//打开文件</span><br><span class="line">inet_interfaces = all//修改文件中代码</span><br><span class="line">保存关闭文件</span><br><span class="line">sudo systemctl start postfix//启动Postfix服务</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>添加GitLab软件包仓库</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.rpm.sh | sudo bash</span><br></pre></td></tr></table></figure>
+
+<ol start="7">
+<li>安装GitLab</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo EXTERNAL_URL=&quot;GitLab服务器的公网IP地址:端口&quot; yum install -y gitlab-ce</span><br></pre></td></tr></table></figure>
+
+<ol start="8">
+<li>打开网页<br>用户名root<br>密码在&#x2F;etc&#x2F;gitlab&#x2F;initial_root_password文件中</li>
 </ol>
 <h3 id="gitlab内存占用过大问题修改"><a href="#gitlab内存占用过大问题修改" class="headerlink" title="gitlab内存占用过大问题修改"></a>gitlab内存占用过大问题修改</h3><p><a target="_blank" rel="noopener" href="https://ouyangpeng.blog.csdn.net/article/details/84066417">gitlab内存占用过大问题参考</a></p>
-<p>编辑/etc/gitlab/gitlab.rb文件<br>添加<br>unicorn[‘worker_timeout’] = 20<br>unicorn[‘worker_processes’] = 2<br>postgresql[‘shared_buffers’] = “128MB”<br>postgresql[‘max_worker_processes’] = 4<br>sidekiq[‘concurrency’] = 5</p>
+<p>编辑&#x2F;etc&#x2F;gitlab&#x2F;gitlab.rb文件<br>添加<br>unicorn[‘worker_timeout’] &#x3D; 20<br>unicorn[‘worker_processes’] &#x3D; 2<br>postgresql[‘shared_buffers’] &#x3D; “128MB”<br>postgresql[‘max_worker_processes’] &#x3D; 4<br>sidekiq[‘concurrency’] &#x3D; 5</p>
 <p>运行gitlab-ctl reconfigure命令<br>gitlab-ctl restart</p>
 <h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>自己的2核4g服务器无法使用，只能打开个网页，一直转圈卡住。</p>
 
@@ -309,7 +317,7 @@
 
 
 
-    <a data-url="https://zcccool.cn/2022/05/01/gitlab%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/" data-id="clvuzhj1900204sui6xpma3u9" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://zcccool.cn/2022/05/01/gitlab%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/" data-id="cm8x6tcaa001oeohyc69zd4br" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -397,7 +405,7 @@
 依次运行一下命令，配置SSH服务
 
 12sudo systemctl start sshd //启动SS",
-        "wordCount": 125
+        "wordCount": 128
     }
 </script>
 
@@ -723,7 +731,6 @@
     </div>
 </footer>
 
-<!--<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>-->
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <script src="//cdn1.lncld.net/static/js/2.5.0/av-min.js"></script>
 

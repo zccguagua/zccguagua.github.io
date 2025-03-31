@@ -90,7 +90,7 @@
     
 
 
-<meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="Orange个人博客" type="application/atom+xml">
+<meta name="generator" content="Hexo 7.0.0"><link rel="alternate" href="/atom.xml" title="Orange个人博客" type="application/atom+xml">
 </head>
 
 <body>
@@ -286,7 +286,7 @@
 <p><font color=red>注意:此方法有可能会被腾讯检测到外挂插件</font><br>我的微信号被提醒了一次，不敢用了</p>
 <h3 id="搭建自己的ChatGPT网站"><a href="#搭建自己的ChatGPT网站" class="headerlink" title="搭建自己的ChatGPT网站"></a>搭建自己的ChatGPT网站</h3><p><a target="_blank" rel="noopener" href="https://github.com/Chanzhaoyu/chatgpt-web">参考：chatgpt-web</a><br>部署到Railway后,点击项目-&gt; setting -&gt; Domains -&gt; 可以创建一个访问地址，<br>可以绑定自己的域名<br>用免费的openai key，既可拥有自己的ChatGPT啦,</p>
 <h3 id="微信公众号集成ChatGPT"><a href="#微信公众号集成ChatGPT" class="headerlink" title="微信公众号集成ChatGPT"></a>微信公众号集成ChatGPT</h3><p>ps:railway微信公众号无法访问,我是搭在我的天翼云ubuntu上，需要开启clash代理，否则无法访问openai<br><a target="_blank" rel="noopener" href="https://github.com/zhayujie/chatgpt-on-wechat">参考项目chatgpt-on-wechat</a><br><a target="_blank" rel="noopener" href="https://github.com/zhayujie/chatgpt-on-wechat/blob/master/channel/wechatmp/README.md">使用文档</a><br>ps:运行程序的时候一开始会提示缺少库，一个一个安装就行<br>我的设置iptables端口转发到80时，没有加sudo，运行app.py时也没有加sudo</p>
-<h5 id="代理："><a href="#代理：" class="headerlink" title="代理："></a>代理：</h5><p><a target="_blank" rel="noopener" href="https://w1.v2free.top/doc/#/linux/clash">Clash for linux 教程</a><br>ps:我的订阅下载的是字符串文件，不是yaml规则文件，我是把windows电脑上clash的yml配置文件替换到~/.config/clash/config.yaml中去的</p>
+<h5 id="代理："><a href="#代理：" class="headerlink" title="代理："></a>代理：</h5><p><a target="_blank" rel="noopener" href="https://w1.v2free.top/doc/#/linux/clash">Clash for linux 教程</a><br>ps:我的订阅下载的是字符串文件，不是yaml规则文件，我是把windows电脑上clash的yml配置文件替换到~&#x2F;.config&#x2F;clash&#x2F;config.yaml中去的</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//其他命令</span><br><span class="line">nohup ./clash &amp; tail -f nohup.out//后台运行</span><br><span class="line">jobs -l //查看后台进程</span><br><span class="line">kill %编号 //杀死进程</span><br><span class="line">touch 文件.后缀 //新建文件</span><br><span class="line">nohup python3 app.py &amp; tail -f nohup.out //后台运行并打印日志到nohub.out</span><br><span class="line">ps -ef | grep clash //查看进程编号</span><br><span class="line">lsof -i 8080 //显示8080端口进程</span><br></pre></td></tr></table></figure>
 
 <h3 id="无阻访问OpenAI-API"><a href="#无阻访问OpenAI-API" class="headerlink" title="无阻访问OpenAI API"></a>无阻访问OpenAI API</h3><p>不用配置代理啦<br><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/SYGPuHKO7ShzfmBGsQ363w">通过Cloudflare Worker无阻访问OpenAI API</a><br><a target="_blank" rel="noopener" href="https://nic.eu.org/arf/en/">eu.org</a><br><a target="_blank" rel="noopener" href="https://dash.cloudflare.com/">cloudflare</a><br><a target="_blank" rel="noopener" href="https://github.com/Yidadaa/ChatGPT-Next-Web">ChatGPT-Next-Web</a><br><a target="_blank" rel="noopener" href="https://vercel.com/">vercel</a></p>
@@ -303,7 +303,7 @@
 
 
 
-    <a data-url="https://zcccool.cn/2023/03/15/ChatGPT%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" data-id="clvuzhj1f002s4suih9rm9zx7" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://zcccool.cn/2023/03/15/ChatGPT%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" data-id="cm8x6tca50014eohyhvqnew68" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -713,7 +713,6 @@
     </div>
 </footer>
 
-<!--<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>-->
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <script src="//cdn1.lncld.net/static/js/2.5.0/av-min.js"></script>
 

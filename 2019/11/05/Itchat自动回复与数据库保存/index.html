@@ -15,12 +15,12 @@
 <!--    <meta name="baidu-site-verification" content="code-PwF0RA7PZP" />-->
 
     
-    <meta name="description" content="使用ItChat库微信消息自动回复&#x2F;pymysql保存数据库前提注意登录网页微信只有老用户可以，新申请的微信号无法登录会出现以下提示： 1234&lt;error&gt;&lt;ret&gt;1203&lt;&#x2F;ret&gt;&lt;message&gt;为了你的帐号安全，此微信号已不允许登录网页微信。你可以使用Windows微信或Mac微信在电脑端登录。Windows微信下载地址：https:&#x2F;">
+    <meta name="description" content="使用ItChat库微信消息自动回复&#x2F;pymysql保存数据库前提注意登录网页微信只有老用户可以，新申请的微信号无法登录会出现以下提示： 1234&lt;error&gt;&lt;ret&gt;1203&lt;&#x2F;ret&gt;&lt;message&gt;为了你的帐号安全，此微信号已不允许登录网页微信。你可以使用Windows微信或Mac微信在电脑端登录。Windows微信下载地址：ht">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Itchat自动回复与数据库保存">
 <meta property="og:url" content="https://zcccool.cn/2019/11/05/Itchat%E8%87%AA%E5%8A%A8%E5%9B%9E%E5%A4%8D%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BF%9D%E5%AD%98/index.html">
 <meta property="og:site_name" content="Orange个人博客">
-<meta property="og:description" content="使用ItChat库微信消息自动回复&#x2F;pymysql保存数据库前提注意登录网页微信只有老用户可以，新申请的微信号无法登录会出现以下提示： 1234&lt;error&gt;&lt;ret&gt;1203&lt;&#x2F;ret&gt;&lt;message&gt;为了你的帐号安全，此微信号已不允许登录网页微信。你可以使用Windows微信或Mac微信在电脑端登录。Windows微信下载地址：https:&#x2F;">
+<meta property="og:description" content="使用ItChat库微信消息自动回复&#x2F;pymysql保存数据库前提注意登录网页微信只有老用户可以，新申请的微信号无法登录会出现以下提示： 1234&lt;error&gt;&lt;ret&gt;1203&lt;&#x2F;ret&gt;&lt;message&gt;为了你的帐号安全，此微信号已不允许登录网页微信。你可以使用Windows微信或Mac微信在电脑端登录。Windows微信下载地址：ht">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_03.jpg">
 <meta property="article:published_time" content="2019-11-05T07:31:05.000Z">
@@ -90,7 +90,7 @@
     
 
 
-<meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="Orange个人博客" type="application/atom+xml">
+<meta name="generator" content="Hexo 7.0.0"><link rel="alternate" href="/atom.xml" title="Orange个人博客" type="application/atom+xml">
 </head>
 
 <body>
@@ -270,7 +270,7 @@
             
 
             <p><img src="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_03.jpg" title="Image"></p>
-<h3 id="使用ItChat库微信消息自动回复-pymysql保存数据库"><a href="#使用ItChat库微信消息自动回复-pymysql保存数据库" class="headerlink" title="使用ItChat库微信消息自动回复/pymysql保存数据库"></a>使用ItChat库微信消息自动回复/pymysql保存数据库</h3><h4 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h4><p>注意登录网页微信只有老用户可以，新申请的微信号无法登录会出现以下提示：</p>
+<h3 id="使用ItChat库微信消息自动回复-pymysql保存数据库"><a href="#使用ItChat库微信消息自动回复-pymysql保存数据库" class="headerlink" title="使用ItChat库微信消息自动回复&#x2F;pymysql保存数据库"></a>使用ItChat库微信消息自动回复&#x2F;pymysql保存数据库</h3><h4 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h4><p>注意登录网页微信只有老用户可以，新申请的微信号无法登录会出现以下提示：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;error&gt;&lt;ret&gt;1203&lt;/ret&gt;&lt;message&gt;为了你的帐号安全，此微信号已不允许登录网页微信。</span><br><span class="line">你可以使用Windows微信或Mac微信在电脑端登录。Windows微信下载地址：https://pc.weixin.qq.com </span><br><span class="line"> Mac微信下载地址：https://mac.weixin.qq.com&lt;/message&gt;&lt;/error&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <h4 id="全局数据："><a href="#全局数据：" class="headerlink" title="全局数据："></a>全局数据：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># 自己id，用于判断是否是自己发送的消息</span><br><span class="line">my_UserName = &quot;my_UserName&quot;</span><br><span class="line"># 关键词恢复字典</span><br><span class="line">message_dict = &#123;</span><br><span class="line">    &quot;你最帅&quot;: &quot;回复消息1&quot;,</span><br><span class="line">    &quot;祝福&quot;: &quot;回复消息2&quot;,</span><br><span class="line">    &quot;佩奇&quot;: &quot;回复消息3&quot;,</span><br><span class="line">&#125;</span><br><span class="line"># 记录消息数，用于首次回复，第二次不再回复</span><br><span class="line">message_record = &#123;</span><br><span class="line">    &quot;userName&quot;: 1</span><br><span class="line">&#125;</span><br><span class="line"># 需要回复消息的微信群名称</span><br><span class="line">reply_group = &#123;1: &quot;消息测试&quot;, 2: &quot;疯狂找媳妇儿&quot;, 3: &quot;不准时下班小组&quot;&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -288,7 +288,7 @@
 
 
 
-    <a data-url="https://zcccool.cn/2019/11/05/Itchat%E8%87%AA%E5%8A%A8%E5%9B%9E%E5%A4%8D%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BF%9D%E5%AD%98/" data-id="clvuzhj14001h4suibe06a0v6" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://zcccool.cn/2019/11/05/Itchat%E8%87%AA%E5%8A%A8%E5%9B%9E%E5%A4%8D%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BF%9D%E5%AD%98/" data-id="cm8x6tca7001beohycbdphzj2" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -367,8 +367,8 @@
         "dateModified": "2020-03-19",
         "url": "https://zcccool.cn/2019/11/05/Itchat自动回复与数据库保存/",
         "description": "
-使用ItChat库微信消息自动回复/pymysql保存数据库前提注意登录网页微信只有老用户可以，新申请的微信号无法登录会出现以下提示：
-1234&lt;error&gt;&lt;ret&gt;1203&lt;/ret&gt;&lt;message&gt;为了你的帐号安全，此微信号已不允许登录网页微信。你可以使用Windows微信或Mac微信在电脑端登录。Windows微信下载地址：https:/",
+使用ItChat库微信消息自动回复&#x2F;pymysql保存数据库前提注意登录网页微信只有老用户可以，新申请的微信号无法登录会出现以下提示：
+1234&lt;error&gt;&lt;ret&gt;1203&lt;/ret&gt;&lt;message&gt;为了你的帐号安全，此微信号已不允许登录网页微信。你可以使用Windows微信或Mac微信在电脑端登录。Windows微信下载地址：ht",
         "wordCount": 3203
     }
 </script>
@@ -695,7 +695,6 @@
     </div>
 </footer>
 
-<!--<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>-->
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <script src="//cdn1.lncld.net/static/js/2.5.0/av-min.js"></script>
 

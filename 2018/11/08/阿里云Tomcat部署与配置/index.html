@@ -15,12 +15,12 @@
 <!--    <meta name="baidu-site-verification" content="code-PwF0RA7PZP" />-->
 
     
-    <meta name="description" content="1.下载下载两个文件apache-tomcat-8.5.72.tar.gzjdk-8u311-linux-x64.tar.gz使用工具复制到&#x2F;usr&#x2F;local&#x2F;java文件夹 2.安装java解压1tar -zxvf jdk-8u311-linux-x64.tar.gz 配置Java环境变量 进入编辑 vim &#x2F;etc&#x2F;profile在文件最后添加下面的内容(i 编辑,Esc 退出,:wq 保">
+    <meta name="description" content="1.下载下载两个文件apache-tomcat-8.5.72.tar.gzjdk-8u311-linux-x64.tar.gz使用工具复制到&#x2F;usr&#x2F;local&#x2F;java文件夹 2.安装java解压1tar -zxvf jdk-8u311-linux-x64.tar.gz 配置Java环境变量 进入编辑 vim &#x2F;etc&#x2F;profile在文件最后">
 <meta property="og:type" content="article">
 <meta property="og:title" content="阿里云Tomcat部署与配置">
 <meta property="og:url" content="https://zcccool.cn/2018/11/08/%E9%98%BF%E9%87%8C%E4%BA%91Tomcat%E9%83%A8%E7%BD%B2%E4%B8%8E%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="Orange个人博客">
-<meta property="og:description" content="1.下载下载两个文件apache-tomcat-8.5.72.tar.gzjdk-8u311-linux-x64.tar.gz使用工具复制到&#x2F;usr&#x2F;local&#x2F;java文件夹 2.安装java解压1tar -zxvf jdk-8u311-linux-x64.tar.gz 配置Java环境变量 进入编辑 vim &#x2F;etc&#x2F;profile在文件最后添加下面的内容(i 编辑,Esc 退出,:wq 保">
+<meta property="og:description" content="1.下载下载两个文件apache-tomcat-8.5.72.tar.gzjdk-8u311-linux-x64.tar.gz使用工具复制到&#x2F;usr&#x2F;local&#x2F;java文件夹 2.安装java解压1tar -zxvf jdk-8u311-linux-x64.tar.gz 配置Java环境变量 进入编辑 vim &#x2F;etc&#x2F;profile在文件最后">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/cat.jpg">
 <meta property="article:published_time" content="2018-11-08T15:11:14.000Z">
@@ -90,7 +90,7 @@
     
 
 
-<meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="Orange个人博客" type="application/atom+xml">
+<meta name="generator" content="Hexo 7.0.0"><link rel="alternate" href="/atom.xml" title="Orange个人博客" type="application/atom+xml">
 </head>
 
 <body>
@@ -270,9 +270,9 @@
             
 
             <p><img src="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/cat.jpg" title="Image"></p>
-<h3 id="1-下载"><a href="#1-下载" class="headerlink" title="1.下载"></a>1.下载</h3><p>下载两个文件<br>apache-tomcat-8.5.72.tar.gz<br>jdk-8u311-linux-x64.tar.gz<br>使用工具复制到/usr/local/java文件夹</p>
+<h3 id="1-下载"><a href="#1-下载" class="headerlink" title="1.下载"></a>1.下载</h3><p>下载两个文件<br>apache-tomcat-8.5.72.tar.gz<br>jdk-8u311-linux-x64.tar.gz<br>使用工具复制到&#x2F;usr&#x2F;local&#x2F;java文件夹</p>
 <h3 id="2-安装java"><a href="#2-安装java" class="headerlink" title="2.安装java"></a>2.安装java</h3><h5 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf jdk-8u311-linux-x64.tar.gz</span><br></pre></td></tr></table></figure>
-<h5 id="配置Java环境变量-进入编辑-vim-etc-profile"><a href="#配置Java环境变量-进入编辑-vim-etc-profile" class="headerlink" title="配置Java环境变量 进入编辑 vim /etc/profile"></a>配置Java环境变量 进入编辑 vim /etc/profile</h5><p>在文件最后添加下面的内容<br>(i 编辑,Esc 退出,:wq 保存退出,:q!退出)</p>
+<h5 id="配置Java环境变量-进入编辑-vim-etc-profile"><a href="#配置Java环境变量-进入编辑-vim-etc-profile" class="headerlink" title="配置Java环境变量 进入编辑 vim &#x2F;etc&#x2F;profile"></a>配置Java环境变量 进入编辑 vim &#x2F;etc&#x2F;profile</h5><p>在文件最后添加下面的内容<br>(i 编辑,Esc 退出,:wq 保存退出,:q!退出)</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/local/java/jdk1.8.0_311</span><br><span class="line">export JRE_HOME=/usr/local/java/jdk1.8.0_311/jre</span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH</span><br><span class="line">export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH</span><br></pre></td></tr></table></figure>
 
 <p>添加完成后，使环境变量生效</p>
@@ -281,11 +281,11 @@
 
 <h3 id="3-安装tomcat"><a href="#3-安装tomcat" class="headerlink" title="3.安装tomcat"></a>3.安装tomcat</h3><h5 id="解压-1"><a href="#解压-1" class="headerlink" title="解压"></a>解压</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf apache-tomcat-8.5.72.tar.gz</span><br></pre></td></tr></table></figure>
 
-<p>进入tomcat路径/bin</p>
+<p>进入tomcat路径&#x2F;bin</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./startup.sh //启动命令</span><br><span class="line">./shutdown.sh //停止命令</span><br></pre></td></tr></table></figure>
 <p>(注意：失败请检查8080端口是否开放，去服务器控制台安全组开启)</p>
 <h3 id="4-配置直接通过地址访问"><a href="#4-配置直接通过地址访问" class="headerlink" title="4.配置直接通过地址访问"></a>4.配置直接通过地址访问</h3><p>进入conf修改server.xml<br> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> &lt;Connector port=&quot;80&quot; protocol=&quot;HTTP/1.1&quot; //端口改为80(需开放80端口)</span><br><span class="line"> &lt;Engine name=&quot;Catalina&quot; defaultHost=&quot;地址/域名&quot;&gt; //地址</span><br><span class="line"> &lt;Host name=&quot;地址/域名&quot;  appBase=&quot;webapps&quot;</span><br><span class="line">            unpackWARs=&quot;true&quot; autoDeploy=&quot;true&quot;&gt;</span><br><span class="line">&lt;Context path=&quot;&quot; docBase=&quot;项目名&quot; debug=&quot;0&quot; reloadable=&quot;true&quot; /&gt; //在Host之间加上</span><br></pre></td></tr></table></figure></p>
-<h3 id="5-Tomcat-开机启动"><a href="#5-Tomcat-开机启动" class="headerlink" title="5.Tomcat 开机启动"></a>5.Tomcat 开机启动</h3><p>centos:<br>关闭Tomcat<br>编辑vim /etc/rc.d/rc.local<br>添加以下内容<br> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/local/java/jdk路径</span><br><span class="line">export JRE_HOME=$JAVA_HOME/jre</span><br><span class="line">sh /usr/local/java/tomcat路径/bin/startup.sh</span><br></pre></td></tr></table></figure></p>
+<h3 id="5-Tomcat-开机启动"><a href="#5-Tomcat-开机启动" class="headerlink" title="5.Tomcat 开机启动"></a>5.Tomcat 开机启动</h3><p>centos:<br>关闭Tomcat<br>编辑vim &#x2F;etc&#x2F;rc.d&#x2F;rc.local<br>添加以下内容<br> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/local/java/jdk路径</span><br><span class="line">export JRE_HOME=$JAVA_HOME/jre</span><br><span class="line">sh /usr/local/java/tomcat路径/bin/startup.sh</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ubuntu:</span><br><span class="line">注册开机启动:  update-rc.d  –f  tomcat  defaults</span><br><span class="line">撤销开机启动:  update-rc.d  –f  tomcat  remove</span><br></pre></td></tr></table></figure>
 <h3 id="6-服务器更新"><a href="#6-服务器更新" class="headerlink" title="6.服务器更新"></a>6.服务器更新</h3> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y update</span><br></pre></td></tr></table></figure>
 
@@ -308,7 +308,7 @@
 
 
 
-    <a data-url="https://zcccool.cn/2018/11/08/%E9%98%BF%E9%87%8C%E4%BA%91Tomcat%E9%83%A8%E7%BD%B2%E4%B8%8E%E9%85%8D%E7%BD%AE/" data-id="clvuzhj1i00354sui2mye7s0i" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://zcccool.cn/2018/11/08/%E9%98%BF%E9%87%8C%E4%BA%91Tomcat%E9%83%A8%E7%BD%B2%E4%B8%8E%E9%85%8D%E7%BD%AE/" data-id="cm8x6tcan002zeohy9vw9f0h6" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -387,9 +387,9 @@
         "dateModified": "2023-06-30",
         "url": "https://zcccool.cn/2018/11/08/阿里云Tomcat部署与配置/",
         "description": "
-1.下载下载两个文件apache-tomcat-8.5.72.tar.gzjdk-8u311-linux-x64.tar.gz使用工具复制到/usr/local/java文件夹
+1.下载下载两个文件apache-tomcat-8.5.72.tar.gzjdk-8u311-linux-x64.tar.gz使用工具复制到&#x2F;usr&#x2F;local&#x2F;java文件夹
 2.安装java解压1tar -zxvf jdk-8u311-linux-x64.tar.gz
-配置Java环境变量 进入编辑 vim /etc/profile在文件最后添加下面的内容(i 编辑,Esc 退出,:wq 保",
+配置Java环境变量 进入编辑 vim &#x2F;etc&#x2F;profile在文件最后",
         "wordCount": 321
     }
 </script>
@@ -716,7 +716,6 @@
     </div>
 </footer>
 
-<!--<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>-->
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <script src="//cdn1.lncld.net/static/js/2.5.0/av-min.js"></script>
 

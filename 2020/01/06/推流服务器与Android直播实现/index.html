@@ -15,12 +15,12 @@
 <!--    <meta name="baidu-site-verification" content="code-PwF0RA7PZP" />-->
 
     
-    <meta name="description" content="前言安卓端实现视频直播&#x2F;观看，尝试自己搭建一个推流服务器，为了简单方便采用SRS(Simple RTMP Server)开源流媒体服务器 系统我使用的是centOS6.5，下载安装虚拟机和centOS可参考其他文章 SRS文档：SRS 安装使用首先clone srs源码 12git clone https:&#x2F;&#x2F;github.com&#x2F;ossrs&#x2F;srscd srs&#x2F;trunk  编译和启动 123">
+    <meta name="description" content="前言安卓端实现视频直播&#x2F;观看，尝试自己搭建一个推流服务器，为了简单方便采用SRS(Simple RTMP Server)开源流媒体服务器 系统我使用的是centOS6.5，下载安装虚拟机和centOS可参考其他文章 SRS文档：SRS 安装使用首先clone srs源码 12git clone https:&#x2F;&#x2F;github.com&#x2F;ossrs&#x2F;srscd srs&#x2F;trunk  编译和启">
 <meta property="og:type" content="article">
 <meta property="og:title" content="推流服务器与Android直播实现">
 <meta property="og:url" content="https://zcccool.cn/2020/01/06/%E6%8E%A8%E6%B5%81%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8EAndroid%E7%9B%B4%E6%92%AD%E5%AE%9E%E7%8E%B0/index.html">
 <meta property="og:site_name" content="Orange个人博客">
-<meta property="og:description" content="前言安卓端实现视频直播&#x2F;观看，尝试自己搭建一个推流服务器，为了简单方便采用SRS(Simple RTMP Server)开源流媒体服务器 系统我使用的是centOS6.5，下载安装虚拟机和centOS可参考其他文章 SRS文档：SRS 安装使用首先clone srs源码 12git clone https:&#x2F;&#x2F;github.com&#x2F;ossrs&#x2F;srscd srs&#x2F;trunk  编译和启动 123">
+<meta property="og:description" content="前言安卓端实现视频直播&#x2F;观看，尝试自己搭建一个推流服务器，为了简单方便采用SRS(Simple RTMP Server)开源流媒体服务器 系统我使用的是centOS6.5，下载安装虚拟机和centOS可参考其他文章 SRS文档：SRS 安装使用首先clone srs源码 12git clone https:&#x2F;&#x2F;github.com&#x2F;ossrs&#x2F;srscd srs&#x2F;trunk  编译和启">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_04.jpg">
 <meta property="article:published_time" content="2020-01-06T15:10:31.000Z">
@@ -91,7 +91,7 @@
     
 
 
-<meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="Orange个人博客" type="application/atom+xml">
+<meta name="generator" content="Hexo 7.0.0"><link rel="alternate" href="/atom.xml" title="Orange个人博客" type="application/atom+xml">
 </head>
 
 <body>
@@ -271,7 +271,7 @@
             
 
             <p><img src="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/ins_04.jpg" title="Image"></p>
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>安卓端实现视频直播/观看，尝试自己搭建一个推流服务器，为了简单方便采用SRS(Simple RTMP Server)开源流媒体服务器</p>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>安卓端实现视频直播&#x2F;观看，尝试自己搭建一个推流服务器，为了简单方便采用SRS(Simple RTMP Server)开源流媒体服务器</p>
 <p>系统我使用的是centOS6.5，下载安装虚拟机和centOS可参考其他文章</p>
 <p>SRS文档：<a target="_blank" rel="noopener" href="https://github.com/ossrs/srs/wiki/v1_CN_Build">SRS</a></p>
 <h3 id="安装使用"><a href="#安装使用" class="headerlink" title="安装使用"></a>安装使用</h3><p>首先clone srs源码</p>
@@ -284,7 +284,7 @@
 <h3 id="测试推流拉流"><a href="#测试推流拉流" class="headerlink" title="测试推流拉流"></a>测试推流拉流</h3><p>可用obs采集摄像头推流 <a target="_blank" rel="noopener" href="https://obsproject.com/">OBS下载</a></p>
 <p>使用方法可参考这篇博客：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/yjmyzz/p/srs_study_1_install_push_and_pull_stream.html">开源流媒体服务器SRS学习笔记</a></p>
 <p>不同端拉流可以用VLC开源播放器 <a target="_blank" rel="noopener" href="https://www.videolan.org/">VLC官网</a></p>
-<p>输入推流地址即可查看到推流视频 “rtmp://your_server_ip:1935/live/livestream”</p>
+<p>输入推流地址即可查看到推流视频 “rtmp:&#x2F;&#x2F;your_server_ip:1935&#x2F;live&#x2F;livestream”</p>
 <h3 id="Android端截屏推流"><a href="#Android端截屏推流" class="headerlink" title="Android端截屏推流"></a>Android端截屏推流</h3><p>安卓端屏幕推流可参考这篇博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zxccxzzxz/article/details/55230272">Android实现录屏直播 </a></p>
 <p>GitHub地址：<a target="_blank" rel="noopener" href="https://github.com/eterrao/ScreenRecorder">传送门</a></p>
 <p>效果图:</p>
@@ -297,7 +297,7 @@
 
 
 
-    <a data-url="https://zcccool.cn/2020/01/06/%E6%8E%A8%E6%B5%81%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8EAndroid%E7%9B%B4%E6%92%AD%E5%AE%9E%E7%8E%B0/" data-id="clvuzhj1k003e4suid4z5curz" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://zcccool.cn/2020/01/06/%E6%8E%A8%E6%B5%81%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8EAndroid%E7%9B%B4%E6%92%AD%E5%AE%9E%E7%8E%B0/" data-id="cm8x6tcag002feohy01xucoh8" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -376,14 +376,13 @@
         "dateModified": "2021-05-26",
         "url": "https://zcccool.cn/2020/01/06/推流服务器与Android直播实现/",
         "description": "
-前言安卓端实现视频直播/观看，尝试自己搭建一个推流服务器，为了简单方便采用SRS(Simple RTMP Server)开源流媒体服务器
+前言安卓端实现视频直播&#x2F;观看，尝试自己搭建一个推流服务器，为了简单方便采用SRS(Simple RTMP Server)开源流媒体服务器
 系统我使用的是centOS6.5，下载安装虚拟机和centOS可参考其他文章
 SRS文档：SRS
 安装使用首先clone srs源码
 12git clone https://github.com/ossrs/srscd srs/trunk
 
-编译和启动
-123",
+编译和启",
         "wordCount": 64
     }
 </script>
@@ -710,7 +709,6 @@ SRS文档：SRS
     </div>
 </footer>
 
-<!--<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>-->
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <script src="//cdn1.lncld.net/static/js/2.5.0/av-min.js"></script>
 
