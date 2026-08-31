@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>使用 Cloudflare Tunnel 绕过备案，安全暴露本地服务 | Orange个人博客</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="Cloudflare" />
+    <!--百度收录-->
+<!--    <meta name="baidu-site-verification" content="code-PwF0RA7PZP" />-->
+
+    
+    <meta name="description" content="使用 Cloudflare Tunnel 绕过备案，安全暴露本地服务适用场景：服务器在国内无法备案，无法使用 80&#x2F;443 端口，需要通过域名安全访问内网服务。 📌 目录  背景与原理  安装 cloudflared  认证与创建隧道  配置隧道与启动  PM2 进程管理（持久化运行）  多域名多端口配置  常见问题排查  命令速查表   背景与原理为什么会有这个问题？ 国内服务器未备">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用 Cloudflare Tunnel 绕过备案，安全暴露本地服务">
+<meta property="og:url" content="https://zcccool.cn/2026/08/31/%E4%BD%BF%E7%94%A8-Cloudflare-Tunnel-%E7%BB%95%E8%BF%87%E5%A4%87%E6%A1%88%EF%BC%8C%E5%AE%89%E5%85%A8%E6%9A%B4%E9%9C%B2%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1/index.html">
+<meta property="og:site_name" content="Orange个人博客">
+<meta property="og:description" content="使用 Cloudflare Tunnel 绕过备案，安全暴露本地服务适用场景：服务器在国内无法备案，无法使用 80&#x2F;443 端口，需要通过域名安全访问内网服务。 📌 目录  背景与原理  安装 cloudflared  认证与创建隧道  配置隧道与启动  PM2 进程管理（持久化运行）  多域名多端口配置  常见问题排查  命令速查表   背景与原理为什么会有这个问题？ 国内服务器未备">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-08-31T12:40:41.000Z">
+<meta property="article:modified_time" content="2026-08-31T13:05:10.288Z">
+<meta property="article:author" content="ZhengChengcheng">
+<meta property="article:tag" content="Cloudflare">
+<meta name="twitter:card" content="summary">
+    
+
+    
+
+    
+        <link rel="icon" href="/images/icon/iconOrangeMedium.ico" />
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+    <!--自己添加的js-->
+<!--    
+<script src="/js/love.js"></script>
+-->
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+
+    <!-- Umami 统计 -->
+    <script defer src="https://orangecat.eu.org/script.js" data-website-id="d1692609-4c7b-41b7-a84c-389a91ff32e8"></script>
+<meta name="generator" content="Hexo 7.0.0"><link rel="alternate" href="/atom.xml" title="Orange个人博客" type="application/atom+xml">
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+
+                    
+
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link"
+                                       href="/">主页</a>
+                                </li>
+                            
+                                
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link"
+                                       href="/myhtml/music.html">云音乐</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link"
+                                       href="/myhtml/image.html">图片</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link"
+                                       href="/myhtml/video.html">视频</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link"
+                                       href="/myhtml/animation.html">动画</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link"
+                                       href="/myhtml/lovetree.html">时间树</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link"
+                                       href="/myhtml/bookmark.html">书签</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    未分类
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-使用-Cloudflare-Tunnel-绕过备案，安全暴露本地服务"
+         class="article article-single article-type-post"
+         itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        使用 Cloudflare Tunnel 绕过备案，安全暴露本地服务
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2026/08/31/%E4%BD%BF%E7%94%A8-Cloudflare-Tunnel-%E7%BB%95%E8%BF%87%E5%A4%87%E6%A1%88%EF%BC%8C%E5%AE%89%E5%85%A8%E6%9A%B4%E9%9C%B2%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1/" class="article-date">
+       <time datetime="2026-08-31T12:40:41.000Z" itemprop="datePublished">2026-08-31</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2026/08/31/%E4%BD%BF%E7%94%A8-Cloudflare-Tunnel-%E7%BB%95%E8%BF%87%E5%A4%87%E6%A1%88%EF%BC%8C%E5%AE%89%E5%85%A8%E6%9A%B4%E9%9C%B2%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1/" class="article-date">
+     <time datetime="2026-08-31T13:05:10.288Z" itemprop="dateModified">2026-08-31</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/Cloudflare/" rel="tag">Cloudflare</a>
+    </div>
+
+                
+
+                
+
+                <span id="busuanzi_container_page_pv">阅读数量:<span id="busuanzi_value_page_pv"></span>次</span>
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <h2 id="使用-Cloudflare-Tunnel-绕过备案，安全暴露本地服务"><a href="#使用-Cloudflare-Tunnel-绕过备案，安全暴露本地服务" class="headerlink" title="使用 Cloudflare Tunnel 绕过备案，安全暴露本地服务"></a>使用 Cloudflare Tunnel 绕过备案，安全暴露本地服务</h2><p>适用场景：服务器在国内无法备案，无法使用 80&#x2F;443 端口，需要通过域名安全访问内网服务。</p>
+<p>📌 目录</p>
+<ol>
+<li><p><a href="#cv1">背景与原理</a></p>
+</li>
+<li><p><a href="#cv2">安装 cloudflared</a></p>
+</li>
+<li><p><a href="#cv3">认证与创建隧道</a></p>
+</li>
+<li><p><a href="#cv4">配置隧道与启动</a></p>
+</li>
+<li><p><a href="#cv5">PM2 进程管理（持久化运行）</a></p>
+</li>
+<li><p><a href="#cv6">多域名多端口配置</a></p>
+</li>
+<li><p><a href="#cv7">常见问题排查</a></p>
+</li>
+<li><p><a href="#cv8">命令速查表</a></p>
+</li>
+</ol>
+<h3 id="背景与原理"><a href="#背景与原理" class="headerlink" title="背景与原理"></a><span id="cv1">背景与原理</span></h3><h4 id="为什么会有这个问题？"><a href="#为什么会有这个问题？" class="headerlink" title="为什么会有这个问题？"></a>为什么会有这个问题？</h4><ul>
+<li><p>国内服务器未备案 → ISP 封禁 80&#x2F;443 端口</p>
+</li>
+<li><p>直接用 IP:端口 访问可以，但域名访问被云厂商拦截（如京东云返回 403 备案拦截页面）</p>
+</li>
+<li><p>常规反向代理 + Cloudflare 灵活模式会报 525&#x2F;1014 等错误</p>
+</li>
+</ul>
+<h4 id="Cloudflare-Tunnel-解决方案"><a href="#Cloudflare-Tunnel-解决方案" class="headerlink" title="Cloudflare Tunnel 解决方案"></a><em><strong>Cloudflare Tunnel</strong></em> 解决方案</h4><p>原理：服务器主动向 Cloudflare 建立加密隧道，所有外部请求通过 Cloudflare 转发到本地服务。</p>
+<p>优点：</p>
+<ul>
+<li><p>不需要开放任何入站端口（防火墙全关都可以）</p>
+</li>
+<li><p>自动管理 SSL 证书（全自动 HTTPS）</p>
+</li>
+<li><p>完全绕过备案检测（流量走 Cloudflare，云厂商看不到域名）</p>
+</li>
+<li><p>一个隧道可以绑定无数个域名和端口</p>
+</li>
+</ul>
+<h3 id="安装-cloudflared"><a href="#安装-cloudflared" class="headerlink" title="安装 cloudflared"></a><span id="cv2">安装 cloudflared</span></h3><p>下载并安装<br>bash</p>
+<h4 id="下载-cloudflared（如果下载慢，可以换成镜像源）"><a href="#下载-cloudflared（如果下载慢，可以换成镜像源）" class="headerlink" title="下载 cloudflared（如果下载慢，可以换成镜像源）"></a>下载 cloudflared（如果下载慢，可以换成镜像源）</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O cloudflared https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64</span><br></pre></td></tr></table></figure>
+<h4 id="添加执行权限"><a href="#添加执行权限" class="headerlink" title="添加执行权限"></a>添加执行权限</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x cloudflared</span><br></pre></td></tr></table></figure>
+<h4 id="移动到系统路径"><a href="#移动到系统路径" class="headerlink" title="移动到系统路径"></a>移动到系统路径</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mv cloudflared /usr/local/bin/</span><br></pre></td></tr></table></figure>
+<h4 id="验证安装"><a href="#验证安装" class="headerlink" title="验证安装"></a>验证安装</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cloudflared --version</span><br></pre></td></tr></table></figure>
+<p>国内下载加速（备选）<br>如果 GitHub 下载太慢，可以查找国内镜像站下载</p>
+<h3 id="认证与创建隧道"><a href="#认证与创建隧道" class="headerlink" title="认证与创建隧道"></a><span id="cv3">认证与创建隧道</span></h3><h4 id="第一步：登录-Cloudflare-授权"><a href="#第一步：登录-Cloudflare-授权" class="headerlink" title="第一步：登录 Cloudflare 授权"></a>第一步：登录 Cloudflare 授权</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cloudflared tunnel login</span><br></pre></td></tr></table></figure>
+<p>执行后会输出一个链接，在浏览器中打开，登录 Cloudflare 账号，选择对应的域名进行授权。</p>
+<p>✅ 授权成功后，会在 ~&#x2F;.cloudflared&#x2F;cert.pem 生成证书文件。(将授权下载的文件移动到服务器指定文件夹内)</p>
+<h4 id="第二步：创建命名隧道"><a href="#第二步：创建命名隧道" class="headerlink" title="第二步：创建命名隧道"></a>第二步：创建命名隧道</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cloudflared tunnel create xxx-tunnel</span><br></pre></td></tr></table></figure>
+<p>输出示例：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Tunnel credentials written to /root/.cloudflared/xxxxx-xxxxx-xxxxx-xxxxx.json</span><br><span class="line">Created tunnel xxx-tunnel with ID xxxxx-xxxxx-xxxxx-xxxxx</span><br></pre></td></tr></table></figure>
+<p>⚠️ 记下这个 Tunnel ID，后面配置文件中要用。</p>
+<h4 id="第三步：验证隧道是否创建成功"><a href="#第三步：验证隧道是否创建成功" class="headerlink" title="第三步：验证隧道是否创建成功"></a>第三步：验证隧道是否创建成功</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cloudflared tunnel list</span><br></pre></td></tr></table></figure>
+<p>应该能看到刚创建的 xxx-tunnel。</p>
+<h3 id="配置隧道与启动"><a href="#配置隧道与启动" class="headerlink" title="配置隧道与启动"></a><span id="cv4">配置隧道与启动</span></h3><h4 id="第一步：创建配置文件"><a href="#第一步：创建配置文件" class="headerlink" title="第一步：创建配置文件"></a>第一步：创建配置文件</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano ~/.cloudflared/config.yml</span><br></pre></td></tr></table></figure>
+<p>填入以下内容（替换 xxxxx-xxxxx-xxxxx-xxxxx 为你的 Tunnel ID）：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">tunnel:</span> <span class="string">xxxxx-xxxxx-xxxxx-xxxxx</span></span><br><span class="line"><span class="attr">credentials-file:</span> <span class="string">/root/.cloudflared/xxxxx-xxxxx-xxxxx-xxxxx.json</span></span><br><span class="line"></span><br><span class="line"><span class="attr">ingress:</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">hostname:</span> <span class="string">xxx.yyy</span></span><br><span class="line">  <span class="attr">service:</span> <span class="string">http://localhost:端口号</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">service:</span> <span class="string">http_status:404</span></span><br></pre></td></tr></table></figure>
+<p>ingress 规则按顺序匹配，越靠前优先级越高。最后一条 http_status:404 是兜底规则。</p>
+<h4 id="第二步：添加-DNS-路由"><a href="#第二步：添加-DNS-路由" class="headerlink" title="第二步：添加 DNS 路由"></a>第二步：添加 DNS 路由</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cloudflared tunnel route dns xxx-tunnel xxx.yyy</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>这条命令会自动在 Cloudflare DNS 中添加 CNAME 记录。</p>
+<p>⚠️ 注意：如果是在添加全新的主域名（如 abc.cn），不要用此命令，应手动在 Cloudflare 后台添加 CNAME 记录，指向 你的隧道UUID.cf-tunnel.xyz。</p>
+<h4 id="第三步：删除旧的-A-记录"><a href="#第三步：删除旧的-A-记录" class="headerlink" title="第三步：删除旧的 A 记录"></a>第三步：删除旧的 A 记录</h4><p>在 Cloudflare 后台 DNS → 记录 中，删除所有指向服务器 IP 的 A 记录，只保留 CNAME 记录指向隧道。</p>
+<p>如果不删除 A 记录，DNS 解析会冲突，导致访问不稳定。</p>
+<h4 id="第四步：前台测试运行"><a href="#第四步：前台测试运行" class="headerlink" title="第四步：前台测试运行"></a>第四步：前台测试运行</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cloudflared tunnel run xxx-tunnel</span><br></pre></td></tr></table></figure>
+<p>如果看到 Registered tunnel connection 日志，说明配置正确。按 Ctrl+C 停止。</p>
+<h3 id="PM2-进程管理（持久化运行）"><a href="#PM2-进程管理（持久化运行）" class="headerlink" title="PM2 进程管理（持久化运行）"></a><span id="cv5">PM2 进程管理（持久化运行）</span></h3><h4 id="启动隧道"><a href="#启动隧道" class="headerlink" title="启动隧道"></a>启动隧道</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 start cloudflared --name &quot;cloudflare-tunnel&quot; -- tunnel run xxx-tunnel</span><br></pre></td></tr></table></figure>
+<h4 id="常用管理命令"><a href="#常用管理命令" class="headerlink" title="常用管理命令"></a>常用管理命令</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看进程状态</span></span><br><span class="line">pm2 list</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看日志</span></span><br><span class="line">pm2 logs cloudflare-tunnel</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看最近 20 行日志</span></span><br><span class="line">pm2 logs cloudflare-tunnel --lines 20</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">重启隧道</span></span><br><span class="line">pm2 restart cloudflare-tunnel</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">停止隧道</span></span><br><span class="line">pm2 stop cloudflare-tunnel</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">删除进程</span></span><br><span class="line">pm2 delete cloudflare-tunnel</span><br></pre></td></tr></table></figure>
+
+<h4 id="设置开机自启（可选）"><a href="#设置开机自启（可选）" class="headerlink" title="设置开机自启（可选）"></a>设置开机自启（可选）</h4><p>bash<br>pm2 save<br>pm2 startup</p>
+<h3 id="多域名多端口配置"><a href="#多域名多端口配置" class="headerlink" title="多域名多端口配置"></a><span id="cv6">多域名多端口配置</span></h3><p>场景：一个隧道绑定多个域名和端口<br>示例：</p>
+<ul>
+<li>xxx.yyy → 本地 2053 端口</li>
+<li>abc.cn → 本地 9999 端口</li>
+</ul>
+<h4 id="第一步：添加-DNS-路由"><a href="#第一步：添加-DNS-路由" class="headerlink" title="第一步：添加 DNS 路由"></a>第一步：添加 DNS 路由</h4><h5 id="子域名（如-app-xxx-yyy）："><a href="#子域名（如-app-xxx-yyy）：" class="headerlink" title="子域名（如 app.xxx.yyy）："></a>子域名（如 app.xxx.yyy）：</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cloudflared tunnel route dns xxx-tunnel app.xxx.yyy</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h5 id="新主域名（如-abc-cn）："><a href="#新主域名（如-abc-cn）：" class="headerlink" title="新主域名（如 abc.cn）："></a>新主域名（如 abc.cn）：</h5><p>手动在 Cloudflare 后台添加 CNAME 记录：</p>
+<ul>
+<li><p>类型：CNAME</p>
+</li>
+<li><p>名称：abc.cn（或 @）</p>
+</li>
+<li><p>目标：你的隧道UUID.cf-tunnel.xyz</p>
+</li>
+</ul>
+<p>⚠️ 记得删除该域名下所有指向 IP 的 A 记录，只保留 CNAME。</p>
+<h4 id="第二步：修改配置文件"><a href="#第二步：修改配置文件" class="headerlink" title="第二步：修改配置文件"></a>第二步：修改配置文件</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano ~/.cloudflared/config.yml</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">tunnel:</span> <span class="string">xxxxx-xxxxx-xxxxx-xxxxx</span></span><br><span class="line"><span class="attr">credentials-file:</span> <span class="string">/root/.cloudflared/xxxxx-xxxxx-xxxxx-xxxxx.json</span></span><br><span class="line"></span><br><span class="line"><span class="attr">ingress:</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">hostname:</span> <span class="string">abc.cn</span></span><br><span class="line">  <span class="attr">service:</span> <span class="string">http://localhost:9999</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">hostname:</span> <span class="string">app.xxx.yyy</span></span><br><span class="line">  <span class="attr">service:</span> <span class="string">http://localhost:3000</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">hostname:</span> <span class="string">xxx.yyy</span></span><br><span class="line">  <span class="attr">service:</span> <span class="string">http://localhost:2053</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">service:</span> <span class="string">http_status:404</span></span><br></pre></td></tr></table></figure>
+<p>规则按顺序匹配，把最常用的或最精确的域名放在最前面。</p>
+<h4 id="第三步：重启生效"><a href="#第三步：重启生效" class="headerlink" title="第三步：重启生效"></a>第三步：重启生效</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 restart cloudflare-tunnel</span><br></pre></td></tr></table></figure>
+<h3 id="常见问题排查"><a href="#常见问题排查" class="headerlink" title="常见问题排查"></a><span id="cv7">常见问题排查</span></h3><table>
+<thead>
+<tr>
+<th align="left">错误现象</th>
+<th align="left">可能原因</th>
+<th align="left">解决方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>ERR_SSL_PROTOCOL_ERROR</code></td>
+<td align="left">用 HTTPS 访问了 HTTP 服务</td>
+<td align="left">确认 <code>service</code> 用的是 <code>http://</code> 不是 <code>https://</code></td>
+</tr>
+<tr>
+<td align="left"><code>Error 525</code></td>
+<td align="left">SSL 握手失败</td>
+<td align="left">改用 Tunnel，放弃反向代理方案</td>
+</tr>
+<tr>
+<td align="left"><code>Error 1014 CNAME Cross-User Banned</code></td>
+<td align="left">CNAME 指向跨账户域名</td>
+<td align="left">改用命名隧道，不要用 <code>trycloudflare.com</code></td>
+</tr>
+<tr>
+<td align="left"><code>403 Forbidden</code> 京东云拦截页面</td>
+<td align="left">DNS 还是 A 记录指向服务器 IP</td>
+<td align="left">删除 A 记录，只保留 CNAME 指向隧道</td>
+</tr>
+<tr>
+<td align="left"><code>cloudflared tunnel create</code> 报错找不到 cert.pem</td>
+<td align="left">未完成登录授权</td>
+<td align="left">执行 <code>cloudflared tunnel login</code> 并完成浏览器授权</td>
+</tr>
+<tr>
+<td align="left">新主域名被添加成子域名</td>
+<td align="left">命令自动加到了默认主域名下</td>
+<td align="left">手动在 Cloudflare 后台添加 CNAME 记录</td>
+</tr>
+<tr>
+<td align="left">网页打开慢</td>
+<td align="left">流量经过 Cloudflare 边缘节点</td>
+<td align="left">正常现象，可考虑升级 Cloudflare 套餐</td>
+</tr>
+</tbody></table>
+<h3 id="命令速查表"><a href="#命令速查表" class="headerlink" title="命令速查表"></a><span id="cv8">命令速查表</span></h3><h4 id="隧道管理"><a href="#隧道管理" class="headerlink" title="隧道管理"></a>隧道管理</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">登录授权</span></span><br><span class="line">cloudflared tunnel login</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建命名隧道</span></span><br><span class="line">cloudflared tunnel create &lt;隧道名&gt;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看隧道列表</span></span><br><span class="line">cloudflared tunnel list</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看隧道详情</span></span><br><span class="line">cloudflared tunnel info &lt;隧道名&gt;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">删除隧道</span></span><br><span class="line">cloudflared tunnel delete &lt;隧道名&gt;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">添加 DNS 路由（子域名用）</span></span><br><span class="line">cloudflared tunnel route dns &lt;隧道名&gt; &lt;域名&gt;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">前台运行测试</span></span><br><span class="line">cloudflared tunnel run &lt;隧道名&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="PM2-管理"><a href="#PM2-管理" class="headerlink" title="PM2 管理"></a>PM2 管理</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">bash</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">启动</span></span><br><span class="line">pm2 start cloudflared --name &quot;cloudflare-tunnel&quot; -- tunnel run &lt;隧道名&gt;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看状态</span></span><br><span class="line">pm2 list</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看日志</span></span><br><span class="line">pm2 logs cloudflare-tunnel</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">重启</span></span><br><span class="line">pm2 restart cloudflare-tunnel</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">停止</span></span><br><span class="line">pm2 stop cloudflare-tunnel</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">删除进程</span></span><br><span class="line">pm2 delete cloudflare-tunnel</span><br></pre></td></tr></table></figure>
+
+<h4 id="DNS-验证"><a href="#DNS-验证" class="headerlink" title="DNS 验证"></a>DNS 验证</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">检查域名解析</span></span><br><span class="line">dig &lt;你的域名&gt;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看 cloudflared 日志</span></span><br><span class="line">pm2 logs cloudflare-tunnel --lines 20</span><br></pre></td></tr></table></figure>
+
+<h3 id="最后的建议"><a href="#最后的建议" class="headerlink" title="最后的建议"></a>最后的建议</h3><ol>
+<li><p>优先使用命名隧道（Named Tunnel），不要用临时隧道（trycloudflare.com），生产环境更稳定。</p>
+</li>
+<li><p>每次添加新域名，记得先登录授权（如果是新主域名），然后修改 config.yml，最后重启 PM2。</p>
+</li>
+<li><p>DNS 记录只保留 CNAME，删除所有 A 记录，避免解析冲突。</p>
+</li>
+<li><p>配置文件 config.yml 的 ingress 规则按优先级排序，精确匹配的放前面，兜底规则放最后。</p>
+</li>
+</ol>
+<p>✅ Cloudflare Tunnel → 完美绕过所有限制 🎉<br>📌 基于实际操作经验整理，适用于 Ubuntu&#x2F;Debian 系统</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://zcccool.cn/2026/08/31/%E4%BD%BF%E7%94%A8-Cloudflare-Tunnel-%E7%BB%95%E8%BF%87%E5%A4%87%E6%A1%88%EF%BC%8C%E5%AE%89%E5%85%A8%E6%9A%B4%E9%9C%B2%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1/" data-id="cmth97j170004xwhyc1k3e9xt" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "ZhengChengcheng"
+        },
+        "headline": "使用 Cloudflare Tunnel 绕过备案，安全暴露本地服务",
+        "image": "https://zcccool.cn",
+        "keywords": "Cloudflare",
+        "genre": "",
+        "datePublished": "2026-08-31",
+        "dateCreated": "2026-08-31",
+        "dateModified": "2026-08-31",
+        "url": "https://zcccool.cn/2026/08/31/使用-Cloudflare-Tunnel-绕过备案，安全暴露本地服务/",
+        "description": "使用 Cloudflare Tunnel 绕过备案，安全暴露本地服务适用场景：服务器在国内无法备案，无法使用 80&#x2F;443 端口，需要通过域名安全访问内网服务。
+📌 目录
+
+背景与原理
+
+安装 cloudflared
+
+认证与创建隧道
+
+配置隧道与启动
+
+PM2 进程管理（持久化运行）
+
+多域名多端口配置
+
+常见问题排查
+
+命令速查表
+
+
+背景与原理为什么会有这个问题？
+国内服务器未备",
+        "wordCount": 928
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="blog" href="https://zccode.cn/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-blog"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://www.instagram.com/g.p.orange/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/zccguagua" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="https://weibo.com/u/3247224430?is_hot=1" target="_blank" rel="noopener">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="https://twitter.com/w7yRCu52263sPTV" target="_blank" rel="noopener">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2026/03/28/%E7%BB%8D%E5%85%B4%E6%B8%B8/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">绍兴游</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2026/08/31/%E4%BD%BF%E7%94%A8-Cloudflare-Tunnel-%E7%BB%95%E8%BF%87%E5%A4%87%E6%A1%88%EF%BC%8C%E5%AE%89%E5%85%A8%E6%9A%B4%E9%9C%B2%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2026/08/31/%E4%BD%BF%E7%94%A8-Cloudflare-Tunnel-%E7%BB%95%E8%BF%87%E5%A4%87%E6%A1%88%EF%BC%8C%E5%AE%89%E5%85%A8%E6%9A%B4%E9%9C%B2%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1/" class="title">使用 Cloudflare Tunnel 绕过备案，安全暴露本地服务</a></p>
+                            <p class="item-date"><time datetime="2026-08-31T12:40:41.000Z" itemprop="datePublished">2026-08-31</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2026/03/28/%E7%BB%8D%E5%85%B4%E6%B8%B8/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/26shaoxing/shaoxing_001.jpg)" alt="绍兴游" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2026/03/28/%E7%BB%8D%E5%85%B4%E6%B8%B8/" class="title">绍兴游</a></p>
+                            <p class="item-date"><time datetime="2026-03-28T08:30:52.000Z" itemprop="datePublished">2026-03-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2026/01/03/2025%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/2025zj/zj2025_bml.jpg)" alt="2025年度总结" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2026/01/03/2025%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" class="title">2025年度总结</a></p>
+                            <p class="item-date"><time datetime="2026-01-03T15:03:18.000Z" itemprop="datePublished">2026-01-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2025/12/20/%E6%B1%BD%E8%BD%A6%E4%BF%9D%E5%85%BB%E7%9C%81%E9%92%B1%E6%8C%87%E5%8D%97/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/25car/qiche_car.jpg)" alt="汽车保养省钱指南" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2025/12/20/%E6%B1%BD%E8%BD%A6%E4%BF%9D%E5%85%BB%E7%9C%81%E9%92%B1%E6%8C%87%E5%8D%97/" class="title">汽车保养省钱指南</a></p>
+                            <p class="item-date"><time datetime="2025-12-20T11:54:56.000Z" itemprop="datePublished">2025-12-20</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2025/12/07/251207%E4%B8%87%E4%BD%9B%E5%B1%B1/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/25wfs/wfs_005.jpg)" alt="251207万佛山" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2025/12/07/251207%E4%B8%87%E4%BD%9B%E5%B1%B1/" class="title">251207万佛山</a></p>
+                            <p class="item-date"><time datetime="2025-12-07T15:58:51.000Z" itemprop="datePublished">2025-12-07</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/9%E5%9B%BE/" style="font-size: 12px;">.9图</a> <a href="/tags/Android/" style="font-size: 18px;">Android</a> <a href="/tags/CSS/" style="font-size: 12px;">CSS</a> <a href="/tags/ChatGPT/" style="font-size: 12px;">ChatGPT</a> <a href="/tags/Cloudflare/" style="font-size: 12px;">Cloudflare</a> <a href="/tags/DeepFaceLab/" style="font-size: 12px;">DeepFaceLab</a> <a href="/tags/FTP/" style="font-size: 12px;">FTP</a> <a href="/tags/Hexo/" style="font-size: 12px;">Hexo</a> <a href="/tags/IPTV/" style="font-size: 12px;">IPTV</a> <a href="/tags/Kotlin/" style="font-size: 14px;">Kotlin</a> <a href="/tags/PS/" style="font-size: 12px;">PS</a> <a href="/tags/Python/" style="font-size: 12px;">Python</a> <a href="/tags/Retorfit/" style="font-size: 12px;">Retorfit</a> <a href="/tags/SQL/" style="font-size: 12px;">SQL</a> <a href="/tags/SRS/" style="font-size: 12px;">SRS</a> <a href="/tags/V2ray/" style="font-size: 12px;">V2ray</a> <a href="/tags/gitlab/" style="font-size: 12px;">gitlab</a> <a href="/tags/jQuery/" style="font-size: 12px;">jQuery</a> <a href="/tags/m3u8/" style="font-size: 12px;">m3u8</a> <a href="/tags/nextcloud/" style="font-size: 12px;">nextcloud</a> <a href="/tags/ping/" style="font-size: 12px;">ping</a> <a href="/tags/python/" style="font-size: 12px;">python</a> <a href="/tags/%E4%B8%8B%E8%BD%BD/" style="font-size: 12px;">下载</a> <a href="/tags/%E4%B8%9C%E6%9E%81%E5%B2%9B/" style="font-size: 10px;">东极岛</a> <a href="/tags/%E4%B9%8C%E9%95%87/" style="font-size: 10px;">乌镇</a> <a href="/tags/%E4%B9%B0%E6%88%BF/" style="font-size: 12px;">买房</a> <a href="/tags/%E5%88%B7%E6%9C%BA/" style="font-size: 12px;">刷机</a> <a href="/tags/%E5%9F%9F%E5%90%8D/" style="font-size: 12px;">域名</a> <a href="/tags/%E5%A9%BA%E6%BA%90-%E4%B8%89%E6%B8%85%E5%B1%B1/" style="font-size: 10px;">婺源&三清山</a> <a href="/tags/%E5%AE%8F%E6%9D%91-%E9%BB%84%E5%B1%B1/" style="font-size: 10px;">宏村&黄山</a> <a href="/tags/%E5%AE%9A%E6%97%B6%E5%99%A8-%E7%BA%BF%E7%A8%8B%E6%B1%A0/" style="font-size: 12px;">定时器&线程池</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 12px;">小程序</a> <a href="/tags/%E5%B7%A2%E6%B9%96/" style="font-size: 10px;">巢湖</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 16px;">总结</a> <a href="/tags/%E6%97%85%E8%A1%8C/" style="font-size: 20px;">旅行</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 12px;">服务器</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 12px;">游戏</a> <a href="/tags/%E6%BC%82%E6%B5%81/" style="font-size: 10px;">漂流</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 12px;">爬虫</a> <a href="/tags/%E7%8B%97/" style="font-size: 12px;">狗</a> <a href="/tags/%E7%9F%A5%E8%AF%86/" style="font-size: 12px;">知识</a> <a href="/tags/%E7%BE%BD%E6%AF%9B%E7%90%83/" style="font-size: 12px;">羽毛球</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 12px;">虚拟机</a> <a href="/tags/%E8%A3%85%E4%BF%AE/" style="font-size: 12px;">装修</a> <a href="/tags/%E8%A7%86%E9%A2%91%E5%90%88%E5%B9%B6/" style="font-size: 12px;">视频合并</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 12px;">设计模式</a> <a href="/tags/%E8%BD%AF%E8%80%83/" style="font-size: 14px;">软考</a> <a href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91/" style="font-size: 14px;">阿里云</a> <a href="/tags/%E9%BE%99%E8%99%8E%E5%B1%B1/" style="font-size: 10px;">龙虎山</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://github.com/ppoffice/hexo-theme-hueman">Theme</a>
+                    </li>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://www.zccai.cn">我的网站</a>
+                    </li>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://weibo.com/u/3247224430?is_hot=1">微博</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <!--<h3 class="widget-title">我的侧边栏</h3>-->
+        <!--<div class="widget">-->
+        <!--这里是我的侧边栏哦-->
+        <!--</div>-->
+        <!--        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=300 height=86-->
+        <!--                src="//music.163.com/outchain/player?type=2&id=26237342&auto=1&height=66"></iframe>-->
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=300 height=86
+                src="//music.163.com/outchain/player?type=2&id=578090&auto=1&height=66"></iframe>
+        <img src="../images/main_wx.png" width=150 height=150>
+
+        <!--天气插件-->
+        <div id="he-plugin-simple" style="width: 300px"></div>
+        <!--天气插件-->
+        <script>
+            WIDGET = {
+                "CONFIG": {
+                    "modules": "01234",
+                    "background": "1",
+                    "tmpColor": "FFFFFF",
+                    "tmpSize": "16",
+                    "cityColor": "FFFFFF",
+                    "citySize": "16",
+                    "aqiColor": "FFFFFF",
+                    "aqiSize": "16",
+                    "weatherIconSize": "24",
+                    "alertIconSize": "18",
+                    "padding": "10px 10px 10px 10px",
+                    "shadow": "0",
+                    "language": "auto",
+                    "fixed": "false",
+                    "vertical": "top",
+                    "horizontal": "left",
+                    "key": "30867faab9634d6692ca70efb12b39ea"
+                }
+            }
+        </script>
+        <script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script>
+
+        <script type="text/javascript"
+                src="//rf.revolvermaps.com/0/0/6.js?i=51m7wtzyf42&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80"
+                async="async"></script>
+
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2026 ZhengChengcheng</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn1.lncld.net/static/js/2.5.0/av-min.js"></script>
+
+<script>
+    var APP_ID = 'K14Yo7meMkb2d2eRXnvjs5Nx-gzGzoHsz';
+    var APP_KEY = 'BG64BwIHiKiOkgqjcr6Nm9DX';
+    AV.init({
+        appId: APP_ID,
+        appKey: APP_KEY
+    });
+    // 显示次数
+    function showTime(Counter) {
+        var query = new AV.Query("Counter");
+        if($(".leancloud_visitors").length > 0){
+            var url = $(".leancloud_visitors").attr('id').trim();
+            // where field
+            query.equalTo("words", url);
+            // count
+            query.count().then(function (number) {
+                // There are number instances of MyClass where words equals url.
+                $(document.getElementById(url)).text(number?  number : '--');
+            }, function (error) {
+                // error is an instance of AVError.
+            });
+        }
+    }
+    // 追加pv
+    function addCount(Counter) {
+        var url = $(".leancloud_visitors").length > 0 ? $(".leancloud_visitors").attr('id').trim() : 'icafebolger.com';
+        var Counter = AV.Object.extend("Counter");
+        var query = new Counter;
+        query.save({
+            words: url
+        }).then(function (object) {
+        })
+    }
+    $(function () {
+        var Counter = AV.Object.extend("Counter");
+        addCount(Counter);
+        showTime(Counter);
+    });
+
+</script>
+
+<script src="/js/fireworks.js"></script>
+
+<!-- 天气预报right -->
+<script type="text/javascript">
+    WIDGET = {FID: '1CtL3FMZRR'}
+</script>
+<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://zcccool.cn/2026/08/31/%E4%BD%BF%E7%94%A8-Cloudflare-Tunnel-%E7%BB%95%E8%BF%87%E5%A4%87%E6%A1%88%EF%BC%8C%E5%AE%89%E5%85%A8%E6%9A%B4%E9%9C%B2%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+</html>
