@@ -15,18 +15,20 @@
 <!--    <meta name="baidu-site-verification" content="code-PwF0RA7PZP" />-->
 
     
-    <meta name="description" content="使用 Cloudflare Tunnel 绕过备案，安全暴露本地服务适用场景：服务器在国内无法备案，无法使用 80&#x2F;443 端口，需要通过域名安全访问内网服务。 📌 目录  背景与原理  安装 cloudflared  认证与创建隧道  配置隧道与启动  PM2 进程管理（持久化运行）  多域名多端口配置  常见问题排查  命令速查表   背景与原理为什么会有这个问题？ 国内服务器未备">
+    <meta name="description" content="使用 Cloudflare Tunnel 绕过备案，安全暴露本地服务适用场景：服务器在国内无法备案，无法使用 80&#x2F;443 端口，需要通过域名安全访问内网服务。 📌 目录  背景与原理  安装 cloudflared  认证与创建隧道  配置隧道与启动  PM2 进程管理（持久化运行）  多域名多端口配置  常见问题排查  命令速查表   背景与原理为什么会有这个问题？ 国内服务器未">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用 Cloudflare Tunnel 绕过备案，安全暴露本地服务">
 <meta property="og:url" content="https://zcccool.cn/2026/08/31/%E4%BD%BF%E7%94%A8-Cloudflare-Tunnel-%E7%BB%95%E8%BF%87%E5%A4%87%E6%A1%88%EF%BC%8C%E5%AE%89%E5%85%A8%E6%9A%B4%E9%9C%B2%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1/index.html">
 <meta property="og:site_name" content="Orange个人博客">
-<meta property="og:description" content="使用 Cloudflare Tunnel 绕过备案，安全暴露本地服务适用场景：服务器在国内无法备案，无法使用 80&#x2F;443 端口，需要通过域名安全访问内网服务。 📌 目录  背景与原理  安装 cloudflared  认证与创建隧道  配置隧道与启动  PM2 进程管理（持久化运行）  多域名多端口配置  常见问题排查  命令速查表   背景与原理为什么会有这个问题？ 国内服务器未备">
+<meta property="og:description" content="使用 Cloudflare Tunnel 绕过备案，安全暴露本地服务适用场景：服务器在国内无法备案，无法使用 80&#x2F;443 端口，需要通过域名安全访问内网服务。 📌 目录  背景与原理  安装 cloudflared  认证与创建隧道  配置隧道与启动  PM2 进程管理（持久化运行）  多域名多端口配置  常见问题排查  命令速查表   背景与原理为什么会有这个问题？ 国内服务器未">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/watermelon.jpg">
 <meta property="article:published_time" content="2026-08-31T12:40:41.000Z">
-<meta property="article:modified_time" content="2026-08-31T13:05:10.288Z">
+<meta property="article:modified_time" content="2026-09-02T14:31:00.190Z">
 <meta property="article:author" content="ZhengChengcheng">
 <meta property="article:tag" content="Cloudflare">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/watermelon.jpg">
     
 
     
@@ -123,6 +125,11 @@
                                 <li class="main-nav-list-item">
                                     <a class="main-nav-list-link"
                                        href="/myhtml/music.html">云音乐</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link"
+                                       href="/myhtml/weather.html">天氣</a>
                                 </li>
                             
                                 <li class="main-nav-list-item">
@@ -240,7 +247,7 @@
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
   <a href="/2026/08/31/%E4%BD%BF%E7%94%A8-Cloudflare-Tunnel-%E7%BB%95%E8%BF%87%E5%A4%87%E6%A1%88%EF%BC%8C%E5%AE%89%E5%85%A8%E6%9A%B4%E9%9C%B2%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1/" class="article-date">
-     <time datetime="2026-08-31T13:05:10.288Z" itemprop="dateModified">2026-08-31</time>
+     <time datetime="2026-09-02T14:31:00.190Z" itemprop="dateModified">2026-09-02</time>
   </a>
 </div>
 
@@ -268,7 +275,8 @@
 
             
 
-            <h2 id="使用-Cloudflare-Tunnel-绕过备案，安全暴露本地服务"><a href="#使用-Cloudflare-Tunnel-绕过备案，安全暴露本地服务" class="headerlink" title="使用 Cloudflare Tunnel 绕过备案，安全暴露本地服务"></a>使用 Cloudflare Tunnel 绕过备案，安全暴露本地服务</h2><p>适用场景：服务器在国内无法备案，无法使用 80&#x2F;443 端口，需要通过域名安全访问内网服务。</p>
+            <p><img src="https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/watermelon.jpg" alt="image"></p>
+<h2 id="使用-Cloudflare-Tunnel-绕过备案，安全暴露本地服务"><a href="#使用-Cloudflare-Tunnel-绕过备案，安全暴露本地服务" class="headerlink" title="使用 Cloudflare Tunnel 绕过备案，安全暴露本地服务"></a>使用 Cloudflare Tunnel 绕过备案，安全暴露本地服务</h2><p>适用场景：服务器在国内无法备案，无法使用 80&#x2F;443 端口，需要通过域名安全访问内网服务。</p>
 <p>📌 目录</p>
 <ol>
 <li><p><a href="#cv1">背景与原理</a></p>
@@ -308,7 +316,12 @@
 <li><p>一个隧道可以绑定无数个域名和端口</p>
 </li>
 </ul>
-<h3 id="安装-cloudflared"><a href="#安装-cloudflared" class="headerlink" title="安装 cloudflared"></a><span id="cv2">安装 cloudflared</span></h3><p>下载并安装<br>bash</p>
+<p>之前的链路：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">用户 → Cloudflare（灵活模式）→ 宝塔反向代理（监听某个端口）→ 你的服务（:2053）</span><br></pre></td></tr></table></figure>
+<p>这条链路非常脆弱，受制于备案、端口、证书、Cloudflare 回源等一系列问题<br>现在的新链路是：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">用户 → Cloudflare（自动HTTPS）→ Tunnel（加密通道）→ 你的服务（:2053）</span><br></pre></td></tr></table></figure>
+<p>这条新链路完全绕过了宝塔，直接由 cloudflared 把请求转发给本地服务。宝塔在这个过程中已经没有任何作用了，反向代理也可以删除。</p>
+<h3 id="安装-cloudflared"><a href="#安装-cloudflared" class="headerlink" title="安装 cloudflared"></a><span id="cv2">安装 cloudflared</span></h3><p>下载并安装</p>
 <h4 id="下载-cloudflared（如果下载慢，可以换成镜像源）"><a href="#下载-cloudflared（如果下载慢，可以换成镜像源）" class="headerlink" title="下载 cloudflared（如果下载慢，可以换成镜像源）"></a>下载 cloudflared（如果下载慢，可以换成镜像源）</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O cloudflared https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64</span><br></pre></td></tr></table></figure>
 <h4 id="添加执行权限"><a href="#添加执行权限" class="headerlink" title="添加执行权限"></a>添加执行权限</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x cloudflared</span><br></pre></td></tr></table></figure>
 <h4 id="移动到系统路径"><a href="#移动到系统路径" class="headerlink" title="移动到系统路径"></a>移动到系统路径</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mv cloudflared /usr/local/bin/</span><br></pre></td></tr></table></figure>
@@ -337,7 +350,9 @@
 <h3 id="PM2-进程管理（持久化运行）"><a href="#PM2-进程管理（持久化运行）" class="headerlink" title="PM2 进程管理（持久化运行）"></a><span id="cv5">PM2 进程管理（持久化运行）</span></h3><h4 id="启动隧道"><a href="#启动隧道" class="headerlink" title="启动隧道"></a>启动隧道</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 start cloudflared --name &quot;cloudflare-tunnel&quot; -- tunnel run xxx-tunnel</span><br></pre></td></tr></table></figure>
 <h4 id="常用管理命令"><a href="#常用管理命令" class="headerlink" title="常用管理命令"></a>常用管理命令</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看进程状态</span></span><br><span class="line">pm2 list</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看日志</span></span><br><span class="line">pm2 logs cloudflare-tunnel</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看最近 20 行日志</span></span><br><span class="line">pm2 logs cloudflare-tunnel --lines 20</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">重启隧道</span></span><br><span class="line">pm2 restart cloudflare-tunnel</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">停止隧道</span></span><br><span class="line">pm2 stop cloudflare-tunnel</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">删除进程</span></span><br><span class="line">pm2 delete cloudflare-tunnel</span><br></pre></td></tr></table></figure>
 
-<h4 id="设置开机自启（可选）"><a href="#设置开机自启（可选）" class="headerlink" title="设置开机自启（可选）"></a>设置开机自启（可选）</h4><p>bash<br>pm2 save<br>pm2 startup</p>
+<h4 id="设置开机自启（可选）"><a href="#设置开机自启（可选）" class="headerlink" title="设置开机自启（可选）"></a>设置开机自启（可选）</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pm2 save</span><br><span class="line">pm2 startup</span><br></pre></td></tr></table></figure>
+
+
 <h3 id="多域名多端口配置"><a href="#多域名多端口配置" class="headerlink" title="多域名多端口配置"></a><span id="cv6">多域名多端口配置</span></h3><p>场景：一个隧道绑定多个域名和端口<br>示例：</p>
 <ul>
 <li>xxx.yyy → 本地 2053 端口</li>
@@ -405,7 +420,7 @@
 </tbody></table>
 <h3 id="命令速查表"><a href="#命令速查表" class="headerlink" title="命令速查表"></a><span id="cv8">命令速查表</span></h3><h4 id="隧道管理"><a href="#隧道管理" class="headerlink" title="隧道管理"></a>隧道管理</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">登录授权</span></span><br><span class="line">cloudflared tunnel login</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建命名隧道</span></span><br><span class="line">cloudflared tunnel create &lt;隧道名&gt;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看隧道列表</span></span><br><span class="line">cloudflared tunnel list</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看隧道详情</span></span><br><span class="line">cloudflared tunnel info &lt;隧道名&gt;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">删除隧道</span></span><br><span class="line">cloudflared tunnel delete &lt;隧道名&gt;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">添加 DNS 路由（子域名用）</span></span><br><span class="line">cloudflared tunnel route dns &lt;隧道名&gt; &lt;域名&gt;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">前台运行测试</span></span><br><span class="line">cloudflared tunnel run &lt;隧道名&gt;</span><br></pre></td></tr></table></figure>
 
-<h4 id="PM2-管理"><a href="#PM2-管理" class="headerlink" title="PM2 管理"></a>PM2 管理</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">bash</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">启动</span></span><br><span class="line">pm2 start cloudflared --name &quot;cloudflare-tunnel&quot; -- tunnel run &lt;隧道名&gt;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看状态</span></span><br><span class="line">pm2 list</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看日志</span></span><br><span class="line">pm2 logs cloudflare-tunnel</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">重启</span></span><br><span class="line">pm2 restart cloudflare-tunnel</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">停止</span></span><br><span class="line">pm2 stop cloudflare-tunnel</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">删除进程</span></span><br><span class="line">pm2 delete cloudflare-tunnel</span><br></pre></td></tr></table></figure>
+<h4 id="PM2-管理"><a href="#PM2-管理" class="headerlink" title="PM2 管理"></a>PM2 管理</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">启动</span></span><br><span class="line">pm2 start cloudflared --name &quot;cloudflare-tunnel&quot; -- tunnel run &lt;隧道名&gt;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看状态</span></span><br><span class="line">pm2 list</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看日志</span></span><br><span class="line">pm2 logs cloudflare-tunnel</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">重启</span></span><br><span class="line">pm2 restart cloudflare-tunnel</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">停止</span></span><br><span class="line">pm2 stop cloudflare-tunnel</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">删除进程</span></span><br><span class="line">pm2 delete cloudflare-tunnel</span><br></pre></td></tr></table></figure>
 
 <h4 id="DNS-验证"><a href="#DNS-验证" class="headerlink" title="DNS 验证"></a>DNS 验证</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">检查域名解析</span></span><br><span class="line">dig &lt;你的域名&gt;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看 cloudflared 日志</span></span><br><span class="line">pm2 logs cloudflare-tunnel --lines 20</span><br></pre></td></tr></table></figure>
 
@@ -498,14 +513,15 @@
             "name": "ZhengChengcheng"
         },
         "headline": "使用 Cloudflare Tunnel 绕过备案，安全暴露本地服务",
-        "image": "https://zcccool.cn",
+        "image": "https://zcccool.cnhttps://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/watermelon.jpg",
         "keywords": "Cloudflare",
         "genre": "",
         "datePublished": "2026-08-31",
         "dateCreated": "2026-08-31",
-        "dateModified": "2026-08-31",
+        "dateModified": "2026-09-02",
         "url": "https://zcccool.cn/2026/08/31/使用-Cloudflare-Tunnel-绕过备案，安全暴露本地服务/",
-        "description": "使用 Cloudflare Tunnel 绕过备案，安全暴露本地服务适用场景：服务器在国内无法备案，无法使用 80&#x2F;443 端口，需要通过域名安全访问内网服务。
+        "description": "
+使用 Cloudflare Tunnel 绕过备案，安全暴露本地服务适用场景：服务器在国内无法备案，无法使用 80&#x2F;443 端口，需要通过域名安全访问内网服务。
 📌 目录
 
 背景与原理
@@ -526,8 +542,8 @@ PM2 进程管理（持久化运行）
 
 
 背景与原理为什么会有这个问题？
-国内服务器未备",
-        "wordCount": 928
+国内服务器未",
+        "wordCount": 957
     }
 </script>
 
@@ -601,9 +617,9 @@ PM2 进程管理（持久化运行）
 <nav id="article-nav">
     
     
-        <a href="/2026/03/28/%E7%BB%8D%E5%85%B4%E6%B8%B8/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2026/06/30/%E8%A3%85%E6%9C%BA%E8%BD%AF%E4%BB%B6%E5%88%97%E8%A1%A8/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">绍兴游</p>
+        <p class="article-nav-title">装机软件列表</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -628,7 +644,7 @@ PM2 进程管理（持久化运行）
                             <a href="/2026/08/31/%E4%BD%BF%E7%94%A8-Cloudflare-Tunnel-%E7%BB%95%E8%BF%87%E5%A4%87%E6%A1%88%EF%BC%8C%E5%AE%89%E5%85%A8%E6%9A%B4%E9%9C%B2%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/watermelon.jpg)" alt="使用 Cloudflare Tunnel 绕过备案，安全暴露本地服务" class="thumbnail-image"></span>
     
     
 </a>
@@ -639,6 +655,26 @@ PM2 进程管理（持久化运行）
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/2026/08/31/%E4%BD%BF%E7%94%A8-Cloudflare-Tunnel-%E7%BB%95%E8%BF%87%E5%A4%87%E6%A1%88%EF%BC%8C%E5%AE%89%E5%85%A8%E6%9A%B4%E9%9C%B2%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1/" class="title">使用 Cloudflare Tunnel 绕过备案，安全暴露本地服务</a></p>
                             <p class="item-date"><time datetime="2026-08-31T12:40:41.000Z" itemprop="datePublished">2026-08-31</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2026/06/30/%E8%A3%85%E6%9C%BA%E8%BD%AF%E4%BB%B6%E5%88%97%E8%A1%A8/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/orange.jpg)" alt="装机软件列表" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2026/06/30/%E8%A3%85%E6%9C%BA%E8%BD%AF%E4%BB%B6%E5%88%97%E8%A1%A8/" class="title">装机软件列表</a></p>
+                            <p class="item-date"><time datetime="2026-06-30T12:40:41.000Z" itemprop="datePublished">2026-06-30</time></p>
                         </div>
                     </li>
                 
@@ -702,26 +738,6 @@ PM2 进程管理（持久化运行）
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2025/12/07/251207%E4%B8%87%E4%BD%9B%E5%B1%B1/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/25wfs/wfs_005.jpg)" alt="251207万佛山" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2025/12/07/251207%E4%B8%87%E4%BD%9B%E5%B1%B1/" class="title">251207万佛山</a></p>
-                            <p class="item-date"><time datetime="2025-12-07T15:58:51.000Z" itemprop="datePublished">2025-12-07</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -734,7 +750,7 @@ PM2 进程管理（持久化运行）
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/9%E5%9B%BE/" style="font-size: 12px;">.9图</a> <a href="/tags/Android/" style="font-size: 18px;">Android</a> <a href="/tags/CSS/" style="font-size: 12px;">CSS</a> <a href="/tags/ChatGPT/" style="font-size: 12px;">ChatGPT</a> <a href="/tags/Cloudflare/" style="font-size: 12px;">Cloudflare</a> <a href="/tags/DeepFaceLab/" style="font-size: 12px;">DeepFaceLab</a> <a href="/tags/FTP/" style="font-size: 12px;">FTP</a> <a href="/tags/Hexo/" style="font-size: 12px;">Hexo</a> <a href="/tags/IPTV/" style="font-size: 12px;">IPTV</a> <a href="/tags/Kotlin/" style="font-size: 14px;">Kotlin</a> <a href="/tags/PS/" style="font-size: 12px;">PS</a> <a href="/tags/Python/" style="font-size: 12px;">Python</a> <a href="/tags/Retorfit/" style="font-size: 12px;">Retorfit</a> <a href="/tags/SQL/" style="font-size: 12px;">SQL</a> <a href="/tags/SRS/" style="font-size: 12px;">SRS</a> <a href="/tags/V2ray/" style="font-size: 12px;">V2ray</a> <a href="/tags/gitlab/" style="font-size: 12px;">gitlab</a> <a href="/tags/jQuery/" style="font-size: 12px;">jQuery</a> <a href="/tags/m3u8/" style="font-size: 12px;">m3u8</a> <a href="/tags/nextcloud/" style="font-size: 12px;">nextcloud</a> <a href="/tags/ping/" style="font-size: 12px;">ping</a> <a href="/tags/python/" style="font-size: 12px;">python</a> <a href="/tags/%E4%B8%8B%E8%BD%BD/" style="font-size: 12px;">下载</a> <a href="/tags/%E4%B8%9C%E6%9E%81%E5%B2%9B/" style="font-size: 10px;">东极岛</a> <a href="/tags/%E4%B9%8C%E9%95%87/" style="font-size: 10px;">乌镇</a> <a href="/tags/%E4%B9%B0%E6%88%BF/" style="font-size: 12px;">买房</a> <a href="/tags/%E5%88%B7%E6%9C%BA/" style="font-size: 12px;">刷机</a> <a href="/tags/%E5%9F%9F%E5%90%8D/" style="font-size: 12px;">域名</a> <a href="/tags/%E5%A9%BA%E6%BA%90-%E4%B8%89%E6%B8%85%E5%B1%B1/" style="font-size: 10px;">婺源&三清山</a> <a href="/tags/%E5%AE%8F%E6%9D%91-%E9%BB%84%E5%B1%B1/" style="font-size: 10px;">宏村&黄山</a> <a href="/tags/%E5%AE%9A%E6%97%B6%E5%99%A8-%E7%BA%BF%E7%A8%8B%E6%B1%A0/" style="font-size: 12px;">定时器&线程池</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 12px;">小程序</a> <a href="/tags/%E5%B7%A2%E6%B9%96/" style="font-size: 10px;">巢湖</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 16px;">总结</a> <a href="/tags/%E6%97%85%E8%A1%8C/" style="font-size: 20px;">旅行</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 12px;">服务器</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 12px;">游戏</a> <a href="/tags/%E6%BC%82%E6%B5%81/" style="font-size: 10px;">漂流</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 12px;">爬虫</a> <a href="/tags/%E7%8B%97/" style="font-size: 12px;">狗</a> <a href="/tags/%E7%9F%A5%E8%AF%86/" style="font-size: 12px;">知识</a> <a href="/tags/%E7%BE%BD%E6%AF%9B%E7%90%83/" style="font-size: 12px;">羽毛球</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 12px;">虚拟机</a> <a href="/tags/%E8%A3%85%E4%BF%AE/" style="font-size: 12px;">装修</a> <a href="/tags/%E8%A7%86%E9%A2%91%E5%90%88%E5%B9%B6/" style="font-size: 12px;">视频合并</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 12px;">设计模式</a> <a href="/tags/%E8%BD%AF%E8%80%83/" style="font-size: 14px;">软考</a> <a href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91/" style="font-size: 14px;">阿里云</a> <a href="/tags/%E9%BE%99%E8%99%8E%E5%B1%B1/" style="font-size: 10px;">龙虎山</a>
+            <a href="/tags/9%E5%9B%BE/" style="font-size: 12px;">.9图</a> <a href="/tags/Android/" style="font-size: 18px;">Android</a> <a href="/tags/CSS/" style="font-size: 12px;">CSS</a> <a href="/tags/ChatGPT/" style="font-size: 12px;">ChatGPT</a> <a href="/tags/Cloudflare/" style="font-size: 14px;">Cloudflare</a> <a href="/tags/DeepFaceLab/" style="font-size: 12px;">DeepFaceLab</a> <a href="/tags/FTP/" style="font-size: 12px;">FTP</a> <a href="/tags/Hexo/" style="font-size: 12px;">Hexo</a> <a href="/tags/IPTV/" style="font-size: 12px;">IPTV</a> <a href="/tags/Kotlin/" style="font-size: 14px;">Kotlin</a> <a href="/tags/PS/" style="font-size: 12px;">PS</a> <a href="/tags/Python/" style="font-size: 12px;">Python</a> <a href="/tags/Retorfit/" style="font-size: 12px;">Retorfit</a> <a href="/tags/SQL/" style="font-size: 12px;">SQL</a> <a href="/tags/SRS/" style="font-size: 12px;">SRS</a> <a href="/tags/V2ray/" style="font-size: 12px;">V2ray</a> <a href="/tags/gitea/" style="font-size: 12px;">gitea</a> <a href="/tags/gitlab/" style="font-size: 10px;">gitlab</a> <a href="/tags/jQuery/" style="font-size: 12px;">jQuery</a> <a href="/tags/m3u8/" style="font-size: 12px;">m3u8</a> <a href="/tags/nextcloud/" style="font-size: 12px;">nextcloud</a> <a href="/tags/ping/" style="font-size: 12px;">ping</a> <a href="/tags/python/" style="font-size: 12px;">python</a> <a href="/tags/%E4%B8%8B%E8%BD%BD/" style="font-size: 12px;">下载</a> <a href="/tags/%E4%B8%9C%E6%9E%81%E5%B2%9B/" style="font-size: 10px;">东极岛</a> <a href="/tags/%E4%B9%8C%E9%95%87/" style="font-size: 10px;">乌镇</a> <a href="/tags/%E4%B9%B0%E6%88%BF/" style="font-size: 12px;">买房</a> <a href="/tags/%E5%88%B7%E6%9C%BA/" style="font-size: 12px;">刷机</a> <a href="/tags/%E5%9F%9F%E5%90%8D/" style="font-size: 12px;">域名</a> <a href="/tags/%E5%A9%BA%E6%BA%90-%E4%B8%89%E6%B8%85%E5%B1%B1/" style="font-size: 10px;">婺源&三清山</a> <a href="/tags/%E5%AE%8F%E6%9D%91-%E9%BB%84%E5%B1%B1/" style="font-size: 10px;">宏村&黄山</a> <a href="/tags/%E5%AE%9A%E6%97%B6%E5%99%A8-%E7%BA%BF%E7%A8%8B%E6%B1%A0/" style="font-size: 12px;">定时器&线程池</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 12px;">小程序</a> <a href="/tags/%E5%B7%A2%E6%B9%96/" style="font-size: 10px;">巢湖</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 16px;">总结</a> <a href="/tags/%E6%97%85%E8%A1%8C/" style="font-size: 20px;">旅行</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 12px;">服务器</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 12px;">游戏</a> <a href="/tags/%E6%BC%82%E6%B5%81/" style="font-size: 10px;">漂流</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 12px;">爬虫</a> <a href="/tags/%E7%8B%97/" style="font-size: 12px;">狗</a> <a href="/tags/%E7%9F%A5%E8%AF%86/" style="font-size: 12px;">知识</a> <a href="/tags/%E7%BE%BD%E6%AF%9B%E7%90%83/" style="font-size: 12px;">羽毛球</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 12px;">虚拟机</a> <a href="/tags/%E8%A3%85%E4%BF%AE/" style="font-size: 12px;">装修</a> <a href="/tags/%E8%A7%86%E9%A2%91%E5%90%88%E5%B9%B6/" style="font-size: 12px;">视频合并</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 12px;">设计模式</a> <a href="/tags/%E8%BD%AF%E8%80%83/" style="font-size: 14px;">软考</a> <a href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91/" style="font-size: 14px;">阿里云</a> <a href="/tags/%E9%BE%99%E8%99%8E%E5%B1%B1/" style="font-size: 10px;">龙虎山</a>
         </div>
     </div>
 

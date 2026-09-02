@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>Orange个人博客</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="description" content="天气              * { box-sizing: border-box; }          body {             margin: 0;             font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;PingFang SC&quot;,">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Orange个人博客">
+<meta property="og:url" content="https://zcccool.cn/myhtml/weather.html">
+<meta property="og:site_name" content="Orange个人博客">
+<meta property="og:description" content="天气              * { box-sizing: border-box; }          body {             margin: 0;             font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;PingFang SC&quot;,">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-09-02T15:04:14.172Z">
+<meta property="article:modified_time" content="2026-09-02T15:04:14.172Z">
+<meta property="article:author" content="ZhengChengcheng">
+<meta property="article:tag" content="郑程程">
+<meta name="twitter:card" content="summary">
+    
+
+    
+
+    
+        <link rel="icon" href="/images/icon/iconOrangeMedium.ico" />
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+    <!--自己添加的js-->
+<!--    
+<script src="/js/love.js"></script>
+-->
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+
+    <!-- Umami 统计 -->
+    <script defer src="https://orangecat.eu.org/script.js" data-website-id="d1692609-4c7b-41b7-a84c-389a91ff32e8"></script>
+<meta name="generator" content="Hexo 7.0.0"><link rel="alternate" href="/atom.xml" title="Orange个人博客" type="application/atom+xml">
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+
+                    
+
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link"
+                                       href="/">主页</a>
+                                </li>
+                            
+                                
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link"
+                                       href="/myhtml/music.html">云音乐</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link"
+                                       href="/myhtml/weather.html">天氣</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link"
+                                       href="/myhtml/image.html">图片</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link"
+                                       href="/myhtml/video.html">视频</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link"
+                                       href="/myhtml/animation.html">动画</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link"
+                                       href="/myhtml/lovetree.html">时间树</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link"
+                                       href="/myhtml/bookmark.html">书签</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    Orange个人博客
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="page-"
+         class="article article-single article-type-page"
+         itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天气</title></title>
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            color: #303133;
+            background: #f5f7fa;
+        }
+
+        .page {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 16px;
+        }
+
+        .loading {
+            padding: 60px 0;
+            text-align: center;
+            color: #909399;
+        }
+
+        .empty {
+            padding: 60px 0;
+            text-align: center;
+            color: #909399;
+        }
+
+        .block {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+        .block-title {
+            font-size: 15px;
+            font-weight: 600;
+            margin: 0 0 12px;
+        }
+
+        /* 搜索栏 */
+        .search-bar {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+        .search-bar input {
+            flex: 1;
+            max-width: 320px;
+            height: 36px;
+            padding: 0 12px;
+            border: 1px solid #dcdfe6;
+            border-radius: 6px;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .search-bar input:focus {
+            border-color: #409eff;
+        }
+        .search-bar button {
+            height: 36px;
+            padding: 0 20px;
+            border: none;
+            border-radius: 6px;
+            background: #409eff;
+            color: #fff;
+            font-size: 14px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .search-bar button:hover { opacity: 0.9; }
+        .search-bar button:disabled { opacity: 0.6; cursor: not-allowed; }
+
+        /* 顶部渐变卡片 */
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            gap: 24px;
+            padding: 24px;
+            margin-bottom: 16px;
+            border-radius: 12px;
+            color: #fff;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        .hero-left {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .location {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+        }
+        .city {
+            font-size: 28px;
+            font-weight: 600;
+        }
+        .country {
+            font-size: 16px;
+            opacity: 0.85;
+        }
+        .update-time {
+            font-size: 13px;
+            opacity: 0.85;
+        }
+        .today {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-top: 6px;
+        }
+        .today-icon {
+            font-size: 56px;
+            line-height: 1;
+        }
+        .today-wea {
+            font-size: 18px;
+        }
+        .today-temp {
+            font-size: 24px;
+            font-weight: 600;
+        }
+        .today-temp .low {
+            font-size: 18px;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        .hero-right {
+            background: rgba(255, 255, 255, 0.18);
+            border-radius: 12px;
+            padding: 16px 20px;
+            min-width: 260px;
+            align-self: center;
+        }
+        .air-title { font-size: 13px; opacity: 0.85; }
+        .air-level { font-size: 26px; font-weight: 700; margin: 4px 0; }
+        .air-tips { font-size: 13px; opacity: 0.9; margin-bottom: 12px; }
+        .air-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px 16px;
+            margin-bottom: 12px;
+        }
+        .air-item {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+        }
+        .air-item .label { opacity: 0.8; }
+        .air-item .value { font-weight: 600; }
+        .air-advice {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .air-advice span {
+            background: rgba(255, 255, 255, 0.22);
+            border-radius: 4px;
+            padding: 2px 8px;
+            font-size: 12px;
+        }
+
+        /* 7天预报 */
+        .forecast {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            padding-bottom: 4px;
+        }
+        .forecast-item {
+            flex: 0 0 110px;
+            padding: 14px 10px;
+            border-radius: 10px;
+            text-align: center;
+            background: #f5f7fa;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .forecast-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+        }
+        .forecast-item.active {
+            background: #e6f4ff;
+            box-shadow: inset 0 0 0 2px #409eff;
+        }
+        .f-day { font-size: 13px; color: #606266; margin-bottom: 6px; }
+        .f-icon { font-size: 30px; margin-bottom: 6px; }
+        .f-wea { font-size: 14px; margin-bottom: 6px; }
+        .f-temp { font-size: 14px; }
+        .f-temp .high { color: #f56c6c; font-weight: 600; margin-right: 6px; }
+        .f-temp .low { color: #409eff; }
+
+        .alarm {
+            background: #fdf6ec;
+            color: #e6a23c;
+            border-left: 4px solid #e6a23c;
+            border-radius: 6px;
+            padding: 12px 16px;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+        .alarm .alarm-head { font-weight: 600; margin-bottom: 4px; }
+
+        /* 详情指标 */
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .metric {
+            background: #fafafa;
+            border-radius: 8px;
+            padding: 12px 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .metric.wide { grid-column: span 3; }
+        .m-label { font-size: 12px; color: #909399; }
+        .m-value { font-size: 15px; color: #303133; font-weight: 500; }
+
+        /* 折叠区 */
+        .collapse { border: 1px solid #ebeef5; border-radius: 6px; margin-bottom: 12px; overflow: hidden; }
+        .collapse-head {
+            padding: 12px 16px;
+            background: #fafafa;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .collapse-head .arrow { transition: transform 0.2s; }
+        .collapse.open .collapse-head .arrow { transform: rotate(90deg); }
+        .collapse-body { display: none; padding: 16px; }
+        .collapse.open .collapse-body { display: block; }
+
+        /* 逐小时 */
+        .hours {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding-bottom: 6px;
+        }
+        .hour {
+            flex: 0 0 80px;
+            background: #f5f7fa;
+            border-radius: 8px;
+            padding: 10px 8px;
+            text-align: center;
+        }
+        .h-time { font-size: 12px; color: #606266; }
+        .h-icon { font-size: 22px; margin: 4px 0; }
+        .h-wea { font-size: 12px; margin-bottom: 2px; }
+        .h-temp { font-size: 14px; font-weight: 600; }
+        .h-wind { font-size: 11px; color: #909399; }
+
+        /* 生活指数 */
+        .index-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+        .index-item {
+            background: #fafafa;
+            border-radius: 8px;
+            padding: 12px 14px;
+        }
+        .i-title { font-size: 13px; color: #606266; }
+        .i-level { font-size: 16px; font-weight: 600; color: #409eff; margin: 4px 0; }
+        .i-desc { font-size: 12px; color: #909399; line-height: 1.5; }
+
+        @media (max-width: 768px) {
+            .hero { flex-direction: column; }
+            .hero-right { width: 100%; }
+            .metrics { grid-template-columns: repeat(2, 1fr); }
+            .metric.wide { grid-column: span 2; }
+            .index-grid { grid-template-columns: repeat(2, 1fr); }
+            .air-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 480px) {
+            .metrics, .index-grid { grid-template-columns: 1fr; }
+            .metric.wide { grid-column: span 1; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <div id="loading" class="loading">天气数据加载中...</div>
+
+    <div id="content" style="display: none;">
+        <div class="search-bar">
+            <input id="cityInput" type="text" placeholder="输入城市名称，如：北京">
+            <button id="searchBtn">搜索</button>
+        </div>
+
+        <div id="hero"></div>
+        <div id="forecast"></div>
+        <div id="detail"></div>
+    </div>
+
+    <div id="empty" class="empty" style="display: none;">暂无天气数据</div>
+</div>
+
+<script>
+    // ===== 配置：后端天气接口地址 =====
+    // 本地开发默认 http://localhost:8080，部署后改成你后端的域名，例如：
+    // const API_BASE = 'https://你的后端域名'
+    const API_BASE = 'https://zccai.cn';
+
+    var weather = null;
+    var activeIndex = 0;
+    var cityInput = document.getElementById('cityInput');
+    var searchBtn = document.getElementById('searchBtn');
+    var loadingEl = document.getElementById('loading');
+    var contentEl = document.getElementById('content');
+    var emptyEl = document.getElementById('empty');
+    var heroEl = document.getElementById('hero');
+    var forecastEl = document.getElementById('forecast');
+    var detailEl = document.getElementById('detail');
+
+    // 天气图标：wea_img 编码 -> emoji
+    var iconMap = {
+        qing: '☀️', yun: '⛅', yin: '☁️', yu: '🌧️', lei: '⛈️',
+        xue: '🌨️', wu: '🌫️', shachen: '🌪️', bingbao: '🧊', wumai: '🌫️',
+        dongyu: '🌧️', xiaoyu: '🌦️', zhongyu: '🌧️', dayu: '🌧️',
+        zhenyu: '🌦️', qiangzhenyu: '⛈️', dabaoyu: '🌧️', tedabaoyu: '🌧️',
+        xiaoxue: '🌨️', zhongxue: '❄️', daxue: '❄️', yujiaxue: '🌨️',
+        xuejiayu: '🌨️', feng: '💨', jufeng: '🌀', taifeng: '🌀'
+    };
+
+    function icon(code) { return iconMap[code] || '☁️'; }
+    function fmt(v) { return (v === null || v === undefined || v === '') ? '-' : v; }
+    function deg(v) { return (v === null || v === undefined || v === '') ? '-' : (v + '°'); }
+    function windText(win) {
+        if (Array.isArray(win)) {
+            return win.filter(Boolean).join(' / ') || '-';
+        }
+        return fmt(win);
+    }
+    function esc(s) {
+        return String(s === null || s === undefined ? '' : s)
+            .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+    }
+
+    function load() {
+        fetchWeather();
+    }
+
+    function fetchWeather(city) {
+        loadingEl.style.display = 'block';
+        contentEl.style.display = 'none';
+        emptyEl.style.display = 'none';
+
+        var url = API_BASE + '/api/weather';
+        if (city) { url += '?city=' + encodeURIComponent(city); }
+
+        fetch(url)
+            .then(function (res) { return res.json(); })
+            .then(function (res) {
+                if (res.code === 200 && res.data) {
+                    weather = res.data;
+                    activeIndex = 0;
+                    render();
+                } else {
+                    throw new Error(res.message || '天气查询失败');
+                }
+            })
+            .catch(function (err) {
+                alert(err.message || '天气数据加载失败');
+                loadingEl.style.display = 'none';
+                emptyEl.style.display = 'block';
+            });
+    }
+
+    function render() {
+        loadingEl.style.display = 'none';
+
+        if (!weather) {
+            emptyEl.style.display = 'block';
+            return;
+        }
+
+        contentEl.style.display = 'block';
+        renderHero();
+        renderForecast();
+        renderDetail();
+    }
+
+    function renderHero() {
+        var today = weather.data && weather.data[0];
+        var aqi = weather.aqi;
+
+        var html = '<div class="hero-left">';
+        html += '<div class="location"><span class="city">' + esc(weather.city) + '</span>';
+        if (weather.country) { html += '<span class="country">' + esc(weather.country) + '</span>'; }
+        html += '</div>';
+        html += '<div class="update-time">更新时间：' + esc(weather.update_time) + '</div>';
+        if (today) {
+            html += '<div class="today"><span class="today-icon">' + icon(today.wea_img) + '</span>';
+            html += '<div><div class="today-wea">' + esc(today.wea) + '</div>';
+            html += '<div class="today-temp"><span class="high">' + esc(today.tem1) + '°</span>';
+            html += '<span class="low">/ ' + esc(today.tem2) + '°</span></div></div></div>';
+        }
+        html += '</div>';
+
+        if (aqi) {
+            html += '<div class="hero-right">';
+            html += '<div class="air-title">空气质量</div>';
+            html += '<div class="air-level">' + esc(fmt(aqi.air_level)) + '</div>';
+            html += '<div class="air-tips">' + esc(fmt(aqi.air_tips)) + '</div>';
+            html += '<div class="air-grid">';
+            html += airItem('PM2.5', aqi.pm25);
+            html += airItem('PM10', aqi.pm10);
+            html += airItem('O₃', aqi.o3);
+            html += airItem('NO₂', aqi.no2);
+            html += airItem('SO₂', aqi.so2);
+            html += airItem('CO', aqi.co);
+            html += '</div>';
+            html += '<div class="air-advice">';
+            if (aqi.kouzhao) { html += '<span>口罩：' + esc(aqi.kouzhao) + '</span>'; }
+            if (aqi.waichu) { html += '<span>外出：' + esc(aqi.waichu) + '</span>'; }
+            if (aqi.yundong) { html += '<span>运动：' + esc(aqi.yundong) + '</span>'; }
+            if (aqi.kaichuang) { html += '<span>开窗：' + esc(aqi.kaichuang) + '</span>'; }
+            if (aqi.jinghuaqi) { html += '<span>净化器：' + esc(aqi.jinghuaqi) + '</span>'; }
+            html += '</div></div>';
+        }
+
+        heroEl.innerHTML = html;
+    }
+
+    function airItem(label, value) {
+        return '<div class="air-item"><span class="label">' + label + '</span>' +
+            '<span class="value">' + esc(fmt(value)) + '</span></div>';
+    }
+
+    function renderForecast() {
+        var days = weather.data || [];
+        if (!days.length) {
+            forecastEl.innerHTML = '';
+            return;
+        }
+
+        var html = '<div class="block"><div class="block-title">7天预报</div><div class="forecast">';
+        days.forEach(function (d, i) {
+            var cls = i === activeIndex ? 'forecast-item active' : 'forecast-item';
+            html += '<div class="' + cls + '" data-index="' + i + '">';
+            html += '<div class="f-day">' + esc(d.day) + '</div>';
+            html += '<div class="f-icon">' + icon(d.wea_img) + '</div>';
+            html += '<div class="f-wea">' + esc(d.wea) + '</div>';
+            html += '<div class="f-temp"><span class="high">' + esc(d.tem1) + '°</span>';
+            html += '<span class="low">' + esc(d.tem2) + '°</span></div>';
+            html += '</div>';
+        });
+        html += '</div></div>';
+        forecastEl.innerHTML = html;
+
+        forecastEl.querySelectorAll('.forecast-item').forEach(function (el) {
+            el.addEventListener('click', function () {
+                activeIndex = parseInt(el.getAttribute('data-index'), 10);
+                renderForecast();
+                renderDetail();
+            });
+        });
+    }
+
+    function renderDetail() {
+        var current = weather.data && weather.data[activeIndex];
+        if (!current) {
+            detailEl.innerHTML = '';
+            return;
+        }
+
+        var html = '<div class="block"><div class="block-title">' + esc(current.day) + ' 详情</div>';
+
+        if (current.alarm && current.alarm.alarm_type) {
+            html += '<div class="alarm"><div class="alarm-head">' +
+                esc(current.alarm.alarm_type + ' ' + current.alarm.alarm_level + '预警') +
+                '</div><div>' + esc(current.alarm.alarm_content) + '</div></div>';
+        }
+
+        html += '<div class="metrics">';
+        html += metric('实时温度', deg(current.tem));
+        html += metric('最高 / 最低', deg(current.tem1) + ' / ' + deg(current.tem2));
+        html += metric('白天 / 夜间', fmt(current.wea_day) + ' / ' + fmt(current.wea_night));
+        html += metric('湿度', fmt(current.humidity));
+        html += metric('能见度', fmt(current.visibility));
+        html += metric('气压', fmt(current.pressure));
+        html += metric('风向 / 风力', windText(current.win) + ' ' + fmt(current.win_speed));
+        html += metric('日出 / 日落', fmt(current.sunrise) + ' / ' + fmt(current.sunset));
+        html += metric('空气质量', fmt(current.air) + ' ' + fmt(current.air_level));
+        html += metric('空气提示', fmt(current.air_tips), true);
+        html += '</div>';
+
+        // 逐小时
+        html += '<div class="collapse" id="collapse-hours">';
+        html += '<div class="collapse-head"><span>逐小时天气</span><span class="arrow">▶</span></div>';
+        html += '<div class="collapse-body">';
+        if (current.hours && current.hours.length) {
+            html += '<div class="hours">';
+            current.hours.forEach(function (h) {
+                html += '<div class="hour">';
+                html += '<div class="h-time">' + esc(h.hours) + '</div>';
+                html += '<div class="h-icon">' + icon(h.wea_img) + '</div>';
+                html += '<div class="h-wea">' + esc(h.wea) + '</div>';
+                html += '<div class="h-temp">' + esc(h.tem) + '°</div>';
+                html += '<div class="h-wind">' + esc(h.win) + ' ' + esc(h.win_speed) + '</div>';
+                html += '</div>';
+            });
+            html += '</div>';
+        } else {
+            html += '<div class="empty">暂无逐小时数据</div>';
+        }
+        html += '</div></div>';
+
+        // 生活指数
+        html += '<div class="collapse" id="collapse-index">';
+        html += '<div class="collapse-head"><span>生活指数</span><span class="arrow">▶</span></div>';
+        html += '<div class="collapse-body">';
+        if (current.index && current.index.length) {
+            html += '<div class="index-grid">';
+            current.index.forEach(function (item) {
+                html += '<div class="index-item">';
+                html += '<div class="i-title">' + esc(item.title) + '</div>';
+                html += '<div class="i-level">' + esc(item.level) + '</div>';
+                html += '<div class="i-desc">' + esc(item.desc) + '</div>';
+                html += '</div>';
+            });
+            html += '</div>';
+        } else {
+            html += '<div class="empty">暂无生活指数</div>';
+        }
+        html += '</div></div>';
+
+        html += '</div>';
+        detailEl.innerHTML = html;
+
+        // 折叠交互
+        detailEl.querySelectorAll('.collapse').forEach(function (el) {
+            el.querySelector('.collapse-head').addEventListener('click', function () {
+                el.classList.toggle('open');
+            });
+        });
+    }
+
+    function metric(label, value, wide) {
+        var cls = wide ? 'metric wide' : 'metric';
+        return '<div class="' + cls + '"><span class="m-label">' + label + '</span>' +
+            '<span class="m-value">' + esc(value) + '</span></div>';
+    }
+
+    searchBtn.addEventListener('click', function () {
+        var city = cityInput.value.trim();
+        searchBtn.disabled = true;
+        fetchWeather(city || undefined);
+        setTimeout(function () { searchBtn.disabled = false; }, 1500);
+    });
+
+    cityInput.addEventListener('keyup', function (e) {
+        if (e.key === 'Enter') { searchBtn.click(); }
+    });
+
+    load();
+</script>
+</body>
+</html>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://zcccool.cn/myhtml/weather.html" data-id="cmtk85mks000048hyahva7yz6" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "ZhengChengcheng"
+        },
+        
+        "image": "https://zcccool.cn",
+        
+        
+        "datePublished": "2026-09-02",
+        "dateCreated": "2026-09-02",
+        "dateModified": "2026-09-02",
+        "url": "https://zcccool.cn/myhtml/weather.html",
+        "description": "
+
+
+    
+    
+    天气
+    
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+           ",
+        "wordCount": 6479
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="blog" href="https://zccode.cn/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-blog"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://www.instagram.com/g.p.orange/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/zccguagua" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="https://weibo.com/u/3247224430?is_hot=1" target="_blank" rel="noopener">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="https://twitter.com/w7yRCu52263sPTV" target="_blank" rel="noopener">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2026/08/31/%E4%BD%BF%E7%94%A8-Cloudflare-Tunnel-%E7%BB%95%E8%BF%87%E5%A4%87%E6%A1%88%EF%BC%8C%E5%AE%89%E5%85%A8%E6%9A%B4%E9%9C%B2%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/watermelon.jpg)" alt="使用 Cloudflare Tunnel 绕过备案，安全暴露本地服务" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2026/08/31/%E4%BD%BF%E7%94%A8-Cloudflare-Tunnel-%E7%BB%95%E8%BF%87%E5%A4%87%E6%A1%88%EF%BC%8C%E5%AE%89%E5%85%A8%E6%9A%B4%E9%9C%B2%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1/" class="title">使用 Cloudflare Tunnel 绕过备案，安全暴露本地服务</a></p>
+                            <p class="item-date"><time datetime="2026-08-31T12:40:41.000Z" itemprop="datePublished">2026-08-31</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2026/06/30/%E8%A3%85%E6%9C%BA%E8%BD%AF%E4%BB%B6%E5%88%97%E8%A1%A8/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/cover/orange.jpg)" alt="装机软件列表" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2026/06/30/%E8%A3%85%E6%9C%BA%E8%BD%AF%E4%BB%B6%E5%88%97%E8%A1%A8/" class="title">装机软件列表</a></p>
+                            <p class="item-date"><time datetime="2026-06-30T12:40:41.000Z" itemprop="datePublished">2026-06-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2026/03/28/%E7%BB%8D%E5%85%B4%E6%B8%B8/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/26shaoxing/shaoxing_001.jpg)" alt="绍兴游" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2026/03/28/%E7%BB%8D%E5%85%B4%E6%B8%B8/" class="title">绍兴游</a></p>
+                            <p class="item-date"><time datetime="2026-03-28T08:30:52.000Z" itemprop="datePublished">2026-03-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2026/01/03/2025%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/2025zj/zj2025_bml.jpg)" alt="2025年度总结" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2026/01/03/2025%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" class="title">2025年度总结</a></p>
+                            <p class="item-date"><time datetime="2026-01-03T15:03:18.000Z" itemprop="datePublished">2026-01-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2025/12/20/%E6%B1%BD%E8%BD%A6%E4%BF%9D%E5%85%BB%E7%9C%81%E9%92%B1%E6%8C%87%E5%8D%97/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://zccguagua.oss-cn-hangzhou.aliyuncs.com/images/blog/25car/qiche_car.jpg)" alt="汽车保养省钱指南" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2025/12/20/%E6%B1%BD%E8%BD%A6%E4%BF%9D%E5%85%BB%E7%9C%81%E9%92%B1%E6%8C%87%E5%8D%97/" class="title">汽车保养省钱指南</a></p>
+                            <p class="item-date"><time datetime="2025-12-20T11:54:56.000Z" itemprop="datePublished">2025-12-20</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/9%E5%9B%BE/" style="font-size: 12px;">.9图</a> <a href="/tags/Android/" style="font-size: 18px;">Android</a> <a href="/tags/CSS/" style="font-size: 12px;">CSS</a> <a href="/tags/ChatGPT/" style="font-size: 12px;">ChatGPT</a> <a href="/tags/Cloudflare/" style="font-size: 14px;">Cloudflare</a> <a href="/tags/DeepFaceLab/" style="font-size: 12px;">DeepFaceLab</a> <a href="/tags/FTP/" style="font-size: 12px;">FTP</a> <a href="/tags/Hexo/" style="font-size: 12px;">Hexo</a> <a href="/tags/IPTV/" style="font-size: 12px;">IPTV</a> <a href="/tags/Kotlin/" style="font-size: 14px;">Kotlin</a> <a href="/tags/PS/" style="font-size: 12px;">PS</a> <a href="/tags/Python/" style="font-size: 12px;">Python</a> <a href="/tags/Retorfit/" style="font-size: 12px;">Retorfit</a> <a href="/tags/SQL/" style="font-size: 12px;">SQL</a> <a href="/tags/SRS/" style="font-size: 12px;">SRS</a> <a href="/tags/V2ray/" style="font-size: 12px;">V2ray</a> <a href="/tags/gitea/" style="font-size: 12px;">gitea</a> <a href="/tags/gitlab/" style="font-size: 10px;">gitlab</a> <a href="/tags/jQuery/" style="font-size: 12px;">jQuery</a> <a href="/tags/m3u8/" style="font-size: 12px;">m3u8</a> <a href="/tags/nextcloud/" style="font-size: 12px;">nextcloud</a> <a href="/tags/ping/" style="font-size: 12px;">ping</a> <a href="/tags/python/" style="font-size: 12px;">python</a> <a href="/tags/%E4%B8%8B%E8%BD%BD/" style="font-size: 12px;">下载</a> <a href="/tags/%E4%B8%9C%E6%9E%81%E5%B2%9B/" style="font-size: 10px;">东极岛</a> <a href="/tags/%E4%B9%8C%E9%95%87/" style="font-size: 10px;">乌镇</a> <a href="/tags/%E4%B9%B0%E6%88%BF/" style="font-size: 12px;">买房</a> <a href="/tags/%E5%88%B7%E6%9C%BA/" style="font-size: 12px;">刷机</a> <a href="/tags/%E5%9F%9F%E5%90%8D/" style="font-size: 12px;">域名</a> <a href="/tags/%E5%A9%BA%E6%BA%90-%E4%B8%89%E6%B8%85%E5%B1%B1/" style="font-size: 10px;">婺源&三清山</a> <a href="/tags/%E5%AE%8F%E6%9D%91-%E9%BB%84%E5%B1%B1/" style="font-size: 10px;">宏村&黄山</a> <a href="/tags/%E5%AE%9A%E6%97%B6%E5%99%A8-%E7%BA%BF%E7%A8%8B%E6%B1%A0/" style="font-size: 12px;">定时器&线程池</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 12px;">小程序</a> <a href="/tags/%E5%B7%A2%E6%B9%96/" style="font-size: 10px;">巢湖</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 16px;">总结</a> <a href="/tags/%E6%97%85%E8%A1%8C/" style="font-size: 20px;">旅行</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 12px;">服务器</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 12px;">游戏</a> <a href="/tags/%E6%BC%82%E6%B5%81/" style="font-size: 10px;">漂流</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 12px;">爬虫</a> <a href="/tags/%E7%8B%97/" style="font-size: 12px;">狗</a> <a href="/tags/%E7%9F%A5%E8%AF%86/" style="font-size: 12px;">知识</a> <a href="/tags/%E7%BE%BD%E6%AF%9B%E7%90%83/" style="font-size: 12px;">羽毛球</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 12px;">虚拟机</a> <a href="/tags/%E8%A3%85%E4%BF%AE/" style="font-size: 12px;">装修</a> <a href="/tags/%E8%A7%86%E9%A2%91%E5%90%88%E5%B9%B6/" style="font-size: 12px;">视频合并</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 12px;">设计模式</a> <a href="/tags/%E8%BD%AF%E8%80%83/" style="font-size: 14px;">软考</a> <a href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91/" style="font-size: 14px;">阿里云</a> <a href="/tags/%E9%BE%99%E8%99%8E%E5%B1%B1/" style="font-size: 10px;">龙虎山</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://github.com/ppoffice/hexo-theme-hueman">Theme</a>
+                    </li>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://www.zccai.cn">我的网站</a>
+                    </li>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://weibo.com/u/3247224430?is_hot=1">微博</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <!--<h3 class="widget-title">我的侧边栏</h3>-->
+        <!--<div class="widget">-->
+        <!--这里是我的侧边栏哦-->
+        <!--</div>-->
+        <!--        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=300 height=86-->
+        <!--                src="//music.163.com/outchain/player?type=2&id=26237342&auto=1&height=66"></iframe>-->
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=300 height=86
+                src="//music.163.com/outchain/player?type=2&id=578090&auto=1&height=66"></iframe>
+        <img src="../images/main_wx.png" width=150 height=150>
+
+        <!--天气插件-->
+        <div id="he-plugin-simple" style="width: 300px"></div>
+        <!--天气插件-->
+        <script>
+            WIDGET = {
+                "CONFIG": {
+                    "modules": "01234",
+                    "background": "1",
+                    "tmpColor": "FFFFFF",
+                    "tmpSize": "16",
+                    "cityColor": "FFFFFF",
+                    "citySize": "16",
+                    "aqiColor": "FFFFFF",
+                    "aqiSize": "16",
+                    "weatherIconSize": "24",
+                    "alertIconSize": "18",
+                    "padding": "10px 10px 10px 10px",
+                    "shadow": "0",
+                    "language": "auto",
+                    "fixed": "false",
+                    "vertical": "top",
+                    "horizontal": "left",
+                    "key": "30867faab9634d6692ca70efb12b39ea"
+                }
+            }
+        </script>
+        <script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script>
+
+        <script type="text/javascript"
+                src="//rf.revolvermaps.com/0/0/6.js?i=51m7wtzyf42&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80"
+                async="async"></script>
+
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2026 ZhengChengcheng</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn1.lncld.net/static/js/2.5.0/av-min.js"></script>
+
+<script>
+    var APP_ID = 'K14Yo7meMkb2d2eRXnvjs5Nx-gzGzoHsz';
+    var APP_KEY = 'BG64BwIHiKiOkgqjcr6Nm9DX';
+    AV.init({
+        appId: APP_ID,
+        appKey: APP_KEY
+    });
+    // 显示次数
+    function showTime(Counter) {
+        var query = new AV.Query("Counter");
+        if($(".leancloud_visitors").length > 0){
+            var url = $(".leancloud_visitors").attr('id').trim();
+            // where field
+            query.equalTo("words", url);
+            // count
+            query.count().then(function (number) {
+                // There are number instances of MyClass where words equals url.
+                $(document.getElementById(url)).text(number?  number : '--');
+            }, function (error) {
+                // error is an instance of AVError.
+            });
+        }
+    }
+    // 追加pv
+    function addCount(Counter) {
+        var url = $(".leancloud_visitors").length > 0 ? $(".leancloud_visitors").attr('id').trim() : 'icafebolger.com';
+        var Counter = AV.Object.extend("Counter");
+        var query = new Counter;
+        query.save({
+            words: url
+        }).then(function (object) {
+        })
+    }
+    $(function () {
+        var Counter = AV.Object.extend("Counter");
+        addCount(Counter);
+        showTime(Counter);
+    });
+
+</script>
+
+<script src="/js/fireworks.js"></script>
+
+<!-- 天气预报right -->
+<script type="text/javascript">
+    WIDGET = {FID: '1CtL3FMZRR'}
+</script>
+<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://zcccool.cn/myhtml/weather.html';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+</html>
